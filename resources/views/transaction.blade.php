@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;" />
+    <meta name="author" content="李章岭"/>
+    <meta name="keywords" content=""/>
+    <title>商城</title>
+    <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cart.css">
+</head>
+<body>
+<header class="cart-header">
+    <a href="">返回</a>交易记录
+</header>
+
+<section class="transactions">
+    【消费】产品名称产品名称 <span>-200.3</span>
+</section>
+<section class="transactions">
+    【分红】产品名称产品名称 <span>+200.3</span>
+</section>
+
+<footer class="footer footer-bottom">
+    <p><img src="/images/tmp/7.png" alt=""></p>
+    <p>@版权 版权 版权</p>
+</footer>
+
+</body>
+</html>

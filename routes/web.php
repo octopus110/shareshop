@@ -1,0 +1,55 @@
+<?php
+Route::get('/index', function () {
+    return view('index');
+});
+Route::get('/list', function () {
+    return view('list');
+});
+Route::get('/member', function () {
+    return view('member');
+});
+Route::get('/cart', function () {
+    return view('cart');
+});
+Route::get('/transaction', function () {
+    return view('transaction');
+});
+Route::get('/address', function () {
+    return view('address');
+});
+
+Route::group(['prefix' => 'server'], function () {
+
+    Auth::routes();
+
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/quit', 'HomeController@quit')->name('quit');
+
+    //多图片上传接口
+    Route::any('/update', 'updateController@images');
+    //分类管理
+    Route::any('/classify', 'classifyController@_list');
+    Route::any('/classify/add', 'classifyController@add');
+    Route::any('/classify/del', 'classifyController@del');
+    Route::any('/classify/modify', 'classifyController@modify');
+    //商品管理
+    Route::any('/commodity', 'commodityController@_list');
+    Route::any('/commodity/add', 'commodityController@add');
+    Route::any('/commodity/del', 'commodityController@del');
+    Route::any('/commodity/modify', 'commodityController@modify');
+    Route::any('/commodity/detail/{id}', 'commodityController@detail');
+    Route::any('/commodity/soldout', 'commodityController@soldout');
+    //订单管理
+    Route::any('/order', 'orderController@_list');
+    Route::any('/order/stop', 'orderController@stop');
+    Route::any('/order/send', 'orderController@send');
+    //个体渠道商
+    Route::any('/channel', 'channelController@_list');
+    Route::any('/channel/send', 'channelController@send');
+    Route::any('/channel/earnings/{id}', 'channelController@earnings');
+    //注册商管理
+    Route::any('/user', 'userController@_list');
+    Route::any('/user/add', 'userController@add');
+    Route::any('/user/del', 'userController@del');
+    Route::any('/user/modify', 'userController@modify');
+});

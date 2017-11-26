@@ -1,0 +1,22 @@
+html,body{
+	height: 100%;
+}
+.nav{
+	float: left;
+	width: 15%;
+	height: 100%;
+	font-size: 16px;
+	background: #333;
+}
+.nav li{
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+}
+.nav a{
+	color: #fff;
+}
+.content{
+	float: left;
+	width: 85%;
+}

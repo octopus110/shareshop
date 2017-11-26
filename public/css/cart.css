@@ -1,0 +1,50 @@
+.cart-header{
+	height: 9.7vw;
+	background: #fff;
+	line-height: 9.7vw;
+	text-align: center;
+	font-size: 3.8vw;
+	position: relative;
+}
+.cart-header a{
+	display: inline-block;
+	height: 9.7vw;
+	line-height: 9.7vw;
+	position: absolute;
+	left: 10px;
+	top: 0;
+	font-size: 3.3vw;
+}
+.carts,.transactions{
+	background: #fff;
+	padding:10px;
+	margin-top: 10px;
+}
+.cart-img{
+	width: 20%;
+	margin-right: 4%;
+}
+.cart-content{
+	width: 76%;
+}
+.cart-content h3{
+	font-size: 3.6vw;
+}
+.cart-content p{
+	padding-top: 10px;
+}
+.cart-content p span{
+	color: red;
+	padding-left: 4%;
+}
+.cart-content p i{
+	padding:0 2%;
+}
+.cart-content p em{
+	float: right;
+	color: #ccc;
+}
+.transactions span{
+	float: right;
+	color: red;
+}

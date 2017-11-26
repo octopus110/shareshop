@@ -1,0 +1,39 @@
+.member-info{
+	background: #fff;
+	font-size: 4vw;
+	padding:9vw 2vw 2vw;
+
+}
+.member-info p{
+	height: 10vw;
+	line-height: 10vw;
+	padding-left: 5vw;
+}
+.member-info img{
+	width: 20vw;
+	border-radius: 50%;
+}
+.member-item{
+	background: #fff;
+	text-align: center;
+	padding:10px 0; 
+	margin-top: 10px;	
+}
+.member-item table{
+	width: 100%
+}
+.member-item table td{
+	padding:10px 0; 
+}
+.member-item table td i{
+	font-size: 8vw;
+}
+.footer-bottom{
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
+.member-item span{
+	color: red;
+}
