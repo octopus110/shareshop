@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Classify;
 use App\Commodity;
 use App\Image;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 
 class commodityController extends Controller
@@ -33,13 +35,24 @@ class commodityController extends Controller
             $classify = new Classify();
             $data = $classify->getInfo();
 
-            return view('server/commodity_add', ['data' => $data]);
+            $merchant = Auth::user();
+            $role = 1;
+
+            if ($merchant->grade == 0) {
+                $userModel = new User();
+
+                $merchant = $userModel->where('grade', 1)->select('id', 'storename', 'grade')->get();
+                $role = 0;
+            }
+
+            return view('server/commodity_add', ['data' => $data, 'merchant' => $merchant, 'role' => $role]);
         } else {
             $validator = Validator::make($request->all(), [
                 'name' => 'required|String',
                 'classify' => 'required|Numeric',
                 'quantity' => 'required|Numeric',
                 'price' => 'required',
+                'sid' => 'required',
                 'description' => 'required',
             ]);
 
@@ -49,7 +62,7 @@ class commodityController extends Controller
 
             $commodity = new Commodity();
 
-            $id = $commodity->add($request->only('name', 'classify', 'quantity', 'price', 'description'));
+            $id = $commodity->add($request->only('name', 'classify', 'quantity', 'price', 'description', 'sid'));
 
             $image = explode(',', $request->input('image_id'));
 
@@ -98,10 +111,22 @@ class commodityController extends Controller
             $images = $imagesModel->select('src')->where('cid', $id)->get();
             $classify = $classifyModel->getInfo();
 
+            $merchant = Auth::user();
+            $role = 1;
+
+            if ($merchant->grade == 0) {
+                $userModel = new User();
+
+                $merchant = $userModel->where('grade', 1)->select('id', 'storename', 'grade')->get();
+                $role = 0;
+            }
+
             return view('server/commodity_modify', [
                 'commodity' => $commodity,
                 'images' => $images,
-                'classify' => $classify
+                'classify' => $classify,
+                'merchant' => $merchant,
+                'role' => $role
             ]);
         } else {
             $validator = Validator::make($request->all(), [
@@ -110,6 +135,7 @@ class commodityController extends Controller
                 'quantity' => 'required|Numeric',
                 'price' => 'required',
                 'description' => 'required',
+                'sid' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -126,6 +152,7 @@ class commodityController extends Controller
                 'quantity' => $request->input('quantity'),
                 'price' => $request->input('price'),
                 'introduce' => $request->input('description'),
+                'sid' => $request->input('sid'),
             ]);
 
             $image = explode(',', $request->input('image_id'));

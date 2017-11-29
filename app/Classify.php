@@ -11,7 +11,7 @@ class Classify extends Model
 
     public function getInfo()
     {
-        $res = $this->select('id', 'name', 'sort')->get();
+        $res = $this->select('id', 'name', 'sort','src')->get();
 
         return $res;
     }
@@ -21,6 +21,7 @@ class Classify extends Model
         if (is_array($data)) {
             $this->name = $data['name'];
             $this->sort = $data['sort'];
+            $this->src = $data['src'];
             $res = $this->save();
 
             if ($res) {

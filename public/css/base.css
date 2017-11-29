@@ -83,6 +83,9 @@ a:active {
 .pro-title{
 	font-size: 4.5vw;
 }
+.pro-title a{
+	font-size: 3.6vw;
+}
 .footer{
 	text-align: center;
 	padding:15px 0;

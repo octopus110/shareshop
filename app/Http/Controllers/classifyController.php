@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Classify;
 use Validator;
+use Storage;
 
 class classifyController extends Controller
 {
@@ -34,9 +35,29 @@ class classifyController extends Controller
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '分类已经存在', 'callbackType' => 'confirm']);
             }
 
+            $data['name'] = $request->input('name');
+            $data['sort'] = $request->input('sort');
+
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                if ($file->isValid()) {
+                    if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
+                        $newName = 'classify_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+
+                        $realPath = $file->getRealPath();
+
+                        $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
+
+                        if ($bool) {
+                            $data['src'] = $newName;
+                        }
+                    }
+                }
+            }
+
             $classifyModel = new Classify();
 
-            $res = $classifyModel->add($request->only(['name', 'sort']));
+            $res = $classifyModel->add($data);
 
             if ($res) {
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '添加成功', 'callbackType' => 'confirm']);
@@ -66,23 +87,42 @@ class classifyController extends Controller
         $classifyModel = new Classify();
 
         if ($request->isMethod('get')) {
-            $data = $classifyModel->select('id','name', 'sort')->find($id);
+            $data = $classifyModel->select('id', 'name', 'sort', 'src')->find($id);
 
             return view('server/classify_modify', ['data' => $data]);
         } else {
             $validator = Validator::make($request->all(), [
-                'name' => 'required|unique:classifys|String',
+                'name' => 'required|String',
                 'sort' => 'required|Numeric',
             ]);
 
             if ($validator->fails()) {
-                return response()->json(['statusCode' => 200, 'confirmMsg' => '分类已经存在', 'callbackType' => 'confirm']);
+                return response()->json(['statusCode' => 200, 'confirmMsg' => '分类名和排序不能为空', 'callbackType' => 'confirm']);
             }
 
-            $res = $classifyModel->where('id', $id)->update([
+            $data = [
                 'name' => $request->input('name'),
                 'sort' => $request->input('sort')
-            ]);
+            ];
+
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                if ($file->isValid()) {
+                    if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
+                        $newName = 'classify_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+
+                        $realPath = $file->getRealPath();
+
+                        $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
+
+                        if ($bool) {
+                            $data['src'] = $newName;
+                        }
+                    }
+                }
+            }
+
+            $res = $classifyModel->where('id', $id)->update($data);
 
             if ($res) {
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '修改成功', 'callbackType' => 'confirm']);

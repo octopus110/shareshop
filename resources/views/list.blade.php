@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
     <title>商城</title>
@@ -24,34 +24,31 @@
         <div class="swiper-slide">
             畅销品
         </div>
-        <div class="swiper-slide">
-            内裤
-        </div>
-        <div class="swiper-slide">
-            胸罩
-        </div>
-        <div class="swiper-slide">
-            冈本
-        </div>
-        <div class="swiper-slide">
-            验孕棒
-        </div>
+        @foreach($classify as $item)
+            <div class="swiper-slide">
+                {{ $item->name }}
+            </div>
+        @endforeach
     </div>
 </div>
 
 <section class="product">
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
+
         <div>
             <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
             <p><span class="right">￥159.3</span></p>
         </div>
         <div class="clear"></div>
     </div>
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
+
         <div>
             <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
             <p><span class="right">￥159.3</span></p>
         </div>
         <div class="clear"></div>
@@ -59,39 +56,48 @@
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
         <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
         <p><span class="right">￥159.3</span></p>
+
         <div class="clear"></div>
     </div>
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
         <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
         <p><span class="right">￥159.3</span></p>
+
         <div class="clear"></div>
     </div>
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
         <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
         <p><span class="right">￥159.3</span></p>
+
         <div class="clear"></div>
     </div>
     <div class="pro-item">
         <img src="/images/tmp/6.jpg" alt="" width="100%">
         <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+
         <p><span class="right">￥159.3</span></p>
+
         <div class="clear"></div>
     </div>
 </section>
 
 <footer class="footer">
     <p><img src="/images/tmp/7.png" alt=""></p>
+
     <p>@版权 版权 版权</p>
 </footer>
 
 <script type="text/javascript">
     $(document).ready(function () {
         new Swiper('.swiper-nav', {
-            slidesPerView : 5,
-            spaceBetween : 25,
+            slidesPerView: 5,
+            spaceBetween: 25,
         })
     });
 </script>

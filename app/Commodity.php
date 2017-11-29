@@ -11,13 +11,23 @@ class Commodity extends Model
 
     public function getInfo()
     {
-        $id = Auth::id();//属于哪个商户的商品
-        $res = $this->where('sid', $id)->select(
-            'commoditys.id', 'commoditys.name', 'commoditys.quantity', 'commoditys.status',
-            'commoditys.introduce', 'commoditys.price', 'commoditys.created_at', 'classifys.name as classify')
-            ->leftJoin('classifys', 'commoditys.classify_id', 'classifys.id')
-            ->get();
+        $user = Auth::user();//属于哪个商户的商品
 
+        $grade = $user->grade;
+
+        if ($grade == 0) {
+            $res = $this->select(
+                'commoditys.id', 'commoditys.name', 'commoditys.sales', 'commoditys.quantity', 'commoditys.status',
+                'commoditys.introduce', 'commoditys.price', 'commoditys.created_at', 'classifys.name as classify')
+                ->leftJoin('classifys', 'commoditys.classify_id', 'classifys.id')
+                ->get();
+        } else {
+            $res = $this->where('sid', $user->id)->select(
+                'commoditys.id', 'commoditys.name', 'commoditys.quantity', 'commoditys.status',
+                'commoditys.introduce', 'commoditys.price', 'commoditys.created_at', 'classifys.name as classify')
+                ->leftJoin('classifys', 'commoditys.classify_id', 'classifys.id')
+                ->get();
+        }
         return $res;
     }
 
@@ -39,6 +49,7 @@ class Commodity extends Model
             'introduce' => $data['description'],
             'classify_id' => $data['classify'],
             'price' => $data['price'],
+            'sid' => $data['sid'],
         ]);
 
         return $id;

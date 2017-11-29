@@ -26,14 +26,4 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function grade($grade)
-    {
-        $arr = [
-            '注册商户',
-            '系统管理员'
-        ];
-
-        return $arr[$grade];
-    }
 }

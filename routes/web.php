@@ -1,10 +1,6 @@
 <?php
-Route::get('/index', function () {
-    return view('index');
-});
-Route::get('/list', function () {
-    return view('list');
-});
+Route::get('/index', 'IndexController@index');
+Route::get('/list/{id?}', 'IndexController@_list');
 Route::get('/member', function () {
     return view('member');
 });
@@ -52,4 +48,13 @@ Route::group(['prefix' => 'server'], function () {
     Route::any('/user/add', 'userController@add');
     Route::any('/user/del', 'userController@del');
     Route::any('/user/modify', 'userController@modify');
+    //管理员管理
+    Route::any('/admin', 'sundryController@admin');
+    Route::any('/admin/add', 'sundryController@add');
+    Route::any('/admin/del', 'sundryController@del');
+    Route::any('/admin/modify', 'sundryController@modify');
+    //首页轮播图管理
+    Route::any('/banner', 'sundryController@banner');
+    Route::any('/banner/update', 'updateController@banner');
+    Route::any('/banner/del', 'sundryController@banner_del');
 });

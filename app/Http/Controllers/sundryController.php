@@ -2,58 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Image;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
 
-class userController extends Controller
+class sundryController extends Controller
 {
-    public function _list()
+    //管理员管理
+    public function admin()
     {
         $user = new User();
-        $data = $user->where('grade', 1)->get();
 
-        return view('server/user', ['data' => $data]);
+        $data = $user->where('grade', 0)->select(
+            'id', 'weixin', 'name', 'phone', 'email', 'created_at'
+        )->get();
+
+        return view('server/admin', ['data' => $data]);
     }
 
     public function add(Request $request)
     {
         if ($request->isMethod('get')) {
 
-            return view('server/user_add');
+            return view('server/admin_add');
         } else {
             $validator = Validator::make($request->all(), [
-                'weixin' => 'required|unique:users',
-                'storename' => 'required',
+                'weixin' => 'required',
                 'name' => 'required',
                 'phone' => 'required',
-                'IDnumber' => 'required',
-                'provider' => 'required',
-                'email' => 'required|unique:users',
+                'email' => 'required',
                 'password' => 'required',
-                'profit' => 'required',
             ]);
 
             if ($validator->fails()) {
-                return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整或用户已经存在', 'callbackType' => 'confirm']);
+                return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整', 'callbackType' => 'confirm']);
             }
 
             $userModel = new User();
 
             $userModel->weixin = $request->input('weixin');
-            $userModel->storename = $request->input('storename');
-            $userModel->storeintroduce = $request->input('storeintroduce');
             $userModel->name = $request->input('name');
             $userModel->phone = $request->input('phone');
-            $userModel->IDnumber = $request->input('IDnumber');
-            $userModel->provider = $request->input('provider');
             $userModel->email = $request->input('email');
-            $userModel->password = bcrypt($request->input('password'));
-            $userModel->deadline = $request->input('deadline');
-            $userModel->grade = 1;
-
+            $userModel->password = $request->input('password');
+            $userModel->grade = 0;
             $res = $userModel->save();
-
             if ($res) {
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '添加成功', 'callbackType' => 'confirm']);
             } else {
@@ -69,9 +63,9 @@ class userController extends Controller
         $res = $userModel->where('id', $id)->delete();
 
         if ($res) {
-            return response()->json(['statusCode' => 200, 'confirmMsg' => '删除成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'user']);
+            return response()->json(['statusCode' => 200, 'confirmMsg' => '删除成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'admin']);
         } else {
-            return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'user']);
+            return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'admin']);
         }
     }
 
@@ -82,38 +76,30 @@ class userController extends Controller
         $userModel = new User();
 
         if ($request->isMethod('get')) {
-            $data = $userModel->find($id);
+            $data = $userModel->select('id', 'name', 'weixin', 'phone', 'email')->find($id);
 
-            return view('server/user_modify', ['data' => $data]);
+            return view('server/admin_modify', ['data' => $data]);
         } else {
             $validator = Validator::make($request->all(), [
                 'weixin' => 'required',
                 'name' => 'required',
                 'phone' => 'required',
-                'IDnumber' => 'required',
-                'provider' => 'required',
                 'email' => 'required',
-                'profit' => 'required'
             ]);
 
             if ($validator->fails()) {
-                return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整或用户已经存在', 'callbackType' => 'confirm']);
+                return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整', 'callbackType' => 'confirm']);
             }
 
             $arr = [
                 'weixin' => $request->input('weixin'),
                 'name' => $request->input('name'),
-                'storename' => $request->input('storename'),
-                'storeintroduce' => $request->input('storeintroduce'),
                 'phone' => $request->input('phone'),
-                'IDnumber' => $request->input('IDnumber'),
-                'provider' => $request->input('provider'),
                 'email' => $request->input('email'),
-                'profit' => $request->input('profit'),
             ];
 
             if ($request->input('password')) {
-                $arr['password'] = bcrypt($request->input('password'));
+                $arr['password'] = $request->input('password');
             }
 
             $res = $userModel->where('id', $id)->update($arr);
@@ -123,6 +109,27 @@ class userController extends Controller
             } else {
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'confirm']);
             }
+        }
+    }
+
+    public function banner()
+    {
+        $imagesModel = new Image();
+
+        $images = $imagesModel->select('id', 'src')->where('classify', 1)->orderBy('id', 'desc')->limit(4)->get()->toArray();
+
+        return view('server/banner', ['images' => $images]);
+    }
+
+    public function banner_del(Request $request)
+    {
+        $id = $request->input('id');
+        $imageModel = new Image();
+        $res = $imageModel->where('id', $id)->delete();
+        if ($res) {
+            return response()->json(['statusCode' => 200, 'confirmMsg' => '删除成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'banner']);
+        } else {
+            return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'banner']);
         }
     }
 }
