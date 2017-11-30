@@ -1,5 +1,5 @@
 <?php
-Route::get('/index', 'IndexController@index');
+Route::get('/', 'IndexController@index');
 Route::get('/list/{id?}', 'IndexController@_list');
 Route::get('/member', function () {
     return view('member');
