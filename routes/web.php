@@ -19,8 +19,8 @@ Route::group(['prefix' => 'server'], function () {
 
     Auth::routes();
 
-    Route::get('/home', 'HomeController@index')->name('home');
-    Route::get('/quit', 'HomeController@quit')->name('quit');
+    Route::get('/home', 'homeController@index')->name('home');
+    Route::get('/quit', 'homeController@quit')->name('quit');
 
     //多图片上传接口
     Route::any('/update', 'updateController@images');
