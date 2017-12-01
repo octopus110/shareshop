@@ -8,9 +8,16 @@
     <title>商城</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="/lib/swiper-3.4.2.jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/modernizr.custom.js"></script>
+    <script src="/lib/masonry.pkgd.min.js"></script>
+    <script src="/lib/imagesloaded.js"></script>
+    <script src="/lib/classie.js"></script>
+    <script src="/lib/AnimOnScroll.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/list.css">
     <link rel="stylesheet" href="/lib/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="/lib/component.css">
+    <link rel="stylesheet" href="/lib/default.css">
 </head>
 <body>
 <div class="swiper-container swiper-nav">
@@ -32,64 +39,23 @@
     </div>
 </div>
 
-<section class="product">
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
+<section class="grid effect-2" id="grid">
+    @foreach($commoditys as $item)
+        <li class="pro-item">
+            <img src="/uploads/{{ $item->src }}" alt="" width="100%">
 
-        <div>
-            <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
+            <div>
+                <h6>{{ $item->name }}</h6>
 
-            <p><span class="right">￥159.3</span></p>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
-
-        <div>
-            <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
-
-            <p><span class="right">￥159.3</span></p>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
-        <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
-
-        <p><span class="right">￥159.3</span></p>
-
-        <div class="clear"></div>
-    </div>
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
-        <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
-
-        <p><span class="right">￥159.3</span></p>
-
-        <div class="clear"></div>
-    </div>
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
-        <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
-
-        <p><span class="right">￥159.3</span></p>
-
-        <div class="clear"></div>
-    </div>
-    <div class="pro-item">
-        <img src="/images/tmp/6.jpg" alt="" width="100%">
-        <h6>【抢到就赚到】春夏秋冬 不一样的丝滑</h6>
-
-        <p><span class="right">￥159.3</span></p>
-
-        <div class="clear"></div>
-    </div>
+                <p><span class="right">￥{{ $item->price }}</span></p>
+            </div>
+            <div class="clear"></div>
+        </li>
+    @endforeach
 </section>
 
 <footer class="footer">
     <p><img src="/images/tmp/7.png" alt=""></p>
-
     <p>@版权 版权 版权</p>
 </footer>
 
@@ -98,7 +64,17 @@
         new Swiper('.swiper-nav', {
             slidesPerView: 5,
             spaceBetween: 25,
-        })
+        });
+
+        new AnimOnScroll(document.getElementById('grid'), {
+            minDuration: 0.4,
+            maxDuration: 0.7,
+            viewportFactor: 0.2
+        });
+
+        $.ajax({
+            'url':'',
+        });
     });
 </script>
 </body>

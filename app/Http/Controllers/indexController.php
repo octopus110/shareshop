@@ -40,10 +40,10 @@ class indexController extends Controller
         ]);
     }
 
-    public function _list($id)
+    public function _list($id = -2)
     {
         $classifyModel = new Classify();
-        $classify = $classifyModel->select('id','name')->get();
+        $classify = $classifyModel->select('id', 'name')->get();
 
         $commoditysModel = new Commodity();
         $ready = $commoditysModel;
@@ -66,11 +66,17 @@ class indexController extends Controller
             ->leftjoin('images', 'images.cid', 'commoditys.id')
             ->leftjoin('users', 'users.id', 'commoditys.sid')
             ->groupby('commoditys.id')
-            ->paginate(8);
+            ->limit(3)
+            ->get();
         return view('list', [
             'commoditys' => $commoditys,
             'classify' => $classify,
             'active' => $id
         ]);
+    }
+
+    public function ajax_list(Request $request)
+    {
+
     }
 }

@@ -14,12 +14,11 @@
 	display: -webkit-flex;
   	flex-wrap: wrap;
   	justify-content: space-between;
+	align-items:flex-start;
 }
 .pro-item{
-	width: 43vw;
-	padding:2vw;
 	background: #fff;
-	border-bottom: 1vw #f2f2f2 solid;
+	border: 0.5vw #f2f2f2 solid;
 }
 .pro-item span{
 	color: red;
