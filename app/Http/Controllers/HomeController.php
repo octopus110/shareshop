@@ -31,7 +31,7 @@ class HomeController extends Controller
         $user['weixin'] = $data['weixin'];
         $user['grade'] = $data['grade'];
 
-        return view('/server/index', ['data' => $user]);
+        return view('server/index', ['data' => $user]);
     }
 
     public function quit()
