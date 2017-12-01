@@ -2,6 +2,7 @@
 Route::get('/', 'indexController@index');
 Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
+Route::get('/detail/{id?}', 'indexController@detail');
 Route::get('/member', function () {
     return view('member');
 });

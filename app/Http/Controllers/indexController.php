@@ -79,4 +79,9 @@ class indexController extends Controller
 
         return response()->json($commoditys);
     }
+
+    public function detail($id)
+    {
+        return view('detail');
+    }
 }

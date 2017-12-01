@@ -38,7 +38,7 @@
 <section class="new-product">
     <div class="pro-title">
         新品上架
-        <a href="/list" class="right">更多</a>
+        <a href="/list/-1/1" class="right">更多</a>
     </div>
     <div class="product">
         @foreach($newcommoditys as $item)
@@ -58,7 +58,7 @@
 <section class="active-product">
     <div class="pro-title">
         畅销产品
-        <a href="/list" class="right">更多</a>
+        <a href="/list/0/2" class="right">更多</a>
     </div>
     <div class="product">
         @foreach($salescommoditys as $item)
