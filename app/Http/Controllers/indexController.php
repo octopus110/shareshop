@@ -40,43 +40,43 @@ class indexController extends Controller
         ]);
     }
 
-    public function _list($id = -2)
+    public function _list($id = -2, $k = 0)
     {
         $classifyModel = new Classify();
         $classify = $classifyModel->select('id', 'name')->get();
 
+        return view('list', [
+            'classify' => $classify,
+            'id' => $id,
+            'k' => $k
+        ]);
+    }
+
+    public function ajax_list(Request $request, $id)
+    {
         $commoditysModel = new Commodity();
-        $ready = $commoditysModel;
 
-        if ($id == -1) {//新品
-            $ready = $ready->orderBy('commoditys.id', 'desc');
+        $page = $request->input('page');
+        $offset = ($page - 1) * 8;
+
+        if ($id == -1) {
+            $commoditysModel = $commoditysModel->orderBy('commoditys.id', 'desc');
+        } else if ($id == 0) {
+            $commoditysModel = $commoditysModel->orderBy('commoditys.sales', 'desc');
+        } else if ($id > 0) {
+            $commoditysModel = $commoditysModel->where('commoditys.classify_id', $id);
         }
 
-        if ($id == 0) {//畅销品
-            $ready = $ready->orderBy('commoditys.sales', 'desc');
-        }
-
-        if ($id > 0) {
-            $ready = $ready->where('classify_id', $id);
-        }
-
-        $commoditys = $ready->select(
+        $commoditys = $commoditysModel->select(
             'commoditys.id', 'commoditys.name', 'commoditys.price', 'users.storename', 'images.src'
         )
             ->leftjoin('images', 'images.cid', 'commoditys.id')
             ->leftjoin('users', 'users.id', 'commoditys.sid')
             ->groupby('commoditys.id')
-            ->limit(3)
+            ->offset($offset)
+            ->limit(8)
             ->get();
-        return view('list', [
-            'commoditys' => $commoditys,
-            'classify' => $classify,
-            'active' => $id
-        ]);
-    }
 
-    public function ajax_list(Request $request)
-    {
-
+        return response()->json($commoditys);
     }
 }

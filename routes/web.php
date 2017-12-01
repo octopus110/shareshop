@@ -1,7 +1,7 @@
 <?php
 Route::get('/', 'indexController@index');
-Route::get('/list/{id?}', 'indexController@_list');
-Route::get('/ajax_list', 'indexController@ajax_list');//ajax获取产品 下拉刷新
+Route::get('/list/{id?}/{k?}', 'indexController@_list');
+Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::get('/member', function () {
     return view('member');
 });
