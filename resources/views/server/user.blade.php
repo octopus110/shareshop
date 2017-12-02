@@ -14,6 +14,7 @@
             <th>负责人名字</th>
             <th>微信号</th>
             <th>店铺名称</th>
+            <th>店铺logo</th>
             <th>负责人电话</th>
             <th>负责人邮箱</th>
             <th>负责人身份证号</th>
@@ -30,6 +31,7 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->weixin }}</td>
                 <td>{{ $item->storename }}</td>
+                <td><img src="/uploads/{{ $item->logo }}" alt="无标志"></td>
                 <td>{{ $item->phone }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->IDnumber }}</td>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Validator;
+use Storage;
 
 class userController extends Controller
 {
@@ -38,11 +39,30 @@ class userController extends Controller
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整或用户已经存在', 'callbackType' => 'confirm']);
             }
 
+            $logo = '';
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                if ($file->isValid()) {
+                    if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
+                        $newName = 'classify_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+
+                        $realPath = $file->getRealPath();
+
+                        $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
+
+                        if ($bool) {
+                            $logo = $newName;
+                        }
+                    }
+                }
+            }
+
             $userModel = new User();
 
             $userModel->weixin = $request->input('weixin');
             $userModel->storename = $request->input('storename');
             $userModel->storeintroduce = $request->input('storeintroduce');
+            $userModel->logo = $logo;
             $userModel->name = $request->input('name');
             $userModel->phone = $request->input('phone');
             $userModel->IDnumber = $request->input('IDnumber');
@@ -100,17 +120,33 @@ class userController extends Controller
                 return response()->json(['statusCode' => 200, 'confirmMsg' => '信息不完整或用户已经存在', 'callbackType' => 'confirm']);
             }
 
-            $arr = [
-                'weixin' => $request->input('weixin'),
-                'name' => $request->input('name'),
-                'storename' => $request->input('storename'),
-                'storeintroduce' => $request->input('storeintroduce'),
-                'phone' => $request->input('phone'),
-                'IDnumber' => $request->input('IDnumber'),
-                'provider' => $request->input('provider'),
-                'email' => $request->input('email'),
-                'profit' => $request->input('profit'),
-            ];
+            $arr = [];
+            if ($request->file('image')) {
+                $file = $request->file('image');
+                if ($file->isValid()) {
+                    if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
+                        $newName = 'classify_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
+
+                        $realPath = $file->getRealPath();
+
+                        $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
+
+                        if ($bool) {
+                            $arr['logo'] = $newName;
+                        }
+                    }
+                }
+            }
+
+            $arr['weixin'] = $request->input('weixin');
+            $arr['name'] = $request->input('name');
+            $arr['storename'] = $request->input('storename');
+            $arr['storeintroduce'] = $request->input('storeintroduce');
+            $arr['phone'] = $request->input('phone');
+            $arr['IDnumber'] = $request->input('IDnumber');
+            $arr['provider'] = $request->input('provider');
+            $arr['email'] = $request->input('email');
+            $arr['profit'] = $request->input('profit');
 
             if ($request->input('password')) {
                 $arr['password'] = bcrypt($request->input('password'));

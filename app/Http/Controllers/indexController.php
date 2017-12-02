@@ -84,7 +84,7 @@ class indexController extends Controller
     {
         $commoditysModel = new Commodity();
         $data = $commoditysModel->select(
-            'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.introduce','users.storename', 'users.storeintroduce'
+            'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.introduce', 'users.storename', 'users.logo', 'users.storeintroduce'
         )
             ->leftjoin('users', 'users.id', 'commoditys.sid')
             ->find($id);

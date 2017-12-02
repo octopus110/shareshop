@@ -1,6 +1,7 @@
 <div class="pageContent">
     <form method="post" action="user/modify" class="pageForm required-validate"
-          onsubmit="return validateCallback(this, navTabAjaxDone)">
+          enctype="multipart/form-data" onsubmit="return iframeCallback(this)">
+        {{ csrf_field()}}
         <div class="pageFormContent" layoutH="56">
             <input type="hidden" name="id" value="{{ $data->id }}">
 
@@ -13,6 +14,13 @@
                 <label>商店简介：</label>
                 <textarea name="storeintroduce" cols="60" rows="4">{{ $data->storename }}</textarea>
             </p>
+
+            <label>logo上传：</label>
+            <img src="/uploads/{{ $data->logo }}" style="max-width: 80px; max-height: 80px">
+
+            <div class="upload-wrap">
+                <input type="file" name="image" accept="image/*" class="valid" style="left: 0px;">
+            </div>
 
             <div style="clear: both;height: 50px;"></div>
 

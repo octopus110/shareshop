@@ -50,7 +50,7 @@
                 </ul>
                 <ul class="table-view" style="margin-top: 10px;">
                     <li class="table-view-cell media"><a class="">
-                            <img class="media-object pull-left" src="http://placehold.it/42x42"/>
+                            <img class="media-object pull-left" src="/uploads/{{ $data->logo }}" width="12%"/>
 
                             <div class="media-body">
                                 {{ $data->storename }}
@@ -68,7 +68,7 @@
                             <div class="media-body"> 产品详情</div>
                         </li>
                     </ul>
-                    <div style="background: #fff">
+                    <div>
                         {!! $data->introduce !!}
                     </div>
                 </div>
