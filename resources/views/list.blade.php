@@ -38,14 +38,16 @@
     @if(isset($commoditys))
         @foreach($commoditys as $item)
             <div class="pro-item">
-                <div class="pro-img">
-                    <img src="/uploads/{{ $item->src }}" alt="" width="100%">
-                </div>
-                <div class="pro-info">
-                    <h6>{{ $item->name }}</h6>
+                <a href="/details/{{ $item->id }}">
+                    <div class="pro-img">
+                        <img src="/uploads/{{ $item->src }}" alt="" width="100%">
+                    </div>
+                    <div class="pro-info">
+                        <h6>{{ $item->name }}</h6>
 
-                    <p><span class="right">￥{{ $item->price }}</span></p>
-                </div>
+                        <p><span class="right">￥{{ $item->price }}</span></p>
+                    </div>
+                </a>
             </div>
         @endforeach
     @endif
@@ -100,13 +102,13 @@
                     var html = '';
                     for (var i = 0; i < data.length; i++) {
                         html += '<div class="pro-item">' +
-                                '<div class="pro-img">' +
+                                '<a href="/details/' + data[i]['id'] + '"><div class="pro-img">' +
                                 '<img src="/uploads/' + data[i]['src'] + '" alt="" width="100%">' +
                                 '</div>' +
                                 '<div class="pro-info">' +
                                 '<h6>' + data[i]['name'] + '</h6>' +
                                 '<p><b>' + data[i]['storename'] + '</b><span class="right">￥' + data[i]['price'] + '</span></p>' +
-                                '</div>' +
+                                '</div></a>' +
                                 '</div>';
                     }
                     $('#grid').append(html);

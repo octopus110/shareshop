@@ -25,11 +25,13 @@
 
 <div class="swiper-container swiper-nav">
     <div class="swiper-wrapper">
-        @foreach($classify as $item)
+        @foreach($classify as $k=>$item)
             <div class="swiper-slide">
-                <img src="/uploads/{{ $item->src }}" alt="" width="100%"/>
+                <a href="/list/{{ $item->id }}/{{ $k+3 }}">
+                    <img src="/uploads/{{ $item->src }}" alt="" width="100%"/>
 
-                <p>{{ $item->name }}</p>
+                    <p>{{ $item->name }}</p>
+                </a>
             </div>
         @endforeach
     </div>
@@ -43,13 +45,15 @@
     <div class="product">
         @foreach($newcommoditys as $item)
             <div class="pro-item">
-                <img src="/uploads/{{ $item->src }}" alt="" width="100%">
+                <a href="/details/{{ $item->id }}">
+                    <img src="/uploads/{{ $item->src }}" alt="" width="100%">
 
-                <div>
-                    <h6>{{ $item->name }}</h6>
+                    <div>
+                        <h6>{{ $item->name }}</h6>
 
-                    <p><b>{{ $item->storename }}</b><span class="right">￥{{ $item->price }}</span></p>
-                </div>
+                        <p><b>{{ $item->storename }}</b><span class="right">￥{{ $item->price }}</span></p>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>
@@ -63,17 +67,19 @@
     <div class="product">
         @foreach($salescommoditys as $item)
             <div class="pro-item">
-                <img src="/uploads/{{ $item->src }}" alt="" width="100%">
+                <a href="/details/{{ $item->id }}">
+                    <img src="/uploads/{{ $item->src }}" alt="" width="100%">
 
-                <div>
-                    <h3>{{ $item->storename }}</h3>
+                    <div>
+                        <h3>{{ $item->storename }}</h3>
 
-                    <p>{{ $item->name }}</p>
+                        <p>{{ $item->name }}</p>
 
-                    <p><span class="right">￥{{ $item->price }}</span></p>
+                        <p><span class="right">￥{{ $item->price }}</span></p>
 
-                    <div class="clear"></div>
-                </div>
+                        <div class="clear"></div>
+                    </div>
+                </a>
             </div>
         @endforeach
     </div>
@@ -92,7 +98,7 @@
             scrollbar: '.swiper-scrollbar',
         })
         new Swiper('.swiper-nav', {
-            slidesPerView: 4,
+            slidesPerView: 5,
             spaceBetween: 25,
         })
     });

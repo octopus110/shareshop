@@ -46,7 +46,7 @@
                 <ul class="table-view">
                     <li class="table-view-cell"
                         style="padding: 11px 6px 11px 15px;font-size: 16px;color:#333;">规格选择 <span
-                                style="float: right;margin-right:10px;" class="clickwn">~</span></li>
+                                style="float: right;margin-right:10px;" class="clickwn"><img src="/images/next.png" width="20" height="20"/></span></li>
                 </ul>
                 <ul class="table-view" style="margin-top: 10px;">
                     <li class="table-view-cell media"><a class="">
@@ -80,7 +80,7 @@
                             <div class="spec-first-pic"><img id="spec_image" src="/uploads/{{ $images[0]->src }}"/>
                             </div>
                             <a class="rt-close-btn-wrap spec-menu-close">
-                                <p class="flick-menu-close tclck"><img src="images/close.png" width="24" height="24"/>
+                                <p class="flick-menu-close tclck"><img src="/images/close.png" width="24" height="24"/>
                                 </p>
                             </a>
 
@@ -130,7 +130,7 @@
 
                                         <div style="width: 100%;margin-left: 10px;" class="num">
                                             <p class="jian" style="float: left;margin-top: 5px;"><img
-                                                        src="images/jian.png" width="16" height="16"></p>
+                                                        src="/images/jian.png" width="16" height="16"></p>
                                             <input id="cool" class="inputBorder" value="1"
                                                    onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"
                                                    onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"
@@ -138,7 +138,7 @@
                                                    style="font-size: 12px;width: 60px;height: 20px;float: left;padding: 0 5px;margin-top:3px;margin-left: 5px;"/>
 
                                             <p class="jia" style="float: left;margin-top: 5px;margin-left:4px;"><img
-                                                        src="images/jia.png" width="16" height="16"></p>
+                                                        src="/images/jia.png" width="16" height="16"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -179,11 +179,11 @@
                 <!-- 弹出 -->
                 <section id="s-actionBar-container">
                     <div id="s-actionbar" class="action-bar mui-flex align-center">
-                        <div class="web"><img src="images/atm.png" width="20" height="20"/>
+                        <div class="web"><img src="/images/atm.png" width="20" height="20"/>
 
                             <p>联系商家</p>
                         </div>
-                        <div class="web"><img src="images/trade-assurance.png" width="20" height="20"/>
+                        <div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
 
                             <p>进店</p>
                         </div>
