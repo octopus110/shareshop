@@ -99,6 +99,69 @@
 
             <div style="clear: both;"></div>
 
+            <h2 class="contentTitle">产品属性</h2>
+
+            <div class="tabsContent" style="height: 150px;">
+                <div>
+                    <table class="list nowrap itemDetail" addButton="新建属性" width="100%">
+                        <thead>
+                        <tr>
+                            <th type="text" name="property[#index#][title]" fieldClass="required">
+                                属性名
+                            </th>
+                            <th type="text" name="property[#index#][v1]">
+                                属性值1
+                            </th>
+                            <th type="text" name="property[#index#][v2]">
+                                属性值2
+                            </th>
+                            <th type="text" name="property[#index#][v3]">
+                                属性值3
+                            </th>
+                            <th type="text" name="property[#index#][v4]">
+                                属性值4
+                            </th>
+                            <th type="text" name="property[#index#][v5]">
+                                属性值5
+                            </th>
+                            <th type="text" name="property[#index#][v6]">
+                                属性值6
+                            </th>
+                            <th type="del" width="60">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($propertys as $k=>$item)
+                            <tr class="unitBox">
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][title]" value="{{ $item['title'] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v1]" value="{{ $item['content'][0] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v2]" value="{{ $item['content'][1] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v3]" value="{{ $item['content'][2] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v4]" value="{{ $item['content'][3] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v5]" value="{{ $item['content'][4] }}">
+                                </td>
+                                <td>
+                                    <input type="text" name="property[{{ $k }}][v6]" value="{{ $item['content'][5] }}">
+                                </td>
+                                <td><a href="javascript:void(0)" class="btnDel ">删除</a></td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
             <h2 class="contentTitle">产品介绍</h2>
 
             <div class="unit">

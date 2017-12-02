@@ -46,7 +46,9 @@
                 <ul class="table-view">
                     <li class="table-view-cell"
                         style="padding: 11px 6px 11px 15px;font-size: 16px;color:#333;">规格选择 <span
-                                style="float: right;margin-right:10px;" class="clickwn"><img src="/images/next.png" width="20" height="20"/></span></li>
+                                style="float: right;margin-right:10px;" class="clickwn"><img src="/images/next.png"
+                                                                                             width="20"
+                                                                                             height="20"/></span></li>
                 </ul>
                 <ul class="table-view" style="margin-top: 10px;">
                     <li class="table-view-cell media"><a class="">
@@ -87,44 +89,39 @@
                             <div class="spec-price" id="specJdPri" style="display: block">
 
                                 <span id="spec_price">￥ 36.80 </span></div>
-                            <div id="specWeightDiv" class="spec-weight"><span>重量:</span> <span
-                                        id="spec_weight">3.26kg</span></div>
+                            <div id="specWeightDiv" class="spec-weight"><span>库存:</span> <span
+                                        id="spec_weight">{{ $data->quantity }}</span></div>
                         </div>
                         <div class="spec-menu-middle">
                             <div class="prod-spec" id="prodSpecArea">
                                 <div class="prod-spec" id="prodSpecArea">
+
                                     <div class="spec-desc"><span class="part-note-msg">已选</span>
 
-                                        <div id="specDetailInfo_spec" class="base-txt"><span id="pro-type">白色 直袖款</span>
+                                        <div id="specDetailInfo_spec" class="base-txt"><span
+                                                    id="pro-type">{{ $propertys?$propertys[0]['content'][0]:'' }}</span>
                                             &nbsp;&nbsp;
                                             <span class="amount">1</span>件
                                         </div>
                                     </div>
-                                    <div class="nature-container" id="natureCotainer">
-                                        <div class="pro-color"><span class="part-note-msg"> 颜色 </span>
+                                    @if($propertys)
+                                        <div class="nature-container" id="natureCotainer">
+                                            @foreach($propertys as $item)
+                                                <div class="pro-color"><span
+                                                            class="part-note-msg"> {{ $item['title'] }} </span>
 
-                                            <p id="color">
-                                                <a title="白色 直袖款" class="a-item selected J_ping"
-                                                   report-eventparam="白色 直袖款">白色 直袖款</a>
-                                                <a title="蓝色 直袖款" class="a-item J_ping" report-eventparam="蓝色 直袖款">蓝色
-                                                    直袖款</a>
-                                                <a title="黑色 直袖款" class="a-item J_ping" report-eventparam="黑色 直袖款">黑色
-                                                    直袖款</a>
-                                                <a title="灰色 直袖款" class="a-item J_ping" report-eventparam="灰色 直袖款">灰色
-                                                    直袖款</a>
-                                                <a title="粉色 直袖款" class="a-item J_ping" report-eventparam="粉色 直袖款">粉色
-                                                    直袖款</a>
-                                                <a title="紫色 直袖款" class="a-item J_ping"
-                                                   report-eventparam="紫色 直袖款">紫色直袖款</a>
-                                            </p>
+                                                    <p id="color">
+                                                        @foreach($item['content'] as $k=>$property)
+                                                            <a title="{{ $property }}"
+                                                               class="a-item {{ $k==0?'selected':'' }} J_ping"
+                                                               report-eventparam="{{ $property }}">{{ $property }}</a>
+                                                        @endforeach
+                                                    </p>
+                                                </div>
+                                            @endforeach
                                         </div>
-                                        <!--尺寸-->
-                                        <!--容量-->
-                                        <!--数量-->
-                                    </div>
-                                    <!--尺寸-->
-                                    <!--容量-->
-                                    <!--数量-->
+                                    @endif
+
                                     <div id="addCartNum" class="pro-count">
                                         <span class="part-note-msg" style="margin-right: 10px;">数量</span>
 
@@ -135,7 +132,7 @@
                                                    onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"
                                                    onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"
                                                    type="text" maxlength="5" placeholder="数量"
-                                                   style="font-size: 12px;width: 60px;height: 20px;float: left;padding: 0 5px;margin-top:3px;margin-left: 5px;"/>
+                                                   style="font-size: 12px;width: 36px;height: 20px;float: left;padding: 0 5px;margin-top:3px;margin-left: 5px;"/>
 
                                             <p class="jia" style="float: left;margin-top: 5px;margin-left:4px;"><img
                                                         src="/images/jia.png" width="16" height="16"></p>

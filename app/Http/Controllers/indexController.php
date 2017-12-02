@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classify;
 use App\Commodity;
 use App\Image;
+use App\Property;
 use Illuminate\Http\Request;
 
 class indexController extends Controller
@@ -84,7 +85,7 @@ class indexController extends Controller
     {
         $commoditysModel = new Commodity();
         $data = $commoditysModel->select(
-            'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.introduce', 'users.storename', 'users.logo', 'users.storeintroduce'
+            'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.quantity', 'commoditys.introduce', 'users.storename', 'users.logo', 'users.storeintroduce'
         )
             ->leftjoin('users', 'users.id', 'commoditys.sid')
             ->find($id);
@@ -92,9 +93,21 @@ class indexController extends Controller
         $imagModel = new Image();
         $images = $imagModel->where('cid', $id)->select('src')->get();
 
+        $propertysModel = new Property();
+        $propertysDb = $propertysModel->where('cid', $id)->select('id', 'title', 'content')->get();
+        $propertys = [];
+        $propertysNum = count($propertysDb);
+        if ($propertysNum) {
+            foreach ($propertysDb as $k => $item) {
+                $propertys[$k]['title'] = $item->title;
+                $propertys[$k]['content'] = array_filter(explode(',', $item->content));
+            }
+        }
+
         return view('detail', [
             'data' => $data,
-            'images' => $images
+            'images' => $images,
+            'propertys' => $propertys
         ]);
     }
 }
