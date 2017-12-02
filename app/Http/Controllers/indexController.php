@@ -80,8 +80,21 @@ class indexController extends Controller
         return response()->json($commoditys);
     }
 
-    public function detail($id)
+    public function detail($id = 15)
     {
-        return view('detail');
+        $commoditysModel = new Commodity();
+        $data = $commoditysModel->select(
+            'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.introduce','users.storename', 'users.storeintroduce'
+        )
+            ->leftjoin('users', 'users.id', 'commoditys.sid')
+            ->find($id);
+
+        $imagModel = new Image();
+        $images = $imagModel->where('cid', $id)->select('src')->get();
+
+        return view('detail', [
+            'data' => $data,
+            'images' => $images
+        ]);
     }
 }
