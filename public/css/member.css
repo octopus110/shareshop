@@ -17,7 +17,7 @@
 	background: #fff;
 	text-align: center;
 	padding:10px 0; 
-	margin-top: 10px;	
+	margin-top: 2vw;
 }
 .member-item table{
 	width: 100%
@@ -36,4 +36,23 @@
 }
 .member-item span{
 	color: red;
+}
+
+.logistics{
+	background: #fff;
+	margin-top:2vw;
+	padding:2vw;
+	font-size: 3.6vw;
+}
+.logistics h2{
+	text-align: center;
+	padding-bottom:2vw;
+	font-size: 4vw;
+}
+.logistics h3{
+	text-align: center;
+	padding-bottom: 2vw;
+}
+.logistics li{
+	padding:1vw 0;
 }

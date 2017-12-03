@@ -110,4 +110,24 @@ class indexController extends Controller
             'propertys' => $propertys
         ]);
     }
+
+    public function member()
+    {
+        return view('member');
+    }
+
+    public function carts()
+    {
+        return view('cart');
+    }
+
+    public function transaction()
+    {
+        return view('transaction');
+    }
+
+    public function address()
+    {
+        return view('address');
+    }
 }
