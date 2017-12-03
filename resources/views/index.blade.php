@@ -71,9 +71,9 @@
                     <img src="/uploads/{{ $item->src }}" alt="" width="100%">
 
                     <div>
-                        <h3>{{ $item->storename }}</h3>
+                        <h3 style="padding-top: 2vw"><b>{{ $item->storename }}</b></h3>
 
-                        <p>{{ $item->name }}</p>
+                        <p style="padding:1vw 0;">{{ $item->name }}</p>
 
                         <p><span class="right">￥{{ $item->price }}</span></p>
 

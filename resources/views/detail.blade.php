@@ -88,7 +88,7 @@
 
                             <div class="spec-price" id="specJdPri" style="display: block">
 
-                                <span id="spec_price">￥ 36.80 </span></div>
+                                <span id="spec_price">￥ {{ $data->price }} </span></div>
                             <div id="specWeightDiv" class="spec-weight"><span>库存:</span> <span
                                         id="spec_weight">{{ $data->quantity }}</span></div>
                         </div>
@@ -98,9 +98,7 @@
 
                                     <div class="spec-desc"><span class="part-note-msg">已选</span>
 
-                                        <div id="specDetailInfo_spec" class="base-txt"><span
-                                                    id="pro-type">{{ $propertys?$propertys[0]['content'][0]:'' }}</span>
-                                            &nbsp;&nbsp;
+                                        <div id="specDetailInfo_spec" class="base-txt">
                                             <span class="amount">1</span>件
                                         </div>
                                     </div>
@@ -110,7 +108,7 @@
                                                 <div class="pro-color"><span
                                                             class="part-note-msg"> {{ $item['title'] }} </span>
 
-                                                    <p id="color">
+                                                    <p class="color">
                                                         @foreach($item['content'] as $k=>$property)
                                                             <a title="{{ $property }}"
                                                                class="a-item {{ $k==0?'selected':'' }} J_ping"
@@ -140,37 +138,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--延保start-->
-                            <div class="warranty-wrap bdr-t" style="display: none;">
-                                <div id="spec_yanbaoInfo" class="warranty-title"> 保障服务</div>
-                                <div id="spec_yanbaoItems"></div>
-                            </div>
-                            <!--延保end-->
                         </div>
-                        <div class="flick-menu-btn spec-menu-btn"><a class="yellow-color add_cart" id="add_cart_spec"
-                                                                     style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">加入购物车</a>
+                        <div class="flick-menu-btn spec-menu-btn">
+                            <a class="yellow-color add_cart" id="add_cart_spec"
+                               style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">加入购物车</a>
                             <a class="red-color directorder" id="directorder_spec"
-                               style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">立即购买</a> <a
-                                    class="yellow-color J_ping looksimilar looksimilara looksimilar_spec"
-                                    id="looksimilar_speca" href=" " style="display: none;"
-                                    report-eventid="MProductdetail_Similar" report-eventparam="W" report-eventlevel="5">查看相似</a>
-                            <!--大家电-查看同款-->
-                            <a class="yellow-color J_ping looksimilar looksimilarb looksimilar_spec"
-                               id="looksimilar_specb" href="" style="display: none;"
-                               report-eventid="MProductdetail_SameProduct" report-pageparam="" report-eventlevel="4">查看同款</a>
-                            <a class="red-color J_ping arrivalInform" id="arrivalInform_spec" style="display: none;"
-                               report-eventid="MProductdetail_ArrivalNotice" report-eventparam="2015246_W"
-                               report-eventlevel="5">到货通知</a> <a class="red-color disabled waitingForAppointments"
-                                                                 style="display: none;"
-                                                                 id="waitingForAppointments_spec">等待预约</a> <a
-                                    class="red-color makeAppointments" style="display: none;"
-                                    id="makeAppointments_spec">立即预约</a> <a class="red-color disabled waitingForBuying"
-                                                                           style="display: none;"
-                                                                           id="waitingForBuying_spec">等待抢购</a> <a
-                                    class="red-color buyImmediately" style="display: none;" id="buyImmediately_spec">立即抢购</a>
-                            <a class="red-color disabled appointmentsEnd" style="display: none;"
-                               id="appointmentsEnd_spec">预约结束</a> <a class="red-color" style="display: none;"
-                                                                     id="yushou_add_cart_spec">立即预定</a></div>
+                               style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">立即购买</a></div>
                     </div>
                 </div>
                 <!-- 弹出 -->
@@ -215,10 +188,8 @@
         }).bind('input input', function () {
         });
 
-        $('#color a').click(function () {
-            var cook = $(this).index();
-            $('#color a').eq(cook).addClass('selected').siblings().removeClass('selected');
-            $('#pro-type').text($(this).text());
+        $('.color a').click(function () {
+            $(this).addClass('selected').siblings().removeClass('selected');
         })
 
         //加减面板

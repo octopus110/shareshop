@@ -81,10 +81,10 @@ class commodityController extends Controller
             if (count($propertysNum)) {
                 $arr = [];
                 for ($i = 0; $i < $propertysNum; $i++) {
-                    $arr['title'] = $propertys[$i]['title'];
-                    $arr['content'] = $propertys[$i]['v1'] . ',' . $propertys[$i]['v2'] . ',' . $propertys[$i]['v3'] . ',' .
+                    $arr[$i]['title'] = $propertys[$i]['title'];
+                    $arr[$i]['content'] = $propertys[$i]['v1'] . ',' . $propertys[$i]['v2'] . ',' . $propertys[$i]['v3'] . ',' .
                         $propertys[$i]['v4'] . ',' . $propertys[$i]['v5'] . ',' . $propertys[$i]['v6'];
-                    $arr['cid'] = $id;
+                    $arr[$i]['cid'] = $id;
 
                 }
                 $propertyModel = new Property();
@@ -122,7 +122,7 @@ class commodityController extends Controller
             $imagesModel = new Image();
             $classifyModel = new Classify();
 
-            $commodity = $commodityModel->select('id', 'name', 'quantity', 'introduce', 'classify_id', 'price')->find($id);
+            $commodity = $commodityModel->select('id', 'name','sid', 'quantity', 'introduce', 'classify_id', 'price')->find($id);
             $images = $imagesModel->select('src')->where('cid', $id)->get();
             $classify = $classifyModel->getInfo();
 
@@ -195,16 +195,18 @@ class commodityController extends Controller
 
             //更新属性
             $propertys = $request->input('property');
+
             $propertysNum = count($propertys);
             if ($propertysNum) {
                 $arr = [];
                 for ($i = 0; $i < $propertysNum; $i++) {
-                    $arr['title'] = $propertys[$i]['title'];
-                    $arr['content'] = $propertys[$i]['v1'] . ',' . $propertys[$i]['v2'] . ',' . $propertys[$i]['v3'] . ',' .
+                    $arr[$i]['title'] = $propertys[$i]['title'];
+                    $arr[$i]['content'] = $propertys[$i]['v1'] . ',' . $propertys[$i]['v2'] . ',' . $propertys[$i]['v3'] . ',' .
                         $propertys[$i]['v4'] . ',' . $propertys[$i]['v5'] . ',' . $propertys[$i]['v6'];
-                    $arr['cid'] = $id;
+                    $arr[$i]['cid'] = $id;
 
                 }
+
                 $propertyModel = new Property();
                 $propertyModel->where('cid', $id)->delete();
                 $propertyModel->insert($arr);

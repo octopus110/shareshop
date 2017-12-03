@@ -61,9 +61,9 @@
                 <label>所属渠道商：</label>
                 @if($role == 0)
                     <select class="combox" name="sid">
-                        <option value="all">选择分类</option>
+                        <option value="all">选择渠道商</option>
                         @foreach($merchant as $item)
-                            <option value="{{ $item->id }}">{{ $item->storename }}</option>
+                            <option value="{{ $item->id }}" {{ $item->id == $commodity->sid?'selected':'' }}>{{ $item->storename }}</option>
                         @endforeach
                     </select>
                 @else
