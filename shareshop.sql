@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-03 13:53:48
+Date: 2017-12-04 09:03:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -150,9 +150,9 @@ CREATE TABLE `images` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `src` varchar(100) NOT NULL COMMENT '图片路径',
   `cid` int(11) NOT NULL DEFAULT '0' COMMENT '对应商品id',
+  `classify` tinyint(2) NOT NULL DEFAULT '0' COMMENT '分类 0商品图片 1banner图片 2分类图片',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `classify` tinyint(2) NOT NULL DEFAULT '0' COMMENT '分类 0商品图片 1banner图片 2分类图片',
   PRIMARY KEY (`id`),
   KEY `cid` (`cid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf32 COMMENT='图片表';
@@ -160,52 +160,52 @@ CREATE TABLE `images` (
 -- ----------------------------
 -- Records of images
 -- ----------------------------
-INSERT INTO `images` VALUES ('33', 'commodity_1511773881521118.jpg', '15', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('34', 'commodity_1511773881683197.jpg', '15', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('35', 'commodity_151177388110773.jpg', '15', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('36', 'commodity_1511773882185730.jpg', '15', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('37', 'commodity_1511774102890503.jpg', '16', '2017-11-27 17:16:59', '2017-11-27 09:16:59', '0');
-INSERT INTO `images` VALUES ('38', 'commodity_1511774103479218.jpg', '16', '2017-11-27 17:16:59', '2017-11-27 09:16:59', '0');
-INSERT INTO `images` VALUES ('39', 'commodity_1511774103927856.jpg', '16', '2017-11-27 17:16:59', '2017-11-27 09:16:59', '0');
-INSERT INTO `images` VALUES ('40', 'commodity_1511774352466431.jpg', '17', '2017-11-27 17:19:14', '2017-11-27 09:19:14', '0');
-INSERT INTO `images` VALUES ('41', 'commodity_1511774352110688.jpg', '17', '2017-11-27 17:19:14', '2017-11-27 09:19:14', '0');
-INSERT INTO `images` VALUES ('42', 'commodity_1511774352157257.jpg', '17', '2017-11-27 17:19:14', '2017-11-27 09:19:14', '0');
-INSERT INTO `images` VALUES ('43', 'commodity_1511774497301605.jpg', '18', '2017-11-27 17:22:02', '2017-11-27 09:22:02', '0');
-INSERT INTO `images` VALUES ('44', 'commodity_1511774497849975.jpg', '18', '2017-11-27 17:22:02', '2017-11-27 09:22:02', '0');
-INSERT INTO `images` VALUES ('45', 'commodity_1511774497260102.jpg', '18', '2017-11-27 17:22:02', '2017-11-27 09:22:02', '0');
-INSERT INTO `images` VALUES ('46', 'commodity_1511774498365479.jpg', '18', '2017-11-27 17:22:02', '2017-11-27 09:22:02', '0');
-INSERT INTO `images` VALUES ('47', 'commodity_151177540437781.jpg', '14', '2017-11-27 17:37:16', '2017-11-27 09:37:16', '0');
-INSERT INTO `images` VALUES ('48', 'commodity_1511775571568726.png', '19', '2017-11-27 17:40:06', '2017-11-27 09:40:06', '0');
-INSERT INTO `images` VALUES ('49', 'commodity_1511775571292633.png', '19', '2017-11-27 17:40:06', '2017-11-27 09:40:06', '0');
-INSERT INTO `images` VALUES ('50', 'commodity_1511775571789428.png', '19', '2017-11-27 17:40:06', '2017-11-27 09:40:06', '0');
-INSERT INTO `images` VALUES ('51', 'commodity_1511775571937591.png', '19', '2017-11-27 17:40:06', '2017-11-27 09:40:06', '0');
-INSERT INTO `images` VALUES ('52', 'commodity_1511775670145447.jpg', '20', '2017-11-27 17:41:21', '2017-11-27 09:41:21', '0');
-INSERT INTO `images` VALUES ('53', 'commodity_1511775671361115.jpg', '20', '2017-11-27 17:41:21', '2017-11-27 09:41:21', '0');
-INSERT INTO `images` VALUES ('54', 'commodity_1511775671307068.jpg', '20', '2017-11-27 17:41:21', '2017-11-27 09:41:21', '0');
-INSERT INTO `images` VALUES ('55', 'commodity_1511775763857788.jpg', '21', '2017-11-27 17:42:46', '2017-11-27 09:42:46', '0');
-INSERT INTO `images` VALUES ('56', 'commodity_151177576437598.jpg', '21', '2017-11-27 17:42:46', '2017-11-27 09:42:46', '0');
-INSERT INTO `images` VALUES ('64', 'banner_1511828877285248.jpg', '0', '2017-11-28 08:27:57', '0000-00-00 00:00:00', '1');
-INSERT INTO `images` VALUES ('65', 'banner_151182887722889.jpg', '0', '2017-11-28 08:27:57', '0000-00-00 00:00:00', '1');
-INSERT INTO `images` VALUES ('66', 'banner_151182887799945.jpg', '0', '2017-11-28 08:27:57', '0000-00-00 00:00:00', '1');
-INSERT INTO `images` VALUES ('67', 'commodity_1511848762348725.jpg', '22', '2017-11-28 13:59:33', '2017-11-28 05:59:33', '0');
-INSERT INTO `images` VALUES ('68', 'commodity_1511848763954193.jpg', '22', '2017-11-28 13:59:33', '2017-11-28 05:59:33', '0');
-INSERT INTO `images` VALUES ('69', 'commodity_1511773881521118.jpg', '23', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('70', 'commodity_1511773881521118.jpg', '24', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('71', 'commodity_1511773881521118.jpg', '25', '2017-11-27 17:11:51', '2017-11-27 09:11:51', '0');
-INSERT INTO `images` VALUES ('72', 'commodity_1512204147372498.jpg', '27', '2017-12-02 16:44:40', '2017-12-02 08:44:40', '0');
-INSERT INTO `images` VALUES ('73', 'commodity_1512204147707580.jpg', '27', '2017-12-02 16:44:40', '2017-12-02 08:44:40', '0');
-INSERT INTO `images` VALUES ('74', 'commodity_1512204147618164.jpg', '27', '2017-12-02 16:44:40', '2017-12-02 08:44:40', '0');
-INSERT INTO `images` VALUES ('75', 'commodity_151220414873914.jpg', '27', '2017-12-02 16:44:40', '2017-12-02 08:44:40', '0');
-INSERT INTO `images` VALUES ('76', 'commodity_1512204999838897.jpg', '35', '2017-12-02 16:57:18', '2017-12-02 08:57:18', '0');
-INSERT INTO `images` VALUES ('78', 'commodity_1512206335587524.jpg', '33', '2017-12-02 17:20:05', '2017-12-02 09:20:05', '0');
-INSERT INTO `images` VALUES ('79', 'commodity_1512206368663666.jpg', '33', '2017-12-02 17:20:05', '2017-12-02 09:20:05', '0');
-INSERT INTO `images` VALUES ('81', 'commodity_1512206760626617.jpg', '31', '2017-12-02 17:26:03', '2017-12-02 09:26:03', '0');
-INSERT INTO `images` VALUES ('82', 'commodity_1512206829569946.jpg', '30', '2017-12-02 17:27:11', '2017-12-02 09:27:11', '0');
-INSERT INTO `images` VALUES ('83', 'commodity_1512206946580139.jpg', '29', '2017-12-02 17:29:23', '2017-12-02 09:29:23', '0');
-INSERT INTO `images` VALUES ('84', 'commodity_1512207182770721.jpg', '34', '2017-12-02 17:33:05', '2017-12-02 09:33:05', '0');
-INSERT INTO `images` VALUES ('85', 'commodity_1512207211810363.jpg', '32', '2017-12-02 17:33:50', '2017-12-02 09:33:50', '0');
-INSERT INTO `images` VALUES ('86', 'commodity_1512207258532562.jpg', '26', '2017-12-02 17:34:21', '2017-12-02 09:34:21', '0');
-INSERT INTO `images` VALUES ('87', 'commodity_1512207277316925.jpg', '28', '2017-12-02 17:34:39', '2017-12-02 09:34:39', '0');
+INSERT INTO `images` VALUES ('33', 'commodity_1511773881521118.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('34', 'commodity_1511773881683197.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('35', 'commodity_151177388110773.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('36', 'commodity_1511773882185730.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('37', 'commodity_1511774102890503.jpg', '16', '0', '2017-11-27 17:16:59', '2017-11-27 09:16:59');
+INSERT INTO `images` VALUES ('38', 'commodity_1511774103479218.jpg', '16', '0', '2017-11-27 17:16:59', '2017-11-27 09:16:59');
+INSERT INTO `images` VALUES ('39', 'commodity_1511774103927856.jpg', '16', '0', '2017-11-27 17:16:59', '2017-11-27 09:16:59');
+INSERT INTO `images` VALUES ('40', 'commodity_1511774352466431.jpg', '17', '0', '2017-11-27 17:19:14', '2017-11-27 09:19:14');
+INSERT INTO `images` VALUES ('41', 'commodity_1511774352110688.jpg', '17', '0', '2017-11-27 17:19:14', '2017-11-27 09:19:14');
+INSERT INTO `images` VALUES ('42', 'commodity_1511774352157257.jpg', '17', '0', '2017-11-27 17:19:14', '2017-11-27 09:19:14');
+INSERT INTO `images` VALUES ('43', 'commodity_1511774497301605.jpg', '18', '0', '2017-11-27 17:22:02', '2017-11-27 09:22:02');
+INSERT INTO `images` VALUES ('44', 'commodity_1511774497849975.jpg', '18', '0', '2017-11-27 17:22:02', '2017-11-27 09:22:02');
+INSERT INTO `images` VALUES ('45', 'commodity_1511774497260102.jpg', '18', '0', '2017-11-27 17:22:02', '2017-11-27 09:22:02');
+INSERT INTO `images` VALUES ('46', 'commodity_1511774498365479.jpg', '18', '0', '2017-11-27 17:22:02', '2017-11-27 09:22:02');
+INSERT INTO `images` VALUES ('47', 'commodity_151177540437781.jpg', '14', '0', '2017-11-27 17:37:16', '2017-11-27 09:37:16');
+INSERT INTO `images` VALUES ('48', 'commodity_1511775571568726.png', '19', '0', '2017-11-27 17:40:06', '2017-11-27 09:40:06');
+INSERT INTO `images` VALUES ('49', 'commodity_1511775571292633.png', '19', '0', '2017-11-27 17:40:06', '2017-11-27 09:40:06');
+INSERT INTO `images` VALUES ('50', 'commodity_1511775571789428.png', '19', '0', '2017-11-27 17:40:06', '2017-11-27 09:40:06');
+INSERT INTO `images` VALUES ('51', 'commodity_1511775571937591.png', '19', '0', '2017-11-27 17:40:06', '2017-11-27 09:40:06');
+INSERT INTO `images` VALUES ('52', 'commodity_1511775670145447.jpg', '20', '0', '2017-11-27 17:41:21', '2017-11-27 09:41:21');
+INSERT INTO `images` VALUES ('53', 'commodity_1511775671361115.jpg', '20', '0', '2017-11-27 17:41:21', '2017-11-27 09:41:21');
+INSERT INTO `images` VALUES ('54', 'commodity_1511775671307068.jpg', '20', '0', '2017-11-27 17:41:21', '2017-11-27 09:41:21');
+INSERT INTO `images` VALUES ('55', 'commodity_1511775763857788.jpg', '21', '0', '2017-11-27 17:42:46', '2017-11-27 09:42:46');
+INSERT INTO `images` VALUES ('56', 'commodity_151177576437598.jpg', '21', '0', '2017-11-27 17:42:46', '2017-11-27 09:42:46');
+INSERT INTO `images` VALUES ('64', 'banner_1511828877285248.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
+INSERT INTO `images` VALUES ('65', 'banner_151182887722889.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
+INSERT INTO `images` VALUES ('66', 'banner_151182887799945.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
+INSERT INTO `images` VALUES ('67', 'commodity_1511848762348725.jpg', '22', '0', '2017-11-28 13:59:33', '2017-11-28 05:59:33');
+INSERT INTO `images` VALUES ('68', 'commodity_1511848763954193.jpg', '22', '0', '2017-11-28 13:59:33', '2017-11-28 05:59:33');
+INSERT INTO `images` VALUES ('69', 'commodity_1511773881521118.jpg', '23', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('70', 'commodity_1511773881521118.jpg', '24', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('71', 'commodity_1511773881521118.jpg', '25', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
+INSERT INTO `images` VALUES ('72', 'commodity_1512204147372498.jpg', '27', '0', '2017-12-02 16:44:40', '2017-12-02 08:44:40');
+INSERT INTO `images` VALUES ('73', 'commodity_1512204147707580.jpg', '27', '0', '2017-12-02 16:44:40', '2017-12-02 08:44:40');
+INSERT INTO `images` VALUES ('74', 'commodity_1512204147618164.jpg', '27', '0', '2017-12-02 16:44:40', '2017-12-02 08:44:40');
+INSERT INTO `images` VALUES ('75', 'commodity_151220414873914.jpg', '27', '0', '2017-12-02 16:44:40', '2017-12-02 08:44:40');
+INSERT INTO `images` VALUES ('76', 'commodity_1512204999838897.jpg', '35', '0', '2017-12-02 16:57:18', '2017-12-02 08:57:18');
+INSERT INTO `images` VALUES ('78', 'commodity_1512206335587524.jpg', '33', '0', '2017-12-02 17:20:05', '2017-12-02 09:20:05');
+INSERT INTO `images` VALUES ('79', 'commodity_1512206368663666.jpg', '33', '0', '2017-12-02 17:20:05', '2017-12-02 09:20:05');
+INSERT INTO `images` VALUES ('81', 'commodity_1512206760626617.jpg', '31', '0', '2017-12-02 17:26:03', '2017-12-02 09:26:03');
+INSERT INTO `images` VALUES ('82', 'commodity_1512206829569946.jpg', '30', '0', '2017-12-02 17:27:11', '2017-12-02 09:27:11');
+INSERT INTO `images` VALUES ('83', 'commodity_1512206946580139.jpg', '29', '0', '2017-12-02 17:29:23', '2017-12-02 09:29:23');
+INSERT INTO `images` VALUES ('84', 'commodity_1512207182770721.jpg', '34', '0', '2017-12-02 17:33:05', '2017-12-02 09:33:05');
+INSERT INTO `images` VALUES ('85', 'commodity_1512207211810363.jpg', '32', '0', '2017-12-02 17:33:50', '2017-12-02 09:33:50');
+INSERT INTO `images` VALUES ('86', 'commodity_1512207258532562.jpg', '26', '0', '2017-12-02 17:34:21', '2017-12-02 09:34:21');
+INSERT INTO `images` VALUES ('87', 'commodity_1512207277316925.jpg', '28', '0', '2017-12-02 17:34:39', '2017-12-02 09:34:39');
 
 -- ----------------------------
 -- Table structure for informations
@@ -296,7 +296,7 @@ DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   KEY `password_resets_email_index` (`email`(250))
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -367,7 +367,7 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `login_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='注册商表';
 
