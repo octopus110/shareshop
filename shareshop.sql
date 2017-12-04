@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-04 09:11:54
+Date: 2017-12-04 09:25:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,7 +25,7 @@ CREATE TABLE `address` (
   `info` varchar(300) NOT NULL COMMENT '地址信息',
   `uid` int(11) NOT NULL COMMENT '用户id',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='地址表';
 
@@ -42,7 +42,7 @@ CREATE TABLE `carts` (
   `uid` int(11) NOT NULL COMMENT '用户id',
   `cid` int(11) NOT NULL COMMENT '商品id',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='购物车';
 
@@ -60,7 +60,7 @@ CREATE TABLE `classifys` (
   `src` varchar(255) DEFAULT NULL COMMENT '分类logo',
   `sort` tinyint(2) unsigned NOT NULL COMMENT '分类排序',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf32 COMMENT='分类表';
 
@@ -92,7 +92,7 @@ CREATE TABLE `commoditys` (
   `classify_id` int(11) NOT NULL COMMENT '商品分类',
   `price` float NOT NULL COMMENT '商品价格',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `classify_id` (`classify_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf32 COMMENT='商品表';
@@ -133,7 +133,7 @@ CREATE TABLE `earnings` (
   `cid` int(11) NOT NULL COMMENT '产品id',
   `uid` int(11) NOT NULL COMMENT '用户id',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32 COMMENT='收益表';
 
@@ -152,7 +152,7 @@ CREATE TABLE `images` (
   `cid` int(11) NOT NULL DEFAULT '0' COMMENT '对应商品id',
   `classify` tinyint(2) NOT NULL DEFAULT '0' COMMENT '分类 0商品图片 1banner图片 2分类图片',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `cid` (`cid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=utf32 COMMENT='图片表';
@@ -219,7 +219,7 @@ CREATE TABLE `informations` (
   `birthplace` varchar(100) NOT NULL COMMENT '出生地',
   `abode` varchar(100) NOT NULL COMMENT '居住地',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='个人信息表';
 
@@ -238,7 +238,7 @@ CREATE TABLE `members` (
   `earnings` float DEFAULT '0' COMMENT '用户收益 每次发放就清0',
   `getearnings` float unsigned DEFAULT '0' COMMENT '发放金额',
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32 COMMENT='用户表';
 
@@ -279,7 +279,7 @@ CREATE TABLE `orders` (
   `status` tinyint(1) unsigned DEFAULT '1' COMMENT '0 已付款 1 未付款 2关闭',
   `delivery` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '发货状态 0未发货 1已发货 2已签收',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32 COMMENT='订单表';
@@ -315,7 +315,7 @@ CREATE TABLE `propertys` (
   `title` varchar(20) NOT NULL COMMENT '属性标题',
   `content` varchar(100) NOT NULL COMMENT '属性内容 用，隔开',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf32 COMMENT='商品属性表';
 
@@ -336,7 +336,7 @@ CREATE TABLE `records` (
   `status` tinyint(2) NOT NULL COMMENT '0 已付款 1未付款',
   `rid` int(11) NOT NULL COMMENT '流水id',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='流水表';
 
@@ -367,9 +367,9 @@ CREATE TABLE `users` (
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `login_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='注册商表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='注册商表';
 
 -- ----------------------------
 -- Records of users
