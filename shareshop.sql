@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-04 09:25:26
+Date: 2017-12-04 09:31:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -184,9 +184,9 @@ INSERT INTO `images` VALUES ('53', 'commodity_1511775671361115.jpg', '20', '0', 
 INSERT INTO `images` VALUES ('54', 'commodity_1511775671307068.jpg', '20', '0', '2017-11-27 17:41:21', '2017-11-27 09:41:21');
 INSERT INTO `images` VALUES ('55', 'commodity_1511775763857788.jpg', '21', '0', '2017-11-27 17:42:46', '2017-11-27 09:42:46');
 INSERT INTO `images` VALUES ('56', 'commodity_151177576437598.jpg', '21', '0', '2017-11-27 17:42:46', '2017-11-27 09:42:46');
-INSERT INTO `images` VALUES ('64', 'banner_1511828877285248.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
-INSERT INTO `images` VALUES ('65', 'banner_151182887722889.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
-INSERT INTO `images` VALUES ('66', 'banner_151182887799945.jpg', '0', '1', '2017-11-28 08:27:57', '0000-00-00 00:00:00');
+INSERT INTO `images` VALUES ('64', 'banner_1511828877285248.jpg', '0', '1', '2017-12-04 09:31:07', '2017-12-04 09:31:04');
+INSERT INTO `images` VALUES ('65', 'banner_151182887722889.jpg', '0', '1', '2017-12-04 09:31:10', '2017-12-04 09:31:08');
+INSERT INTO `images` VALUES ('66', 'banner_151182887799945.jpg', '0', '1', '2017-12-04 09:31:12', '2017-12-04 09:31:10');
 INSERT INTO `images` VALUES ('67', 'commodity_1511848762348725.jpg', '22', '0', '2017-11-28 13:59:33', '2017-11-28 05:59:33');
 INSERT INTO `images` VALUES ('68', 'commodity_1511848763954193.jpg', '22', '0', '2017-11-28 13:59:33', '2017-11-28 05:59:33');
 INSERT INTO `images` VALUES ('69', 'commodity_1511773881521118.jpg', '23', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
