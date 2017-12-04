@@ -2,17 +2,18 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;" />
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
     <title>商城</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/address.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>
 <header class="address-header">
-    <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>收货地址
+    <a href="/member"><i class="iconfont icon-fanhui"></i></a>收货地址
 </header>
 
 <section class="address">
@@ -27,9 +28,9 @@
 
 <div class="turnoff" style="display: none">
     <div data-toggle="distpicker">
-      <select></select>
-      <select></select>
-      <select></select>
+        <select></select>
+        <select></select>
+        <select></select>
     </div>
 
     <input type="text" placeholder="输入详细地址"/>
@@ -41,6 +42,7 @@
 
 <footer class="footer footer-bottom">
     <p><img src="/images/tmp/7.png" alt=""></p>
+
     <p>@版权 版权 版权</p>
 </footer>
 

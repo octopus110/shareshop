@@ -4091,3 +4091,22 @@ body, div, ol, p, span, ul {
 .ipo {
     margin-top: 10px;
 }
+
+.address-header {
+    height: 9.7vw;
+    background: #fff;
+    line-height: 9.7vw;
+    text-align: center;
+    font-size: 3.8vw;
+    position: relative;
+}
+
+.address-header a {
+    display: inline-block;
+    height: 9.7vw;
+    line-height: 9.7vw;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 3.3vw;
+}

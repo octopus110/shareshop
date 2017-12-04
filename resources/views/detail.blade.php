@@ -17,8 +17,12 @@
     <script type="text/javascript" src="/lib/ratchet.min.js"></script>
     <script type="text/javascript" src="/lib/swiper-3.4.2.jquery.min.js"></script>
     <link rel="stylesheet" href="/lib/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>
+<header class="address-header">
+    <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui" style="color: #333;"></i></a>产品详情
+</header>
 <div id="content">
     <div class="scroller">
         <div id="p-summary" class="page">

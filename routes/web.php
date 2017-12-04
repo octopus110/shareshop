@@ -3,10 +3,11 @@ Route::get('/', 'indexController@index');
 Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::any('/details/{id?}', 'indexController@detail');
-Route::get('/member', 'indexController@member');
-Route::get('/cart', 'indexController@carts');
-Route::get('/transaction', 'indexController@transaction');
-Route::get('/address', 'indexController@address');
+Route::any('/login', 'memberController@login');
+Route::get('/member', 'memberController@member');
+Route::get('/cart', 'memberController@carts');
+Route::get('/transaction', 'memberController@transaction');
+Route::get('/address', 'memberController@address');
 
 Route::group(['prefix' => 'server'], function () {
 

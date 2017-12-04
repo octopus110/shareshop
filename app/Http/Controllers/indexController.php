@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class indexController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $imageModel = new Image();
         $banner = $imageModel->where('classify', 1)->select('id', 'src')->get();
@@ -37,7 +37,8 @@ class indexController extends Controller
             'banner' => $banner,
             'newcommoditys' => $newcommoditys,
             'classify' => $classify,
-            'salescommoditys' => $salescommoditys
+            'salescommoditys' => $salescommoditys,
+            'mid' => session()->get('mid')
         ]);
     }
 
@@ -109,25 +110,5 @@ class indexController extends Controller
             'images' => $images,
             'propertys' => $propertys
         ]);
-    }
-
-    public function member()
-    {
-        return view('member');
-    }
-
-    public function carts()
-    {
-        return view('cart');
-    }
-
-    public function transaction()
-    {
-        return view('transaction');
-    }
-
-    public function address()
-    {
-        return view('address');
     }
 }
