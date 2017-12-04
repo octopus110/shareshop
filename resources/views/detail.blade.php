@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link rel="stylesheet" href="/detail/ratchet.min.css"/>
-    <link rel="stylesheet" href="/detail/page.css"/>
+    <link rel="stylesheet" href="/css/page.css"/>
     <link rel="stylesheet" href="/detail/product.css"/>
     <link rel="stylesheet" href="/detail/pro2.css"/>
     <script type="text/javascript" src="/lib/flex.js"></script>
