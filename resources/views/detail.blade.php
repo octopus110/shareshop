@@ -9,7 +9,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <link rel="stylesheet" href="/detail/ratchet.min.css"/>
-    <link rel="stylesheet" href="/css/page.css"/>
+    <link rel="stylesheet" href="/detail/page.css"/>
     <link rel="stylesheet" href="/detail/product.css"/>
     <link rel="stylesheet" href="/detail/pro2.css"/>
     <script type="text/javascript" src="/lib/flex.js"></script>
@@ -154,13 +154,11 @@
                 <section id="s-actionBar-container">
                     <div id="s-actionbar" class="action-bar mui-flex align-center">
                         <div class="web"><img src="/images/atm.png" width="20" height="20"/>
-
                             <p>联系商家</p>
                         </div>
-                        <div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
-
+                        {{--<div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
                             <p>进店</p>
-                        </div>
+                        </div>--}}
                         <button class="cart cell">加入购物车</button>
                         <button class="buy cell">立即购买</button>
                         <div class="activity-box cell"></div>

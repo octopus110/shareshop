@@ -38,8 +38,9 @@
 	width: 90%;
 	margin: 20px auto;
 	font-size: 4vw;
-	padding:5px 0;
+	padding:9px 0;
 	background: #f2f2f2;
 	text-indent: 10px;
 	border: none;
+	border-radius: 5px;
 }

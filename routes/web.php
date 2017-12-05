@@ -7,7 +7,7 @@ Route::any('/login', 'memberController@login');
 Route::get('/member', 'memberController@member');
 Route::get('/cart', 'memberController@carts');
 Route::get('/transaction', 'memberController@transaction');
-Route::get('/address', 'memberController@address');
+Route::any('/address', 'memberController@address');
 
 Route::group(['prefix' => 'server'], function () {
 
