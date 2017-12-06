@@ -127,18 +127,28 @@ class memberController extends Controller
 
     public function carts(Request $request)
     {
+        $cartModel = new Cart();
+
+        $mid = $request->session()->get('mid');
+
         if ($request->isMethod('get')) {
-            return view('cart');
+            $carts = $cartModel->where('carts.uid', $mid)
+                ->select('carts.id', 'commoditys.name', 'commoditys.price', 'images.src', 'carts.sum')
+                ->leftJoin('commoditys', 'carts.cid', 'commoditys.id')
+                ->leftJoin('images', 'images.cid', 'commoditys.id')
+                ->groupby('commoditys.id')
+                ->get();
+
+            return view('cart', ['carts' => $carts]);
         } else {
             $validator = Validator::make($request->all(), [
-                'cid' => 'required'
+                'cid' => 'required',
             ]);
 
             if ($validator->fails()) {
                 return response()->json(['statusCode' => 300]);
             }
 
-            $mid = $request->session()->get('mid');
             $cid = $request->input('cid');
 
             if (!$mid) {
@@ -147,13 +157,12 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 100,]);
             }
 
-            $cartModel = new Cart();
-
             if ($cartModel->where('cid', $cid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
                 $cartModel->uid = $mid;
                 $cartModel->cid = $cid;
+                $cartModel->sum = $request->input('sum', 1);
                 $ret = $cartModel->save();
 
                 if ($ret) {

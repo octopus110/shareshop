@@ -22,6 +22,8 @@
 }
 .cart-img{
 	width: 20%;
+	height:18.75vw;
+	overflow: hidden;
 	margin-right: 4%;
 }
 .cart-content{

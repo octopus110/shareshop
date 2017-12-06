@@ -103,7 +103,7 @@
                                     <div class="spec-desc"><span class="part-note-msg">已选</span>
 
                                         <div id="specDetailInfo_spec" class="base-txt">
-                                            <span class="amount">1</span>件
+                                            <span class="amount" id="amount">1</span>件
                                         </div>
                                     </div>
                                     @if($propertys)
@@ -223,12 +223,15 @@
 
         //加入购物车ajax
         $(".add_cart").click(function () {
+            var sum = $("#amount").text();
+
             $.ajax({
                 url: '/cart',
                 type: 'post',
                 dataType: 'json',
                 data: {
                     cid: '{{ $data->id }}',
+                    'sum': sum,
                     '_token': '{{ csrf_token() }}'
                 },
                 success: function (data) {
