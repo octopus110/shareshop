@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-04 09:31:26
+Date: 2017-12-06 17:35:32
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,15 +23,20 @@ CREATE TABLE `address` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` tinyint(1) NOT NULL COMMENT '0 普通地址 1默认地址',
   `info` varchar(300) NOT NULL COMMENT '地址信息',
+  `name` varchar(30) NOT NULL DEFAULT '' COMMENT '收件人姓名',
+  `phone` varchar(15) NOT NULL COMMENT '收件人联系方式',
   `uid` int(11) NOT NULL COMMENT '用户id',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='地址表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf32 COMMENT='地址表';
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
+INSERT INTO `address` VALUES ('1', '0', '河北省 石家庄市 长安区 皇城路200号', '吴先生', '13658965689', '6', '2017-12-05 17:51:18', '2017-12-05 17:51:18');
+INSERT INTO `address` VALUES ('8', '1', '吉林省 长春市 南关区 黄泉路188号', '王先生', '13547854587', '6', '2017-12-05 17:51:03', '2017-12-05 17:51:03');
+INSERT INTO `address` VALUES ('9', '0', '北京市 北京市市辖区 东城区 天堂路250号', '刘先生', '13245677456', '6', '2017-12-05 17:50:49', '2017-12-05 17:50:49');
 
 -- ----------------------------
 -- Table structure for carts
@@ -40,15 +45,19 @@ DROP TABLE IF EXISTS `carts`;
 CREATE TABLE `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL COMMENT '用户id',
-  `cid` int(11) NOT NULL COMMENT '商品id',
+  `cid` int(11) unsigned NOT NULL COMMENT '商品id',
+  `sum` int(5) unsigned NOT NULL DEFAULT '1' COMMENT '产品数量',
+  `total` int(10) unsigned NOT NULL COMMENT '总价',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='购物车';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32 COMMENT='购物车';
 
 -- ----------------------------
 -- Records of carts
 -- ----------------------------
+INSERT INTO `carts` VALUES ('10', '6', '25', '4', '356', '2017-12-06 17:35:12', '2017-12-06 17:35:12');
+INSERT INTO `carts` VALUES ('11', '6', '35', '1', '128', '2017-12-06 17:31:05', '2017-12-06 17:31:05');
 
 -- ----------------------------
 -- Table structure for classifys
@@ -233,19 +242,27 @@ CREATE TABLE `informations` (
 DROP TABLE IF EXISTS `members`;
 CREATE TABLE `members` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `weixinid` varchar(50) NOT NULL COMMENT '用户对应微信UID',
+  `email` varchar(30) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `nickname` varchar(50) NOT NULL COMMENT '用户对应微信UID',
   `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '用户类型 0 普通用户 1 个体商',
+  `head` varchar(255) DEFAULT NULL COMMENT '头像',
+  `realname` varchar(20) DEFAULT NULL,
+  `IDnumber` varchar(20) DEFAULT NULL,
+  `sex` tinyint(1) unsigned DEFAULT '0' COMMENT '0 男 1 女',
   `earnings` float DEFAULT '0' COMMENT '用户收益 每次发放就清0',
   `getearnings` float unsigned DEFAULT '0' COMMENT '发放金额',
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf32 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
 
 -- ----------------------------
 -- Records of members
 -- ----------------------------
-INSERT INTO `members` VALUES ('1', '111', '1', '100', '100', '0000-00-00 00:00:00', '2017-11-26 10:29:06');
+INSERT INTO `members` VALUES ('6', '1169815992@qq.com', null, '1c63129ae9db9c60c3e8aa94d3e00495', '愤怒值', '0', null, null, null, '0', '0', '0', '2017-12-04 08:44:25', '2017-12-04 08:44:25');
+INSERT INTO `members` VALUES ('8', '1169856235@qq.com', null, '1qaz2wsx', '回火', '0', null, null, null, '0', '0', '0', '0000-00-00 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for migrations
