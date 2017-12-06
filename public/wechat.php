@@ -1,9 +1,9 @@
 <?php
 define("TOKEN", "mall");
-$wechatObj = new wechatCallbackapiTest();
+$wechatObj = new wechat();
 $wechatObj->valid();
 
-class wechatCallbackapiTest
+class wechat
 {
     public function valid()
     {

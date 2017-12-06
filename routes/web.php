@@ -5,9 +5,11 @@ Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产
 Route::any('/details/{id?}', 'indexController@detail');
 Route::any('/login', 'memberController@login');
 Route::get('/member', 'memberController@member');
-Route::get('/cart', 'memberController@carts');
+Route::any('/cart', 'memberController@carts');
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
+Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
+Route::any('/address/edit/{id?}', 'memberController@edit');
 
 Route::group(['prefix' => 'server'], function () {
 

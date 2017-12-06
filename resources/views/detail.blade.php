@@ -144,22 +144,21 @@
                             </div>
                         </div>
                         <div class="flick-menu-btn spec-menu-btn">
-                            <a class="yellow-color add_cart" id="add_cart_spec"
-                               style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">加入购物车</a>
-                            <a class="red-color directorder" id="directorder_spec"
-                               style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">立即购买</a></div>
+                            <a class="yellow-color add_cart add_cart">加入购物车</a>
+                            <a class="red-color directorder">立即购买</a></div>
                     </div>
                 </div>
                 <!-- 弹出 -->
                 <section id="s-actionBar-container">
                     <div id="s-actionbar" class="action-bar mui-flex align-center">
                         <div class="web"><img src="/images/atm.png" width="20" height="20"/>
+
                             <p>联系商家</p>
                         </div>
                         {{--<div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
                             <p>进店</p>
                         </div>--}}
-                        <button class="cart cell">加入购物车</button>
+                        <button class="cart cell add_cart">加入购物车</button>
                         <button class="buy cell">立即购买</button>
                         <div class="activity-box cell"></div>
                     </div>
@@ -220,8 +219,36 @@
                     $('.amount').html($num)
                 }
             });
-
         })
+
+        //加入购物车ajax
+        $(".add_cart").click(function () {
+            $.ajax({
+                url: '/cart',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    cid: '{{ $data->id }}',
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (data) {
+                    switch (data.statusCode) {
+                        case 200:
+                            alert('已加入购物车');
+                            break;
+                        case 100:
+                            window.location.href = '/login';
+                            break;
+                        case 300:
+                            alert('网络不稳定，请重试');
+                            break;
+                        case 400:
+                            alert('商品已存在');
+                            break;
+                    }
+                }
+            });
+        });
     })
 </script>
 </html>

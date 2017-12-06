@@ -15,7 +15,16 @@ class memberController extends Controller
     public function login(Request $request)
     {
         if ($request->isMethod('get')) {
-            return view('login');
+
+            $mid = $request->session()->get('mid');
+
+            if ($mid) {
+                return redirect('/');
+            } else {
+                return view('login', [
+                    'redirect_url' => session()->get('redirect_url'),
+                ]);
+            }
         } else {
             $validator = Validator::make($request->all(), [
                 'type' => 'required'
@@ -116,9 +125,42 @@ class memberController extends Controller
         return redirect('/');
     }
 
-    public function carts()
+    public function carts(Request $request)
     {
-        return view('cart');
+        if ($request->isMethod('get')) {
+            return view('cart');
+        } else {
+            $validator = Validator::make($request->all(), [
+                'cid' => 'required'
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['statusCode' => 300]);
+            }
+
+            $mid = $request->session()->get('mid');
+            $cid = $request->input('cid');
+
+            if (!$mid) {
+                $request->session()->put('redirect_url', '/details/' . $cid);
+
+                return response()->json(['statusCode' => 100,]);
+            }
+
+            $cartModel = new Cart();
+
+            if ($cartModel->where('cid', $cid)->count()) {
+                return response()->json(['statusCode' => 400]);
+            } else {
+                $cartModel->uid = $mid;
+                $cartModel->cid = $cid;
+                $ret = $cartModel->save();
+
+                if ($ret) {
+                    return response()->json(['statusCode' => 200]);
+                }
+            }
+        }
     }
 
     public function transaction()
@@ -131,8 +173,10 @@ class memberController extends Controller
         $addressModel = new Address();
 
         if ($request->isMethod('get')) {
-            $address = $addressModel->where('uid', $request->session()->get('mid'))->select('id', 'type', 'info')
-                ->orderBy('type')
+            $address = $addressModel->where('uid', $request->session()->get('mid'))->select(
+                'id', 'type', 'info', 'name', 'phone'
+            )
+                ->orderBy('type', 'desc')
                 ->get();
 
             return view('address', [
@@ -152,14 +196,16 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 100]);
             }
 
-            if (!$addressModel->where('type', 1)->count()) {
-                $addressModel->type = 1;
-            } else {
+            if ($addressModel->where('type', 1)->count()) {
                 $addressModel->type = 0;
+            } else {
+                $addressModel->type = 1;
             }
 
             $addressModel->info = $request->input('province') . ' ' . $request->input('city') . ' ' . $request->input('district')
                 . ' ' . $request->input('address');
+            $addressModel->name = $request->input('name');
+            $addressModel->phone = $request->input('phone');
             $addressModel->uid = $request->session()->get('mid');
 
             $ret = $addressModel->save();
@@ -168,6 +214,79 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 200]);
             } else {
                 return response()->json(['statusCode' => 300]);
+            }
+        }
+    }
+
+    public function address_deal($id = 0, $t = 0)
+    {
+        $addressModel = new Address();
+
+        switch ($t) {
+            case 0:
+                $ret = $addressModel->where('id', $id)->delete();
+
+                if ($ret) {
+                    return redirect('/address');
+                }
+                break;
+            case 1:
+                $addressModel->where('type', 1)->update([
+                    'type' => 0,
+                ]);
+                $ret = $addressModel->where('id', $id)->update([
+                    'type' => 1,
+                ]);
+
+                if ($ret) {
+                    return redirect('/address');
+                }
+                break;
+        }
+
+    }
+
+    public function edit(Request $request, $id = 0)
+    {
+        if ($request->isMethod('get')) {
+            $address = (new Address())->select('id', 'info', 'name', 'phone')->find($id)->toArray();
+            $address['info'] = explode(' ', $address['info']);
+
+            return view('address_eidt', [
+                'address' => $address,
+                'id' => $id
+            ]);
+        } else {
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+                'province' => 'required',
+                'city' => 'required',
+                'district' => 'required',
+                'address' => 'required',
+                'name' => 'required|String',
+                'phone' => ['regex:/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/'],
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['statusCode' => 100]);
+            }
+
+            $addressModel = new Address();
+
+            $info = $request->input('province') . ' ' . $request->input('city') . ' ' . $request->input('district')
+                . ' ' . $request->input('address');
+
+
+            $ret = $addressModel->where('id', $request->input('id'))->update([
+                'info' => $info,
+                'name' => $request->input('name'),
+                'phone' => $request->input('phone'),
+            ]);
+
+            if ($ret) {
+                return redirect('/address');
+            } else {
+                return redirect('/address/edit/' . $request->input('id'));
             }
         }
     }

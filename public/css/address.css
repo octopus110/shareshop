@@ -1,46 +1,61 @@
-.address-header{
-	height: 9.7vw;
-	background: #fff;
-	line-height: 9.7vw;
-	text-align: center;
-	font-size: 3.8vw;
-	position: relative;
+.address-header {
+    height: 9.7vw;
+    background: #fff;
+    line-height: 9.7vw;
+    text-align: center;
+    font-size: 3.8vw;
+    position: relative;
 }
-.address-header a{
-	display: inline-block;
-	height: 9.7vw;
-	line-height: 9.7vw;
-	position: absolute;
-	left: 10px;
-	top: 0;
-	font-size: 3.3vw;
+
+.address-header a {
+    display: inline-block;
+    height: 9.7vw;
+    line-height: 9.7vw;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 3.3vw;
 }
-.address{
-	background: #fff;
-	margin-top: 10px;
-	padding: 10px;
+
+.address {
+    background: #fff;
+    margin-top: 10px;
+    padding: 10px;
 
 }
-.address p{
-	margin-bottom: 10px;
+
+.address p {
+    margin-bottom: 10px;
 }
-.address a{
-	padding-right: 10px;
+
+.address a {
+    padding-right: 10px;
 }
-.address-add{
-	text-align: center;
-	font-size: 10vw;
-	background: #fff;
-	margin-top: 10px;
+
+.address .a_clear {
+    width: 100vw;
+    height: 1px;
 }
-.turnoff select,.turnoff input{
-	display: block;
-	width: 90%;
-	margin: 20px auto;
-	font-size: 4vw;
-	padding:9px 0;
-	background: #f2f2f2;
-	text-indent: 10px;
-	border: none;
-	border-radius: 5px;
+
+.address a i.sheweimoren {
+    color: red;
+}
+
+.address-add {
+    text-align: center;
+    font-size: 10vw;
+    background: #fff;
+    margin-top: 10px;
+}
+
+.turnoff select, .turnoff input {
+    display: block;
+    width: 90%;
+    margin: 20px auto;
+    font-size: 4vw;
+    padding: 9px 0;
+    background: #f2f2f2;
+    text-indent: 10px;
+    border: none;
+    border-radius: 5px;
 }

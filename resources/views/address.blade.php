@@ -18,11 +18,12 @@
 
 @foreach($address as $item)
     <section class="address">
-        <p>{{ $item->info }} {{ $item->name }}收 {{ $item->phone }}</p>
-        <a href="">编辑</a> <a href="">删除</a>
-        @if(!$item->type)
-            <a href="">设为默认</a>
-        @endif
+        <p>
+            <a href="/address/deal/{{ $item->id }}/1"><i class="iconfont icon-sheweimoren {{ $item->type?'sheweimoren':'' }}"></i></a>
+            {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
+        </p>
+        <a href="/address/edit/{{ $item->id }}"><i class="iconfont icon-bianji"></i></a>
+        <a href="/address/deal/{{ $item->id }}/0"><i class="iconfont icon-shanchu"></i></a>
     </section>
 @endforeach
 
