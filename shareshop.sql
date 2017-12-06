@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-06 17:44:23
+Date: 2017-12-06 17:48:15
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -263,23 +263,6 @@ CREATE TABLE `members` (
 -- ----------------------------
 INSERT INTO `members` VALUES ('6', '1169815992@qq.com', null, '1c63129ae9db9c60c3e8aa94d3e00495', '愤怒值', '0', null, null, null, '0', '0', '0', '2017-12-04 08:44:25', '2017-12-04 08:44:25');
 INSERT INTO `members` VALUES ('8', '1169856235@qq.com', null, '1qaz2wsx', '回火', '0', null, null, null, '0', '0', '0', '0000-00-00 00:00:00', null);
-
--- ----------------------------
--- Table structure for migrations
--- ----------------------------
-DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE `migrations` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- ----------------------------
--- Records of migrations
--- ----------------------------
-INSERT INTO `migrations` VALUES ('1', '2014_10_12_000000_create_users_table', '1');
-INSERT INTO `migrations` VALUES ('2', '2014_10_12_100000_create_password_resets_table', '1');
 
 -- ----------------------------
 -- Table structure for orders
