@@ -4109,3 +4109,8 @@ body, div, ol, p, span, ul {
     top: 0;
     font-size: 3.3vw;
 }
+
+.swiper-slide{
+    height:105vw;
+    overflow: hidden;
+}

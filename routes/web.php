@@ -6,6 +6,7 @@ Route::any('/details/{id?}', 'indexController@detail');
 Route::any('/login', 'memberController@login');
 Route::get('/member', 'memberController@member');
 Route::any('/cart', 'memberController@carts');
+Route::any('/cart/deal/{id?}', 'memberController@cartDel');
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');

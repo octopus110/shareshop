@@ -8,6 +8,7 @@
           content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="stylesheet" href="/lib/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/detail/ratchet.min.css"/>
     <link rel="stylesheet" href="/detail/page.css"/>
     <link rel="stylesheet" href="/detail/product.css"/>
@@ -16,7 +17,6 @@
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="/lib/ratchet.min.js"></script>
     <script type="text/javascript" src="/lib/swiper-3.4.2.jquery.min.js"></script>
-    <link rel="stylesheet" href="/lib/swiper-3.4.2.min.css">
     <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Address;
 use App\Cart;
+use App\Commodity;
 use App\Member;
 use App\Order;
 use Validator;
@@ -133,7 +134,7 @@ class memberController extends Controller
 
         if ($request->isMethod('get')) {
             $carts = $cartModel->where('carts.uid', $mid)
-                ->select('carts.id', 'commoditys.name', 'commoditys.price', 'images.src', 'carts.sum')
+                ->select('carts.id', 'commoditys.id as commodty_id', 'carts.total', 'commoditys.name', 'commoditys.price', 'images.src', 'carts.sum')
                 ->leftJoin('commoditys', 'carts.cid', 'commoditys.id')
                 ->leftJoin('images', 'images.cid', 'commoditys.id')
                 ->groupby('commoditys.id')
@@ -157,17 +158,53 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 100,]);
             }
 
+            $total = (new Commodity())->select('price')->find($cid);
+
             if ($cartModel->where('cid', $cid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
                 $cartModel->uid = $mid;
                 $cartModel->cid = $cid;
                 $cartModel->sum = $request->input('sum', 1);
+                $cartModel->total = $request->input('sum', 1) * $total['price'];
                 $ret = $cartModel->save();
 
                 if ($ret) {
                     return response()->json(['statusCode' => 200]);
                 }
+            }
+        }
+    }
+
+    public function cartDel(Request $request, $id)
+    {
+        $cart = new Cart();
+
+        if ($request->isMethod('get')) {
+            $ret = $cart->where('id', $id)->delete();
+
+            if ($ret) {
+                return redirect('/cart');
+            }
+        } else {
+            $validator = Validator::make($request->all(), [
+                'sum' => 'required',
+                'total' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['statusCode' => 100]);
+            }
+
+            $ret = $cart->where('id', $id)->update([
+                'sum' => $request->input('sum'),
+                'total' => $request->input('total'),
+            ]);
+
+            if ($ret) {
+                return response()->json(['statusCode' => 200]);
+            } else {
+                return response()->json(['statusCode' => 300]);
             }
         }
     }
