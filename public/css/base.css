@@ -165,3 +165,7 @@ a:active {
 .nav div {
     flex-grow: 1;
 }
+
+.nav div.active {
+    color: red;
+}

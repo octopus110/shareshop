@@ -24,14 +24,14 @@
 }
 
 .cart-img {
-    width: 20%;
-    height: 18.75vw;
+    width: 30%;
+    height: 28vw;
     overflow: hidden;
-    margin-right: 4%;
+    margin-right: 3%;
 }
 
 .cart-content {
-    width: 76%;
+    width: 56%;
 }
 
 .cart-content h3 {
@@ -68,4 +68,23 @@
 
 .icon-queren-copy {
     color: red !important;
+}
+
+.checkbox {
+    padding: 10vw 3vw;
+}
+
+.checkbox input {
+    border: 1px red solid;
+}
+
+.pay {
+    display: block;
+    width: 80vw;
+    height: 10vw;
+    margin: 10vw auto;
+    border: 1px #ccc solid;
+    background: #fff;
+    border-radius: 1.5vw;
+
 }

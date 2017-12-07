@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
-    <title>商城</title>
+    <title>EOS商城</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
@@ -18,11 +18,13 @@
 
 @foreach($carts as $item)
     <section class="carts">
-        <a href="/details/{{ $item->commodty_id }}">
-            <div class="left cart-img">
-                <img src="/uploads/{{ $item->src  }}" alt="" width="100%">
-            </div>
-        </a>
+        <div class="left checkbox">
+            <input type="checkbox" name="id[]" value="{{ $item->id }}"/>
+        </div>
+
+        <div class="left cart-img">
+            <img src="/uploads/{{ $item->src  }}" alt="" width="100%">
+        </div>
 
         <div class="left cart-content">
             <a href="/details/{{ $item->commodty_id }}">
@@ -33,6 +35,7 @@
                 <i class="iconfont icon-jian" onclick="commidty_sum(this,0)"></i>
                 <i class="sum">{{ $item->sum }}</i>
                 <i class="iconfont icon-jia" onclick="commidty_sum(this,1)"></i>
+                <br/>
                 <span>
                     ￥<i class="total">{{ $item->total }}</i>
                      <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
@@ -41,7 +44,7 @@
                 <a href="/cart/deal/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
-
+                <em style="padding:1px 2vw;"> </em>
                 <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
             </p>
 
@@ -51,11 +54,7 @@
     </section>
 @endforeach
 
-<footer class="footer footer-bottom">
-    <p><img src="/images/tmp/7.png" alt=""></p>
-
-    <p>@版权 版权 版权</p>
-</footer>
+<input type="button" value="支付" class="pay">
 
 <script type="text/javascript">
 
@@ -64,7 +63,7 @@
         var total = $(that).parent().find('.total');
 
         var price = $(that).parent().find('.price');
-        var submit = $(that).parent().find('.submit');
+        var submit = $(that).parent().parent().find('.submit');
 
         var cu_sum = parseInt(sum.text());
         var t_sum = 0;

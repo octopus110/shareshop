@@ -6,7 +6,7 @@
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>商城</title>
+    <title>EOS商城</title>
     <link rel="stylesheet" href="/css/login.css">
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
 </head>

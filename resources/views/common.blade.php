@@ -6,7 +6,7 @@
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>mall</title>
+    <title>EOS商城</title>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/iconfont.css">
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
@@ -17,17 +17,17 @@
 @yield('content','')
 
 <nav class="nav">
-    <div><a href="/">
+    <div class="{{ Request::path()=='/'?'active':'' }}"><a href="/">
             <i class="iconfont icon-shouye"></i>
 
             <p>首页</p>
         </a></div>
-    <div><a href="/list">
+    <div class="{{ Request::path()=='list'?'active':'' }}"><a href="/list">
             <i class="iconfont icon-weibiaoti--"></i>
 
             <p>列表</p>
         </a></div>
-    <div><a href="/member">
+    <div class="{{ Request::path()=='member'?'active':'' }}"><a href="/member">
             <i class="iconfont icon-gerenzhongxinxia"></i>
 
             <p>我的</p>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
-    <title>商城</title>
+    <title>EOS商城</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/address.css">
@@ -19,7 +19,8 @@
 @foreach($address as $item)
     <section class="address">
         <p>
-            <a href="/address/deal/{{ $item->id }}/1"><i class="iconfont icon-sheweimoren {{ $item->type?'sheweimoren':'' }}"></i></a>
+            <a href="/address/deal/{{ $item->id }}/1"><i
+                        class="iconfont icon-sheweimoren {{ $item->type?'sheweimoren':'' }}"></i></a>
             {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
         </p>
         <a href="/address/edit/{{ $item->id }}"><i class="iconfont icon-bianji"></i></a>
@@ -47,12 +48,6 @@
     <input type="submit" value="确认" id="address_add"/>
     <input type="button" value="取消" id="address_quit"/>
 </div>
-
-<footer class="footer footer-bottom">
-    <p><img src="/images/tmp/7.png" alt=""></p>
-
-    <p>@版权 版权 版权</p>
-</footer>
 
 <script src="/lib/distpicker.data.js"></script>
 <script src="/lib/distpicker.js"></script>

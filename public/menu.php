@@ -1,87 +1,76 @@
 <?php
-dd(123);
-$wechatObj = new Wechat();
+header("Content-type: text/html; charset=utf-8");
+define("ACCESS_TOKEN", "sO5WqLGTBbZ7Knnzqu0_Le-0qdV0SfgVjIxZ88lHe12yzJXEY6IVnSZZItDtyhrV5AZrj7uc7gEaWLCnc7ziBzs7WNZsJBep8kvv45t0KFQQeBnOTbcG8-cRfIKzi3i7YKAgACATFV");
 
-$creatMenu = $wechatObj->getAccessToken();
-//creatMenu
-var_dump($creatMenu);
-
-class Wechat
-{
-    public $appid = 'wx45758c4b029a3bcc';
-    protected $appsecret = '3d47b3bee2474f09b16e5ff6500e31f5';
-
-    //获得token
-    public function getAccessToken()
-    {
-
-        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" . $this->appid . "&secret=" . $this->appsecret;
-        $data = getCurl($url);
-        $resultArr = json_decode($data, true);
-        return $resultArr["access_token"];
-    }
-
-    //创建菜单
-    public function creatMenu()
-    {
-        $accessToken = $this->getAccessToken();
-        $menuPostString = ' {
-                             "button":[
-                             {
-                                  "type":"click",
-                                  "name":"今日歌曲",
-                                  "key":"V1001_TODAY_MUSIC"
-                              },
-                              {
-                                   "name":"菜单",
-                                   "sub_button":[
-                                   {
-                                       "type":"view",
-                                       "name":"搜索",
-                                       "url":"http://www.soso.com/"
-                                    },
-                                    {
-                                         "type":"miniprogram",
-                                         "name":"wxa",
-                                         "url":"http://mp.weixin.qq.com",
-                                         "appid":"wx286b93c14bbf93aa",
-                                         "pagepath":"pages/lunar/index"
-                                     },
-                                    {
-                                       "type":"click",
-                                       "name":"赞一下我们",
-                                       "key":"V1001_GOOD"
-                                    }]
-                               }]
-                         }';
-
-        $menuPostUrl = " https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" . $accessToken;
-        $menu = dataPost($menuPostString, $menuPostUrl);
-
-        return $menu;
-    }
-}
-
-function getCurl($url)
+function createMenu($data)
 {
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    $result = curl_exec($ch);
+    curl_setopt($ch, CURLOPT_URL, "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=" . ACCESS_TOKEN);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (compatible; MSIE 5.01; Windows NT 5.0)');
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+    curl_setopt($ch, CURLOPT_AUTOREFERER, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $tmpInfo = curl_exec($ch);
+    if (curl_errno($ch)) {
+        return curl_error($ch);
+    }
+
     curl_close($ch);
-    return $result;
+    return $tmpInfo;
+
 }
 
-function dataPost($post_string, $url)
+//获取菜单
+function getMenu()
 {
-    $context = array('http' =>
-        array('method' => "POST",
-            'header' => "User-Agent:Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US) \r\n Accept: */*",
-            'content' => $post_string)
-    );
-    $stream_context = stream_context_create($context);
-    $data = file_get_contents($url, FALSE, $stream_context);
-    return $data;
+    return file_get_contents("https://api.weixin.qq.com/cgi-bin/menu/get?access_token=" . ACCESS_TOKEN);
 }
+
+//删除菜单
+function deleteMenu()
+{
+    return file_get_contents("https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=" . ACCESS_TOKEN);
+}
+
+
+$data = '{
+     "button":[
+     {
+          "type":"view",
+          "name":"商城首页",
+          "url":"http://mall.eos-tech.cn/"
+      },
+      {
+          "type":"view",
+          "name":"全部商品",
+          "url":"http://mall.eos-tech.cn/list"
+      },
+      {
+           "name":"我的",
+           "sub_button":[
+            {
+               "type":"view",
+                "name":"我的账户",
+                "url":"http://mall.eos-tech.cn/member"
+            },
+            {
+               "type":"view",
+                "name":"购物车",
+                "url":"http://mall.eos-tech.cn/cart"
+            },
+            {
+               "type":"view",
+                "name":"查看物流",
+                "url":"http://mall.eos-tech.cn/member"
+            }]
+       }]
+}';
+
+
+echo createMenu($data);
+//echo getMenu();
+//echo deleteMenu();
