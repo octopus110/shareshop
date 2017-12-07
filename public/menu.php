@@ -1,5 +1,5 @@
 <?php
-
+dd(123);
 $wechatObj = new Wechat();
 
 $creatMenu = $wechatObj->getAccessToken();
@@ -14,7 +14,7 @@ class Wechat
     //获得token
     public function getAccessToken()
     {
-        dd(123);
+
         $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=" . $this->appid . "&secret=" . $this->appsecret;
         $data = getCurl($url);
         $resultArr = json_decode($data, true);
