@@ -6,7 +6,7 @@ return [
      *
      * 当值为 false 时，所有的日志都不会记录
      */
-    'debug'  => true,
+    'debug' => true,
 
     /*
      * 使用 Laravel 的缓存系统
@@ -16,9 +16,9 @@ return [
     /*
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id'  => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
-    'secret'  => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
-    'token'   => env('WECHAT_TOKEN', 'DGQOS2zcxmCwCNRDhCy4oKfcGNJEA03VCffFZLFKBmdtTd2yh0ouQ0nEJRqOIwIFoNiLVm8jp0hdRrHojg4gci-RdiYF6BE2CP7x-Oe5K5XyTORq3FQb9tb2F6K0TIloZCHiAGAEHM'),          // Token
+    'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
+    'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
+    'token' => env('WECHAT_TOKEN', 'mall'),          // Token
     'aes_key' => env('WECHAT_AES_KEY', ''),                    // EncodingAESKey
 
     /**
@@ -63,7 +63,7 @@ return [
      */
     'log' => [
         'level' => env('WECHAT_LOG_LEVEL', 'debug'),
-        'file'  => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
+        'file' => env('WECHAT_LOG_FILE', storage_path('logs/wechat.log')),
     ],
 
     /*
@@ -82,16 +82,16 @@ return [
     /*
      * 微信支付
      */
-     'payment' => [
-         'merchant_id'        => env('WECHAT_PAYMENT_MERCHANT_ID', 'your-mch-id'),
-         'key'                => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-         'cert_path'          => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), // XXX: 绝对路径！！！！
-         'key_path'           => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/your/key'),      // XXX: 绝对路径！！！！
-         // 'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO', ''),
-         // 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
-         // 'sub_merchant_id' => env('WECHAT_PAYMENT_SUB_MERCHANT_ID', ''),
-         // ...
-     ],
+    'payment' => [
+        'merchant_id' => env('WECHAT_PAYMENT_MERCHANT_ID', 'your-mch-id'),
+        'key' => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
+        'cert_path' => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), // XXX: 绝对路径！！！！
+        'key_path' => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/your/key'),      // XXX: 绝对路径！！！！
+        // 'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO', ''),
+        // 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
+        // 'sub_merchant_id' => env('WECHAT_PAYMENT_SUB_MERCHANT_ID', ''),
+        // ...
+    ],
 
     /*
      * 开发模式下的免授权模拟授权用户资料
