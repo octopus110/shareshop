@@ -252,6 +252,47 @@
                 }
             });
         });
+
+        $(".buy").click(function () {
+            $(".clickwn").click();
+        });
+
+        $(".directorder").click(function () {
+
+            var natureCotainer = $("#natureCotainer");
+            var attr = natureCotainer.find('a.selected');
+            var amount = $("#amount");
+            var attrV = '';
+            var sum = 0;
+
+            for (var i = 0; i < attr.length; i++) {
+                attrV += attr.eq(i).text() + ',';
+            }
+
+            sum = parseInt(amount.text());
+
+
+            $.ajax({
+                url: '/create/order',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    id: ' {{ $data->id }}',
+                    attr: attrV,
+                    sum: sum,
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (data) {
+                    if (data.statusCode == 200) {
+                        window.location.href = '/create/order/' + data.id
+                    } else if (data.statusCode == 500) {
+                        window.location.href = '/login';
+                    } else {
+                        alert('网络不稳定，请重试');
+                    }
+                }
+            });
+        });
     })
 </script>
 </html>

@@ -1,0 +1,95 @@
+.address-header {
+    height: 9.7vw;
+    background: #fff;
+    line-height: 9.7vw;
+    text-align: center;
+    font-size: 3.8vw;
+    position: relative;
+}
+
+.address-header a {
+    display: inline-block;
+    height: 9.7vw;
+    line-height: 9.7vw;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 3.3vw;
+}
+
+.address {
+    background: #fff;
+    padding: 1vw;
+    margin-top: 1vw;
+}
+.address i{
+    padding-right:2vw;
+}
+
+.address p {
+    padding: 0.5vw 0;
+}
+
+.commdity {
+    width: 98vw;
+    height: 30vw;
+    padding: 1vw;
+    background: #fff;
+    margin-top: 2vw;
+    overflow: hidden;
+}
+
+.commdity div {
+    float: left;
+}
+
+.commdity img {
+    max-height: 30vw;
+}
+
+.commdity .c_img {
+    width: 30vw;
+}
+
+.commdity .c_info {
+    width: 64vw;
+    padding: 2vw;
+    height: 86%;
+    position: relative;
+}
+
+.commdity .c_info h6 {
+    padding: 3.5vw 0;
+}
+
+.commdity .c_info p {
+    position: absolute;
+    bottom: 2vw;
+    left: 2vw;
+}
+
+.c_info i{
+    font-size: 3vw;
+    padding-right: 2vw;
+}
+
+.price {
+    color: red;
+}
+
+.sum {
+    padding: 2vw;
+    background: #fff;
+    margin-top: 2vw;
+    text-align: right;
+}
+
+.pay {
+    display: block;
+    width: 80vw;
+    height: 10vw;
+    margin: 10vw auto;
+    border: 1px #ccc solid;
+    background: #fff;
+    border-radius: 1.5vw;
+}

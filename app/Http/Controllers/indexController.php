@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Classify;
 use App\Commodity;
 use App\Image;
+use App\Order;
 use App\Property;
+use App\Address;
+use Validator;
 use Illuminate\Http\Request;
 
 class indexController extends Controller
@@ -110,5 +113,74 @@ class indexController extends Controller
             'images' => $images,
             'propertys' => $propertys
         ]);
+    }
+
+    public function c_order(Request $request, $id = 0)
+    {
+        if ($request->isMethod('get')) {
+            $orderMode = new Order();
+            $order = $orderMode->select(
+                'id', 'cid', 'uid', 'money', 'sum', 'attr'
+            )->find($id);
+
+            $address = (new Address())->where('type', 1)->select(
+                'name', 'phone', 'info'
+            )->find($order->uid);
+
+            $commdity = (new Commodity())->select(
+                'commoditys.name', 'images.src', 'commoditys.price'
+            )
+                ->leftJoin('images', 'images.cid', 'commoditys.id')
+                ->groupby('commoditys.id')
+                ->find($order->cid);
+
+            /*
+             * 生成微信支付订单信息
+             * */
+
+            return view('order', [
+                'order' => $order,
+                'address' => $address,
+                'commdity' => $commdity,
+            ]);
+        } else {
+            $validator = Validator::make($request->all(), [
+                'id' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json(['statusCode' => 100]);
+            }
+
+            $uid = $request->session()->get('mid');
+
+            if (!$uid) {
+                return response()->json(['statusCode' => 500]);
+            }
+
+            $order = new Order();
+            $id = $request->input('id');
+
+            $sid = (new Commodity())->select('sid', 'price', 'name')->find($id);
+            $money = $sid->price * $request->input('sum');
+
+            $id = $order->insertGetId([
+                'sid' => $sid->sid,
+                'cid' => $id,
+                'type' => 0,
+                'uid' => $uid,
+                'money' => $money,
+                'rid' => 'eos' . time(),
+                'sum' => $request->input('sum', 1),
+                'attr' => $request->input('attr', ''),
+                'status' => 1,
+                'proinfo' => $sid->name,
+                'delivery' => 0,
+            ]);
+
+            if ($id) {
+                return response()->json(['statusCode' => 200, 'id' => $id]);
+            }
+        }
     }
 }
