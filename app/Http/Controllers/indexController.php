@@ -126,8 +126,8 @@ class indexController extends Controller
             'payment' => [
                 'merchant_id' => '你的商户ID，MCH_ID',
                 'key' => '你的KEY',
-                'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
-                'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
+                'cert_path' => '/cert/apiclient_cert.pem', // XXX: 绝对路径！！！！
+                'key_path' => '/cert/apiclient_key.pem',      // XXX: 绝对路径！！！！
 //                /'notify_url' => '你的回调地址',       // 你也可以在下单时单独设置来想覆盖它
                 // 'device_info'     => '013467007045764',
                 // 'sub_app_id'      => '',
