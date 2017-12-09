@@ -127,9 +127,9 @@ class indexController extends Controller
             'payment' => [
                 'merchant_id' => '1494016742',
                 'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
-                'cert_path' => 'http://mall.eos-tech.cn/cert/apiclient_cert.pem',
-                'key_path' => 'http://mall.eos-tech.cn/cert/apiclient_key.pem',
-                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',// 你也可以在下单时单独设置来想覆盖它
+                'cert_path' => '/var/www/shareshop/public/cert/apiclient_cert.pem',
+                'key_path' => '/var/www/shareshop/public/cert/apiclient_key.pem',
+                'notify_url' => 'http://www.shashop.com/wechat/back',// 你也可以在下单时单独设置来想覆盖它
             ],
         ];
     }
@@ -156,19 +156,18 @@ class indexController extends Controller
             /*
              * 生成微信支付订单信息
              * */
-            $mch_id = 1494016742;//你的MCH_ID
             $options = $this->options();
             $app = new Application($options);
             $payment = $app->payment;
 
             $attributes = [
                 'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+                'openid' => 'wx45758c4b029a3bcc',
                 'body' => '购买EOS产品',
                 'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
                 'out_trade_no' => $order->rid,
                 'total_fee' => $order->money * 100,
                 'notify_url' => 'http://mall.eos-tech.cn/wechat/back',
-                'openid' => 'wx45758c4b029a3bcc',
             ];
 
             $orderwechat = new \EasyWeChat\Payment\Order($attributes);
