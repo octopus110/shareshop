@@ -8,6 +8,7 @@ use App\Image;
 use App\Order;
 use App\Property;
 use App\Address;
+use EasyWeChat\Foundation\Application;
 use Validator;
 use Illuminate\Http\Request;
 
@@ -124,15 +125,11 @@ class indexController extends Controller
 
             // payment
             'payment' => [
-                'merchant_id' => '你的商户ID，MCH_ID',
-                'key' => '你的KEY',
-                'cert_path' => '/cert/apiclient_cert.pem', // XXX: 绝对路径！！！！
-                'key_path' => '/cert/apiclient_key.pem',      // XXX: 绝对路径！！！！
-//                /'notify_url' => '你的回调地址',       // 你也可以在下单时单独设置来想覆盖它
-                // 'device_info'     => '013467007045764',
-                // 'sub_app_id'      => '',
-                // 'sub_merchant_id' => '',
-                // ...
+                'merchant_id' => '1494016742',
+                'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
+                'cert_path' => 'http://mall.eos-tech.cn/cert/apiclient_cert.pem',
+                'key_path' => 'http://mall.eos-tech.cn/cert/apiclient_key.pem',
+                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',// 你也可以在下单时单独设置来想覆盖它
             ],
         ];
     }
@@ -142,7 +139,7 @@ class indexController extends Controller
         if ($request->isMethod('get')) {
             $orderMode = new Order();
             $order = $orderMode->select(
-                'id', 'cid', 'uid', 'money', 'sum', 'attr'
+                'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
             )->find($id);
 
             $address = (new Address())->where('type', 1)->select(
@@ -159,12 +156,37 @@ class indexController extends Controller
             /*
              * 生成微信支付订单信息
              * */
+            $mch_id = 1494016742;//你的MCH_ID
+            $options = $this->options();
+            $app = new Application();
+            $payment = $app->payment;
+
+            $attributes = [
+                'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+                'body' => '购买EOS产品',
+                'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
+                'out_trade_no' => $order->rid,
+                'total_fee' => $order->money * 100,
+                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',
+                'openid' => 'wx45758c4b029a3bcc',
+            ];
+
+            $orderwechat = new \EasyWeChat\Payment\Order($attributes);
+            $result = $payment->prepare($orderwechat);
+            if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+                // return response()->json(['result'=>$result]);
+                $prepayId = $result->prepay_id;
+                $config = $payment->configForAppPayment($prepayId);
+            }
+
+            $js = EasyWeChat::js();
 
 
             return view('order', [
                 'order' => $order,
                 'address' => $address,
-                'commdity' => $commdity,
+                'config' => $config,
+                'js' => $js
             ]);
         } else {
             $validator = Validator::make($request->all(), [

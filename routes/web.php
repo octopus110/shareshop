@@ -14,6 +14,7 @@ Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@edit');
 
 Route::any('/wechat', 'WechatController@serve');
+Route::any('/wechat/back', 'WechatController@back');
 
 Route::group(['prefix' => 'server'], function () {
 

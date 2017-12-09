@@ -41,4 +41,9 @@ class WechatController extends Controller
 
         return $server->serve();
     }
+
+    public function back()
+    {
+
+    }
 }
