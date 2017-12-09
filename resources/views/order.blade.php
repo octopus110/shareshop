@@ -39,7 +39,7 @@
     共 {{ $order->sum }} 件商品 &nbsp;&nbsp;&nbsp; 总计：<span class="price">￥{{ $order->money }}</span>
 </section>
 
-<input type="button" value="支付" class="pay">
+<input type="button" value="支付" class="pay" id="pay">
 
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 
