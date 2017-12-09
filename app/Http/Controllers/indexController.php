@@ -115,6 +115,28 @@ class indexController extends Controller
         ]);
     }
 
+    protected function options()
+    {
+        return [
+            'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
+            'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
+            'token' => env('WECHAT_TOKEN', 'mall'),
+
+            // payment
+            'payment' => [
+                'merchant_id' => '你的商户ID，MCH_ID',
+                'key' => '你的KEY',
+                'cert_path'          => 'path/to/your/cert.pem', // XXX: 绝对路径！！！！
+                'key_path'           => 'path/to/your/key',      // XXX: 绝对路径！！！！
+//                /'notify_url' => '你的回调地址',       // 你也可以在下单时单独设置来想覆盖它
+                // 'device_info'     => '013467007045764',
+                // 'sub_app_id'      => '',
+                // 'sub_merchant_id' => '',
+                // ...
+            ],
+        ];
+    }
+
     public function c_order(Request $request, $id = 0)
     {
         if ($request->isMethod('get')) {
@@ -137,6 +159,7 @@ class indexController extends Controller
             /*
              * 生成微信支付订单信息
              * */
+
 
             return view('order', [
                 'order' => $order,
