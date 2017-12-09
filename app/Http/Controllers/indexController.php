@@ -10,6 +10,7 @@ use App\Property;
 use App\Address;
 use EasyWeChat\Foundation\Application;
 use Validator;
+use EasyWeChat;
 use Illuminate\Http\Request;
 
 class indexController extends Controller
@@ -176,6 +177,8 @@ class indexController extends Controller
                 // return response()->json(['result'=>$result]);
                 $prepayId = $result->prepay_id;
                 $config = $payment->configForAppPayment($prepayId);
+            }else{
+                dd($result);
             }
 
             $js = EasyWeChat::js();
