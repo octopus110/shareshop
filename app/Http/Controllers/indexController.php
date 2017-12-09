@@ -158,7 +158,7 @@ class indexController extends Controller
              * */
             $mch_id = 1494016742;//你的MCH_ID
             $options = $this->options();
-            $app = new Application();
+            $app = new Application($options);
             $payment = $app->payment;
 
             $attributes = [
@@ -180,7 +180,6 @@ class indexController extends Controller
             }
 
             $js = EasyWeChat::js();
-
 
             return view('order', [
                 'order' => $order,
