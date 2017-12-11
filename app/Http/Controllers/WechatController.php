@@ -30,15 +30,23 @@ class WechatController extends Controller
                     switch ($message->Event) {
                         case 'subscribe':
                             $member = new Member();
-                            $member->nickname = $user->get($userOpenid)->nickname;
-                            $member->head = $user->get($userOpenid)->headimgurl;
-                            $ret = $member->save();
 
-                            if ($ret) {
-                                request()->session()->put('openid', $userOpenid);
-                                return $this->reply('follow_keyword');
+                            $sum = $member->where('openid', $userOpenid)->count();
+
+                            if (!$sum) {
+                                $member->openid = $userOpenid;
+                                $member->nickname = $user->get($userOpenid)->nickname;
+                                $member->head = $user->get($userOpenid)->headimgurl;
+                                $ret = $member->save();
+
+                                if ($ret) {
+                                    request()->session()->put('openid', $userOpenid);
+                                    return $this->reply('follow_keyword');
+                                } else {
+                                    return '您的信息由于某种原因没有保存，您处于未登录状态';
+                                }
                             } else {
-                                return '您的信息由于某种原因没有保存，你处于未登录状态';
+                                return '欢迎您的再次光临';
                             }
                             break;
                         default:
