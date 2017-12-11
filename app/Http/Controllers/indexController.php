@@ -128,9 +128,9 @@ class indexController extends Controller
             'payment' => [
                 'merchant_id' => '1494016742',
                 'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
-                'cert_path' => '/var/www/shareshop/public/cert/apiclient_cert.pem',
-                'key_path' => '/var/www/shareshop/public/cert/apiclient_key.pem',
-                'notify_url' => 'http://www.shashop.com/wechat/back',// 你也可以在下单时单独设置来想覆盖它
+                'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
+                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem',
+                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',// 你也可以在下单时单独设置来想覆盖它
             ],
         ];
     }
