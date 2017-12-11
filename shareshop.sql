@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-11 18:48:29
+Date: 2017-12-11 20:04:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -242,12 +242,10 @@ CREATE TABLE `informations` (
 DROP TABLE IF EXISTS `members`;
 CREATE TABLE `members` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email` varchar(30) NOT NULL,
-  `phone` varchar(15) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `openid` varchar(50) NOT NULL,
   `nickname` varchar(50) NOT NULL COMMENT '用户对应微信UID',
-  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '用户类型 0 普通用户 1 个体商',
   `head` varchar(255) DEFAULT NULL COMMENT '头像',
+  `type` tinyint(4) NOT NULL DEFAULT '0' COMMENT '用户类型 0 普通用户 1 个体商',
   `realname` varchar(20) DEFAULT NULL,
   `IDnumber` varchar(20) DEFAULT NULL,
   `sex` tinyint(1) unsigned DEFAULT '0' COMMENT '0 男 1 女',
@@ -261,8 +259,6 @@ CREATE TABLE `members` (
 -- ----------------------------
 -- Records of members
 -- ----------------------------
-INSERT INTO `members` VALUES ('6', '1169815992@qq.com', null, '1c63129ae9db9c60c3e8aa94d3e00495', '愤怒值', '0', null, null, null, '0', '0', '0', '2017-12-04 08:44:25', '2017-12-04 08:44:25');
-INSERT INTO `members` VALUES ('8', '1169856235@qq.com', null, '1qaz2wsx', '回火', '0', null, null, null, '0', '0', '0', '0000-00-00 00:00:00', null);
 
 -- ----------------------------
 -- Table structure for orders

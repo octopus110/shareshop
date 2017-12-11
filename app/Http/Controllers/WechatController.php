@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Member;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Transfer;
 use Illuminate\Http\Request;
@@ -24,9 +25,21 @@ class WechatController extends Controller
         $server->setMessageHandler(function ($message) use ($user) {
             switch ($message->MsgType) {
                 case 'event':
+                    $userOpenid = $message->FromUserName;
+
                     switch ($message->Event) {
                         case 'subscribe':
-                            return '你好' . $user->get($message->FromUserName)->nickname . '! 欢迎关注';
+                            $member = new Member();
+                            $member->nickname = $user->get($userOpenid)->nickname;
+                            $member->head = $user->get($userOpenid)->headimgurl;
+                            $ret = $member->save();
+
+                            if ($ret) {
+                                request()->session()->put('openid', $userOpenid);
+                                return $this->reply('follow_keyword');
+                            } else {
+                                return '您的信息由于某种原因没有保存，你处于未登录状态';
+                            }
                             break;
                         default:
                             return '谢谢关注';
