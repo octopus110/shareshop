@@ -42,7 +42,7 @@ class WechatController extends Controller
 
                                 if ($id) {
                                     request()->session()->put('mid', $id);
-                                    return '欢迎您的到来:' . $member->nickname;
+                                    return '欢迎您的到来:' . $user->get($userOpenid)->nickname;
                                 } else {
                                     return '您的信息由于某种原因没有保存，您处于未登录状态';
                                 }
