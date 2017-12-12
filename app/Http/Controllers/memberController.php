@@ -18,8 +18,6 @@ class memberController extends Controller
     {
         if ($request->isMethod('get')) {
 
-            dd(session('wechat.oauth_user'));
-
             /*$mid = $request->session()->get('mid');
 
             if ($mid) {
@@ -95,6 +93,9 @@ class memberController extends Controller
 
     public function member(Request $request)
     {
+
+        dd(session('wechat.oauth_user'));
+
         $memberid = $request->session()->get('mid');
         if ($memberid) {
             $ordersModel = new Order();
