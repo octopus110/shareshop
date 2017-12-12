@@ -46,7 +46,7 @@ class WechatController extends Controller
                                     return '您的信息由于某种原因没有保存，您处于未登录状态';
                                 }
                             } else {
-                                request()->session()->put('mid', $id);
+                                $request->session()->put('mid', $userInfo->id);
                                 return '欢迎您的再次光临';
                             }
                             break;
