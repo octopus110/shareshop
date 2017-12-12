@@ -180,7 +180,7 @@ class indexController extends Controller
             if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
                 // return response()->json(['result'=>$result]);
                 $prepayId = $result->prepay_id;
-                $config = $payment->configForAppPayment($prepayId);
+                $config = $payment->configForJSSDKPayment($prepayId);
             } else {
                 dd($result);
             }

@@ -48,10 +48,10 @@
     $('#pay').click(function () {
         wx.chooseWXPay({
             timestamp: '{{$config['timestamp']}}',
-            nonceStr: '{{$config['noncestr']}}',
+            nonceStr: '{{$config['nonceStr']}}',
             package: '{{$config['package']}}',
             signType: '{{$config['signType']}}',
-            paySign: '{{$config['sign']}}', // 支付签名
+            paySign: '{{$config['paySign']}}', // 支付签名
             success: function (res) {
                 // 支付成功后的回调函数
                 alert(0);
