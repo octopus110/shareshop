@@ -30,9 +30,9 @@ class WechatController extends Controller
                         case 'subscribe':
                             $member = new Member();
 
-                            $id = $member->where('openid', $userOpenid)->select('id')->first();
+                            $userInfo = $member->where('openid', $userOpenid)->select('id')->first();
 
-                            if (!$id) {
+                            if (!$userInfo) {
                                 $id = $member->insertGetId([
                                     'openid' => $userOpenid,
                                     'nickname' => $user->get($userOpenid)->nickname,
