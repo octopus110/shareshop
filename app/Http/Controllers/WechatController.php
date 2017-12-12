@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Member;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Transfer;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class WechatController extends Controller
@@ -17,12 +16,12 @@ class WechatController extends Controller
         $this->wechat = $wechat;
     }
 
-    public function serve()
+    public function serve(Request $request)
     {
         $server = $this->wechat->server;
         $user = $this->wechat->user;
 
-        $server->setMessageHandler(function ($message) use ($user) {
+        $server->setMessageHandler(function ($message) use ($user, $request) {
             switch ($message->MsgType) {
                 case 'event':
                     $userOpenid = $message->FromUserName;
@@ -41,7 +40,7 @@ class WechatController extends Controller
                                 ]);
 
                                 if ($id) {
-                                    request()->session()->put('mid', $id);
+                                    $request->session()->put('mid', $id);
                                     return '欢迎您的到来:' . $user->get($userOpenid)->nickname;
                                 } else {
                                     return '您的信息由于某种原因没有保存，您处于未登录状态';
