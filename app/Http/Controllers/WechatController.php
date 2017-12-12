@@ -18,12 +18,21 @@ class WechatController extends Controller
     public function serve()
     {
         $server = $this->wechat->server;
-        $user = $this->wechat->user;
+        $userWe = $this->wechat->user;
 
-        $server->setMessageHandler(function ($message) use ($user) {
+        $server->setMessageHandler(function ($message) use ($userWe) {
+            $userOpenid = $message->FromUserName;
             switch ($message->MsgType) {
                 case 'event':
-                    return '欢迎您的到来:' . $user->get($message->FromUserName)->nickname;
+                    $userInfo['openid'] = $userOpenid;
+                    $user = $userWe->get($userInfo['openid']);
+                    $userInfo['nickname'] = $user['nickname'];
+                    $userInfo['headimgurl'] = $user['headimgurl'];
+                    if (userAttention($userInfo)) {
+                        return $this->reply('follow_keyword');
+                    } else {
+                        return '您的信息由于某种原因没有保存，请重新关注';
+                    }
                     break;
                 case 'text':
                     return new Transfer();

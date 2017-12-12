@@ -14,34 +14,11 @@ use App\Http\Controllers\Controller;
 
 class memberController extends Controller
 {
-    public function oauth_callback()
-    {
-
-    }
-
     public function login(Request $request)
     {
         if ($request->isMethod('get')) {
 
-            $config = [
-                'oauth' => [
-                    'scopes' => ['snsapi_userinfo'],
-                    'callback' => '/oauth_callback',
-                ],
-            ];
-
-            $app = Factory::officialAccount($config);
-            $oauth = $app->oauth;
-
-            // 未登录
-            if (empty(session()->get('wechat_user'))) {
-
-                session()->put('target_url', '/login');
-                return $oauth->redirect();
-            }
-
-            $user = session()->get('wechat_user');
-            dd($user);
+            dd(session('wechat.oauth_user'));
 
             /*$mid = $request->session()->get('mid');
 
