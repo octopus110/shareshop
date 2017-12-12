@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-11 20:04:04
+Date: 2017-12-12 14:32:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -253,8 +253,9 @@ CREATE TABLE `members` (
   `getearnings` float unsigned DEFAULT '0' COMMENT '发放金额',
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `openid` (`openid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
 
 -- ----------------------------
 -- Records of members

@@ -285,8 +285,6 @@
                 success: function (data) {
                     if (data.statusCode == 200) {
                         window.location.href = '/create/order/' + data.id
-                    } else if (data.statusCode == 500) {
-                        window.location.href = '/login';
                     } else {
                         alert('网络不稳定，请重试');
                     }

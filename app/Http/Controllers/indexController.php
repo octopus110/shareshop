@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Classify;
 use App\Commodity;
 use App\Image;
+use App\Member;
 use App\Order;
 use App\Property;
 use App\Address;
@@ -137,6 +138,9 @@ class indexController extends Controller
 
     public function c_order(Request $request, $id = 0)
     {
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+
         if ($request->isMethod('get')) {
             $orderMode = new Order();
             $order = $orderMode->select(
@@ -161,8 +165,6 @@ class indexController extends Controller
             $app = new Application($options);
             $payment = $app->payment;
 
-            $user = session('wechat.oauth_user');
-            $openid = $user['id'];
 
             $attributes = [
                 'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
@@ -201,11 +203,8 @@ class indexController extends Controller
                 return response()->json(['statusCode' => 100]);
             }
 
-            $uid = $request->session()->get('mid');
-
-            if (!$uid) {
-                return response()->json(['statusCode' => 500]);
-            }
+            $uid = (new Member())->where('openid', $openid)->select('id')->first();
+            $uid = $uid->id;
 
             $order = new Order();
             $id = $request->input('id');
