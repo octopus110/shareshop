@@ -103,6 +103,7 @@ class memberController extends Controller
             $memberid = $memberModel->where('openid', $openid)->select('id')->first();
 
             if ($memberid) {
+                $memberid = $memberid->id;
                 $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings')->find($memberid);
 
                 $carts = $cartsModel->where('uid', $memberid)->count();
