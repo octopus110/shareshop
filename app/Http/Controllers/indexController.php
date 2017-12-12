@@ -17,7 +17,7 @@ class indexController extends Controller
 {
     public function index(Request $request)
     {
-        dd($_SESSION);
+        dd(session()->all());
         $imageModel = new Image();
         $banner = $imageModel->where('classify', 1)->select('id', 'src')->get();
 
