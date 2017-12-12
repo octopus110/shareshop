@@ -98,12 +98,14 @@ class memberController extends Controller
         if ($openid) {
             $ordersModel = new Order();
             $memberModel = new Member();
+            $cartsModel = new Cart();
+
             $memberid = $memberModel->where('openid', $openid)->select('id')->first();
 
             if ($memberid) {
                 $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings')->find($memberid);
 
-                $carts = (new Cart())->where('uid', $memberid)->count();
+                $carts = $cartsModel->where('uid', $memberid)->count();
                 $sends = $ordersModel->where([
                     ['uid', '=', $memberid],
                     ['status', '=', 0],
@@ -134,6 +136,8 @@ class memberController extends Controller
             } else {
                 $t = '晚上好';
             }
+
+            dd($member);
 
             return view('member', [
                 'member' => $member,
