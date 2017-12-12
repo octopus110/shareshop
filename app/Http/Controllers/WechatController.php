@@ -16,12 +16,12 @@ class WechatController extends Controller
         $this->wechat = $wechat;
     }
 
-    public function serve(Request $request)
+    public function serve()
     {
         $server = $this->wechat->server;
         $user = $this->wechat->user;
 
-        $server->setMessageHandler(function ($message) use ($user, $request) {
+        $server->setMessageHandler(function ($message) use ($user) {
             switch ($message->MsgType) {
                 case 'event':
                     $userOpenid = $message->FromUserName;
@@ -40,13 +40,14 @@ class WechatController extends Controller
                                 ]);
 
                                 if ($id) {
-                                    $request->session()->put('mid', $id);
+                                    $_SESSION['mid'] = $id;
+
                                     return '欢迎您的到来:' . $user->get($userOpenid)->nickname;
                                 } else {
                                     return '您的信息由于某种原因没有保存，您处于未登录状态';
                                 }
                             } else {
-                                $request->session()->put('mid', $userInfo->id);
+                                $_SESSION['mid'] = $userInfo->id;
                                 return '欢迎您的再次光临';
                             }
                             break;
