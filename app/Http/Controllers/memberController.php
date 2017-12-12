@@ -138,8 +138,6 @@ class memberController extends Controller
                 $t = '晚上好';
             }
 
-            dd($member);
-
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,

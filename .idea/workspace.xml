@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/public/css/index.css" line="56" />
-    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php" line="181" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php" line="179" mnemonic="9" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="">
@@ -75,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.5351438">
-              <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+              <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
                 <element signature="e#275#2939#0#PHP" expanded="false" />
@@ -818,7 +818,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5351438">
-          <caret line="105" column="42" selection-start-line="105" selection-start-column="42" selection-end-line="105" selection-end-column="42" />
+          <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
             <element signature="e#275#2939#0#PHP" expanded="false" />
