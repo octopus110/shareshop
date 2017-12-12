@@ -50,6 +50,7 @@
             timestamp: '{{$config['timestamp']}}',
             nonceStr: '{{$config['noncestr']}}',
             package: '{{$config['package']}}',
+            signType: '{{$config['signType']}}',
             paySign: '{{$config['sign']}}', // 支付签名
             success: function (res) {
                 // 支付成功后的回调函数
