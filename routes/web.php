@@ -1,10 +1,9 @@
 <?php
+//Route::any('/login', 'memberController@login');
 Route::get('/', 'indexController@index');
 Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::any('/details/{id?}', 'indexController@detail');
-Route::any('/create/order/{id?}', 'indexController@c_order');//生成订单
-Route::any('/login', 'memberController@login');
 
 Route::any('/cart', 'memberController@carts');
 Route::any('/cart/deal/{id?}', 'memberController@cartDel');
@@ -16,7 +15,8 @@ Route::any('/address/edit/{id?}', 'memberController@edit');
 Route::any('/wechat', 'WechatController@serve');
 
 Route::group(['middleware' => 'wechat.oauth'], function () {
-    Route::get('/member', 'memberController@member');
+    Route::get('/member', 'memberController@member'); //用户页面
+    Route::any('/create/order/{id?}', 'indexController@c_order');//生成订单
 });
 
 Route::group(['prefix' => 'server'], function () {

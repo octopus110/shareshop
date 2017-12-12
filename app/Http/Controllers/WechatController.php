@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Transfer;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cookie;
 
 class WechatController extends Controller
 {
@@ -28,6 +29,7 @@ class WechatController extends Controller
                     $user = $userWe->get($userInfo['openid']);
                     $userInfo['nickname'] = $user['nickname'];
                     $userInfo['headimgurl'] = $user['headimgurl'];
+
                     if (userAttention($userInfo)) {
                         return $this->reply('follow_keyword');
                     } else {

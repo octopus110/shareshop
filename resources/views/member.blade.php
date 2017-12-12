@@ -5,10 +5,10 @@
 @section('content')
     <section class="member-info">
         <div class="left">
-            <img src="{{ $member->head?$member->head:'/images/tmp/5.png' }}" alt="">
+            <img src="{{ $member['head']?$member['head']:'/images/tmp/5.png' }}" alt="">
         </div>
         <div class="left">
-            <p>{{ $member->nickname }}</p>
+            <p>{{ $member['nickname'] }}</p>
 
             <p>{{ $t }}</p>
         </div>
@@ -42,12 +42,12 @@
                 <td>
                     <h6><i class="iconfont icon-tixian"></i></h6>
 
-                    <p>提现(<span>{{ $member->getearnings }}</span>)</p>
+                    <p>提现(<span>{{ $member['getearnings'] }}</span>)</p>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-yuecopy"></i></h6>
 
-                    <p>我的余额(<span>￥{{ $member->earnings }}</span>)</p>
+                    <p>我的余额(<span>￥{{ $member['earnings'] }}</span>)</p>
                 </td>
                 <td>
                     <a href="/address">

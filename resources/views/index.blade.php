@@ -5,11 +5,11 @@
 @endsection
 
 @section('content')
-    @if(!$mid)
+{{--    @if(!$mid)
         <div class="login">
             <a href="/login">登录 / 注册</a>
         </div>
-    @endif
+    @endif--}}
 
     <div class="swiper-container swiper-banner">
         <div class="swiper-wrapper">

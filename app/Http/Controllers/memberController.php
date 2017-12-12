@@ -14,11 +14,11 @@ use App\Http\Controllers\Controller;
 
 class memberController extends Controller
 {
-    public function login(Request $request)
+    /*public function login(Request $request)
     {
         if ($request->isMethod('get')) {
 
-            /*$mid = $request->session()->get('mid');
+            $mid = $request->session()->get('mid');
 
             if ($mid) {
                 return redirect('/');
@@ -26,7 +26,7 @@ class memberController extends Controller
                 return view('login', [
                     'redirect_url' => session()->get('redirect_url'),
                 ]);
-            }*/
+            }
         } else {
             $validator = Validator::make($request->all(), [
                 'type' => 'required'
@@ -89,24 +89,39 @@ class memberController extends Controller
                     break;
             }
         }
-    }
+    }*/
 
     public function member(Request $request)
     {
-
-        dd(session('wechat.oauth_user'));
-
-        $memberid = $request->session()->get('mid');
-        if ($memberid) {
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+        if ($openid) {
             $ordersModel = new Order();
+            $memberModel = new Member();
+            $memberid = $memberModel->where('openid', $openid)->select('id')->first();
 
-            $member = (new Member())->select('nickname', 'head', 'earnings', 'getearnings')->find($memberid);
-            $carts = (new Cart())->where('uid', $memberid)->count();
-            $sends = $ordersModel->where([
-                ['uid', '=', $memberid],
-                ['status', '=', 0],
-                ['delivery', '<>', 2],
-            ])->count();
+            if ($memberid) {
+                $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings')->find($memberid);
+
+                $carts = (new Cart())->where('uid', $memberid)->count();
+                $sends = $ordersModel->where([
+                    ['uid', '=', $memberid],
+                    ['status', '=', 0],
+                    ['delivery', '<>', 2],
+                ])->count();
+            } else {
+                $member = [
+                    'openid' => $openid,
+                    'nickname' => $user['nickname'],
+                    'head' => $user['avatar'],
+                    'earnings' => 0,
+                    'getearnings' => 0
+                ];
+                $memberModel->insertGetId($member);
+
+                $carts = 0;
+                $sends = 0;
+            }
 
             $h = date('G');
 

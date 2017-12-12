@@ -43,7 +43,7 @@ class indexController extends Controller
             'newcommoditys' => $newcommoditys,
             'classify' => $classify,
             'salescommoditys' => $salescommoditys,
-            'mid' => session()->get('mid')
+            /*'mid' => session()->get('mid')*/
         ]);
     }
 
@@ -161,9 +161,12 @@ class indexController extends Controller
             $app = new Application($options);
             $payment = $app->payment;
 
+            $user = session('wechat.oauth_user');
+            $openid = $user['id'];
+
             $attributes = [
                 'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
-                'openid' => 'wx45758c4b029a3bcc',
+                'openid' => $openid,
                 'body' => '购买EOS产品',
                 'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
                 'out_trade_no' => $order->rid,
