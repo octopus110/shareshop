@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use EasyWeChat\Foundation\Application;
 use EasyWeChat\Message\Transfer;
+use App\Http\Controllers\Controller;
 
 class WechatController extends Controller
 {

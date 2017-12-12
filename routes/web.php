@@ -15,6 +15,7 @@ Route::any('/address/edit/{id?}', 'memberController@edit');
 
 Route::any('/wechat', 'WechatController@serve');
 Route::any('/wechat/back', 'WechatController@back');
+Route::any('/oauth_callback', 'memberController@oauth_callback');
 
 Route::group(['prefix' => 'server'], function () {
 

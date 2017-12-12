@@ -7,17 +7,43 @@ use App\Cart;
 use App\Commodity;
 use App\Member;
 use App\Order;
+use EasyWeChat\Factory;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class memberController extends Controller
 {
+    public function oauth_callback()
+    {
+
+    }
+
     public function login(Request $request)
     {
         if ($request->isMethod('get')) {
 
-            $mid = $request->session()->get('mid');
+            $config = [
+                'oauth' => [
+                    'scopes' => ['snsapi_userinfo'],
+                    'callback' => '/oauth_callback',
+                ],
+            ];
+
+            $app = Factory::officialAccount($config);
+            $oauth = $app->oauth;
+
+            // 未登录
+            if (empty(session()->get('wechat_user'))) {
+
+                session()->put('target_url', '/login');
+                return $oauth->redirect();
+            }
+
+            $user = session()->get('wechat_user');
+            dd($user);
+
+            /*$mid = $request->session()->get('mid');
 
             if ($mid) {
                 return redirect('/');
@@ -25,7 +51,7 @@ class memberController extends Controller
                 return view('login', [
                     'redirect_url' => session()->get('redirect_url'),
                 ]);
-            }
+            }*/
         } else {
             $validator = Validator::make($request->all(), [
                 'type' => 'required'
