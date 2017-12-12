@@ -185,14 +185,12 @@ class indexController extends Controller
                 dd($result);
             }
 
-            $js = EasyWeChat::js();
-
             return view('order', [
                 'order' => $order,
                 'address' => $address,
                 'commdity' => $commdity,
                 'config' => $config,
-                'js' => $js
+                'js' => $app->js
             ]);
         } else {
             $validator = Validator::make($request->all(), [

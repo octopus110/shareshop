@@ -51,7 +51,7 @@
             nonceStr: '{{$config['nonceStr']}}',
             package: '{{$config['package']}}',
             signType: '{{$config['signType']}}',
-            paySign: '{{$config['paySign']}}', // 支付签名
+            paySign: '{{$config['paySign']}}',
             success: function (res) {
                 // 支付成功后的回调函数
                 alert(0);
