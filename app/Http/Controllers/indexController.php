@@ -185,6 +185,8 @@ class indexController extends Controller
                 dd($result);
             }
 
+            dd($config);
+
             $js = EasyWeChat::js();
 
             return view('order', [
