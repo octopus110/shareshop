@@ -165,7 +165,6 @@ class indexController extends Controller
             $app = new Application($options);
             $payment = $app->payment;
 
-
             $attributes = [
                 'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
                 'openid' => $openid,
@@ -191,6 +190,7 @@ class indexController extends Controller
             return view('order', [
                 'order' => $order,
                 'address' => $address,
+                'commdity' => $commdity,
                 'config' => $config,
                 'js' => $js
             ]);
