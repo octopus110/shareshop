@@ -284,7 +284,7 @@
                 },
                 success: function (data) {
                     if (data.statusCode == 200) {
-                        window.location.href = '/create/order/' + data.id
+                        window.location.href = '/pay'
                     } else {
                         alert('网络不稳定，请重试');
                     }

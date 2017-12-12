@@ -136,97 +136,105 @@ class indexController extends Controller
         ];
     }
 
-    public function c_order(Request $request, $id = 0)
+    public function pay(Request $request)
+    {
+        $id = $request->session()->get('order_id');
+        
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+
+        $orderMode = new Order();
+        $order = $orderMode->select(
+            'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
+        )->find($id);
+
+        $address = (new Address())->where('type', 1)->select(
+            'name', 'phone', 'info'
+        )->find($order->uid);
+
+        $commdity = (new Commodity())->select(
+            'commoditys.name', 'images.src', 'commoditys.price'
+        )
+            ->leftJoin('images', 'images.cid', 'commoditys.id')
+            ->groupby('commoditys.id')
+            ->find($order->cid);
+
+        /*
+         * 生成微信支付订单信息
+         * */
+        $options = $this->options();
+        $app = new Application($options);
+        $payment = $app->payment;
+
+        $attributes = [
+            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+            'openid' => $openid,
+            'body' => '购买EOS产品',
+            'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
+            'out_trade_no' => $order->rid,
+            'total_fee' => $order->money * 100,
+            'notify_url' => 'http://mall.eos-tech.cn/wechat/back',
+        ];
+
+        $orderwechat = new \EasyWeChat\Payment\Order($attributes);
+        $result = $payment->prepare($orderwechat);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+            // return response()->json(['result'=>$result]);
+            $prepayId = $result->prepay_id;
+            $config = $payment->configForJSSDKPayment($prepayId);
+        } else {
+            dd($result);
+        }
+
+        return view('order', [
+            'order' => $order,
+            'address' => $address,
+            'commdity' => $commdity,
+            'config' => $config,
+            'js' => $app->js
+        ]);
+    }
+
+    public function order(Request $request)
     {
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
-        if ($request->isMethod('get')) {
-            $orderMode = new Order();
-            $order = $orderMode->select(
-                'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
-            )->find($id);
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+        ]);
 
-            $address = (new Address())->where('type', 1)->select(
-                'name', 'phone', 'info'
-            )->find($order->uid);
+        if ($validator->fails()) {
+            return response()->json(['statusCode' => 100]);
+        }
 
-            $commdity = (new Commodity())->select(
-                'commoditys.name', 'images.src', 'commoditys.price'
-            )
-                ->leftJoin('images', 'images.cid', 'commoditys.id')
-                ->groupby('commoditys.id')
-                ->find($order->cid);
+        $uid = (new Member())->where('openid', $openid)->select('id')->first();
+        $uid = $uid->id;
 
-            /*
-             * 生成微信支付订单信息
-             * */
-            $options = $this->options();
-            $app = new Application($options);
-            $payment = $app->payment;
+        $order = new Order();
+        $id = $request->input('id');
 
-            $attributes = [
-                'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
-                'openid' => $openid,
-                'body' => '购买EOS产品',
-                'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
-                'out_trade_no' => $order->rid,
-                'total_fee' => $order->money * 100,
-                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',
-            ];
+        $sid = (new Commodity())->select('sid', 'price', 'name')->find($id);
+        $money = $sid->price * $request->input('sum');
 
-            $orderwechat = new \EasyWeChat\Payment\Order($attributes);
-            $result = $payment->prepare($orderwechat);
-            if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
-                // return response()->json(['result'=>$result]);
-                $prepayId = $result->prepay_id;
-                $config = $payment->configForJSSDKPayment($prepayId);
-            } else {
-                dd($result);
-            }
+        $id = $order->insertGetId([
+            'sid' => $sid->sid,
+            'cid' => $id,
+            'type' => 0,
+            'uid' => $uid,
+            'money' => $money,
+            'rid' => 'eos' . time(),
+            'sum' => $request->input('sum', 1),
+            'attr' => $request->input('attr', ''),
+            'status' => 1,
+            'proinfo' => $sid->name,
+            'delivery' => 0,
+        ]);
 
-            return view('order', [
-                'order' => $order,
-                'address' => $address,
-                'commdity' => $commdity,
-                'config' => $config,
-                'js' => $app->js
-            ]);
-        } else {
-            $validator = Validator::make($request->all(), [
-                'id' => 'required',
-            ]);
+        $request->session()->put('order_id', $id);
 
-            if ($validator->fails()) {
-                return response()->json(['statusCode' => 100]);
-            }
-
-            $uid = (new Member())->where('openid', $openid)->select('id')->first();
-            $uid = $uid->id;
-
-            $order = new Order();
-            $id = $request->input('id');
-
-            $sid = (new Commodity())->select('sid', 'price', 'name')->find($id);
-            $money = $sid->price * $request->input('sum');
-
-            $id = $order->insertGetId([
-                'sid' => $sid->sid,
-                'cid' => $id,
-                'type' => 0,
-                'uid' => $uid,
-                'money' => $money,
-                'rid' => 'eos' . time(),
-                'sum' => $request->input('sum', 1),
-                'attr' => $request->input('attr', ''),
-                'status' => 1,
-                'proinfo' => $sid->name,
-                'delivery' => 0,
-            ]);
-
-            if ($id) {
-                return response()->json(['statusCode' => 200, 'id' => $id]);
-            }
+        if ($id) {
+            return response()->json(['statusCode' => 200]);
         }
     }
 }

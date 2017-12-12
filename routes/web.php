@@ -16,7 +16,8 @@ Route::any('/wechat', 'WechatController@serve');
 
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
-    Route::any('/create/order/{id?}', 'indexController@c_order');//生成订单
+    Route::any('/create/order', 'indexController@order');//生成订单
+    Route::any('/pay', 'indexController@pay');//生成订单
 });
 
 Route::group(['prefix' => 'server'], function () {
