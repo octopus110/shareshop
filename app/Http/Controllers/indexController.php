@@ -17,6 +17,7 @@ class indexController extends Controller
 {
     public function index(Request $request)
     {
+        dd($request->session()->get('mid'));
         $imageModel = new Image();
         $banner = $imageModel->where('classify', 1)->select('id', 'src')->get();
 
@@ -177,7 +178,7 @@ class indexController extends Controller
                 // return response()->json(['result'=>$result]);
                 $prepayId = $result->prepay_id;
                 $config = $payment->configForAppPayment($prepayId);
-            }else{
+            } else {
                 dd($result);
             }
 
