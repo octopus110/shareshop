@@ -197,20 +197,16 @@ class indexController extends Controller
 
     public function callback(Request $request)
     {
-        Log::info('diaoyong: ');
         $options = $this->options();
         $app = new Application($options);
         $payment = $app->payment;
 
         $response = $payment->handleNotify(function ($notify, $successful) {
-            // 记录日志
-            Log::info('微信支付: ' . json_encode($notify));
-
             // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
             $order = Order::where('rid', $notify->out_trade_no)->first();
 
             // 检查订单是否已经更新过支付状态
-            if ($order->status != 0) {
+            if ($order->status == 0) { //已经是支付状态
                 return true;
             }
             // 用户是否支付成功
