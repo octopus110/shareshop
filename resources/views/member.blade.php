@@ -28,7 +28,7 @@
                 <td>
                     <h6><i class="iconfont icon-weibiaoti2fuzhi04"></i></h6>
 
-                    <p>待付款(<span>{{ $sends }}</span>)</p>
+                    <p>待付款(<span>{{ $pay }}</span>)</p>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-daifahuo1"></i></h6>
@@ -38,7 +38,7 @@
                 <td>
                     <h6><i class="iconfont icon-daiqianshou"></i></h6>
 
-                    <p>待签收(<span>{{ $sends }}</span>)</p>
+                    <p>待签收(<span>{{ $submit }}</span>)</p>
                 </td>
             </tr>
             <tr>

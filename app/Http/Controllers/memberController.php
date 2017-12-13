@@ -102,50 +102,48 @@ class memberController extends Controller
 
             $memberid = $memberModel->where('openid', $openid)->select('id')->first();
 
+            $carts = $pay = $send = $submit = 0;
             if ($memberid) {
                 $memberid = $memberid->id;
-                $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings')->find($memberid);
+                $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
 
                 $carts = $cartsModel->where('uid', $memberid)->count();
-                $sends = $ordersModel->where([
-                    ['uid', '=', $memberid],
-                    ['status', '=', 0],
-                    ['delivery', '<>', 2],
-                ])->count();
+                $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
+
+                foreach ($orderStatus as $item) {
+                    if ($item->status == 1) {
+                        $pay++;
+                    }
+                    if ($item->status == 0 && $item->delivery == 0) {
+                        $send++;
+                    }
+                    if ($item->status == 1 && $item->delivery == 1) {
+                        $submit++;
+                    }
+                }
             } else {
                 $member = [
                     'openid' => $openid,
                     'nickname' => $user['nickname'],
                     'head' => $user['avatar'],
                     'earnings' => 0,
-                    'getearnings' => 0
+                    'getearnings' => 0,
+                    'type' => 0
                 ];
                 $memberModel->insertGetId($member);
-
-                $carts = 0;
-                $sends = 0;
-            }
-
-            $h = date('G');
-
-            if ($h < 11) {
-                $t = '早上好';
-            } else if ($h < 13) {
-                $t = '中午好';
-            } else if ($h < 17) {
-                $t = '下午好';
-            } else {
-                $t = '晚上好';
             }
 
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,
                 'sends' => $sends,
-                't' => $t
+                'carts' => $carts,
+                'pay' => $pay,
+                'send' => $send,
+                'submit' => $submit,
+                'submit' => $submit
             ]);
         }
-        return redirect('/');
     }
 
     public function carts(Request $request)
