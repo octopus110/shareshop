@@ -180,12 +180,13 @@ class indexController extends Controller
         $orderwechat = new \EasyWeChat\Payment\Order($attributes);
         $result = $payment->prepare($orderwechat);
         if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
-            // return response()->json(['result'=>$result]);
             $prepayId = $result->prepay_id;
             $config = $payment->configForJSSDKPayment($prepayId);
         } else {
             dd($result);
         }
+
+        dd($config);
 
         return view('order', [
             'order' => $order,
