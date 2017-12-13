@@ -53,8 +53,7 @@
             signType: '{{$config['signType']}}',
             paySign: '{{$config['paySign']}}',
             success: function (res) {
-                // 支付成功后的回调函数
-                alert(0);
+                window.location.href = '/pay/success';
             }
         });
     });

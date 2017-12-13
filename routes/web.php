@@ -21,6 +21,9 @@ Route::group(['middleware' => 'wechat.oauth'], function () {
 
 Route::any('/pay', 'indexController@pay');//支付
 Route::any('/pay/callback', 'indexController@callback');//支付回调
+Route::any('/pay/success', function () {//支付成功
+    return view('pay_success');
+});
 
 Route::group(['prefix' => 'server'], function () {
 
