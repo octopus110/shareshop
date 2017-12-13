@@ -271,7 +271,6 @@
 
             sum = parseInt(amount.text());
 
-
             $.ajax({
                 url: '/create/order',
                 type: 'post',
