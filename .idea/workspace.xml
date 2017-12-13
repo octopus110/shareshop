@@ -7,8 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/detail.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/order.blade.php" afterPath="$PROJECT_DIR$/resources/views/order.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/wechat.php" afterPath="$PROJECT_DIR$/config/wechat.php" />
     </list>
     <ignored path="shareShop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,8 +42,8 @@
       <file leaf-file-name="wechat.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/wechat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6589359">
-              <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.22919509">
+              <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -146,7 +145,6 @@
         <option value="$PROJECT_DIR$/storage/logs/laravel.log" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/config/wechat.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WechatController.php" />
@@ -156,6 +154,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/detail.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/order.blade.php" />
+        <option value="$PROJECT_DIR$/config/wechat.php" />
       </list>
     </option>
   </component>
@@ -799,14 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-36.8">
-          <caret line="211" column="30" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-63.633335">
@@ -831,10 +822,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-36.8">
+          <caret line="211" column="30" selection-start-line="211" selection-start-column="30" selection-end-line="211" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/wechat.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6589359">
-          <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.22919509">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
           <folding />
         </state>
       </provider>
