@@ -30,11 +30,7 @@ class WechatController extends Controller
                     $userInfo['nickname'] = $user['nickname'];
                     $userInfo['headimgurl'] = $user['headimgurl'];
 
-                    if (userAttention($userInfo)) {
-                        return $this->reply('follow_keyword');
-                    } else {
-                        return '您的信息由于某种原因没有保存，请重新关注';
-                    }
+                    return '欢迎您的到来: ' . $user['nickname'];
                     break;
                 case 'text':
                     return new Transfer();
