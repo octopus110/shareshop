@@ -20,18 +20,18 @@
             <tr>
                 <td>
                     <a href="/cart">
-                        <h6><i class="iconfont icon-gouwuche"></i></h6>
+                        <h6><i class="iconfont icon-icon1"></i></h6>
 
                         <p>购物车(<span>{{ $carts }}</span>)</p>
                     </a>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-daiqianshou"></i></h6>
+                    <h6><i class="iconfont icon-weibiaoti2fuzhi04"></i></h6>
 
                     <p>待付款(<span>{{ $sends }}</span>)</p>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-daiqianshou"></i></h6>
+                    <h6><i class="iconfont icon-daifahuo1"></i></h6>
 
                     <p>代发货(<span>{{ $sends }}</span>)</p>
                 </td>
@@ -44,15 +44,10 @@
             <tr>
                 <td>
                     <a href="/transaction">
-                        <h6><i class="iconfont icon-icon08"></i></h6>
+                        <h6><i class="iconfont icon-jiaoyijilu"></i></h6>
 
                         <p>交易记录</p>
                     </a>
-                </td>
-                <td>
-                    <h6><i class="iconfont icon-tixian"></i></h6>
-
-                    <p>提现(<span>{{ $member['getearnings'] }}</span>)</p>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-yuecopy"></i></h6>
@@ -60,8 +55,13 @@
                     <p>我的余额(<span>￥{{ $member['earnings'] }}</span>)</p>
                 </td>
                 <td>
+                    <h6><i class="iconfont icon-tixian"></i></h6>
+
+                    <p>提现(<span>{{ $member['getearnings'] }}</span>)</p>
+                </td>
+                <td>
                     <a href="/address">
-                        <h6><i class="iconfont icon-shouhuodizhi"></i></h6>
+                        <h6><i class="iconfont icon-shouhuodizhi1"></i></h6>
 
                         <p>收货地址</p>
                     </a>
