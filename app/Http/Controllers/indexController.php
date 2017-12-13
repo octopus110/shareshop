@@ -186,7 +186,7 @@ class indexController extends Controller
             dd($result);
         }
 
-        dd($config);
+        dd($attributes);
 
         return view('order', [
             'order' => $order,
