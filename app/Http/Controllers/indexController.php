@@ -131,8 +131,7 @@ class indexController extends Controller
                 'merchant_id' => '1494016742',
                 'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
                 'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
-                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem',
-                'notify_url' => url('/pay/callback'),// 你也可以在下单时单独设置来想覆盖它
+                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem'
             ],
         ];
     }
@@ -175,6 +174,7 @@ class indexController extends Controller
             'out_trade_no' => $order->rid,
             'total_fee' => $order->money * 100,
             'notify_url' => url('/pay/callback'),
+            'attach' => ''
         ];
 
         $orderwechat = new \EasyWeChat\Payment\Order($attributes);
