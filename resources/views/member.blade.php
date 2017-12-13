@@ -10,7 +10,7 @@
         <div class="left">
             <p>{{ $member['nickname'] }}</p>
 
-            <p>{{ $t }}</p>
+            <p>{{ $type==1?'个体商':'普通会员' }}</p>
         </div>
         <div class="clear"></div>
     </section>

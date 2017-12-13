@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/member.blade.php" afterPath="$PROJECT_DIR$/resources/views/member.blade.php" />
     </list>
     <ignored path="shareShop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="memberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82191783">
+            <state vertical-scroll-proportion="-17.647058">
               <caret line="138" column="32" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="32" />
               <folding>
                 <element signature="e#275#2939#0#PHP" expanded="false" />
@@ -62,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="member.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="member.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/member.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.558824">
-              <caret line="35" column="41" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.41095892">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -156,8 +156,8 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/public/css/iconfont.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
-        <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
+        <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
       </list>
     </option>
   </component>
@@ -765,21 +765,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/member.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.558824">
-          <caret line="35" column="41" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82191783">
+        <state vertical-scroll-proportion="-17.647058">
           <caret line="138" column="32" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="32" />
           <folding>
             <element signature="e#275#2939#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/member.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41095892">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
