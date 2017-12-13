@@ -33,7 +33,7 @@
                 <td>
                     <h6><i class="iconfont icon-daifahuo1"></i></h6>
 
-                    <p>代发货(<span>{{ $sends }}</span>)</p>
+                    <p>代发货(<span>{{ $send }}</span>)</p>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-daiqianshou"></i></h6>
