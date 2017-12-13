@@ -10,6 +10,7 @@ use App\Order;
 use App\Property;
 use App\Address;
 use EasyWeChat\Foundation\Application;
+use Illuminate\Support\Facades\Log;
 use Validator;
 use EasyWeChat;
 use Illuminate\Http\Request;
@@ -131,7 +132,7 @@ class indexController extends Controller
                 'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
                 'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
                 'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem',
-                'notify_url' => 'http://mall.eos-tech.cn/wechat/back',// 你也可以在下单时单独设置来想覆盖它
+                'notify_url' => url('/pay/callback'),// 你也可以在下单时单独设置来想覆盖它
             ],
         ];
     }
@@ -139,7 +140,7 @@ class indexController extends Controller
     public function pay(Request $request)
     {
         $id = $request->session()->get('order_id');
-        
+
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
@@ -169,11 +170,11 @@ class indexController extends Controller
         $attributes = [
             'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
             'openid' => $openid,
-            'body' => '购买EOS产品',
+            'body' => $commdity->name,
             'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
             'out_trade_no' => $order->rid,
             'total_fee' => $order->money * 100,
-            'notify_url' => 'http://mall.eos-tech.cn/wechat/back',
+            'notify_url' => url('/pay/callback'),
         ];
 
         $orderwechat = new \EasyWeChat\Payment\Order($attributes);
@@ -193,6 +194,39 @@ class indexController extends Controller
             'config' => $config,
             'js' => $app->js
         ]);
+    }
+
+    public function callback(Request $request)
+    {
+        $options = $this->options();
+        $app = new Application($options);
+        $payment = $app->payment;
+
+        $response = $payment->handleNotify(function ($notify, $successful) {
+            // 记录日志
+            Log::info('微信支付: ' . json_encode($notify));
+
+            // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
+            $order = Order::where('rid', $notify->out_trade_no)->first();
+
+            // 检查订单是否已经更新过支付状态
+            if ($order->status != 0) {
+                return true;
+            }
+            // 用户是否支付成功
+            if ($successful) {
+                $order->status = 0;
+            }
+
+            $ret = $order->save();//更新订单已付款
+
+            if ($ret) {
+                return true;
+            }
+
+            return false;
+        });
+        return $response;
     }
 
     public function order(Request $request)
