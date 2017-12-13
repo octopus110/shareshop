@@ -198,6 +198,7 @@ class indexController extends Controller
 
     public function callback(Request $request)
     {
+        Log::info('diaoyong: ');
         $options = $this->options();
         $app = new Application($options);
         $payment = $app->payment;
