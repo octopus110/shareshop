@@ -26,11 +26,14 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/transaction">
-                        <h6><i class="iconfont icon-icon08"></i></h6>
+                    <h6><i class="iconfont icon-daiqianshou"></i></h6>
 
-                        <p>交易记录</p>
-                    </a>
+                    <p>待付款(<span>{{ $sends }}</span>)</p>
+                </td>
+                <td>
+                    <h6><i class="iconfont icon-daiqianshou"></i></h6>
+
+                    <p>代发货(<span>{{ $sends }}</span>)</p>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-daiqianshou"></i></h6>
@@ -39,6 +42,13 @@
                 </td>
             </tr>
             <tr>
+                <td>
+                    <a href="/transaction">
+                        <h6><i class="iconfont icon-icon08"></i></h6>
+
+                        <p>交易记录</p>
+                    </a>
+                </td>
                 <td>
                     <h6><i class="iconfont icon-tixian"></i></h6>
 
@@ -56,6 +66,9 @@
                         <p>收货地址</p>
                     </a>
                 </td>
+            </tr>
+            <tr>
+
             </tr>
         </table>
     </section>
