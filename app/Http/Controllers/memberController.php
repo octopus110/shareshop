@@ -136,7 +136,7 @@ class memberController extends Controller
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,
-                'sends' => $sends,
+                'sends' => $send,
                 'carts' => $carts,
                 'pay' => $pay,
                 'send' => $send,
