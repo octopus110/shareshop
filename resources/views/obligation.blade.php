@@ -33,15 +33,16 @@
 
             <p>
                 <i class="sum">{{ $item->sum }}</i>
-                <br/>
                 <span>
-                    ￥<i class="total">{{ $item->total }}</i>
+                    ￥<i class="total">{{ $item->money }}</i>
                      <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
 
                 <a href="/cart/deal/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
+                <em style="padding:1px 2vw;"> </em>
+                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
             </p>
 
         </div>
