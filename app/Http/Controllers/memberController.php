@@ -257,7 +257,7 @@ class memberController extends Controller
     public function obligation(Request $request)
     {
         $mid = $request->session()->get('mid');
-
+dd($mid);
         if ($mid) {
             return false;
         }
@@ -269,7 +269,7 @@ class memberController extends Controller
             ->leftJoin('images', 'images.cid', 'commoditys.id')
             ->groupby('commoditys.id')
             ->get();
-        
+
         return view('obligation', ['data' => $order]);
     }
 
