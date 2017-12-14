@@ -260,7 +260,7 @@ class memberController extends Controller
         if ($mid) {
             return false;
         }
-
+dd($mid);
         $orderModel = new Order();
         $order = $orderModel->where('uid', $mid)
             ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
