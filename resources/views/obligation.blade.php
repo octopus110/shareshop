@@ -38,7 +38,7 @@
                      <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
 
-                <a href="/cart/deal/{{ $item->id }}">
+                <a href="/order/del/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
                 <em style="padding:1px 2vw;"> </em>
