@@ -283,7 +283,7 @@ class memberController extends Controller
         $ret = Order::where('id', $id)->delete();
 
         if ($ret) {
-            return redirect();
+            return redirect()->back();
         }
     }
 
