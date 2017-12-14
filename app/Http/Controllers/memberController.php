@@ -280,7 +280,7 @@ class memberController extends Controller
 
     public function order_del($id)//删除订单
     {
-        $ret = Order::where('id', $id)->delect();
+        $ret = Order::where('id', $id)->delete();
 
         if ($ret) {
             return redirect();
