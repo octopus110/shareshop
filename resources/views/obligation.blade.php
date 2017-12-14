@@ -32,9 +32,7 @@
             </a>
 
             <p>
-                <i class="iconfont icon-jian" onclick="commidty_sum(this,0)"></i>
                 <i class="sum">{{ $item->sum }}</i>
-                <i class="iconfont icon-jia" onclick="commidty_sum(this,1)"></i>
                 <br/>
                 <span>
                     ￥<i class="total">{{ $item->total }}</i>
@@ -44,8 +42,6 @@
                 <a href="/cart/deal/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
-                <em style="padding:1px 2vw;"> </em>
-                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
             </p>
 
         </div>
@@ -57,35 +53,6 @@
 <input type="button" value="支付" class="pay">
 
 <script type="text/javascript">
-
-    function commidty_sum(that, type) {
-        var sum = $(that).parent().find('.sum');
-        var total = $(that).parent().find('.total');
-
-        var price = $(that).parent().find('.price');
-        var submit = $(that).parent().parent().find('.submit');
-
-        var cu_sum = parseInt(sum.text());
-        var t_sum = 0;
-
-        if (type == 0) {//-
-            if (cu_sum > 1) {
-                t_sum = cu_sum - 1;
-            } else {
-                t_sum = cu_sum;
-            }
-        } else {//+
-            t_sum = cu_sum + 1;
-        }
-
-        sum.text(t_sum);
-        total.text(t_sum * parseInt(price.text()));
-
-        if (submit.css('opacity') == 0) {
-            submit.css('opacity', 1);
-        }
-    }
-
     $(".submit").click(function () {
         var sum = $(this).parent().find('.sum').text();
         var total = $(this).parent().find('.total').text();

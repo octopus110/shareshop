@@ -6,7 +6,10 @@
     <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php" line="19" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="" />
+    <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/obligation.blade.php" afterPath="$PROJECT_DIR$/resources/views/obligation.blade.php" />
+    </list>
     <ignored path="shareShop.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -60,10 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="memberController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="memberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65068495">
+            <state vertical-scroll-proportion="-13.970589">
               <caret line="269" column="29" selection-start-line="269" selection-start-column="29" selection-end-line="269" selection-end-column="29" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
@@ -74,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obligation.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="obligation.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/obligation.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.235294">
-              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.65068495">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -170,8 +173,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
         <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/obligation.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
+        <option value="$PROJECT_DIR$/resources/views/obligation.blade.php" />
       </list>
     </option>
   </component>
@@ -843,10 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/obligation.blade.php">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/594c2600-9339-4370-8208-027b7e25f3c5/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.235294">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -859,23 +862,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/594c2600-9339-4370-8208-027b7e25f3c5/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65068495">
+        <state vertical-scroll-proportion="-13.970589">
           <caret line="269" column="29" selection-start-line="269" selection-start-column="29" selection-end-line="269" selection-end-column="29" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
             <element signature="e#275#2939#0#PHP" expanded="false" />
             <element signature="e#7448#8368#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/obligation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65068495">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
