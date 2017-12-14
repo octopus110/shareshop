@@ -135,7 +135,6 @@ class memberController extends Controller
             }
 
             $request->session()->put('mid', $memberid);
-
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,

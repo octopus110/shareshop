@@ -23,21 +23,23 @@
     <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
 </section>
 
-<section class="commdity">
-    <div class="c_img">
-        <img src="/uploads/{{ $commdity->src }}" alt="">
-    </div>
-    <div class="c_info">
-        <h3>{{ $commdity->name }}</h3>
-        <h6>单价: <span class="price">￥{{ $commdity->price }}</span> &nbsp;&nbsp;&nbsp;
-            <i class="iconfont icon-cheng"></i>{{ $order->sum }}</h6>
+@foreach($data as $item)
+    <section class="commdity">
+        <div class="c_img">
+            <img src="/uploads/{{ $item['commdity']['src'] }}" alt="">
+        </div>
+        <div class="c_info">
+            <h3>{{ $item['commdity']['name'] }}</h3>
+            <h6>单价: <span class="price">￥{{ $item['commdity']['price'] }}</span> &nbsp;&nbsp;&nbsp;
+                <i class="iconfont icon-cheng"></i>{{ $item['order']['sum'] }}</h6>
 
-        <p>产品属性: {{ $order->attr }}</p>
-    </div>
-</section>
+            <p>产品属性: {{ $item['order']['attr'] }}</p>
+        </div>
+    </section>
+@endforeach
 
 <section class="sum">
-    共 {{ $order->sum }} 件商品 &nbsp;&nbsp;&nbsp; 总计：<span class="price">￥{{ $order->money }}</span>
+    共 {{ $order_sum }} 件商品 &nbsp;&nbsp;&nbsp; 总计：<span class="price">￥{{ $money }}</span>
 </section>
 
 <input type="button" value="支付" class="pay" id="pay">

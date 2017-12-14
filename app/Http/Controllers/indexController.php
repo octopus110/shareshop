@@ -136,6 +136,7 @@ class indexController extends Controller
         ];
     }
 
+    //单个产品支付
     public function pay(Request $request)
     {
         $id = $request->session()->get('order_id');
@@ -193,6 +194,109 @@ class indexController extends Controller
             'config' => $config,
             'js' => $app->js
         ]);
+    }
+
+    //根据订单id支付（待支付）
+    public function multiple_pay(Request $request, $multiple_id)
+    {
+        $multiple_id = implode(',', $multiple_id);
+
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+
+        $orderMode = new Order();
+        $commdityModel = new Commodity();
+
+        $body = $out_trade_no = '';
+        $money = 0;
+        $order_sum = 0;
+        foreach ($multiple_id as $k => $id) {
+            $order = $orderMode->select(
+                'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
+            )->find($id);
+
+            $commdity = $commdityModel->select(
+                'commoditys.name', 'images.src', 'commoditys.price'
+            )
+                ->leftJoin('images', 'images.cid', 'commoditys.id')
+                ->groupby('commoditys.id')
+                ->find($order->cid);
+
+            $data[$k]['order'] = $order;
+            $data[$k]['commdity'] = $commdity;
+
+            $body .= $commdity->name . ' ';
+            $out_trade_no .= $order->rid . ' ';
+            $money += $order->money;
+            $order_sum++;
+        }
+
+        $address = (new Address())->where('type', 1)->select(
+            'name', 'phone', 'info'
+        )->find($order->uid);
+
+        /*
+         * 生成微信支付订单信息
+         * */
+        $options = $this->options();
+        $app = new Application($options);
+        $payment = $app->payment;
+
+        $attributes = [
+            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+            'openid' => $openid,
+            'body' => $body,
+            'detail' => $body, //我这里是通过订单找到商品详情，你也可以自定义
+            'out_trade_no' => $out_trade_no,
+            'total_fee' => $money * 100,
+            'notify_url' => url('/multiple_pay/callback'),
+            'attach' => ''
+        ];
+
+        $orderwechat = new \EasyWeChat\Payment\Order($attributes);
+        $result = $payment->prepare($orderwechat);
+        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
+            $prepayId = $result->prepay_id;
+            $config = $payment->configForJSSDKPayment($prepayId);
+        } else {
+            dd($result);
+        }
+
+        return view('multiple_order', [
+            'data' => $data,
+            'address' => $address,
+            'money' => $money,
+            'order_sum' => $order_sum,
+            'config' => $config,
+            'js' => $app->js
+        ]);
+    }
+
+    public function multiple_callback(Request $request)
+    {
+        $options = $this->options();
+        $app = new Application($options);
+        $payment = $app->payment;
+
+        $response = $payment->handleNotify(function ($notify, $successful) {
+            // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
+            $order_id = explode(' ', $notify->out_trade_no);
+
+            foreach ($order_id as $id) {
+                $order = Order::where('rid', $id)->first();
+                // 检查订单是否已经更新过支付状态
+                if ($order->status == 0) { //已经是支付状态
+                    return true;
+                }
+                // 用户是否支付成功
+                if ($successful) {
+                    $order->status = 0;
+                }
+                $order->save();//更新订单已付款
+            }
+            return true;
+        });
+        return $response;
     }
 
     public function callback(Request $request)
