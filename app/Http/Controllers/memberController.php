@@ -135,6 +135,8 @@ class memberController extends Controller
 
             $request->session()->pull('mid', $memberid);
 
+            dd($request->session()->get('mid'));
+
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,
