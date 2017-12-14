@@ -26,9 +26,11 @@
                     </a>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-weibiaoti2fuzhi04"></i></h6>
+                    <a href="/obligation">
+                        <h6><i class="iconfont icon-weibiaoti2fuzhi04"></i></h6>
 
-                    <p>待付款(<span>{{ $pay }}</span>)</p>
+                        <p>待付款(<span>{{ $pay }}</span>)</p>
+                    </a>
                 </td>
                 <td>
                     <h6><i class="iconfont icon-daifahuo1"></i></h6>

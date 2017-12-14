@@ -5,7 +5,9 @@ Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::any('/details/{id?}', 'indexController@detail');
 
-Route::any('/cart', 'memberController@carts');
+Route::any('/obligation', 'memberController@obligation');//待付款
+Route::any('/cart', 'memberController@carts');//待发货
+Route::any('/cart', 'memberController@carts');//待签收
 Route::any('/cart/deal/{id?}', 'memberController@cartDel');
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
@@ -17,6 +19,8 @@ Route::any('/wechat', 'WechatController@serve');
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
     Route::any('/create/order', 'indexController@order');//生成订单
+
+    Route::any('/cart', 'memberController@carts');//购物车
 });
 
 Route::any('/pay', 'indexController@pay');//支付

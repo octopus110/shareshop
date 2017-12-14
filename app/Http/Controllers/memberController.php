@@ -130,8 +130,10 @@ class memberController extends Controller
                     'getearnings' => 0,
                     'type' => 0
                 ];
-                $memberModel->insertGetId($member);
+                $memberid = $memberModel->insertGetId($member);
             }
+
+            $request->session()->pull('mid', $memberid);
 
             return view('member', [
                 'member' => $member,
@@ -150,7 +152,29 @@ class memberController extends Controller
     {
         $cartModel = new Cart();
 
-        $mid = $request->session()->get('mid');
+        if ($request->session()->has('mid')) {
+            $mid = $request ->session()->get('mid');
+        } else {
+            $memberModel = new Member();
+            $user = session('wechat.oauth_user');
+            $openid = $user['id'];
+
+            $memberid = $memberModel->where('openid', $openid)->select('id')->first();
+
+            if (isset($memberid->id)) {
+                $mid = $memberid;
+            } else {
+                $member = [
+                    'openid' => $openid,
+                    'nickname' => $user['nickname'],
+                    'head' => $user['avatar'],
+                    'earnings' => 0,
+                    'getearnings' => 0,
+                    'type' => 0
+                ];
+                $mid = $memberModel->insertGetId($member);
+            }
+        }
 
         if ($request->isMethod('get')) {
             $carts = $cartModel->where('carts.uid', $mid)
@@ -227,6 +251,26 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 300]);
             }
         }
+    }
+
+    public function obligation(Request $request)
+    {
+        $mid = $request->session()->get('mid');
+
+        if ($mid) {
+            return false;
+        }
+
+        $orderModel = new Order();
+
+        $order = $orderModel->where('uid', $mid)
+            ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
+            ->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
+            ->leftJoin('images', 'images.cid', 'commoditys.id')
+            ->groupby('commoditys.id')
+            ->get();
+
+        return view('obligation', ['data' => $order]);
     }
 
     public function transaction()
