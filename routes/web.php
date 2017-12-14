@@ -5,10 +5,16 @@ Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::any('/details/{id?}', 'indexController@detail');
 
-Route::any('/obligation', 'memberController@obligation');//待付款
-Route::any('/cart', 'memberController@carts');//待发货
-Route::any('/cart', 'memberController@carts');//待签收
+Route::any('/cart', 'memberController@carts');//购物车
 Route::any('/cart/deal/{id?}', 'memberController@cartDel');
+
+Route::any('/order/del/{id?}', 'memberController@order_del');//待付款
+Route::any('/obligation', 'memberController@obligation');//待付款
+
+
+Route::any('/cart', 'memberController@carts');//待发货
+Route::any('/cart', 'memberController@carts');//待发货
+
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');

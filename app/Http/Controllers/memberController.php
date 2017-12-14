@@ -278,6 +278,15 @@ class memberController extends Controller
         return view('transaction');
     }
 
+    public function order_del($id)//删除订单
+    {
+        $ret = Order::where('id', $id)->delect();
+
+        if ($ret) {
+            return redirect();
+        }
+    }
+
     public function address(Request $request)
     {
         $addressModel = new Address();
