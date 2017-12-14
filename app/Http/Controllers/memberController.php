@@ -267,20 +267,20 @@ class memberController extends Controller
         $is_pay = 0; //是否需要支付
         switch ($type) {
             case 0: //待付款
-                $order = $order->where('status', 1);
+                $order = $order->where('orders.status', 1);
                 $is_pay = 1;
                 $title = '待付款';
                 break;
             case 1: //待发货
-                $order = $order->where('status', 0)->where('delivery', 0);
+                $order = $order->where('orders.status', 0)->where('orders.delivery', 0);
                 $title = '待发货';
                 break;
             case 2: //待签收
-                $order = $order->where('status', 0)->where('delivery', 1);
+                $order = $order->where('orders.status', 0)->where('orders.delivery', 1);
                 $title = '待签收';
                 break;
             case 3: //已购买
-                $order = $order->where('status', 0)->where('delivery', 1);
+                $order = $order->where('orders.status', 0)->where('orders.delivery', 1);
                 $title = '已购买';
                 break;
         }
@@ -290,7 +290,7 @@ class memberController extends Controller
             ->groupby('orders.id')
             ->get();
 
-        return view('obligation', ['data' => $order, 'is_pay' => $is_pay,'title'=>$title]);
+        return view('obligation', ['data' => $order, 'is_pay' => $is_pay, 'title' => $title]);
     }
 
     public function transaction()
