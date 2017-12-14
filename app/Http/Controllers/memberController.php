@@ -254,7 +254,7 @@ class memberController extends Controller
         }
     }
 
-    public function obligation(Request $request)
+    public function obligation(Request $request, $type)
     {
         $mid = $request->session()->get('mid');
 
@@ -263,14 +263,34 @@ class memberController extends Controller
         }
 
         $orderModel = new Order();
-        $order = $orderModel->where('uid', $mid)
-            ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
+        $order = $orderModel->where('uid', $mid);
+        $is_pay = 0; //是否需要支付
+        switch ($type) {
+            case 0: //待付款
+                $order = $order->where('status', 1);
+                $is_pay = 1;
+                $title = '待付款';
+                break;
+            case 1: //待发货
+                $order = $order->where('status', 0)->where('delivery', 0);
+                $title = '待发货';
+                break;
+            case 2: //待签收
+                $order = $order->where('status', 0)->where('delivery', 1);
+                $title = '待签收';
+                break;
+            case 3: //已购买
+                $order = $order->where('status', 0)->where('delivery', 1);
+                $title = '已购买';
+                break;
+        }
+        $order = $order->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
             ->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
             ->leftJoin('images', 'images.cid', 'commoditys.id')
             ->groupby('orders.id')
             ->get();
 
-        return view('obligation', ['data' => $order]);
+        return view('obligation', ['data' => $order, 'is_pay' => $is_pay,'title'=>$title]);
     }
 
     public function transaction()

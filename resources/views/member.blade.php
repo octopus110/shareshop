@@ -26,21 +26,25 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/obligation">
+                    <a href="/obligation/0">
                         <h6><i class="iconfont icon-weibiaoti2fuzhi04"></i></h6>
 
                         <p>待付款(<span>{{ $pay }}</span>)</p>
                     </a>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-daifahuo1"></i></h6>
+                    <a href="/obligation/1">
+                        <h6><i class="iconfont icon-daifahuo1"></i></h6>
 
-                    <p>代发货(<span>{{ $send }}</span>)</p>
+                        <p>代发货(<span>{{ $send }}</span>)</p>
+                    </a>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-daiqianshou"></i></h6>
+                    <a href="/obligation/2">
+                        <h6><i class="iconfont icon-daiqianshou"></i></h6>
 
-                    <p>待签收(<span>{{ $submit }}</span>)</p>
+                        <p>待签收(<span>{{ $submit }}</span>)</p>
+                    </a>
                 </td>
             </tr>
             <tr>

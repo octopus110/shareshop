@@ -13,7 +13,7 @@
 </head>
 <body>
 <header class="cart-header">
-    <a href="/member"><i class="iconfont icon-fanhui"></i></a>待付款
+    <a href="/member"><i class="iconfont icon-fanhui"></i></a>{{ $title }}
 </header>
 
 @foreach($data as $item)
@@ -51,7 +51,9 @@
     </section>
 @endforeach
 
-<input type="button" value="支付" class="pay">
+@if($is_pay)
+    <input type="button" value="支付" class="pay">
+@endif
 
 <script type="text/javascript">
     $(".submit").click(function () {

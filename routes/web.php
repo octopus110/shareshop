@@ -8,12 +8,8 @@ Route::any('/details/{id?}', 'indexController@detail');
 Route::any('/cart', 'memberController@carts');//购物车
 Route::any('/cart/deal/{id?}', 'memberController@cartDel');
 
-Route::any('/order/del/{id?}', 'memberController@order_del');//待付款
-Route::any('/obligation', 'memberController@obligation');//待付款
-
-
-Route::any('/cart', 'memberController@carts');//待发货
-Route::any('/cart', 'memberController@carts');//待发货
+Route::any('/order/del/{id?}', 'memberController@order_del');//删除订单
+Route::any('/obligation/{type?}', 'memberController@obligation');//待付款 待签收 待发货
 
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
