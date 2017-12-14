@@ -257,8 +257,8 @@ class memberController extends Controller
     public function obligation(Request $request)
     {
         $mid = $request->session()->get('mid');
-dd($mid);
-        if ($mid) {
+
+        if (!$mid) {
             return false;
         }
 
