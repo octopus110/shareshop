@@ -133,9 +133,7 @@ class memberController extends Controller
                 $memberid = $memberModel->insertGetId($member);
             }
 
-            $request->session()->pull('mid', $memberid);
-
-            dd($request->session()->get('mid'));
+            $request->session()->put('mid', $memberid);
 
             return view('member', [
                 'member' => $member,
@@ -262,7 +260,7 @@ class memberController extends Controller
         if ($mid) {
             return false;
         }
-dd($mid);
+        dd($mid);
         $orderModel = new Order();
         $order = $orderModel->where('uid', $mid)
             ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
