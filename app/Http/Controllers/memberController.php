@@ -101,10 +101,11 @@ class memberController extends Controller
             $cartsModel = new Cart();
 
             $memberid = $memberModel->where('openid', $openid)->select('id')->first();
+            $memberid = $memberid->id;
 
             $carts = $pay = $send = $submit = 0;
+
             if ($memberid) {
-                $memberid = $memberid->id;
                 $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
 
                 $carts = $cartsModel->where('uid', $memberid)->count();
@@ -260,7 +261,7 @@ class memberController extends Controller
         if ($mid) {
             return false;
         }
-        dd($mid);
+
         $orderModel = new Order();
         $order = $orderModel->where('uid', $mid)
             ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
@@ -268,9 +269,7 @@ class memberController extends Controller
             ->leftJoin('images', 'images.cid', 'commoditys.id')
             ->groupby('commoditys.id')
             ->get();
-
-        dd($order);
-
+        
         return view('obligation', ['data' => $order]);
     }
 

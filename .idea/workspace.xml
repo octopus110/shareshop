@@ -2,7 +2,7 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/public/css/index.css" line="56" />
-    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php" line="201" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php" line="202" mnemonic="9" />
     <bookmark url="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php" line="19" />
   </component>
   <component name="ChangeListManager">
@@ -53,12 +53,12 @@
       <file leaf-file-name="memberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41095892">
-              <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.7191781">
+              <caret line="271" column="8" selection-start-line="271" selection-start-column="8" selection-end-line="271" selection-end-column="8" />
               <folding>
                 <element signature="e#40#56#0#PHP" expanded="true" />
                 <element signature="e#275#2939#0#PHP" expanded="false" />
-                <element signature="e#7451#8371#0#PHP" expanded="false" />
+                <element signature="e#7448#8368#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -826,12 +826,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41095892">
-          <caret line="135" column="55" selection-start-line="135" selection-start-column="55" selection-end-line="135" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.7191781">
+          <caret line="271" column="8" selection-start-line="271" selection-start-column="8" selection-end-line="271" selection-end-column="8" />
           <folding>
             <element signature="e#40#56#0#PHP" expanded="true" />
             <element signature="e#275#2939#0#PHP" expanded="false" />
-            <element signature="e#7451#8371#0#PHP" expanded="false" />
+            <element signature="e#7448#8368#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
