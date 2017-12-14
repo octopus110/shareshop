@@ -153,7 +153,7 @@ class memberController extends Controller
         $cartModel = new Cart();
 
         if ($request->session()->has('mid')) {
-            $mid = $request ->session()->get('mid');
+            $mid = $request->session()->get('mid');
         } else {
             $memberModel = new Member();
             $user = session('wechat.oauth_user');
@@ -262,13 +262,14 @@ class memberController extends Controller
         }
 
         $orderModel = new Order();
-
         $order = $orderModel->where('uid', $mid)
             ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
             ->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
             ->leftJoin('images', 'images.cid', 'commoditys.id')
             ->groupby('commoditys.id')
             ->get();
+
+        dd($order);
 
         return view('obligation', ['data' => $order]);
     }
