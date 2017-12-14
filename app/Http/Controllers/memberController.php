@@ -267,7 +267,7 @@ class memberController extends Controller
             ->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
             ->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
             ->leftJoin('images', 'images.cid', 'commoditys.id')
-            ->groupby('commoditys.id')
+            ->groupby('orders.id')
             ->get();
 
         return view('obligation', ['data' => $order]);
