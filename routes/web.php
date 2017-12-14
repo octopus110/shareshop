@@ -23,12 +23,13 @@ Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::any('/create/order', 'indexController@order');//生成订单
 
     Route::any('/cart', 'memberController@carts');//购物车
+
+    Route::any('/pay', 'indexController@pay');//支付
+    Route::any('/multiple_pay/{id?}', 'indexController@multiple_pay');//根据订单id支付（待支付）
 });
 
-Route::any('/pay', 'indexController@pay');//支付
-Route::any('/pay/callback', 'indexController@callback');//支付回调
 
-Route::any('/multiple_pay', 'indexController@multiple_pay');//根据订单id支付（待支付）
+Route::any('/pay/callback', 'indexController@callback');//支付回调
 Route::any('/multiple_pay/callback', 'indexController@multiple_callback');//根据订单id支付（待支付） 支付回调
 
 Route::any('/pay/success', function () {//支付成功

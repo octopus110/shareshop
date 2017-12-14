@@ -19,7 +19,7 @@
 @foreach($data as $item)
     <section class="carts">
         <div class="left checkbox">
-            <input type="checkbox" name="id[]" value="{{ $item->id }}"/>
+            <input type="checkbox" class="checkbox_input" name="id[]" value="{{ $item->id }}"/>
         </div>
 
         <div class="left cart-img">
@@ -79,6 +79,18 @@
                 }
             }
         });
+    });
+    var checkbox_input = $('.checkbox_input');
+    var checkbox_sum = $('.checkbox_input').length;
+    var ids = '';
+    $('.pay').click(function () {
+        for ($i = 0; $i < checkbox_sum; $i++) {
+            if ($('#checkbox-id').eq($i).attr('checked')) {
+                ids += $('#checkbox-id').eq($i).val();
+            }
+        }
+
+        window.location.href = '/multiple_pay/' + ids;
     });
 </script>
 
