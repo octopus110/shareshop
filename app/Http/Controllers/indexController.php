@@ -159,7 +159,7 @@ class indexController extends Controller
         $commdityModel = new Commodity();
 
         $member = $membreModel->where('openid', $openid)->select('id')->first();
-        if ($member) {
+        if (!isset($member->id)) {
             return response()->json(['statusCode' => 100]);
         }
 

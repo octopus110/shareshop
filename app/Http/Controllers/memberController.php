@@ -134,7 +134,7 @@ class memberController extends Controller
                 $memberid = $memberModel->insertGetId($member);
             }
 
-            $request->session()->put('mid', $memberid);
+            session()->put('mid', $memberid);
             return view('member', [
                 'member' => $member,
                 'carts' => $carts,
