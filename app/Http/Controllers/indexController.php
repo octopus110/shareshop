@@ -210,6 +210,7 @@ class indexController extends Controller
         $body = $out_trade_no = '';
         $money = 0;
         $order_sum = 0;
+        $uid = '';
         foreach ($multiple_id as $k => $id) {
             $order = $orderMode->select(
                 'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
@@ -229,11 +230,15 @@ class indexController extends Controller
             $out_trade_no .= $order->cid . '_';
             $money += $order->money;
             $order_sum++;
+
+            if ($uid == '') {
+                $uid = $order->uid;
+            }
         }
 
         $address = (new Address())->where('type', 1)->select(
             'name', 'phone', 'info'
-        )->find($order->uid);
+        )->find($uid);
 
         /*
          * 生成微信支付订单信息
