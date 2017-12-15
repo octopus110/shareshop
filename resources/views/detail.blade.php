@@ -310,10 +310,10 @@
     wx.config(<?php echo $js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'), false) ?>);
     wx.ready(function () {
         wx.onMenuShareAppMessage({//朋友
-            title: '推荐给你一个好东西：{{ $data->name }}',
-            desc: '{!! $data->introduce !!}',
+            title: '推荐给你一个好东西',
+            desc: '{{ $data->name }}',
             link: '{{ url("/details/$data->id") }}',
-            imgUrl: '{{ url("uploads/$images[0]->src") }}',
+            imgUrl: '<?php echo url("uploads/$images[0]->src") ?>',
             success: function () {
                 alert('分享成功,有人购买后讲获得奖金');
             },
@@ -327,7 +327,7 @@
         wx.onMenuShareTimeline({//朋友圈
             title: '{{ $data->name }}',
             link: '{{ url("/details/$data->id") }}',
-            imgUrl: '{{ url("uploads/$images[0]->src") }}',
+            imgUrl: '<?php echo url("uploads/$images[0]->src") ?>',
             success: function () {
                 alert('分享成功,有人购买后讲获得奖金');
             },
