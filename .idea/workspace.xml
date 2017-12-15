@@ -57,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.8406593">
-              <caret line="329" column="65" selection-start-line="329" selection-start-column="65" selection-end-line="329" selection-end-column="65" />
+              <caret line="329" column="67" selection-start-line="329" selection-start-column="67" selection-end-line="329" selection-end-column="67" />
               <folding>
                 <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -835,7 +835,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8406593">
-          <caret line="329" column="65" selection-start-line="329" selection-start-column="65" selection-end-line="329" selection-end-column="65" />
+          <caret line="329" column="67" selection-start-line="329" selection-start-column="67" selection-end-line="329" selection-end-column="67" />
           <folding>
             <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
           </folding>
