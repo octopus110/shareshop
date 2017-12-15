@@ -89,7 +89,7 @@
                 ids += $('#checkbox-id').eq($i).val();
             }
         }
-
+alert(ids);
         window.location.href = '/multiple_pay/' + ids;
     });
 </script>
