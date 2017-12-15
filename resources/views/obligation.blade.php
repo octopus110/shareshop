@@ -19,7 +19,7 @@
 @foreach($data as $item)
     <section class="carts">
         <div class="left checkbox">
-            <input type="checkbox" class="checkbox_input" name="id[]" value="{{ $item->id }}"/>
+            <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
         </div>
 
         <div class="left cart-img">
@@ -89,7 +89,7 @@
                 ids += checkbox_input.eq($i).val();
             }
         }
-
+alert(ids);
         window.location.href = '/multiple_pay/' + ids;
     });
 </script>
