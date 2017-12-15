@@ -197,7 +197,7 @@ class indexController extends Controller
     }
 
     //根据订单id支付（待支付）
-    public function multiple_pay(Request $request, $multiple_id)
+    public function multiple_pay($multiple_id)
     {
         $multiple_id = implode(',', $multiple_id);
 
