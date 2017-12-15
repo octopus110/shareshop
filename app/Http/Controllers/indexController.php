@@ -226,7 +226,7 @@ class indexController extends Controller
             $data[$k]['commdity'] = $commdity;
 
             $body .= $commdity->name . ' ';
-            $out_trade_no .= $order->rid . ' ';
+            $out_trade_no .= $order->id . ' ';
             $money += $order->money;
             $order_sum++;
         }
