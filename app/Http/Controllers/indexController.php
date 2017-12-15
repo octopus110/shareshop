@@ -239,6 +239,8 @@ class indexController extends Controller
         $address = (new Address())->where('type', 1)->where('uid', $uid)->select(
             'name', 'phone', 'info'
         )->first();
+
+        dd($address);
         /*
          * 生成微信支付订单信息
          * */
