@@ -167,6 +167,8 @@ class indexController extends Controller
             $dataArr = $request->input('commodityid');
             $dataArr = array_filter($dataArr);
 
+            $cartsModel = new Cart();
+
             $orderIds = [];//存放订单id的数组
             foreach ($dataArr as $k => $v) {//一个订单一个产品
                 $one = $commdityModel->select('sid', 'price', 'name')->find($k);
@@ -187,6 +189,16 @@ class indexController extends Controller
                 ]);
 
                 array_push($orderIds, $id);
+
+                //如果是从cart来的 更新cart状态
+                $cart = $cartsModel->where([
+                    'uid' => $member->id,
+                    'cid' => $k
+                ])->select('id', '')->first();
+
+                if (isset($cart->id)) {
+                    $cart->where('id', $cart->id)->delete();
+                }
             }
         } else if ($request->input('type') == 1) { //传递的是订单id
             $orderIds = $request->input('orderid');
