@@ -28,18 +28,14 @@ Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::any('/multiple_pay/{id?}', 'indexController@multiple_pay');//根据订单id支付（待支付）
 });
 
-
 Route::any('/pay/callback', 'indexController@callback');//支付回调
 Route::any('/multiple_pay/callback', 'indexController@multiple_callback');//根据订单id支付（待支付） 支付回调
-
 Route::any('/pay/success', function () {//支付成功
     return view('pay_success');
 });
 
 Route::group(['prefix' => 'server'], function () {
-
     Auth::routes();
-
     Route::get('/home', 'homeController@index')->name('home');
     Route::get('/quit', 'homeController@quit')->name('quit');
     //多图片上传接口
