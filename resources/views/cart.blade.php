@@ -30,7 +30,7 @@
             <a href="/details/{{ $item->commodty_id }}">
                 <h3>{{ $item->name }}</h3>
 
-                <p>{{ $item->attr }}</p>
+                <p class="attr">{{ $item->attr }}</p>
             </a>
 
             <p>
@@ -115,14 +115,21 @@
 
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
-    var ids = '';
+    var id = 0;
+    var data = {};
 
     $('.pay').click(function () {
         for (var i = 0; i < checkbox_sum; i++) {
             if (checkbox_input.eq(i).is(':checked')) {
-                ids += checkbox_input.eq(i).val() + ',';
+                id = checkbox_input.eq(i).val();
+                data.id = {
+                    'attr': checkbox_input.eq(i).parent().parent().find('.attr').text(),
+                    'sum': checkbox_input.eq(i).parent().parent().find('.sum').text()
+                };
             }
         }
+
+        console.log(data);
 
         $.ajax({
             url: '/create_order',
@@ -130,17 +137,12 @@
             dataType: 'json',
             data: {
                 type: 0,
-                commodityid: {
-                    '1': {
-                        attr: attrV,
-                        sum: sum,
-                    }
-                },
+                commodityid: data,
                 '_token': '{{ csrf_token() }}'
             },
             success: function (data) {
                 if (data.statusCode == 200) {
-                    window.location.href = '/pay'
+                    //window.location.href = '/pay'
                 } else if (data.statusCode == 100) {
                     window.location.href = '/member'
                 } else {
@@ -148,8 +150,6 @@
                 }
             }
         });
-
-        window.location.href = '/create/order/cart/' + ids;
     });
 </script>
 
