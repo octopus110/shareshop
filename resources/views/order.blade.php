@@ -43,10 +43,6 @@
             <p>产品属性: {{ $order[$k]['attr'] }}</p>
         </div>
     </section>
-
-    <section class="sum">
-        共 {{ $order[$k]['sum'] }} 件商品 &nbsp;&nbsp;&nbsp; 小计：<span class="price">￥{{ $order[$k]['money'] }}</span>
-    </section>
 @endforeach
 
 <section class="sum">
