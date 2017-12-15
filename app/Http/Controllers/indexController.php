@@ -216,13 +216,14 @@ class indexController extends Controller
             'name', 'phone', 'info'
         )->first();
 
-        $money = 0;//总价格初始化 0元
+        $money = $sum = 0;//总价格初始化 0元
         $commditys = $orders = [];
 
-        $orders = $orderModel->whereIn('id', $orderid)->select('id', 'cid', 'money')->get();
+        $orders = $orderModel->whereIn('id', $orderid)->select('id', 'cid', 'money', 'sum')->get();
         foreach ($orders as $item) {
             $money += $item->money;
-            $commditys = $commodityModel->find($item->cid);
+            $sum += $item->sum;
+            array_push($commditys, $commodityModel->find($item->cid));
         }
 
         $orderidstr = implode(' ', $orderid);//用于构造out_trade_no
@@ -254,12 +255,12 @@ class indexController extends Controller
             dd($result);
         }
 
-        dd($orders,$address,$commditys,$config);
-
         return view('order', [
             'order' => $orders,
             'address' => $address,
             'commdity' => $commditys,
+            'money' => $money,
+            'sum' => $sum,
             'config' => $config,
             'js' => $app->js
         ]);
