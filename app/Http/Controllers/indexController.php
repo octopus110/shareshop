@@ -167,7 +167,6 @@ class indexController extends Controller
             $dataArr = $request->input('commodityid');
             $dataArr = array_filter($dataArr);
 
-            dd($dataArr);
             $orderIds = [];//存放订单id的数组
             foreach ($dataArr as $k => $v) {//一个订单一个产品
                 $one = $commdityModel->select('sid', 'price', 'name')->find($k);
