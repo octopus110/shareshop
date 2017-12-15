@@ -160,7 +160,7 @@ class indexController extends Controller
 
         $member = $membreModel->where('openid', $openid)->select('id')->first();
         if ($member) {
-            return redirect('/member');
+            return response()->json(['statusCode' => 100]);
         }
 
         if ($request->input('type') == 0) { //传递的是产品id
