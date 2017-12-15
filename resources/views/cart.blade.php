@@ -116,13 +116,13 @@
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
     var id = 0;
-    var data = {};
+    var data = [];
 
     $('.pay').click(function () {
         for (var i = 0; i < checkbox_sum; i++) {
             if (checkbox_input.eq(i).is(':checked')) {
                 id = checkbox_input.eq(i).val();
-                data.id = {
+                data[id] = {
                     'attr': checkbox_input.eq(i).parent().parent().find('.attr').text(),
                     'sum': checkbox_input.eq(i).parent().parent().find('.sum').text()
                 };
