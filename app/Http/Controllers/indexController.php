@@ -267,6 +267,8 @@ class indexController extends Controller
             dd($result);
         }
 
+        dd($config);
+
         return view('multiple_order', [
             'data' => $data,
             'address' => $address,
