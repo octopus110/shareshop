@@ -129,8 +129,6 @@
             }
         }
 
-        console.log(data);
-
         $.ajax({
             url: '/create_order',
             type: 'post',
