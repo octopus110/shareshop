@@ -4110,7 +4110,19 @@ body, div, ol, p, span, ul {
     font-size: 3.3vw;
 }
 
-.swiper-slide{
-    height:105vw;
+.swiper-slide {
+    height: 105vw;
     overflow: hidden;
+}
+
+.share {
+    text-align: center;
+    font-size: 3.8vw;
+    padding: 8vw 0;
+    display: none;
+}
+
+.share p {
+    font-size: 3.6vw;
+    padding-top: 2vw;
 }

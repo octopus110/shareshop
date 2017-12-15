@@ -24,6 +24,11 @@
     <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui" style="color: #333;"></i></a>产品详情
 </header>
 <div id="content">
+    <div class="share">
+        <h6>告诉你个秘密：</h6>
+
+        <p>分享产品到朋友圈有人购买后就能拿到奖金奥</p>
+    </div>
     <div class="scroller">
         <div id="p-summary" class="page">
             <div class="container">
@@ -174,7 +179,13 @@
             autoplay: 2000,
             scrollbar: '.swiper-scrollbar',
         })
-        //--
+
+        //两秒后隐藏提示
+        $(".share").slideDown();
+        window.setTimeout(function () {
+            $(".share").slideUp();
+        }, 4000);
+
         $(".clickwn").click(function () {
             $(".flick-menu-mask").show();
             $(".spec-menu").show();
@@ -197,13 +208,10 @@
         $(function () {
             //加号
             $(".jia").click(function () {
-
                 var $parent = $(this).parent(".num");
                 var $num = window.Number($(".inputBorder", $parent).val());
                 $(".inputBorder", $parent).val($num + 1);
-
                 $('.amount').html($num + 1)
-
             });
 
             //减号
@@ -213,7 +221,6 @@
                 if ($num > 2) {
                     $(".inputBorder", $parent).val($num - 1);
                     $('.amount').html($num - 1)
-
                 } else {
                     $(".inputBorder", $parent).val(1);
                     $('.amount').html($num)
@@ -262,19 +269,15 @@
         });
 
         $(".directorder").click(function () {
-
             var natureCotainer = $("#natureCotainer");
             var attr = natureCotainer.find('a.selected');
             var amount = $("#amount");
             var attrV = '';
             var sum = 0;
-
             for (var i = 0; i < attr.length; i++) {
                 attrV += attr.eq(i).text() + ',';
             }
-
             sum = parseInt(amount.text());
-
             $.ajax({
                 url: '/create_order',
                 type: 'post',
@@ -301,5 +304,40 @@
             });
         });
     })
+</script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    wx.config({{ $js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'), false) }});
+    wx.ready(function () {
+        wx.onMenuShareAppMessage({
+            title: '{{ $data->name }}',
+            desc: '{{ $data->introduce }}',
+            link: '{{ url("/details") }}',
+            imgUrl: '{{ $images[0]['src'] }}',
+            success: function () {
+                alert('分享成功,有人购买后讲获得奖金');
+            },
+            cancel: function () {
+                alert('取消分享，获得不到奖金奥');
+            },
+            fail: function () {
+                alert('分享失败');
+            }
+        });
+        wx.onMenuShareTimeline({
+            title: '推荐给你一个好东西：{{ $data->name }}',
+            link: '{{ url("/details") }}',
+            imgUrl: '{{ $images[0]['src'] }}',
+            success: function () {
+                alert('分享成功,有人购买后讲获得奖金');
+            },
+            cancel: function () {
+                alert('取消分享，获得不到奖金奥');
+            },
+            fail: function () {
+                alert('分享失败');
+            }
+        });
+    });
 </script>
 </html>

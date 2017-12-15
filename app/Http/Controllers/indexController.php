@@ -113,10 +113,14 @@ class indexController extends Controller
             }
         }
 
+        $options = $this->options();
+        $app = new Application($options);
+
         return view('detail', [
             'data' => $data,
             'images' => $images,
-            'propertys' => $propertys
+            'propertys' => $propertys,
+            'js' => $app->js
         ]);
     }
 
