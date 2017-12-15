@@ -122,7 +122,7 @@
         for (var i = 0; i < checkbox_sum; i++) {
             if (checkbox_input.eq(i).is(':checked')) {
                 id = checkbox_input.eq(i).val();
-                data['"'+id+'"'] = {
+                data[id] = {
                     'attr': checkbox_input.eq(i).parent().parent().find('.attr').text(),
                     'sum': checkbox_input.eq(i).parent().parent().find('.sum').text()
                 };
