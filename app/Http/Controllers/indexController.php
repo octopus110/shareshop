@@ -240,6 +240,8 @@ class indexController extends Controller
             'name', 'phone', 'info'
         )->find($uid);
 
+        dd($address);
+
         /*
          * 生成微信支付订单信息
          * */
