@@ -20,7 +20,7 @@
     <section class="address">
         <p>
             <a href="/address/deal/{{ $item->id }}/1">
-                <i class="{{ $item->type?'iconfont icon-sheweimoren':'' }}"></i>
+                <i class="iconfont icon-sheweimoren {{ $item->type?'sheweimoren':'' }}"></i>
             </a>
             {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
         </p>
