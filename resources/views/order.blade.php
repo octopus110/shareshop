@@ -30,7 +30,7 @@
     @endif
 </section>
 
-@foreach($commditys as $k=>$item)
+@foreach($commdity as $k=>$item)
     <section class="commdity">
         <div class="c_img">
             <img src="/uploads/{{ $item->src }}" alt="">
