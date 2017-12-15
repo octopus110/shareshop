@@ -22,8 +22,9 @@
     padding: 1vw;
     margin-top: 1vw;
 }
-.address i{
-    padding-right:2vw;
+
+.address i {
+    padding-right: 2vw;
 }
 
 .address p {
@@ -68,7 +69,7 @@
     left: 2vw;
 }
 
-.c_info i{
+.c_info i {
     font-size: 3vw;
     padding-right: 2vw;
 }
@@ -92,4 +93,9 @@
     border: 1px #ccc solid;
     background: #fff;
     border-radius: 1.5vw;
+}
+
+.add_address {
+    padding: 2vw 0;
+    text-align: center;
 }
