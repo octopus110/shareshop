@@ -149,9 +149,9 @@ class indexController extends Controller
             'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
         )->find($id);
 
-        $address = (new Address())->where('type', 1)->select(
+        $address = (new Address())->where('type', 1)->where('uid', $order->uid)->select(
             'name', 'phone', 'info'
-        )->find($order->uid);
+        )->first();
 
         $commdity = (new Commodity())->select(
             'commoditys.name', 'images.src', 'commoditys.price'

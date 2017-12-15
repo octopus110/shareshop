@@ -17,10 +17,17 @@
 </header>
 
 <section class="address">
-    <p><i class="iconfont icon-shoujianren"></i>收件人:&nbsp; {{ $address->name }} &nbsp;&nbsp;&nbsp; {{ $address->phone }}
-    </p>
+    @if($address)
+        <p><i class="iconfont icon-shoujianren"></i>收件人:&nbsp; {{ $address->name }}
+            &nbsp;&nbsp;&nbsp; {{ $address->phone }}
+        </p>
 
-    <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
+        <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
+    @else
+        <div class="add_address">
+            <a href="/address">添加地址</a>
+        </div>
+    @endif
 </section>
 
 <section class="commdity">
