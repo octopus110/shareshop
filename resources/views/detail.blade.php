@@ -315,7 +315,7 @@
             link: '{{ url("/details/$data->id") }}',
             imgUrl: '{{ url("uploads/".$images[0]->src) }}',
             success: function () {
-                alert('分享成功,有人购买后讲获得奖金');
+                alert('分享成功,有人购买后将获得奖金');
             },
             cancel: function () {
                 alert('取消分享，获得不到奖金奥');
@@ -329,7 +329,7 @@
             link: '{{ url("/details/$data->id") }}',
             imgUrl: '{{ url("uploads/".$images[0]->src) }}',
             success: function () {
-                alert('分享成功,有人购买后讲获得奖金');
+                alert('分享成功,有人购买后将获得奖金');
             },
             cancel: function () {
                 alert('取消分享，获得不到奖金奥');
