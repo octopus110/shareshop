@@ -19,7 +19,7 @@
 @foreach($carts as $item)
     <section class="carts">
         <div class="left checkbox">
-            <input type="checkbox" name="id[]" value="{{ $item->id }}"/>
+            <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
         </div>
 
         <div class="left cart-img">
@@ -109,6 +109,20 @@
                 }
             }
         });
+    });
+
+    var checkbox_input = $('.checkbox_input');
+    var checkbox_sum = $('.checkbox_input').length;
+    var ids = '';
+
+    $('.pay').click(function () {
+        for (var i = 0; i < checkbox_sum; i++) {
+            if (checkbox_input.eq(i).is(':checked')) {
+                ids += checkbox_input.eq(i).val() + ',';
+            }
+        }
+
+        window.location.href = '/create/order/cart/' + ids;
     });
 </script>
 

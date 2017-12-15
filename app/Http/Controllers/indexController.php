@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Classify;
 use App\Commodity;
 use App\Image;
@@ -136,29 +137,92 @@ class indexController extends Controller
         ];
     }
 
-    //单个产品支付
-    public function pay(Request $request)
+    //创建订单接口
+    public function create_order(Request $request)
     {
-        $id = $request->session()->get('order_id');
+        //产品id
+        $validator = Validator::make($request->all(), [
+            'type' => 'required', //0传递的是商品id 1传递的是订单id
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['statusCode' => 100]);
+        }
+
+        //'commodityid' => 'required', 是一个数组，索引是商品id 值是一个数组分别存放数量和属性
+        //'orderid' =>  'required' 是一个数组，订单id
 
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
-        $orderMode = new Order();
-        $order = $orderMode->select(
-            'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
-        )->find($id);
+        $membreModel = new Member();
+        $orderModel = new Order();
+        $commdityModel = new Commodity();
 
-        $address = (new Address())->where('type', 1)->where('uid', $order->uid)->select(
+        $member = $membreModel->where('openid', $openid)->select('id')->first();
+        if ($member) {
+            return redirect('/member');
+        }
+
+        if ($request->input('type') == 0) { //传递的是产品id
+            $dataArr = $request->input('commodityid');
+
+            $orderIds = [];//存放订单id的数组
+            foreach ($dataArr as $k => $v) {//一个订单一个产品
+                $one = $commdityModel->select('sid', 'price', 'name')->find($k)->toArray();
+                $money = $one['price'] * $v['sum'];
+
+                $id = $orderModel->insertGetId([
+                    'sid' => $one->sid,
+                    'cid' => $k,
+                    'type' => 0,
+                    'uid' => $member->id,
+                    'money' => $money,
+                    'rid' => 'eos' . time(),
+                    'sum' => $v['sum'],
+                    'attr' => $v['attr'],
+                    'status' => 1,
+                    'proinfo' => $one->name,
+                    'delivery' => 0,
+                ]);
+
+                array_push($orderIds, $id);
+            }
+        } else if ($request->input('type') == 1) { //传递的是订单id
+            $orderIds = $request->input('orderid');
+        }
+        if ($request->session()->put('orderid', $orderIds)) {
+            return redirect('/pay');
+        }
+    }
+
+    //支付接口
+    public function pay(Request $request)
+    {
+        $orderid = $request->session()->get('orderid'); //订单id是一个数组
+
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+
+        $mid = session()->get('mid');
+
+        $addressModel = new Address();
+        $orderModel = new Order();
+        $commodityModel = new Commodity();
+
+        $address = $addressModel->where('type', 1)->where('uid', $mid)->select(
             'name', 'phone', 'info'
         )->first();
 
-        $commdity = (new Commodity())->select(
-            'commoditys.name', 'images.src', 'commoditys.price'
-        )
-            ->leftJoin('images', 'images.cid', 'commoditys.id')
-            ->groupby('commoditys.id')
-            ->find($order->cid);
+        $money = 0;//总价格初始化 0元
+        $commditys = $orders = [];
+
+        $orders = $orderModel->whereIn('id', $orderid)->select('id', 'cid', 'money')->get();
+        foreach ($orders as $item) {
+            $money += $item->money;
+            $commditys = $commodityModel->find($item->cid);
+        }
+
+        $orderidstr = explode(' ', $orderid);//用于构造out_trade_no
 
         /*
          * 生成微信支付订单信息
@@ -168,14 +232,14 @@ class indexController extends Controller
         $payment = $app->payment;
 
         $attributes = [
-            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
+            'trade_type' => 'JSAPI',
             'openid' => $openid,
-            'body' => $commdity->name,
-            'detail' => $commdity->name, //我这里是通过订单找到商品详情，你也可以自定义
-            'out_trade_no' => $order->rid,
-            'total_fee' => $order->money * 100,
+            'body' => 'EOS商品购买',
+            'detail' => 'EOS商品购买 订单id是(多个订单的话 id用空格分割)：' . $orderidstr,
+            'out_trade_no' => 'eos' . time(),
+            'total_fee' => $money * 100,
             'notify_url' => url('/pay/callback'),
-            'attach' => ''
+            'attach' => $orderidstr //用于回调是的更新订单状态
         ];
 
         $orderwechat = new \EasyWeChat\Payment\Order($attributes);
@@ -188,122 +252,16 @@ class indexController extends Controller
         }
 
         return view('order', [
-            'order' => $order,
+            'order' => $orders,
             'address' => $address,
-            'commdity' => $commdity,
+            'commdity' => $commditys,
             'config' => $config,
             'js' => $app->js
         ]);
+
     }
 
-    //根据订单id支付（待支付）
-    public function multiple_pay($multiple_id = '')
-    {
-        $multiple_id = explode(',', rtrim($multiple_id, ','));
-
-        $user = session('wechat.oauth_user');
-        $openid = $user['id'];
-
-        $orderMode = new Order();
-        $commdityModel = new Commodity();
-
-        $body = $out_trade_no = '';
-        $money = 0;
-        $order_sum = 0;
-        $uid = '';
-        foreach ($multiple_id as $k => $id) {
-            $order = $orderMode->select(
-                'id', 'cid', 'uid', 'money', 'sum', 'attr', 'rid'
-            )->find($id);
-
-            $commdity = $commdityModel->select(
-                'commoditys.name', 'images.src', 'commoditys.price'
-            )
-                ->leftJoin('images', 'images.cid', 'commoditys.id')
-                ->groupby('commoditys.id')
-                ->find($order->cid);
-
-            $data[$k]['order'] = $order;
-            $data[$k]['commdity'] = $commdity;
-
-            $body .= $commdity->name . ' ';
-            $out_trade_no .= $order->cid . '_';
-            $money += $order->money;
-            $order_sum++;
-
-            if ($uid == '') {
-                $uid = $order->uid;
-            }
-        }
-
-        $address = (new Address())->where('type', 1)->where('uid', $uid)->select(
-            'name', 'phone', 'info'
-        )->first();
-
-        /*
-         * 生成微信支付订单信息
-         * */
-        $options = $this->options();
-        $app = new Application($options);
-        $payment = $app->payment;
-
-        $attributes = [
-            'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
-            'openid' => $openid,
-            'body' => 'EOS商品购买',
-            'detail' => $body,
-            'out_trade_no' => $out_trade_no,
-            'total_fee' => $money * 100,
-            'notify_url' => url('/multiple_pay/callback'),
-            'attach' => ''
-        ];
-
-        $orderwechat = new \EasyWeChat\Payment\Order($attributes);
-        $result = $payment->prepare($orderwechat);
-        if ($result->return_code == 'SUCCESS' && $result->result_code == 'SUCCESS') {
-            $prepayId = $result->prepay_id;
-            $config = $payment->configForJSSDKPayment($prepayId);
-        } else {
-            dd($result);
-        }
-
-        return view('multiple_order', [
-            'data' => $data,
-            'address' => $address,
-            'money' => $money,
-            'order_sum' => $order_sum,
-            'config' => $config,
-            'js' => $app->js
-        ]);
-    }
-
-    public function multiple_callback(Request $request)
-    {
-        $options = $this->options();
-        $app = new Application($options);
-        $payment = $app->payment;
-
-        $response = $payment->handleNotify(function ($notify, $successful) {
-            // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-            $order_id = explode(' ', $notify->out_trade_no);
-
-            foreach ($order_id as $id) {
-                $order = Order::where('rid', $id)->first();
-                // 检查订单是否已经更新过支付状态
-                if ($order->status == 0) { //已经是支付状态
-                    return true;
-                }
-                // 用户是否支付成功
-                if ($successful) {
-                    $order->status = 0;
-                }
-                $order->save();//更新订单已付款
-            }
-            return true;
-        });
-        return $response;
-    }
-
+    //支付回调接口
     public function callback(Request $request)
     {
         $options = $this->options();
@@ -311,69 +269,26 @@ class indexController extends Controller
         $payment = $app->payment;
 
         $response = $payment->handleNotify(function ($notify, $successful) {
-            // 使用通知里的 "微信支付订单号" 或者 "商户订单号" 去自己的数据库找到订单
-            $order = Order::where('rid', $notify->out_trade_no)->first();
-
-            // 检查订单是否已经更新过支付状态
-            if ($order->status == 0) { //已经是支付状态
-                return true;
-            }
-            // 用户是否支付成功
             if ($successful) {
-                $order->status = 0;
-            }
+                $orderid = implode($notify->attach, ' '); //获取订单id
 
-            $ret = $order->save();//更新订单已付款
+                $orderModel = new Order();
 
-            if ($ret) {
+                foreach ($orderid as $item) {
+                    $order = $orderModel->find($item);
+
+                    // 检查订单是否已经更新过支付状态
+                    if ($order->status != 0) { //已经是支付状态
+                        $order->status = 0;
+                    }
+                    $order->save();
+                }
+
                 return true;
+            } else {
+                return false;
             }
-
-            return false;
         });
         return $response;
-    }
-
-    public function order(Request $request)
-    {
-        $user = session('wechat.oauth_user');
-        $openid = $user['id'];
-
-        $validator = Validator::make($request->all(), [
-            'id' => 'required',
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json(['statusCode' => 100]);
-        }
-
-        $uid = (new Member())->where('openid', $openid)->select('id')->first();
-        $uid = $uid->id;
-
-        $order = new Order();
-        $id = $request->input('id');
-
-        $sid = (new Commodity())->select('sid', 'price', 'name')->find($id);
-        $money = $sid->price * $request->input('sum');
-
-        $id = $order->insertGetId([
-            'sid' => $sid->sid,
-            'cid' => $id,
-            'type' => 0,
-            'uid' => $uid,
-            'money' => $money,
-            'rid' => 'eos' . time(),
-            'sum' => $request->input('sum', 1),
-            'attr' => $request->input('attr', ''),
-            'status' => 1,
-            'proinfo' => $sid->name,
-            'delivery' => 0,
-        ]);
-
-        $request->session()->put('order_id', $id);
-
-        if ($id) {
-            return response()->json(['statusCode' => 200]);
-        }
     }
 }

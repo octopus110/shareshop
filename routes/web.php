@@ -21,10 +21,12 @@ Route::any('/wechat', 'WechatController@serve');
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
     Route::any('/create/order', 'indexController@order');//生成订单
+    Route::any('/create/order/cart/{id?}', 'indexController@create_cart_order');//购物车支付
 
     Route::any('/cart', 'memberController@carts');//购物车
 
     Route::any('/pay', 'indexController@pay');//支付
+    Route::any('/pay/cart', 'indexController@cart_pay');//购物车支付
     Route::any('/multiple_pay/{id?}', 'indexController@multiple_pay');//根据订单id支付（待支付）
 });
 
