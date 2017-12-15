@@ -190,10 +190,10 @@ class indexController extends Controller
         } else if ($request->input('type') == 1) { //传递的是订单id
             $orderIds = $request->input('orderid');
         }
-        if ($request->session()->put('orderid', $orderIds)) {
-            //return redirect('/pay');
-            return response()->json(['statusCode' => 200]);
-        }
+
+        session()->put('orderid', $orderIds);
+        //return redirect('/pay');
+        return response()->json(['statusCode' => 200]);
     }
 
     //支付接口
