@@ -225,7 +225,7 @@ class indexController extends Controller
             $commditys = $commodityModel->find($item->cid);
         }
 
-        $orderidstr = explode(' ', $orderid);//用于构造out_trade_no
+        $orderidstr = implode(' ', $orderid);//用于构造out_trade_no
 
         /*
          * 生成微信支付订单信息
