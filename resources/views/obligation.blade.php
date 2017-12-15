@@ -83,7 +83,7 @@
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
     var ids = '';
-    alert(checkbox_sum);
+
     $('.pay').click(function () {
         for (var i = 0; i < checkbox_sum; i++) {
             if (checkbox_input.eq(i).is(':checked')) {

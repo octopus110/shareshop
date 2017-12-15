@@ -199,7 +199,7 @@ class indexController extends Controller
     //根据订单id支付（待支付）
     public function multiple_pay($multiple_id = '')
     {
-        $multiple_id = implode(',', rtrim(',', $multiple_id));
+        $multiple_id = explode(',', rtrim(',', $multiple_id));
 
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
