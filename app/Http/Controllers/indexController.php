@@ -194,7 +194,7 @@ class indexController extends Controller
                 $cart = $cartsModel->where([
                     'uid' => $member->id,
                     'cid' => $k
-                ])->select('id', '')->first();
+                ])->select('id')->first();
 
                 if (isset($cart->id)) {
                     $cart->where('id', $cart->id)->delete();
