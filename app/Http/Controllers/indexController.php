@@ -232,7 +232,7 @@ class indexController extends Controller
         }
 
         $orderidstr = implode(' ', $orderid);//用于构造out_trade_no
-
+dd($orderidstr);
         /*
          * 生成微信支付订单信息
          * */

@@ -56,8 +56,8 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.5">
-              <caret line="289" column="53" selection-start-line="289" selection-start-column="53" selection-end-line="289" selection-end-column="53" />
+            <state vertical-scroll-proportion="-13.970589">
+              <caret line="291" column="56" selection-start-line="291" selection-start-column="56" selection-end-line="291" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -66,7 +66,7 @@
       <file leaf-file-name="memberController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.911765">
+            <state vertical-scroll-proportion="-1.0882353">
               <caret line="390" column="20" selection-start-line="390" selection-start-column="12" selection-end-line="390" selection-end-column="20" />
               <folding>
                 <element signature="e#275#2939#0#PHP" expanded="false" />
@@ -78,8 +78,8 @@
       <file leaf-file-name="indexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5315934">
-              <caret line="282" column="35" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.56593406">
+              <caret line="250" column="35" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -786,21 +786,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.5">
-          <caret line="289" column="53" selection-start-line="289" selection-start-column="53" selection-end-line="289" selection-end-column="53" />
+        <state vertical-scroll-proportion="-13.970589">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.911765">
-          <caret line="390" column="20" selection-start-line="390" selection-start-column="12" selection-end-line="390" selection-end-column="20" />
-          <folding>
-            <element signature="e#275#2939#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -812,18 +802,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.970589">
-          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="25" />
+          <caret line="291" column="56" selection-start-line="291" selection-start-column="56" selection-end-line="291" selection-end-column="56" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0882353">
+          <caret line="390" column="20" selection-start-line="390" selection-start-column="12" selection-end-line="390" selection-end-column="20" />
+          <folding>
+            <element signature="e#275#2939#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5315934">
-          <caret line="282" column="35" selection-start-line="282" selection-start-column="35" selection-end-line="282" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.56593406">
+          <caret line="250" column="35" selection-start-line="250" selection-start-column="24" selection-end-line="250" selection-end-column="35" />
           <folding />
         </state>
       </provider>
