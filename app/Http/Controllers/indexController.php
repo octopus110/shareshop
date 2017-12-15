@@ -272,7 +272,7 @@ class indexController extends Controller
     }
 
     //支付回调接口
-    public function callback(Request $request)
+    public function callback()
     {
         $options = $this->options();
         $app = new Application($options);
@@ -280,7 +280,7 @@ class indexController extends Controller
 
         $response = $payment->handleNotify(function ($notify, $successful) {
             if ($successful) {
-                $orderid = implode($notify->attach, ' '); //获取订单id
+                $orderid = explode($notify->attach, ' '); //获取订单id
 
                 $orderModel = new Order();
 
