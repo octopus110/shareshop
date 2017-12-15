@@ -17,11 +17,17 @@
 </header>
 
 <section class="address">
-    <p><i class="iconfont icon-shoujianren"></i>收件人:&nbsp; {{ $address->name }} &nbsp;&nbsp;&nbsp; {{ $address->phone }}
-    </p>
+    @if($address)
+        <p><i class="iconfont icon-shoujianren"></i>收件人:&nbsp; {{ $address->name }}
+            &nbsp;&nbsp;&nbsp; {{ $address->phone }}
+        </p>
 
-    <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
+        <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
+    @else
+        <a href="">添加地址</a>
+    @endif
 </section>
+
 
 @foreach($data as $item)
     <section class="commdity">
