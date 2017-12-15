@@ -16,7 +16,7 @@ Route::any('/address/edit/{id?}', 'memberController@edit');
 Route::any('/wechat', 'WechatController@serve');
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
-    Route::any('/create_order', 'memberController@create_order'); //创建订单
+    Route::any('/create_order', 'indexController@create_order'); //创建订单
     Route::any('/pay', 'indexController@pay');//支付
 
 });
