@@ -83,13 +83,17 @@
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
     var ids = '';
+    alert(checkbox_sum);
     $('.pay').click(function () {
-        for ($i = 0; $i < checkbox_sum; $i++) {
-            if (checkbox_input.eq($i).attr('checked')) {
-                ids += checkbox_input.eq($i).val();
+        for (var i = 0; i < checkbox_sum; i++) {
+            if (checkbox_input.eq(i).attr('checked')) {
+                ids += checkbox_input.eq(i).val();
+                alert(i);
             }
+
+            alert(ids);
         }
-alert(ids);
+        alert(ids);
         window.location.href = '/multiple_pay/' + ids;
     });
 </script>
