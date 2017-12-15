@@ -18,6 +18,23 @@ use Illuminate\Http\Request;
 
 class indexController extends Controller
 {
+    protected function options()
+    {
+        return [
+            'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
+            'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
+            'token' => env('WECHAT_TOKEN', 'mall'),
+
+            // payment
+            'payment' => [
+                'merchant_id' => '1494016742',
+                'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
+                'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
+                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem'
+            ],
+        ];
+    }
+
     public function index(Request $request)
     {
         $imageModel = new Image();
@@ -122,23 +139,6 @@ class indexController extends Controller
             'propertys' => $propertys,
             'js' => $app->js
         ]);
-    }
-
-    protected function options()
-    {
-        return [
-            'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
-            'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
-            'token' => env('WECHAT_TOKEN', 'mall'),
-
-            // payment
-            'payment' => [
-                'merchant_id' => '1494016742',
-                'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
-                'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
-                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem'
-            ],
-        ];
     }
 
     //创建订单接口
