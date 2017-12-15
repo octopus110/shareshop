@@ -309,7 +309,7 @@
 <script type="text/javascript">
     wx.config(<?php echo $js->config(array('onMenuShareTimeline', 'onMenuShareAppMessage'), false) ?>);
     wx.ready(function () {
-        wx.onMenuShareAppMessage({
+        wx.onMenuShareAppMessage({//朋友
             title: '{{ $data->name }}',
             desc: '{{ $data->introduce }}',
             link: '{{ url("/details") }}',
@@ -324,7 +324,7 @@
                 alert('分享失败');
             }
         });
-        wx.onMenuShareTimeline({
+        wx.onMenuShareTimeline({//朋友圈
             title: '推荐给你一个好东西：{{ $data->name }}',
             link: '{{ url("/details") }}',
             imgUrl: '{{ $images[0]['src'] }}',
