@@ -232,7 +232,7 @@ class indexController extends Controller
         }
 
         $orderidstr = implode(' ', $orderid);//用于构造out_trade_no
-dd($orderidstr);
+
         /*
          * 生成微信支付订单信息
          * */
@@ -281,7 +281,8 @@ dd($orderidstr);
         $response = $payment->handleNotify(function ($notify, $successful) {
             if ($successful) {
                 $orderid = explode($notify->attach, ' '); //获取订单id
-
+                Log::info('微信支付: ' . json_encode($notify));
+                Log::info('微信支付2: ' . $orderid);
                 $orderModel = new Order();
 
                 foreach ($orderid as $item) {
