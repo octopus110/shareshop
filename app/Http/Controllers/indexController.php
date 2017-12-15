@@ -245,8 +245,8 @@ class indexController extends Controller
         $attributes = [
             'trade_type' => 'JSAPI', // JSAPI，NATIVE，APP...
             'openid' => $openid,
-            'body' => $body,
-            'detail' => $body, //我这里是通过订单找到商品详情，你也可以自定义
+            'body' => 'EOS商品购买',
+            'detail' => $body,
             'out_trade_no' => $out_trade_no,
             'total_fee' => $money * 100,
             'notify_url' => url('/multiple_pay/callback'),
