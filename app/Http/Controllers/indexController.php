@@ -165,7 +165,7 @@ class indexController extends Controller
 
         if ($request->input('type') == 0) { //传递的是产品id
             $dataArr = $request->input('commodityid');
-            array_filter($dataArr);
+            $dataArr = array_filter($dataArr);
 
             dd($dataArr);
             $orderIds = [];//存放订单id的数组
