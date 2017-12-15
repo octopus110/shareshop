@@ -56,8 +56,8 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.64972526">
-              <caret line="329" column="30" selection-start-line="329" selection-start-column="30" selection-end-line="329" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.27884614">
+              <caret line="315" column="60" selection-start-line="315" selection-start-column="60" selection-end-line="315" selection-end-column="60" />
               <folding>
                 <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -834,8 +834,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64972526">
-          <caret line="329" column="30" selection-start-line="329" selection-start-column="30" selection-end-line="329" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.27884614">
+          <caret line="315" column="60" selection-start-line="315" selection-start-column="60" selection-end-line="315" selection-end-column="60" />
           <folding>
             <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
           </folding>
