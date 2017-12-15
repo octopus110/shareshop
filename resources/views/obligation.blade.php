@@ -82,12 +82,12 @@
     });
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
-    var ids = '';
+    var ids = [];
 
     $('.pay').click(function () {
         for (var i = 0; i < checkbox_sum; i++) {
             if (checkbox_input.eq(i).is(':checked')) {
-                ids += checkbox_input.eq(i).val() + ',';
+                ids[i] = checkbox_input.eq(i).val() + ',';
             }
         }
 
