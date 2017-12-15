@@ -178,7 +178,7 @@ class memberController extends Controller
 
         if ($request->isMethod('get')) {
             $carts = $cartModel->where('carts.uid', $mid)
-                ->select('carts.id', 'commoditys.id as commodty_id', 'carts.total', 'commoditys.name', 'commoditys.price', 'images.src', 'carts.sum')
+                ->select('carts.id', 'commoditys.id as commodty_id', 'carts.total', 'carts.attr', 'commoditys.name', 'commoditys.price', 'images.src', 'carts.sum')
                 ->leftJoin('commoditys', 'carts.cid', 'commoditys.id')
                 ->leftJoin('images', 'images.cid', 'commoditys.id')
                 ->groupby('commoditys.id')

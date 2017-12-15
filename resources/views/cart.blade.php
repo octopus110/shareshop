@@ -29,6 +29,7 @@
         <div class="left cart-content">
             <a href="/details/{{ $item->commodty_id }}">
                 <h3>{{ $item->name }}</h3>
+                <p>黄色</p>
             </a>
 
             <p>
@@ -121,6 +122,31 @@
                 ids += checkbox_input.eq(i).val() + ',';
             }
         }
+
+        $.ajax({
+            url: '/create_order',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                type: 0,
+                commodityid: {
+                    '{{ $data->id }}': {
+                        attr: attrV,
+                        sum: sum,
+                    }
+                },
+                '_token': '{{ csrf_token() }}'
+            },
+            success: function (data) {
+                if (data.statusCode == 200) {
+                    window.location.href = '/pay'
+                } else if (data.statusCode == 100) {
+                    window.location.href = '/member'
+                } else {
+                    alert('网络不稳定，请重试');
+                }
+            }
+        });
 
         window.location.href = '/create/order/cart/' + ids;
     });
