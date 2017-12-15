@@ -203,7 +203,7 @@ class memberController extends Controller
             }
 
             $total = (new Commodity())->select('price')->find($cid);
-            dd($total['price'],$request->input('sum', 1) * $total['price']);
+
             if ($cartModel->where('cid', $cid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
