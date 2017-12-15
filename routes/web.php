@@ -18,9 +18,9 @@ Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
     Route::any('/create_order', 'indexController@create_order'); //创建订单
     Route::any('/pay', 'indexController@pay');//支付
-
 });
 Route::any('/pay/callback', 'indexController@callback');//支付回调
+
 Route::any('/pay/success', function () {//支付成功
     return view('pay_success');
 });

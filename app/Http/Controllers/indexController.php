@@ -279,6 +279,7 @@ class indexController extends Controller
         $payment = $app->payment;
 
         $response = $payment->handleNotify(function ($notify, $successful) {
+            Log::info('123');
             if ($successful) {
                 $orderid = explode($notify->attach, ' '); //获取订单id
                 Log::info('微信支付: ' . json_encode($notify));
