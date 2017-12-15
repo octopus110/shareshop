@@ -278,8 +278,10 @@
                 data: {
                     type: 0,
                     commodityid: {
-                        attr: attrV,
-                        sum: sum,
+                        '{{ $data->id }}': {
+                            attr: attrV,
+                            sum: sum,
+                        }
                     },
                     '_token': '{{ csrf_token() }}'
                 },
