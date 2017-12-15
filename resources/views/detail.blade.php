@@ -312,7 +312,7 @@
         wx.onMenuShareAppMessage({//朋友
             title: '推荐给你一个好东西：{{ $data->name }}',
             desc: '{{ $data->introduce }}',
-            link: '{{ url("/details") }}',
+            link: '{{ url("/details/$data->id") }}',
             imgUrl: '{{ url("uploads/$images[0]['src']") }}',
             success: function () {
                 alert('分享成功,有人购买后讲获得奖金');
@@ -326,7 +326,7 @@
         });
         wx.onMenuShareTimeline({//朋友圈
             title: '{{ $data->name }}',
-            link: '{{ url("/details") }}',
+            link: '{{ url("/details/$data->id") }}',
             imgUrl: '{{ url("uploads/$images[0]['src']") }}',
             success: function () {
                 alert('分享成功,有人购买后讲获得奖金');
