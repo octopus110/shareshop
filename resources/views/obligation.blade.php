@@ -85,11 +85,11 @@
     var ids = '';
     $('.pay').click(function () {
         for ($i = 0; $i < checkbox_sum; $i++) {
-            if ($('#checkbox-id').eq($i).attr('checked')) {
-                ids += $('#checkbox-id').eq($i).val();
+            if (checkbox_input.eq($i).attr('checked')) {
+                ids += checkbox_input.eq($i).val();
             }
         }
-alert(ids);
+
         window.location.href = '/multiple_pay/' + ids;
     });
 </script>
