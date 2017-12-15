@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83691e3d-7109-43a5-bbf3-f112ab38826a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/detail.blade.php" />
     </list>
     <ignored path="shareShop.iws" />
@@ -55,9 +56,11 @@
       <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65384614">
-              <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
-              <folding />
+            <state vertical-scroll-proportion="0.64972526">
+              <caret line="329" column="30" selection-start-line="329" selection-start-column="30" selection-end-line="329" selection-end-column="30" />
+              <folding>
+                <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -831,9 +834,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65384614">
-          <caret line="186" column="12" selection-start-line="186" selection-start-column="12" selection-end-line="186" selection-end-column="12" />
-          <folding />
+        <state vertical-scroll-proportion="0.64972526">
+          <caret line="329" column="30" selection-start-line="329" selection-start-column="30" selection-end-line="329" selection-end-column="30" />
+          <folding>
+            <element signature="n#script#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
