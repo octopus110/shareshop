@@ -19,7 +19,7 @@
 @foreach($carts as $item)
     <section class="carts">
         <div class="left checkbox">
-            <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
+            <input type="checkbox" class="checkbox_input" value="{{ $item->commodty_id }}"/>
         </div>
 
         <div class="left cart-img">

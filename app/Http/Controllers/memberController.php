@@ -203,14 +203,14 @@ class memberController extends Controller
             }
 
             $total = (new Commodity())->select('price')->find($cid);
-
+            dd($total['price'],$request->input('sum', 1) * $total['price']);
             if ($cartModel->where('cid', $cid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
                 $cartModel->uid = $mid;
                 $cartModel->cid = $cid;
                 $cartModel->sum = $request->input('sum', 1);
-                $cartModel->attr = $request->input('attr', '');
+                $cartModel->attr = rtrim($request->input('attr', ''), ',');
                 $cartModel->total = $request->input('sum', 1) * $total['price'];
                 $ret = $cartModel->save();
 
