@@ -29,7 +29,8 @@
         <div class="left cart-content">
             <a href="/details/{{ $item->commodty_id }}">
                 <h3>{{ $item->name }}</h3>
-                <p>黄色</p>
+
+                <p>{{ $item->attr }}</p>
             </a>
 
             <p>
@@ -130,7 +131,7 @@
             data: {
                 type: 0,
                 commodityid: {
-                    '{{ $data->id }}': {
+                    '1': {
                         attr: attrV,
                         sum: sum,
                     }

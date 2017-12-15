@@ -224,6 +224,12 @@
         //加入购物车ajax
         $(".add_cart").click(function () {
             var sum = $("#amount").text();
+            var natureCotainer = $("#natureCotainer");
+            var attr = natureCotainer.find('a.selected');
+            var attrV = '';
+            for (var i = 0; i < attr.length; i++) {
+                attrV += attr.eq(i).text() + ',';
+            }
 
             $.ajax({
                 url: '/cart',
@@ -232,15 +238,13 @@
                 data: {
                     cid: '{{ $data->id }}',
                     'sum': sum,
+                    'attr': attrV,
                     '_token': '{{ csrf_token() }}'
                 },
                 success: function (data) {
                     switch (data.statusCode) {
                         case 200:
                             alert('已加入购物车');
-                            break;
-                        case 100:
-                            window.location.href = '/login';
                             break;
                         case 300:
                             alert('网络不稳定，请重试');

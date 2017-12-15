@@ -210,6 +210,7 @@ class memberController extends Controller
                 $cartModel->uid = $mid;
                 $cartModel->cid = $cid;
                 $cartModel->sum = $request->input('sum', 1);
+                $cartModel->sum = $request->input('attr', '');
                 $cartModel->total = $request->input('sum', 1) * $total['price'];
                 $ret = $cartModel->save();
 
