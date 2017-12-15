@@ -4,34 +4,22 @@ Route::get('/', 'indexController@index');
 Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
 Route::any('/details/{id?}', 'indexController@detail');
-
 Route::any('/cart', 'memberController@carts');//购物车
 Route::any('/cart/deal/{id?}', 'memberController@cartDel');
-
 Route::any('/order/del/{id?}', 'memberController@order_del');//删除订单
 Route::any('/obligation/{type?}', 'memberController@obligation');//待付款 待签收 待发货
-
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@edit');
 
 Route::any('/wechat', 'WechatController@serve');
-
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
-    Route::any('/create/order', 'indexController@order');//生成订单
-    Route::any('/create/order/cart/{id?}', 'indexController@create_cart_order');//购物车支付
-
-    Route::any('/cart', 'memberController@carts');//购物车
-
     Route::any('/pay', 'indexController@pay');//支付
-    Route::any('/pay/cart', 'indexController@cart_pay');//购物车支付
-    Route::any('/multiple_pay/{id?}', 'indexController@multiple_pay');//根据订单id支付（待支付）
-});
 
+});
 Route::any('/pay/callback', 'indexController@callback');//支付回调
-Route::any('/multiple_pay/callback', 'indexController@multiple_callback');//根据订单id支付（待支付） 支付回调
 Route::any('/pay/success', function () {//支付成功
     return view('pay_success');
 });
