@@ -168,7 +168,7 @@ class indexController extends Controller
 
             $orderIds = [];//存放订单id的数组
             foreach ($dataArr as $k => $v) {//一个订单一个产品
-                $one = $commdityModel->select('sid', 'price', 'name')->find($k)->toArray();
+                $one = $commdityModel->select('sid', 'price', 'name')->find($k);
                 $money = $one['price'] * $v['sum'];
 
                 $id = $orderModel->insertGetId([
@@ -204,7 +204,9 @@ class indexController extends Controller
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
-        $mid = session()->get('mid');
+        $membreModel = new Member();
+        $member = $membreModel->where('openid', $openid)->select('id')->first();
+        $mid = $member->id;
 
         $addressModel = new Address();
         $orderModel = new Order();
