@@ -223,7 +223,12 @@ class indexController extends Controller
         foreach ($orders as $item) {
             $money += $item->money;
             $sum += $item->sum;
-            array_push($commditys, $commodityModel->find($item->cid));
+            $com = $commodityModel->select(
+                'commoditys.id', 'commoditys.name', 'commoditys.price', 'images.src'
+            )->leftjoin('images', 'images.cid', 'commoditys.id')
+                ->groupby('commoditys.id')
+                ->find($item->cid);
+            array_push($commditys, $com);
         }
 
         $orderidstr = implode(' ', $orderid);//用于构造out_trade_no
