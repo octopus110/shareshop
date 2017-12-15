@@ -272,13 +272,15 @@
             sum = parseInt(amount.text());
 
             $.ajax({
-                url: '/create/order',
+                url: '/create_order',
                 type: 'post',
                 dataType: 'json',
                 data: {
-                    id: ' {{ $data->id }}',
-                    attr: attrV,
-                    sum: sum,
+                    type: 0,
+                    commodityid: {
+                        attr: attrV,
+                        sum: sum,
+                    },
                     '_token': '{{ csrf_token() }}'
                 },
                 success: function (data) {

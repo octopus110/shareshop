@@ -191,7 +191,8 @@ class indexController extends Controller
             $orderIds = $request->input('orderid');
         }
         if ($request->session()->put('orderid', $orderIds)) {
-            return redirect('/pay');
+            //return redirect('/pay');
+            return response()->json(['statusCode' => 200]);
         }
     }
 
@@ -258,7 +259,6 @@ class indexController extends Controller
             'config' => $config,
             'js' => $app->js
         ]);
-
     }
 
     //支付回调接口
