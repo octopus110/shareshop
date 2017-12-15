@@ -140,7 +140,7 @@
             },
             success: function (data) {
                 if (data.statusCode == 200) {
-                    //window.location.href = '/pay'
+                    window.location.href = '/pay'
                 } else if (data.statusCode == 100) {
                     window.location.href = '/member'
                 } else {
