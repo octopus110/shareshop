@@ -200,7 +200,7 @@ class indexController extends Controller
     public function multiple_pay($multiple_id = '')
     {
         $multiple_id = explode(',', rtrim(',', $multiple_id));
-
+dd($multiple_id);
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
