@@ -254,6 +254,8 @@ class indexController extends Controller
             dd($result);
         }
 
+        dd($orders,$address,$commditys,$config);
+
         return view('order', [
             'order' => $orders,
             'address' => $address,
