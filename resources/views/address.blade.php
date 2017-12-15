@@ -19,8 +19,9 @@
 @foreach($address as $item)
     <section class="address">
         <p>
-            <a href="/address/deal/{{ $item->id }}/1"><i
-                        class="iconfont icon-sheweimoren {{ $item->type?'sheweimoren':'' }}"></i></a>
+            <a href="/address/deal/{{ $item->id }}/1">
+                <i class="{{ $item->type?'iconfont icon-sheweimoren':'' }}"></i>
+            </a>
             {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
         </p>
         <a href="/address/edit/{{ $item->id }}"><i class="iconfont icon-bianji"></i></a>
