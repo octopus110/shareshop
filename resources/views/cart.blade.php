@@ -67,7 +67,7 @@
         var price = $(that).parent().find('.price');
         var submit = $(that).parent().parent().find('.submit');
 
-        var cu_sum = parseInt(sum.text());
+        var cu_sum = parseFloat(sum.text());
         var t_sum = 0;
 
         if (type == 0) {//-
@@ -81,7 +81,7 @@
         }
 
         sum.text(t_sum);
-        total.text(t_sum * parseInt(price.text()));
+        total.text(t_sum * parseFloat(price.text()));
 
         if (submit.css('opacity') == 0) {
             submit.css('opacity', 1);
