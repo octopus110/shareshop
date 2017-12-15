@@ -91,7 +91,25 @@
             }
         }
 
-        window.location.href = '/multiple_pay/' + ids;
+        $.ajax({
+            url: '/create_order',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                type: 1,
+                orderid: ids,
+                '_token': '{{ csrf_token() }}'
+            },
+            success: function (data) {
+                if (data.statusCode == 200) {
+                    window.location.href = '/pay'
+                } else if (data.statusCode == 100) {
+                    window.location.href = '/member'
+                } else {
+                    alert('网络不稳定，请重试');
+                }
+            }
+        });
     });
 </script>
 

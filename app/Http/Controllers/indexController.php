@@ -295,17 +295,14 @@ class indexController extends Controller
             if ($successful) {
                 $orderid = explode(' ', $notify->attach); //获取订单id
                 $orderModel = new Order();
-
                 foreach ($orderid as $item) {
                     $order = $orderModel->find($item);
-
                     // 检查订单是否已经更新过支付状态
                     if ($order->status != 0) { //已经是支付状态
                         $order->status = 0;
                     }
                     $order->save();
                 }
-
                 return true;
             } else {
                 return false;
