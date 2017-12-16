@@ -316,7 +316,7 @@ class indexController extends Controller
                     }
                     $order->save();
 
-                    if ($order->shareshopid && $order->money > 50) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
+                    if ($order->shareshopid && $order->money > 0) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
                         $member = $memberModel->where('openid', $order->shareshopid)->first();
                         $user = $userModel->where('id', $order->sid)->first();
                         $member->earnings = $user->profit;
