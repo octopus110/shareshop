@@ -27,7 +27,7 @@ Route::any('/pay/success', function () {//支付成功
 
 Route::group(['prefix' => 'server'], function () {
     Auth::routes();
-    Route::get('/', 'homeController@index')->name('home');
+    Route::get('/home', 'homeController@index')->name('home');
     Route::get('/quit', 'homeController@quit')->name('quit');
     //多图片上传接口
     Route::any('/update', 'updateController@images');
