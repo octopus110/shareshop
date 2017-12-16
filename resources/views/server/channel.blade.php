@@ -4,7 +4,7 @@
         <tr>
             <th>编号</th>
             <th>微信昵称</th>
-            <th>微信号</th>
+            <th>身份证号</th>
             <th>获得收益</th>
             <th>已发放金额</th>
             <th>最后一次收益时间</th>
@@ -15,8 +15,8 @@
         @foreach($data as $item)
             <tr target="id" rel="{{ $item->id }}">
                 <td>{{ $item->id }}</td>
-                <td>{{ $item->weixinid }}</td>
-                <td>{{ $item->weixinid }}</td>
+                <td>{{ $item->nickname }}</td>
+                <td>{{ $item->IDnumber }}</td>
                 <td>{{ $item->earnings }}</td>
                 <td>{{ $item->getearnings }}</td>
                 <td>{{ $item->updated_at }}</td>

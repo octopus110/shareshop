@@ -321,6 +321,9 @@ class indexController extends Controller
                         $member->earnings = $user->profit;
                         $member->type = 1;
                         $member->save();
+                        //更新注册商表，让他的个体注册商里包含此用户
+                        $user->mid = $user->mid . ',' . $member->id;
+                        $user->save();
                     }
                 }
                 return true;

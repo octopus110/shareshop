@@ -15,11 +15,11 @@ class channelController extends Controller
     {
         $memberModel = new Member();
         $user = Auth::user();
-        $usermid = explode(',',$user->mid);
+        $usermid = explode(',', $user->mid); //一个商户可能拥有多个渠道商
 
         $member = $memberModel->where('type', 1)
-            ->whereIn('id',$usermid)
-            ->select('id', 'weixinid', 'earnings', 'getearnings', 'updated_at')->get();
+            ->whereIn('id', $usermid)
+            ->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'updated_at')->get();
 
         return view('server/channel', ['data' => $member]);
     }
