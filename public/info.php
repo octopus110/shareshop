@@ -1,0 +1,1 @@
+./configure --prefix=/usr/local/php71/ --enable-mbstring --with-curl --with-gd --enable-fpm --enable-mysqlnd  --with-pdo-mysql=mysqlnd --with-config-file-path=/usr/local/php71/etc/ --with-mysqli=mysqlnd 
