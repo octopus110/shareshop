@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .swiper-banner {
     width: 100vw;
 }
@@ -73,3 +74,6 @@
     color: #fff;
     font-size: 3vw;
 }
+=======
+.swiper-banner{width:100vw}.swiper-nav{padding:10px 0;width:100vw;background:#fff}.swiper-nav p{text-align:center}.active-product,.new-product{margin:10px 0;padding:10px 10px 0;background:#fff}.new-product .product{display:flex;width:100%;flex-wrap:wrap;justify-content:space-between}.new-product .pro-item{padding-top:10px;padding-bottom:10px;width:48%;border-bottom:2px solid #f2f2f2}.product .pro-item h6{overflow:hidden;padding-top:2vw;height:17vw}.pro-item p span{color:red}.active-product .pro-item{padding-top:10px;padding-bottom:10px;border-bottom:2px solid #f2f2f2}.active-product .pro-item:last-child{border-bottom:none}.login{position:fixed;top:3vw;right:0;z-index:10;overflow:hidden;width:22vw;height:8vw;border-bottom-left-radius:2vw;border-top-left-radius:2vw;background:#115286;line-height:8vw}.login a{float:left;width:100%;height:100%;color:#fff;text-align:center;font-size:3vw}
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba

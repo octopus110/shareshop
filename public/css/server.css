@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html,body{
 	height: 100%;
 }
@@ -20,3 +21,6 @@ html,body{
 	float: left;
 	width: 85%;
 }
+=======
+.nav,body,html{height:100%}.nav{float:left;width:15%;background:#333;font-size:1pc}.nav li{height:40px;text-align:center;line-height:40px}.nav a{color:#fff}.content{float:left;width:85%}
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .cart-header {
     height: 9.7vw;
     background: #fff;
@@ -87,3 +88,6 @@
     background: #fff;
     border-radius: 1.5vw;
 }
+=======
+.cart-header{position:relative;background:#fff;text-align:center;font-size:3.8vw}.cart-header,.cart-header a{height:9.7vw;line-height:9.7vw}.cart-header a{position:absolute;top:0;left:10px;display:inline-block;font-size:3.3vw}.carts,.transactions{margin-top:10px;padding:10px;background:#fff}.cart-img{overflow:hidden;margin-right:3%;width:30%;height:28vw}.cart-content{width:55%}.cart-content h3{font-size:3.6vw}.cart-content p{padding-top:10px}.cart-content p span{padding-left:4%;color:red}.cart-content p i{padding:0 2%}.cart-content p em{float:right;color:#ccc}.transactions span{float:right;color:red}.submit{padding-right:2vw;opacity:0}.icon-queren-copy{color:red!important}.checkbox{padding:10vw 3vw}.checkbox input{border:1px solid red}.pay{display:block;margin:10vw auto;width:80vw;height:10vw;border:1px solid #ccc;border-radius:1.5vw;background:#fff}
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba

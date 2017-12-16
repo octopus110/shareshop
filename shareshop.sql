@@ -10,7 +10,11 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
+<<<<<<< HEAD
 Date: 2017-12-12 14:32:27
+=======
+Date: 2017-12-16 10:18:00
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,14 +33,21 @@ CREATE TABLE `address` (
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf32 COMMENT='地址表';
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf32 COMMENT='地址表';
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Records of address
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `address` VALUES ('1', '0', '河北省 石家庄市 长安区 皇城路200号', '吴先生', '13658965689', '6', '2017-12-05 17:51:18', '2017-12-05 17:51:18');
 INSERT INTO `address` VALUES ('8', '1', '吉林省 长春市 南关区 黄泉路188号', '王先生', '13547854587', '6', '2017-12-05 17:51:03', '2017-12-05 17:51:03');
 INSERT INTO `address` VALUES ('9', '0', '北京市 北京市市辖区 东城区 天堂路250号', '刘先生', '13245677456', '6', '2017-12-05 17:50:49', '2017-12-05 17:50:49');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for carts
@@ -46,18 +57,32 @@ CREATE TABLE `carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `uid` int(11) NOT NULL COMMENT '用户id',
   `cid` int(11) unsigned NOT NULL COMMENT '商品id',
+<<<<<<< HEAD
   `sum` int(5) unsigned NOT NULL DEFAULT '1' COMMENT '产品数量',
   `total` int(10) unsigned NOT NULL COMMENT '总价',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf32 COMMENT='购物车';
+=======
+  `shareshopid` varchar(50) DEFAULT NULL COMMENT '分享者id',
+  `sum` int(5) unsigned NOT NULL DEFAULT '1' COMMENT '产品数量',
+  `attr` varchar(100) DEFAULT NULL,
+  `total` float(6,2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf32 COMMENT='购物车';
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Records of carts
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `carts` VALUES ('10', '6', '25', '4', '356', '2017-12-06 17:35:12', '2017-12-06 17:35:12');
 INSERT INTO `carts` VALUES ('11', '6', '35', '1', '128', '2017-12-06 17:31:05', '2017-12-06 17:31:05');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for classifys
@@ -76,6 +101,7 @@ CREATE TABLE `classifys` (
 -- ----------------------------
 -- Records of classifys
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `classifys` VALUES ('7', '服装', 'classify_1511847094441437.png', '1', '2017-11-28 13:31:34', '2017-11-28 05:31:34');
 INSERT INTO `classifys` VALUES ('8', '家电', 'classify_1511847195176819.png', '2', '2017-11-28 13:33:15', '2017-11-28 05:33:15');
 INSERT INTO `classifys` VALUES ('9', '数码', 'classify_1511847365209412.png', '3', '2017-11-28 13:36:05', '2017-11-28 05:36:05');
@@ -85,6 +111,8 @@ INSERT INTO `classifys` VALUES ('12', '学习', 'classify_1511847395250702.png',
 INSERT INTO `classifys` VALUES ('13', '百货', 'classify_1511847404302735.png', '7', '2017-11-28 13:36:44', '2017-11-28 05:36:44');
 INSERT INTO `classifys` VALUES ('14', '酒水', 'classify_1511847411537353.png', '8', '2017-11-28 13:36:51', '2017-11-28 05:36:51');
 INSERT INTO `classifys` VALUES ('18', '饮料', 'classify_1511847920832153.png', '9', '2017-11-28 05:45:20', '2017-11-28 05:45:20');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for commoditys
@@ -109,6 +137,7 @@ CREATE TABLE `commoditys` (
 -- ----------------------------
 -- Records of commoditys
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `commoditys` VALUES ('14', '3', 'AaNn羊绒落肩长款大衣 Eugene tong着用', '6', '0', '0', '<ul class=\"attributes-list\" style=\"margin: 0px; padding: 0px 15px; list-style: none; clear: both; font-family: tahoma, arial, &quot;Hiragino Sans GB&quot;, 宋体, sans-serif;\"><li title=\"宽松\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">服装版型:&nbsp;宽松</li><li title=\"浅灰色 黑色\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">颜色分类:&nbsp;浅灰色 黑色</li><li title=\"中长款\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">衣长:&nbsp;中长款</li><li title=\"S M L XL\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">尺码:&nbsp;S M L XL</li><li title=\"单排扣\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">衣门襟:&nbsp;单排扣</li><li title=\"羊绒\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">面料分类:&nbsp;羊绒</li><li title=\"其他/other\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">品牌:&nbsp;其他/other</li><li title=\"冬季\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用季节:&nbsp;冬季</li><li title=\"旅游\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用场景:&nbsp;旅游</li><li title=\"青春流行\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">基础风格:&nbsp;青春流行</li></ul>', '7', '1', '2017-12-08 15:52:38', '2017-11-27 09:37:47');
 INSERT INTO `commoditys` VALUES ('15', '3', '撞色蓝色风衣男 ulzzang韩版中长款简约帅气披风外套时尚潮流秋冬', '20', '0', '0', '<ul class=\"attributes-list\" style=\"margin: 0px; padding: 0px 15px; list-style: none; clear: both; font-family: tahoma, arial, &quot;Hiragino Sans GB&quot;, 宋体, sans-serif;\"><li title=\"中长款\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">衣长:&nbsp;中长款</li><li title=\"宽松\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">版型:&nbsp;宽松</li><li title=\"无扣\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">衣门襟:&nbsp;无扣</li><li title=\"雾蓝\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">颜色:&nbsp;雾蓝</li><li title=\"M L\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">尺码:&nbsp;M L</li><li title=\"其它/other\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">品牌:&nbsp;其它/other</li><li title=\"秋季\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用季节:&nbsp;秋季</li><li title=\"其他休闲\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用场景:&nbsp;其他休闲</li><li title=\"青春流行\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">基础风格:&nbsp;青春流行</li></ul>', '7', '0.01', '2017-12-07 16:18:06', '2017-12-06 17:42:15');
 INSERT INTO `commoditys` VALUES ('16', '3', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', '78', '0', '0', '<ul class=\"attributes-list\" style=\"margin: 0px; padding: 0px 15px; list-style: none; clear: both; font-family: tahoma, arial, &quot;Hiragino Sans GB&quot;, 宋体, sans-serif;\"><li title=\"棉69% 聚酯纤维31%\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">材质成分:&nbsp;棉69% 聚酯纤维31%</li><li title=\"长裤\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">裤长:&nbsp;长裤</li><li title=\"H4065\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">货号:&nbsp;H4065</li><li title=\"黑色\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">颜色:&nbsp;黑色</li><li title=\"29 30 31 32 33 34\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">尺码:&nbsp;29 30 31 32 33 34</li><li title=\"常规牛仔布\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">牛仔面料:&nbsp;常规牛仔布</li><li title=\"其它/other\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">品牌:&nbsp;其它/other</li><li title=\"缉明线\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">款式细节:&nbsp;缉明线</li><li title=\"2017年\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">上市时间:&nbsp;2017年</li><li title=\"四季\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用季节:&nbsp;四季</li><li title=\"其他休闲\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用场景:&nbsp;其他休闲</li><li title=\"青年\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">适用对象:&nbsp;青年</li><li title=\"棉\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">材质:&nbsp;棉</li><li title=\"微弹\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">弹力:&nbsp;微弹</li><li title=\"中腰\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">腰型:&nbsp;中腰</li><li title=\"小直脚\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">裤脚口款式:&nbsp;小直脚</li><li title=\"拉链\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">裤门襟:&nbsp;拉链</li><li title=\"水洗\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">洗水工艺:&nbsp;水洗</li><li title=\"常规\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">厚薄:&nbsp;常规</li><li title=\"修身小脚\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">款式版型:&nbsp;修身小脚</li><li title=\"青春流行\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">基础风格:&nbsp;青春流行</li><li title=\"潮\" style=\"margin: 0px 20px 0px 0px; padding: 0px; display: inline; float: left; width: 206px; height: 24px; overflow: hidden; text-indent: 5px; line-height: 24px; white-space: nowrap; text-overflow: ellipsis;\">细分风格:&nbsp;潮</li></ul>', '7', '0.01', '2017-12-07 16:18:07', '2017-12-06 17:42:19');
@@ -131,6 +160,8 @@ INSERT INTO `commoditys` VALUES ('32', '6', '蒙牛奶粉成人400g青少年女�
 INSERT INTO `commoditys` VALUES ('33', '3', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', '12', '0', '0', '<ul class=\"J_subAttrList\" style=\"margin: 0px; padding: 0px 20px 18px; list-style: none; zoom: 1; border-top: 1px solid rgb(255, 255, 255); color: rgb(64, 64, 64); font-family: tahoma, arial, 微软雅黑, sans-serif;\"><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">净含量:&nbsp;1000g&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">包装方式:&nbsp;包装&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">品牌:&nbsp;Devondale/德运&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">系列:&nbsp;全脂成人奶粉1KG&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">产地:&nbsp;澳大利亚&nbsp;</li><li title=\"&nbsp;23区\" data-spm-anchor-id=\"a220o.1000855.0.i0.5cdf19d09Lsor1\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">奶粉种类:&nbsp;全脂&nbsp;高钙&nbsp;</li></ul>', '13', '0.01', '2017-12-07 16:18:25', '2017-12-02 09:20:05');
 INSERT INTO `commoditys` VALUES ('34', '6', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', '12', '0', '0', '<ul class=\"J_subAttrList\" style=\"margin: 0px; padding: 0px 20px 18px; list-style: none; zoom: 1; border-top: 1px solid rgb(255, 255, 255); color: rgb(64, 64, 64); font-family: tahoma, arial, 微软雅黑, sans-serif;\"><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">净含量:&nbsp;1000g&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">包装方式:&nbsp;包装&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">品牌:&nbsp;Devondale/德运&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">系列:&nbsp;全脂成人奶粉1KG&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">产地:&nbsp;澳大利亚&nbsp;</li><li title=\"&nbsp;23区\" data-spm-anchor-id=\"a220o.1000855.0.i0.5cdf19d09Lsor1\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">奶粉种类:&nbsp;全脂&nbsp;高钙&nbsp;</li></ul>', '13', '0.01', '2017-12-07 16:18:26', '2017-12-03 05:09:44');
 INSERT INTO `commoditys` VALUES ('35', '3', '澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜', '25', '0', '0', '<ul class=\"J_subAttrList\" style=\"margin: 0px; padding: 0px 20px 18px; list-style: none; zoom: 1; border-top: 1px solid rgb(255, 255, 255); color: rgb(64, 64, 64); font-family: tahoma, arial, 微软雅黑, sans-serif;\"><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">净含量:&nbsp;1000g&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">包装方式:&nbsp;包装&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">品牌:&nbsp;Devondale/德运&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">系列:&nbsp;全脂成人奶粉1KG&nbsp;</li><li title=\"&nbsp;23区\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">产地:&nbsp;澳大利亚&nbsp;</li><li title=\"&nbsp;23区\" data-spm-anchor-id=\"a220o.1000855.0.i0.5cdf19d09Lsor1\" style=\"margin: 10px 15px 0px 0px; padding: 0px; list-style: none; display: inline; float: left; width: 220px; height: 18px; overflow: hidden; line-height: 18px; vertical-align: top; white-space: nowrap; text-overflow: ellipsis; color: rgb(102, 102, 102);\">奶粉种类:&nbsp;全脂&nbsp;高钙&nbsp;</li></ul>', '13', '1', '2017-12-08 15:52:53', '2017-12-03 05:03:55');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for earnings
@@ -149,7 +180,10 @@ CREATE TABLE `earnings` (
 -- ----------------------------
 -- Records of earnings
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `earnings` VALUES ('1', '100', '11', '1', '2017-12-06 17:42:44', '2017-12-06 17:42:42');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for images
@@ -169,6 +203,7 @@ CREATE TABLE `images` (
 -- ----------------------------
 -- Records of images
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `images` VALUES ('33', 'commodity_1511773881521118.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
 INSERT INTO `images` VALUES ('34', 'commodity_1511773881683197.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
 INSERT INTO `images` VALUES ('35', 'commodity_151177388110773.jpg', '15', '0', '2017-11-27 17:11:51', '2017-11-27 09:11:51');
@@ -215,6 +250,8 @@ INSERT INTO `images` VALUES ('84', 'commodity_1512207182770721.jpg', '34', '0', 
 INSERT INTO `images` VALUES ('85', 'commodity_1512207211810363.jpg', '32', '0', '2017-12-02 17:33:50', '2017-12-02 09:33:50');
 INSERT INTO `images` VALUES ('86', 'commodity_1512207258532562.jpg', '26', '0', '2017-12-02 17:34:21', '2017-12-02 09:34:21');
 INSERT INTO `images` VALUES ('87', 'commodity_1512207277316925.jpg', '28', '0', '2017-12-02 17:34:39', '2017-12-02 09:34:39');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for informations
@@ -253,9 +290,14 @@ CREATE TABLE `members` (
   `getearnings` float unsigned DEFAULT '0' COMMENT '发放金额',
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NULL DEFAULT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (`id`),
   UNIQUE KEY `openid` (`openid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
+=======
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Records of members
@@ -269,6 +311,10 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `sid` int(10) unsigned NOT NULL COMMENT '属于哪个商户的订单',
   `cid` int(11) unsigned NOT NULL COMMENT '商品id',
+<<<<<<< HEAD
+=======
+  `shareshopid` varchar(50) DEFAULT NULL COMMENT '分享者id',
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
   `type` tinyint(2) NOT NULL COMMENT '订单类型 0 购物订单 1提现订单',
   `uid` int(11) NOT NULL COMMENT '用户id',
   `money` float NOT NULL COMMENT '订单金额',
@@ -282,13 +328,20 @@ CREATE TABLE `orders` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
+<<<<<<< HEAD
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf32 COMMENT='订单表';
+=======
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf32 COMMENT='订单表';
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `orders` VALUES ('7', '3', '35', '0', '6', '1', 'eos1512804289', '1', '澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜', '100ml,原味,', '1', '0', '2017-12-09 15:24:49', null);
 INSERT INTO `orders` VALUES ('8', '3', '35', '0', '6', '1', 'eos1512804291', '1', '澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜', '100ml,原味,', '1', '0', '2017-12-09 15:24:51', null);
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for password_resets
@@ -304,7 +357,10 @@ CREATE TABLE `password_resets` (
 -- ----------------------------
 -- Records of password_resets
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `password_resets` VALUES ('1169815992@qq.com', '$2y$10$f/oKb33CvgPAvXcPgoNGUu6Bw7PBc76..tnuweN4pEE1CEjPneEcm', '2017-11-25 08:18:46');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for propertys
@@ -323,10 +379,13 @@ CREATE TABLE `propertys` (
 -- ----------------------------
 -- Records of propertys
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `propertys` VALUES ('9', '35', '容量', '100ml,300ml,500ml,1l,,', '2017-12-06 17:43:47', '2017-12-06 17:43:46');
 INSERT INTO `propertys` VALUES ('10', '35', '口味', '原味,甜,酸,,,', '2017-12-06 17:43:50', '2017-12-06 17:43:49');
 INSERT INTO `propertys` VALUES ('11', '31', '口味', '草莓,苹果,,,,', '2017-12-06 17:43:52', '2017-12-06 17:43:51');
 INSERT INTO `propertys` VALUES ('12', '29', '口味', '丑,香,纯,,,', '2017-12-06 17:43:55', '2017-12-06 17:43:54');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
 
 -- ----------------------------
 -- Table structure for records
@@ -375,7 +434,10 @@ CREATE TABLE `users` (
 -- ----------------------------
 -- Records of users
 -- ----------------------------
+<<<<<<< HEAD
 INSERT INTO `users` VALUES ('1', '', null, null, 'sdfsdfs', 'root', '13661643461', '372928199301027410', '225658965123', '1169815992@qq.com', '$2y$10$VQUzRqVcdFMxAwhp8E4OJuf6Pkaeq.21SjBisA0NeXmywxix/6VVm', '5', '3', '1', '0', 'prbShdqM19EkwoBHRQSSduLOVzMesYJS1EqzMrvhVbHpPVd8bbDqnQgvOOxM', '2017-11-25 08:13:55', '2017-11-25 08:13:55', '2017-11-25 11:03:24');
 INSERT INTO `users` VALUES ('3', 'GBstudios原创男装', 'GBstudios原创男装', 'classify_1512192125952911.png', '1259845635', '李章岭', '13661643461', '372829366542123595', '5842356411', '1169856235@qq.com', '$2y$10$3emDvyOjTh1QvyowMeoljehtFu1FK6GR6b2hw6JgEef3Shx6Fs.MO', '0', '3', null, '1', '02BG1XqDZcN7vPUAmcpc6tfEXvTuEkBGiy0VVTG6khsQobq6Qsu2VpFGMnof', null, '2017-11-25 10:29:28', '2017-12-02 05:22:05');
 INSERT INTO `users` VALUES ('6', '联想笔记本电脑商城', '联想笔记本电脑商城', 'classify_1512192144361756.png', '1235698', '采购城888', '13661643569', '372928199301027456', '1256335422', '1169815996@qq.com', '$2y$10$OSq6Mxxny1cwMpxf4VUrDO4FbRt/TTNH14sW5guZr73AEl.pwrdJ2', '0', '3', null, '1', 'G3hsvet5EG6T6drbZOHy4Z8lAlZ04JIHaM9bmWU21WixzfqXoaMHlwVon6dN', null, '2017-11-27 02:03:06', '2017-12-02 05:22:24');
 INSERT INTO `users` VALUES ('7', null, null, null, 'afd', 'li99', '136584795896', null, null, 'd@qq.com', '1qaz2wsx', '0', '3', null, '0', null, null, '2017-11-27 02:38:16', '2017-11-27 02:57:25');
+=======
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba

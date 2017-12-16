@@ -1,2 +1,16 @@
+<<<<<<< HEAD
 .idea
 .env
+=======
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+>>>>>>> 0d178cb7376b6af5cf8e710821f0c73f251624ba
