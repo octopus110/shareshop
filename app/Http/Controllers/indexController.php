@@ -319,6 +319,7 @@ class indexController extends Controller
                         $member = $memberModel->where('openid', $order->shareshopid)->first();
                         $user = $userModel->where('id', $order->sid)->first();
                         $member->earnings = $user->profit;
+                        $member->type = 1;
                         $member->save();
                     }
                 }
