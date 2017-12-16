@@ -15,12 +15,11 @@
     <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>交易记录
 </header>
 
-<section class="transactions">
-    【消费】产品名称产品名称 <span>-200.3</span>
-</section>
-<section class="transactions">
-    【分红】产品名称产品名称 <span>+200.3</span>
-</section>
+@foreach($transactions as $item)
+    <section class="transactions">
+        【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
+    </section>
+@endforeach
 
 </body>
 </html>

@@ -296,7 +296,15 @@ class memberController extends Controller
 
     public function transaction()
     {
-        return view('transaction');
+        $orderModel = new Order();
+        $transactions = $orderModel->where('orders.status', 0)
+            ->select('commoditys.name', 'orders.money', 'orders.type')
+            ->leftjoin('commoditys', 'commoditys.id', 'orders.cid')
+            ->get();
+
+        return view('transaction', [
+            'transactions' => $transactions
+        ]);
     }
 
     public function order_del($id)//删除订单
