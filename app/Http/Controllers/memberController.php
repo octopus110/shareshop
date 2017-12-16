@@ -170,7 +170,8 @@ class memberController extends Controller
                     'head' => $user['avatar'],
                     'earnings' => 0,
                     'getearnings' => 0,
-                    'type' => 0
+                    'type' => 0,
+                    'shareshopid' => $request->input('userid')
                 ];
                 $mid = $memberModel->insertGetId($member);
             }

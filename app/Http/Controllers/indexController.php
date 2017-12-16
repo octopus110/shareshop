@@ -10,6 +10,7 @@ use App\Member;
 use App\Order;
 use App\Property;
 use App\Address;
+use App\User;
 use EasyWeChat\Foundation\Application;
 use Illuminate\Support\Facades\Log;
 use Validator;
@@ -107,7 +108,7 @@ class indexController extends Controller
         return response()->json($commoditys);
     }
 
-    public function detail($id = 15)
+    public function detail($id = 15, $userid = null)
     {
         $commoditysModel = new Commodity();
         $data = $commoditysModel->select(
@@ -133,7 +134,12 @@ class indexController extends Controller
         $options = $this->options();
         $app = new Application($options);
 
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
+
         return view('detail', [
+            'openid' => $openid,
+            'userid' => $userid,
             'data' => $data,
             'images' => $images,
             'propertys' => $propertys,
@@ -190,6 +196,7 @@ class indexController extends Controller
                     'status' => 1,
                     'proinfo' => $one->name,
                     'delivery' => 0,
+                    'shareshopid' => $request->input('userid')
                 ]);
 
                 array_push($orderIds, $id);
@@ -299,6 +306,8 @@ class indexController extends Controller
             if ($successful) {
                 $orderid = explode(' ', $notify->attach); //获取订单id
                 $orderModel = new Order();
+                $memberModel = new Member();
+                $userModel = new User();
                 foreach ($orderid as $item) {
                     $order = $orderModel->find($item);
                     // 检查订单是否已经更新过支付状态
@@ -306,6 +315,13 @@ class indexController extends Controller
                         $order->status = 0;
                     }
                     $order->save();
+
+                    if ($order->shareshopid && $order->money > 50) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
+                        $member = $memberModel->where('openid', $order->shareshopid)->first();
+                        $user = $userModel->where('id', $order->sid)->first();
+                        $member->earnings = $user->profit;
+                        $member->save();
+                    }
                 }
                 return true;
             } else {

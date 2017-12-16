@@ -246,6 +246,7 @@
                     cid: '{{ $data->id }}',
                     'sum': sum,
                     'attr': attrV,
+                    'userid': '{{ $userid }}',
                     '_token': '{{ csrf_token() }}'
                 },
                 success: function (data) {
@@ -290,6 +291,7 @@
                             sum: sum,
                         }
                     },
+                    userid: '{{ $userid }}',
                     '_token': '{{ csrf_token() }}'
                 },
                 success: function (data) {
@@ -312,7 +314,7 @@
         wx.onMenuShareAppMessage({//朋友
             title: '推荐给你一个好东西',
             desc: '{{ $data->name }}',
-            link: '{{ url("/details/$data->id") }}',
+            link: '{{ url("/details/$data->id/$openid") }}',
             imgUrl: '{{ url("uploads/".$images[0]->src) }}',
             success: function () {
                 alert('分享成功,有人购买后将获得奖金');
@@ -326,7 +328,7 @@
         });
         wx.onMenuShareTimeline({//朋友圈
             title: '{{ $data->name }}',
-            link: '{{ url("/details/$data->id") }}',
+            link: '{{ url("/details/$data->id/$openid") }}',
             imgUrl: '{{ url("uploads/".$images[0]->src) }}',
             success: function () {
                 alert('分享成功,有人购买后将获得奖金');
