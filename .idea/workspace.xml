@@ -78,8 +78,8 @@
       <file leaf-file-name="indexController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.79395604">
-              <caret line="321" column="41" selection-start-line="321" selection-start-column="41" selection-end-line="321" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.72527474">
+              <caret line="319" column="78" selection-start-line="319" selection-start-column="78" selection-end-line="319" selection-end-column="78" />
               <folding />
             </state>
           </provider>
@@ -851,8 +851,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.79395604">
-          <caret line="321" column="41" selection-start-line="321" selection-start-column="41" selection-end-line="321" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.72527474">
+          <caret line="319" column="78" selection-start-line="319" selection-start-column="78" selection-end-line="319" selection-end-column="78" />
           <folding />
         </state>
       </provider>
