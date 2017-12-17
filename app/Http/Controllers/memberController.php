@@ -108,11 +108,10 @@ class memberController extends Controller
         }
 
         $carts = $pay = $send = $submit = 0;
+        $member = null;
 
         if ($memberid) {
-
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
-
             $carts = $cartsModel->where('uid', $memberid)->count();
             $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
 
@@ -139,7 +138,7 @@ class memberController extends Controller
             ];
             $memberid = $memberModel->insertGetId($member);
         }
-dd($member);
+        dd($member);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,
