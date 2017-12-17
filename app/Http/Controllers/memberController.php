@@ -139,7 +139,7 @@ class memberController extends Controller
             ];
             $memberid = $memberModel->insertGetId($member);
         }
-
+dd($member);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,
