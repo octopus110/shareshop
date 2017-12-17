@@ -98,6 +98,8 @@ class memberController extends Controller
 
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
+
+        \Illuminate\Support\Facades\Log::info('openid:' . $openid);
         if ($openid) {
             $ordersModel = new Order();
             $memberModel = new Member();
