@@ -98,15 +98,9 @@ class memberController extends Controller
         $memberModel = new Member();
         $cartsModel = new Cart();
 
-        if (session()->has('mid')) {
-            dd(session()->get('mid'));
-            $memberid = session()->get('mid');
-        } else {
-            $user = session('wechat.oauth_user');
-
-            $memberid = $memberModel->where('openid', $user['id'])->select('id')->first();
-            $memberid = $memberid->id;
-        }
+        $user = session('wechat.oauth_user');
+        $memberid = $memberModel->where('openid', $user['id'])->select('id')->first();
+        $memberid = $memberid->id;
 
         $carts = $pay = $send = $submit = 0;
 
@@ -138,7 +132,6 @@ class memberController extends Controller
             ];
             $memberid = $memberModel->insertGetId($member);
         }
-        dd($member);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,
