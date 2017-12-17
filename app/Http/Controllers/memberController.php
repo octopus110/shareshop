@@ -110,7 +110,7 @@ class memberController extends Controller
         $carts = $pay = $send = $submit = 0;
 
         if ($memberid) {
-            \Illuminate\Support\Facades\Log::info('member_id:yes');
+
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
 
             $carts = $cartsModel->where('uid', $memberid)->count();
@@ -128,7 +128,6 @@ class memberController extends Controller
                 }
             }
         } else {
-            \Illuminate\Support\Facades\Log::info('member_id:no');
             $user = session('wechat.oauth_user');
             $member = [
                 'openid' => $user['id'],
@@ -149,7 +148,6 @@ class memberController extends Controller
             'carts' => $carts,
             'pay' => $pay,
             'send' => $send,
-            'submit' => $submit,
             'submit' => $submit
         ]);
     }

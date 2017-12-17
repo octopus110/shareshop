@@ -31,15 +31,21 @@ class WechatController extends Controller
 
                     $memberModel = new Member();
 
-                    $member = [
-                        'openid' => $userOpenid,
-                        'nickname' => $user['nickname'],
-                        'head' => $user['headimgurl'],
-                        'earnings' => 0,
-                        'getearnings' => 0,
-                        'type' => 0
-                    ];
-                    $memberid = $memberModel->insertGetId($member);
+                    $is_exit = $memberModel->where('openid', $userOpenid)->select('id')->first();
+
+                    if ($is_exit) {
+                        $memberid = $is_exit->id;
+                    } else {
+                        $member = [
+                            'openid' => $userOpenid,
+                            'nickname' => $user['nickname'],
+                            'head' => $user['headimgurl'],
+                            'earnings' => 0,
+                            'getearnings' => 0,
+                            'type' => 0
+                        ];
+                        $memberid = $memberModel->insertGetId($member);
+                    }
 
                     if ($memberid) {
                         session()->put('mid', $memberid);
