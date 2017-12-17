@@ -47,6 +47,8 @@ class WechatController extends Controller
                         $memberid = $memberModel->insertGetId($member);
                     }
 
+                    return $memberid;
+
                     if ($memberid) {
                         session()->put('mid', $memberid);
                         return '欢迎您的到来: ' . $user['nickname'];
