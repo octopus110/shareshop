@@ -111,6 +111,7 @@ class memberController extends Controller
         $member = null;
 
         if ($memberid) {
+            dd($memberid);
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
             $carts = $cartsModel->where('uid', $memberid)->count();
             $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
