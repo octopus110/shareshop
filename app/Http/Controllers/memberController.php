@@ -108,7 +108,6 @@ class memberController extends Controller
         }
 
         $carts = $pay = $send = $submit = 0;
-        $member = null;
 
         if ($memberid) {
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
