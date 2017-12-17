@@ -88,11 +88,6 @@ class WechatController extends Controller
                         "type" => "view",
                         "name" => "购物车",
                         "url" => "http://mall.eos-tech.cn/cart"
-                    ],
-                    [
-                        "type" => "view",
-                        "name" => "待付款",
-                        "url" => "http://mall.eos-tech.cn/obligation/0"
                     ]
                 ],
             ]
