@@ -11,7 +11,8 @@ Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@edit');
 
-Route::any('/wechat', 'WechatController@serve');
+Route::any('/wechat', 'WechatController@serve');//消息回复
+Route::any('/menu', 'WechatController@menu');//生成菜单
 Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::get('/member', 'memberController@member'); //用户页面
     Route::any('/details/{id?}/{userid?}', 'indexController@detail');//作品详情

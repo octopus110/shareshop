@@ -50,24 +50,15 @@ $data = '{
           "url":"http://mall.eos-tech.cn/list"
       },
       {
-           "name":"我的",
-           "sub_button":[
-            {
-               "type":"view",
-                "name":"我的账户",
-                "url":"http://mall.eos-tech.cn/member"
-            },
-            {
-               "type":"view",
-                "name":"购物车",
-                "url":"http://mall.eos-tech.cn/cart"
-            },
-            {
-               "type":"view",
-                "name":"查看物流",
-                "url":"http://mall.eos-tech.cn/member"
-            }]
-       }]
+          "type":"view",
+          "name":"购物车",
+          "url":"http://mall.eos-tech.cn/cart"
+      },
+      {
+          "type":"view",
+          "name":"个人中心",
+          "url":"http://mall.eos-tech.cn/member"
+      }]
 }';
 
 

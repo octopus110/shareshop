@@ -63,8 +63,31 @@ class WechatController extends Controller
         return $server->serve();
     }
 
-    public function back()
+    public function menu(Application $app)
     {
-
+        $buttons = '{
+             "button":[
+             {
+                  "type":"view",
+                  "name":"商城首页",
+                  "url":"http://mall.eos-tech.cn/"
+              },
+              {
+                  "type":"view",
+                  "name":"全部商品",
+                  "url":"http://mall.eos-tech.cn/list"
+              },
+              {
+                  "type":"view",
+                  "name":"购物车",
+                  "url":"http://mall.eos-tech.cn/cart"
+              },
+              {
+                  "type":"view",
+                  "name":"个人中心",
+                  "url":"http://mall.eos-tech.cn/member"
+              }]
+        }';
+        $app->menu->add($buttons);
     }
 }
