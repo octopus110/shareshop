@@ -91,7 +91,9 @@
             }
         }
 
-        $.ajax({
+console.log(ids);
+
+        /*$.ajax({
             url: '/create_order',
             type: 'post',
             dataType: 'json',
@@ -109,7 +111,7 @@
                     alert('网络不稳定，请重试');
                 }
             }
-        });
+        });*/
     });
 </script>
 
