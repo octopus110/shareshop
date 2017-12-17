@@ -99,6 +99,7 @@ class memberController extends Controller
         $cartsModel = new Cart();
 
         if (session()->has('mid')) {
+            dd(session()->get('mid'));
             $memberid = session()->get('mid');
         } else {
             $user = session('wechat.oauth_user');
