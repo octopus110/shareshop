@@ -92,11 +92,12 @@ class memberController extends Controller
         }
     }*/
 
-    public function member(Request $request)
+    public function member()
     {
         \Illuminate\Support\Facades\Log::info('user_session:' . session()->get('mid'));
 
         $user = session('wechat.oauth_user');
+        \Illuminate\Support\Facades\Log::info('user:' . $user);
         $openid = $user['id'];
 
         \Illuminate\Support\Facades\Log::info('openid:' . $openid);
