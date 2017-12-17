@@ -108,7 +108,7 @@ class memberController extends Controller
         }
 
         $carts = $pay = $send = $submit = 0;
-
+\Illuminate\Support\Facades\Log::info('member_id:'.$memberid);
         if ($memberid) {
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
 
