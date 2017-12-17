@@ -49,6 +49,7 @@ class WechatController extends Controller
 
                     if ($memberid) {
                         session()->pull('mid', $memberid);
+                        return session()->get('mid');
                         return '欢迎您的到来: ' . $user['nickname'];
                     } else {
                         return '由于某种原因你的信息未进行保存,你处于离线状态，购买商品时会跳转到个人中心完成注册，你也可以点击<a href="/member">注册</a>进行手动注册';
