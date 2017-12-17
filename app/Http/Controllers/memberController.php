@@ -8,6 +8,7 @@ use App\Commodity;
 use App\Member;
 use App\Order;
 use EasyWeChat\Factory;
+use EasyWeChat\Support\Log;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -93,6 +94,7 @@ class memberController extends Controller
 
     public function member(Request $request)
     {
+        Log::info(session()->get('mid'));
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
         if ($openid) {
