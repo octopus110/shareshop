@@ -99,8 +99,7 @@ class memberController extends Controller
         $cartsModel = new Cart();
 
         $user = session('wechat.oauth_user');
-        $memberid = $memberModel->where('openid', $user['id'])->select('id')->first();
-        $memberid = $memberid->id;
+        $memberid = $memberModel->where('openid', $user['id'])->select('id')->first()->id;
 
         $carts = $pay = $send = $submit = 0;
 
