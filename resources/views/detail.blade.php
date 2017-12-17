@@ -156,10 +156,13 @@
                 <!-- 弹出 -->
                 <section id="s-actionBar-container">
                     <div id="s-actionbar" class="action-bar mui-flex align-center">
-                        <div class="web"><img src="/images/atm.png" width="20" height="20"/>
+                        <a href="tel:11">
+                            <div class="web">
+                                <img src="/images/atm.png" width="20" height="20"/>
 
-                            <p>联系商家</p>
-                        </div>
+                                <p>联系商家</p>
+                            </div>
+                        </a>
                         {{--<div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
                             <p>进店</p>
                         </div>--}}
