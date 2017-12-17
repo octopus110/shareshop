@@ -91,9 +91,12 @@
             }
         }
 
-console.log(ids);
+        if (ids.length == 0) {
+            alert('你没有选择付款订单');
+            return false;
+        }
 
-        /*$.ajax({
+        $.ajax({
             url: '/create_order',
             type: 'post',
             dataType: 'json',
@@ -111,7 +114,7 @@ console.log(ids);
                     alert('网络不稳定，请重试');
                 }
             }
-        });*/
+        });
     });
 </script>
 
