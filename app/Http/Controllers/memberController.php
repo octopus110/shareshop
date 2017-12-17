@@ -94,7 +94,8 @@ class memberController extends Controller
 
     public function member(Request $request)
     {
-        Log::info('user_session:'.session()->get('mid'));
+        \Illuminate\Support\Facades\Log::info('user_session:' . session()->get('mid'));
+
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
         if ($openid) {
