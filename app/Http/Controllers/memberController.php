@@ -42,16 +42,7 @@ class memberController extends Controller
                 }
             }
         } else {
-            $user = session('wechat.oauth_user');
-            $member = [
-                'openid' => $user['id'],
-                'nickname' => $user['nickname'],
-                'head' => $user['avatar'],
-                'earnings' => 0,
-                'getearnings' => 0,
-                'type' => 0
-            ];
-            $memberid = $memberModel->insertGetId($member);
+            $memberid = $this->addWechatMember();
         }
         session()->put('mid', $memberid);
         return view('member', [
@@ -72,25 +63,12 @@ class memberController extends Controller
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            $memberModel = new Member();
-            $user = session('wechat.oauth_user');
-            $openid = $user['id'];
-
-            $memberid = $memberModel->where('openid', $openid)->select('id')->first();
+            $memberid = $this->getId();
 
             if (isset($memberid->id)) {
                 $mid = $memberid;
             } else {
-                $member = [
-                    'openid' => $openid,
-                    'nickname' => $user['nickname'],
-                    'head' => $user['avatar'],
-                    'earnings' => 0,
-                    'getearnings' => 0,
-                    'type' => 0,
-                    'shareshopid' => $request->input('userid')
-                ];
-                $mid = $memberModel->insertGetId($member);
+                $mid = $this->addWechatMember();
             }
         }
 
@@ -130,6 +108,7 @@ class memberController extends Controller
                 $cartModel->sum = $request->input('sum', 1);
                 $cartModel->attr = rtrim($request->input('attr', ''), ',');
                 $cartModel->total = $request->input('sum', 1) * $total['price'];
+                $cartModel->shareshopid = $request->input('userid');
                 $ret = $cartModel->save();
 
                 if ($ret) {
