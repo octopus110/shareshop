@@ -77,15 +77,26 @@ class WechatController extends Controller
                 "url" => "http://mall.eos-tech.cn/list"
             ],
             [
-                "type" => "view",
-                "name" => "购物车",
-                "url" => "http://mall.eos-tech.cn/cart"
-            ],
-            [
-                "type" => "view",
                 "name" => "个人中心",
-                "url" => "http://mall.eos-tech.cn/member"
-            ]];
+                "sub_button" => [
+                    [
+                        "type" => "view",
+                        "name" => "我的账号",
+                        "url" => "http://mall.eos-tech.cn/member"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "购物车",
+                        "url" => "http://mall.eos-tech.cn/cart"
+                    ],
+                    [
+                        "type" => "view",
+                        "name" => "待付款",
+                        "url" => "http://mall.eos-tech.cn/obligation/0"
+                    ]
+                ],
+            ]
+        ];
         $app->menu->add($buttons);
     }
 }
