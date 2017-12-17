@@ -129,6 +129,11 @@
             }
         }
 
+        if (data.length == 0) {
+            alert('你没有选择产品');
+            return false;
+        }
+
         $.ajax({
             url: '/create_order',
             type: 'post',
