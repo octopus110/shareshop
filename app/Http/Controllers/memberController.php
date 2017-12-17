@@ -8,7 +8,6 @@ use App\Commodity;
 use App\Member;
 use App\Order;
 use EasyWeChat\Factory;
-use EasyWeChat\Support\Log;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -58,19 +57,13 @@ class memberController extends Controller
 
     public function carts(Request $request)
     {
-        $cartModel = new Cart();
-
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            $memberid = $this->getId();
-
-            if (isset($memberid->id)) {
-                $mid = $memberid;
-            } else {
-                $mid = $this->addWechatMember();
-            }
+            return false;
         }
+
+        $cartModel = new Cart();
 
         if ($request->isMethod('get')) {
             $carts = $cartModel->where('carts.uid', $mid)
@@ -118,13 +111,12 @@ class memberController extends Controller
         }
     }
 
-    public function cartDel(Request $request, $id)
+    public function cartDeal(Request $request, $id)//删除和修改
     {
         $cart = new Cart();
 
         if ($request->isMethod('get')) {
             $ret = $cart->where('id', $id)->delete();
-
             if ($ret) {
                 return redirect('/cart');
             }
@@ -142,7 +134,6 @@ class memberController extends Controller
                 'sum' => $request->input('sum'),
                 'total' => $request->input('total'),
             ]);
-
             if ($ret) {
                 return response()->json(['statusCode' => 200]);
             } else {
@@ -151,11 +142,11 @@ class memberController extends Controller
         }
     }
 
-    public function obligation(Request $request, $type)
+    public function obligation(Request $request, $type)//订单状态
     {
-        $mid = $request->session()->get('mid');
-
-        if (!$mid) {
+        if (session()->has('mid')) {
+            $mid = session()->get('mid');
+        } else {
             return false;
         }
 
@@ -190,10 +181,17 @@ class memberController extends Controller
         return view('obligation', ['data' => $order, 'is_pay' => $is_pay, 'title' => $title]);
     }
 
-    public function transaction()
+    public function transaction()//交易记录
     {
+        if (session()->has('mid')) {
+            $mid = session()->get('mid');
+        } else {
+            return false;
+        }
+
         $orderModel = new Order();
         $transactions = $orderModel->where('orders.status', 0)
+            ->where('orders.uid', $mid)
             ->select('commoditys.name', 'orders.money', 'orders.type')
             ->leftjoin('commoditys', 'commoditys.id', 'orders.cid')
             ->get();
@@ -206,7 +204,6 @@ class memberController extends Controller
     public function order_del($id)//删除订单
     {
         $ret = Order::where('id', $id)->delete();
-
         if ($ret) {
             return redirect()->back();
         }
@@ -214,10 +211,16 @@ class memberController extends Controller
 
     public function address(Request $request)
     {
+        if (session()->has('mid')) {
+            $mid = session()->get('mid');
+        } else {
+            return false;
+        }
+
         $addressModel = new Address();
 
         if ($request->isMethod('get')) {
-            $address = $addressModel->where('uid', $request->session()->get('mid'))->select(
+            $address = $addressModel->where('uid', $mid)->select(
                 'id', 'type', 'info', 'name', 'phone'
             )
                 ->orderBy('type', 'desc')
@@ -250,7 +253,7 @@ class memberController extends Controller
                 . ' ' . $request->input('address');
             $addressModel->name = $request->input('name');
             $addressModel->phone = $request->input('phone');
-            $addressModel->uid = $request->session()->get('mid');
+            $addressModel->uid = $mid;
 
             $ret = $addressModel->save();
 
@@ -262,7 +265,7 @@ class memberController extends Controller
         }
     }
 
-    public function address_deal($id = 0, $t = 0)
+    public function address_deal($id = 0, $t = 0)//删除和设为默认
     {
         $addressModel = new Address();
 
@@ -290,7 +293,7 @@ class memberController extends Controller
 
     }
 
-    public function edit(Request $request, $id = 0)
+    public function address_edit(Request $request, $id = 0)
     {
         if ($request->isMethod('get')) {
             $address = (new Address())->select('id', 'info', 'name', 'phone')->find($id)->toArray();

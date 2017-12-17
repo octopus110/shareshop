@@ -64,7 +64,6 @@ class indexController extends Controller
             'newcommoditys' => $newcommoditys,
             'classify' => $classify,
             'salescommoditys' => $salescommoditys,
-            /*'mid' => session()->get('mid')*/
         ]);
     }
 

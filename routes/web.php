@@ -3,13 +3,13 @@
 Route::get('/', 'indexController@index');
 Route::get('/list/{id?}/{k?}', 'indexController@_list');
 Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产品 下拉刷新
-Route::any('/cart/deal/{id?}', 'memberController@cartDel');
+Route::any('/cart/deal/{id?}', 'memberController@cartDeal');
 Route::any('/order/del/{id?}', 'memberController@order_del');//删除订单
 Route::any('/obligation/{type?}', 'memberController@obligation');//待付款 待签收 待发货
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
-Route::any('/address/edit/{id?}', 'memberController@edit');
+Route::any('/address/edit/{id?}', 'memberController@address_edit');
 
 Route::any('/wechat', 'WechatController@serve');//消息回复
 Route::any('/menu', 'WechatController@menu');//生成菜单
