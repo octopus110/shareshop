@@ -22,7 +22,7 @@
 
             <p>首页</p>
         </a></div>
-    <div class="{{ Request::path()=='list'?'active':'' }}"><a href="/list">
+    <div class="{{ Request::path()=='list/*'?'active':'' }}"><a href="/list">
             <i class="iconfont icon-weibiaoti--"></i>
 
             <p>列表</p>
