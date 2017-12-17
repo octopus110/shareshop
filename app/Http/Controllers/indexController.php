@@ -22,11 +22,10 @@ class indexController extends Controller
     protected function options()
     {
         return [
-            'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
-            'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
+            'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),
+            'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),
             'token' => env('WECHAT_TOKEN', 'mall'),
 
-            // payment
             'payment' => [
                 'merchant_id' => '1494016742',
                 'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
@@ -107,19 +106,18 @@ class indexController extends Controller
         return response()->json($commoditys);
     }
 
-    public function detail($id = 15, $userid = null)
+    public function detail($id = 0, $userid = null)
     {
         $commoditysModel = new Commodity();
+        $imagModel = new Image();
+        $propertysModel = new Property();
+
         $data = $commoditysModel->select(
             'commoditys.id', 'commoditys.name', 'commoditys.price', 'commoditys.quantity', 'commoditys.introduce', 'users.storename', 'users.logo', 'users.storeintroduce'
         )
             ->leftjoin('users', 'users.id', 'commoditys.sid')
             ->find($id);
-
-        $imagModel = new Image();
         $images = $imagModel->where('cid', $id)->select('src')->get();
-
-        $propertysModel = new Property();
         $propertysDb = $propertysModel->where('cid', $id)->select('id', 'title', 'content')->get();
         $propertys = [];
         $propertysNum = count($propertysDb);
@@ -130,14 +128,10 @@ class indexController extends Controller
             }
         }
 
-        $options = $this->options();
-        $app = new Application($options);
-
-        $user = session('wechat.oauth_user');
-        $openid = $user['id'];
+        $app = new Application($this->options());
 
         return view('detail', [
-            'openid' => $openid,
+            'openid' => $this->getWeChatInfo()['id'],
             'userid' => $userid,
             'data' => $data,
             'images' => $images,
@@ -215,7 +209,6 @@ class indexController extends Controller
         }
 
         session()->put('orderid', $orderIds);
-        //return redirect('/pay');
         return response()->json(['statusCode' => 200]);
     }
 
@@ -259,8 +252,7 @@ class indexController extends Controller
         /*
          * 生成微信支付订单信息
          * */
-        $options = $this->options();
-        $app = new Application($options);
+        $app = new Application($this->options());
         $payment = $app->payment;
 
         $attributes = [

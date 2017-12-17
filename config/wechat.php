@@ -16,9 +16,9 @@ return [
     /*
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),         // AppID
-    'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),     // AppSecret
-    'token' => env('WECHAT_TOKEN', 'mall'),          // Token
+    'app_id' => env('WECHAT_APPID', 'wx45758c4b029a3bcc'),
+    'secret' => env('WECHAT_SECRET', '3d47b3bee2474f09b16e5ff6500e31f5'),
+    'token' => env('WECHAT_TOKEN', 'mall'),
     'aes_key' => env('WECHAT_AES_KEY', ''),                    // EncodingAESKey
 
     /**
@@ -83,32 +83,11 @@ return [
      * 微信支付
      */
     'payment' => [
-        'merchant_id' => env('WECHAT_PAYMENT_MERCHANT_ID', 'your-mch-id'),
-        'key' => env('WECHAT_PAYMENT_KEY', 'key-for-signature'),
-        'cert_path' => env('WECHAT_PAYMENT_CERT_PATH', 'path/to/your/cert.pem'), // XXX: 绝对路径！！！！
-        'key_path' => env('WECHAT_PAYMENT_KEY_PATH', 'path/to/your/key'),      // XXX: 绝对路径！！！！
-        // 'device_info'     => env('WECHAT_PAYMENT_DEVICE_INFO', ''),
-        // 'sub_app_id'      => env('WECHAT_PAYMENT_SUB_APP_ID', ''),
-        // 'sub_merchant_id' => env('WECHAT_PAYMENT_SUB_MERCHANT_ID', ''),
-        // ...
+        'merchant_id' => '1494016742',
+        'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
+        'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
+        'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem',
     ],
 
     'enable_mock' => env('WECHAT_ENABLE_MOCK', false),
-
-    /*
-     * 开发模式下的免授权模拟授权用户资料
-     *
-     * 当 enable_mock 为 true 则会启用模拟微信授权，用于开发时使用，开发完成请删除或者改为 false 即可
-
-    'mock_user' => [
-        'openid' => 'odh7zsgI75iT8FRh0fGlSojc9PWM',
-        // 以下字段为 scope 为 snsapi_userinfo 时需要
-        'nickname' => 'overtrue',
-        'sex' => '1',
-        'province' => '北京',
-        'city' => '北京',
-        'country' => '中国',
-        'headimgurl' => 'http://wx.qlogo.cn/mmopen/C2rEUskXQiblFYMUl9O0G05Q6pKibg7V1WpHX6CIQaic824apriabJw4r6EWxziaSt5BATrlbx1GVzwW2qjUCqtYpDvIJLjKgP1ug/0',
-    ],
-    */
 ];
