@@ -17,17 +17,17 @@
 @yield('content','')
 
 <nav class="nav">
-    <div class="{{ Request::path()=='/'?'active':'' }}"><a href="/">
+    <div class="{{ Request::is('/')?'active':'' }}"><a href="/">
             <i class="iconfont icon-shouye"></i>
 
             <p>首页</p>
         </a></div>
-    <div class="{{ Request::path()=='list'?'active':'' }}"><a href="/list">
+    <div class="{{ Request::is('list*')?'active':'' }}"><a href="/list">
             <i class="iconfont icon-weibiaoti--"></i>
 
             <p>列表</p>
         </a></div>
-    <div class="{{ Request::path()=='member'?'active':'' }}"><a href="/member">
+    <div class="{{ Request::is('member')?'active':'' }}"><a href="/member">
             <i class="iconfont icon-gerenzhongxinxia"></i>
 
             <p>我的</p>
