@@ -94,65 +94,62 @@ class memberController extends Controller
 
     public function member()
     {
-        \Illuminate\Support\Facades\Log::info('user_session:' . session()->get('mid'));
+        $ordersModel = new Order();
+        $memberModel = new Member();
+        $cartsModel = new Cart();
 
-        $user = session('wechat.oauth_user');
-        \Illuminate\Support\Facades\Log::info('user:' . $user['id']);
-        \Illuminate\Support\Facades\Log::info('user:' . $user->getId());
-        $openid = $user['id'];
+        if (session()->has('mid')) {
+            $memberid = session()->get('mid');
+        } else {
+            $user = session('wechat.oauth_user');
 
-        \Illuminate\Support\Facades\Log::info('openid:' . $openid);
-        if ($openid) {
-            $ordersModel = new Order();
-            $memberModel = new Member();
-            $cartsModel = new Cart();
-
-            $memberid = $memberModel->where('openid', $openid)->select('id')->first();
+            $memberid = $memberModel->where('openid', $user['id'])->select('id')->first();
             $memberid = $memberid->id;
-
-            $carts = $pay = $send = $submit = 0;
-
-            if ($memberid) {
-                $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
-
-                $carts = $cartsModel->where('uid', $memberid)->count();
-                $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
-
-                foreach ($orderStatus as $item) {
-                    if ($item->status == 1) {
-                        $pay++;
-                    }
-                    if ($item->status == 0 && $item->delivery == 0) {
-                        $send++;
-                    }
-                    if ($item->status == 1 && $item->delivery == 1) {
-                        $submit++;
-                    }
-                }
-            } else {
-                $member = [
-                    'openid' => $openid,
-                    'nickname' => $user['nickname'],
-                    'head' => $user['avatar'],
-                    'earnings' => 0,
-                    'getearnings' => 0,
-                    'type' => 0
-                ];
-                $memberid = $memberModel->insertGetId($member);
-            }
-
-            session()->put('mid', $memberid);
-            return view('member', [
-                'member' => $member,
-                'carts' => $carts,
-                'sends' => $send,
-                'carts' => $carts,
-                'pay' => $pay,
-                'send' => $send,
-                'submit' => $submit,
-                'submit' => $submit
-            ]);
         }
+
+        $carts = $pay = $send = $submit = 0;
+
+        if ($memberid) {
+            $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
+
+            $carts = $cartsModel->where('uid', $memberid)->count();
+            $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
+
+            foreach ($orderStatus as $item) {
+                if ($item->status == 1) {
+                    $pay++;
+                }
+                if ($item->status == 0 && $item->delivery == 0) {
+                    $send++;
+                }
+                if ($item->status == 1 && $item->delivery == 1) {
+                    $submit++;
+                }
+            }
+        } else {
+            $user = session('wechat.oauth_user');
+            $member = [
+                'openid' => $user['id'],
+                'nickname' => $user['nickname'],
+                'head' => $user['avatar'],
+                'earnings' => 0,
+                'getearnings' => 0,
+                'type' => 0
+            ];
+            $memberid = $memberModel->insertGetId($member);
+        }
+
+        session()->put('mid', $memberid);
+        return view('member', [
+            'member' => $member,
+            'carts' => $carts,
+            'sends' => $send,
+            'carts' => $carts,
+            'pay' => $pay,
+            'send' => $send,
+            'submit' => $submit,
+            'submit' => $submit
+        ]);
     }
 
     public function carts(Request $request)
