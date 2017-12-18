@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/iconfont.css">
-    @if($is_pay)
+    @if(!$is_pay)
         <style>
             .cart-content {
                 width: 67%;
