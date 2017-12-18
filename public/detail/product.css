@@ -4132,7 +4132,7 @@ body, div, ol, p, span, ul {
     right: 3vw;
     top: 13vw;
     font-size: 6vw !important;
-    color: red;
+    color: #FF9500;
     font-weight: bold;
     z-index: 600;
 }
