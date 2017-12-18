@@ -101,7 +101,7 @@ class memberController extends Controller
                 $cartModel->sum = $request->input('sum', 1);
                 $cartModel->attr = rtrim($request->input('attr', ''), ',');
                 $cartModel->total = $request->input('sum', 1) * $total['price'];
-                $cartModel->shareshopid = $request->input('userid');
+                $cartModel->shareshopid = $request->input('userid','');
                 $ret = $cartModel->save();
 
                 if ($ret) {
