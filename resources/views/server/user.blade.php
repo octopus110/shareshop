@@ -43,22 +43,4 @@
         @endforeach
         </tbody>
     </table>
-    <div class="panelBar">
-        <div class="pages">
-            <span>显示</span>
-            <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-                <option value="200">200</option>
-                <option value="250">250</option>
-            </select>
-            <span>条，共${totalCount}条</span>
-        </div>
-
-        <div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10"
-             currentPage="1"></div>
-
-    </div>
 </div>

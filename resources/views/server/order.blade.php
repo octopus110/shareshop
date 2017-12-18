@@ -1,3 +1,36 @@
+<div class="pageHeader">
+    <form action="/server/order" method="post" onsubmit="return navTabSearch(this);">
+        <div class="searchBar">
+            <table class="searchContent">
+                <tr>
+                    <td>
+                        <select class="combox" name="status">
+                            <option value="-1" {{ $status==-1?'selected':'' }}>订单状态</option>
+                            <option value="0" {{ $status==0?'selected':'' }}>已付款</option>
+                            <option value="1" {{ $status==1?'selected':'' }}>未付款</option>
+                            <option value="2" {{ $status==2?'selected':'' }}>被关闭</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="combox" name="delivery">
+                            <option value="-1" {{ $delivery==-1?'selected':'' }}>物流状态</option>
+                            <option value="0" {{ $delivery==0?'selected':'' }}>未发货</option>
+                            <option value="1" {{ $delivery==1?'selected':'' }}>已发货</option>
+                            <option value="2" {{ $delivery==2?'selected':'' }}>已签收</option>
+                        </select>
+                    </td>
+                    <td>
+                        <div class="buttonActive">
+                            <div class="buttonContent">
+                                <button type="submit">检索</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</div>
 <div class="pageContent">
     <div class="panelBar">
         <ul class="toolBar">
@@ -37,29 +70,12 @@
                 <td>{{ $item->created_at }}</td>
                 <td>
                     @if($item->delivery==0&&$item->status==0&&$item->type==0)
-                        <a class="button" href="order/send?id={{$item->id}}" target="ajaxTodo" title="确定要发货吗?"><span>发货</span></a>
+                        <a class="button" href="order/send?id={{$item->id}}" target="ajaxTodo"
+                           title="确定要发货吗?"><span>发货</span></a>
                     @endif
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    <div class="panelBar">
-        <div class="pages">
-            <span>显示</span>
-            <select class="combox" name="numPerPage" onchange="navTabPageBreak({numPerPage:this.value})">
-                <option value="20">20</option>
-                <option value="50">50</option>
-                <option value="100">100</option>
-                <option value="150">150</option>
-                <option value="200">200</option>
-                <option value="250">250</option>
-            </select>
-            <span>条，共${totalCount}条</span>
-        </div>
-
-        <div class="pagination" targetType="navTab" totalCount="200" numPerPage="20" pageNumShown="10"
-             currentPage="1"></div>
-
-    </div>
 </div>
