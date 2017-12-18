@@ -32,7 +32,7 @@ CREATE TABLE `address` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf32 COMMENT='地址表';
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf32 COMMENT='地址表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,0,'河北省 石家庄市 长安区 皇城路200号','吴先生','13658965689',6,'2017-12-05 09:51:18','2017-12-05 09:51:18'),(8,0,'吉林省 长春市 南关区 黄泉路188号','王先生','13547854587',6,'2017-12-15 01:43:59','2017-12-15 01:43:59'),(9,0,'北京市 北京市市辖区 东城区 天堂路250号','刘先生','13245677456',6,'2017-12-05 09:50:49','2017-12-05 09:50:49'),(10,1,'山西省 阳泉市 郊区 环镇北路2000号','吴永乐','13661643461',16,'2017-12-15 01:43:59','2017-12-15 01:43:59');
+INSERT INTO `address` VALUES (11,1,'上海市 上海市市辖区 宝山区 环镇北路2000号 上海大学','李先生','13661643461',57,'2017-12-18 05:02:54','2017-12-18 05:02:54'),(12,0,'上海市 上海市市辖区 宝山区 哈哈哈哈哈','打哈哈','13612458761',58,'2017-12-18 05:02:54','2017-12-18 05:02:54');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -63,7 +63,7 @@ CREATE TABLE `carts` (
   `attr` varchar(100) DEFAULT NULL,
   `shareshopid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf32 COMMENT='购物车';
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf32 COMMENT='购物车';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `carts` (
 
 LOCK TABLES `carts` WRITE;
 /*!40000 ALTER TABLE `carts` DISABLE KEYS */;
-INSERT INTO `carts` VALUES (16,16,35,2,2.00,'2017-12-15 11:19:53','2017-12-15 11:19:53','100ml,原味,',NULL);
+INSERT INTO `carts` VALUES (26,57,34,2,0.02,'2017-12-18 04:37:30','2017-12-18 04:37:30','',NULL),(28,58,20,1,0.01,'2017-12-18 04:54:58','2017-12-18 04:54:58','',NULL);
 /*!40000 ALTER TABLE `carts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -162,7 +162,6 @@ CREATE TABLE `earnings` (
 
 LOCK TABLES `earnings` WRITE;
 /*!40000 ALTER TABLE `earnings` DISABLE KEYS */;
-INSERT INTO `earnings` VALUES (1,100,11,1,'2017-12-06 09:42:44','2017-12-06 09:42:42');
 /*!40000 ALTER TABLE `earnings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -245,7 +244,7 @@ CREATE TABLE `members` (
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
+) ENGINE=InnoDB AUTO_INCREMENT=60 DEFAULT CHARSET=utf32 COMMENT='前台注册会员表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -254,7 +253,7 @@ CREATE TABLE `members` (
 
 LOCK TABLES `members` WRITE;
 /*!40000 ALTER TABLE `members` DISABLE KEYS */;
-INSERT INTO `members` VALUES (16,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,5,0,'0000-00-00 00:00:00','2017-12-16 01:55:38'),(17,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(18,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(19,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(20,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(21,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(22,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(23,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(24,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(25,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(26,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(27,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(28,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(29,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(30,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(31,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(32,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(33,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(34,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL);
+INSERT INTO `members` VALUES (57,'oIk-Ov178tGXBqmYLa8L43TX8Mqw','Jelly.Lee','http://wx.qlogo.cn/mmopen/PiajxSqBRaEJZEHVmXC3KGRZQ4OO4fGmxW5YrhsZibv9Yj8iaVjLfr54Lh4RJIf3tEA2jRlWNdr9icnn0sjw4DOV3Q/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL),(58,'oIk-Ov2EZvu9BoBjMJyJutEljyIo','Panda 庄志意','http://wx.qlogo.cn/mmopen/OiaFQW0MOI9Y2OcaR6YVa75sljqgohB0lbMVEzPMM8HSIlRhYqX7bXGpxhkFzwHHKSgFQibicSHuZGibIUjwyInjnl3q4GUMUhvr/0',1,NULL,NULL,0,5,0,'0000-00-00 00:00:00','2017-12-18 05:03:26'),(59,'oIk-Ov9b95ZNPxjrKJt5EJu6nTEE','?sasha❄️','http://wx.qlogo.cn/mmopen/Q3auHgzwzM7zBgd6UhXLpq7pbyWFkWT1b98qgPShShJbZfMQibVAN8pDYibYjC8GAGYp3SiarrxTNhlbTkSogY1LBcJicj0VEXKQTb3rkwn5F0Y/0',0,NULL,NULL,0,0,0,'0000-00-00 00:00:00',NULL);
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -283,7 +282,7 @@ CREATE TABLE `orders` (
   `shareshopid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`)
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf32 COMMENT='订单表';
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf32 COMMENT='订单表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -292,7 +291,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (18,6,34,0,16,0.01,'eos1513132075',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-15 12:23:21','2017-12-15 12:23:21',NULL),(20,3,25,0,16,0.02,'eos1513132625',2,'2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男',NULL,0,0,'2017-12-15 12:23:21','2017-12-15 12:23:21',NULL),(24,6,32,0,16,0.01,'eos1513133892',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-14 06:45:29',NULL,NULL),(35,6,20,0,16,0.01,'eos1513234915',1,'Microsoft/微软Surface Book 2 增强版 i5 i7 平板笔记本电脑国行',NULL,1,0,'2017-12-14 07:01:55',NULL,NULL),(36,6,34,0,16,0.01,'eos1513302490',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 01:48:10',NULL,NULL),(37,6,34,0,16,0.01,'eos1513303494',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 02:04:54',NULL,NULL),(38,6,34,0,16,0.01,'eos1513318198',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:09:58',NULL,NULL),(39,6,34,0,16,0.01,'eos1513318373',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:12:53',NULL,NULL),(40,6,34,0,16,0.01,'eos1513318570',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:16:10',NULL,NULL),(41,6,34,0,16,0.01,'eos1513318695',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:18:15',NULL,NULL),(42,6,34,0,16,0.01,'eos1513319270',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:27:50',NULL,NULL),(43,6,34,0,16,0.01,'eos1513319350',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:29:10',NULL,NULL),(44,6,34,0,16,0.01,'eos1513319694',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:34:54',NULL,NULL),(45,6,34,0,16,0.01,'eos1513319727',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-15 07:09:53','2017-12-15 07:09:53',NULL),(46,6,34,0,16,0.01,'eos1513319859',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-15 07:11:51','2017-12-15 07:11:51',NULL),(47,6,32,0,16,0.01,'eos1513319952',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-15 07:13:27','2017-12-15 07:13:27',NULL),(48,6,34,0,16,0.01,'eos1513320194',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:43:14',NULL,NULL),(49,6,34,0,16,0.01,'eos1513320207',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 06:43:27',NULL,NULL),(50,6,32,0,16,0.01,'eos1513320397',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-15 07:20:54','2017-12-15 07:20:54',NULL),(51,3,15,0,16,0.01,'eos1513320485',1,'撞色蓝色风衣男 ulzzang韩版中长款简约帅气披风外套时尚潮流秋冬',NULL,0,0,'2017-12-15 07:22:22','2017-12-15 07:22:22',NULL),(52,6,32,0,16,0.01,'eos1513320698',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-15 06:55:49','2017-12-15 06:55:49',NULL),(53,6,20,0,16,0.01,'eos1513320905',1,'Microsoft/微软Surface Book 2 增强版 i5 i7 平板笔记本电脑国行',NULL,0,0,'2017-12-15 06:55:12','2017-12-15 06:55:12',NULL),(54,6,32,0,16,0.01,'eos1513338163',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 11:42:43',NULL,NULL),(55,3,33,0,16,0.02,'eos1513338163',2,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 11:42:43',NULL,NULL),(56,6,32,0,16,0.01,'eos1513338259',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-15 11:44:28','2017-12-15 11:44:28',NULL),(57,3,33,0,16,0.02,'eos1513338259',2,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-15 11:44:28','2017-12-15 11:44:28',NULL),(58,6,32,0,16,0.01,'eos1513339699',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-15 12:08:26','2017-12-15 12:08:26',NULL),(59,3,33,0,16,0.02,'eos1513339699',2,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-15 12:08:26','2017-12-15 12:08:26',NULL),(60,6,32,0,16,0.01,'eos1513339783',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 12:09:43',NULL,NULL),(61,6,32,0,16,0.01,'eos1513339786',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 12:09:46',NULL,NULL),(62,6,32,0,16,0.01,'eos1513339788',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 12:09:48',NULL,NULL),(63,6,32,0,16,0.01,'eos1513339795',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 12:09:55',NULL,NULL),(64,6,32,0,16,0.01,'eos1513339902',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,1,0,'2017-12-15 12:11:42',NULL,NULL),(65,3,33,0,16,0.02,'eos1513339902',2,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-15 12:11:42',NULL,NULL),(66,6,34,0,16,0.01,'eos1513388401',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-16 01:40:01',NULL,NULL),(67,6,34,0,16,0.01,'eos1513388416',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-16 01:40:16',NULL,NULL),(68,6,34,0,16,0.01,'eos1513388467',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-16 01:41:07',NULL,'123'),(69,3,33,0,16,0.01,'eos1513388562',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-16 01:42:48','2017-12-16 01:42:48','0'),(70,3,33,0,16,0.01,'eos1513388933',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-16 01:49:00','2017-12-16 01:49:00','oIk-Ov178tGXBqmYLa8L43TX8Mqw'),(71,3,33,0,16,0.01,'eos1513389210',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-16 01:53:37','2017-12-16 01:53:37','oIk-Ov178tGXBqmYLa8L43TX8Mqw'),(72,3,33,0,16,0.01,'eos1513389330',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-16 01:55:38','2017-12-16 01:55:38','oIk-Ov178tGXBqmYLa8L43TX8Mqw');
+INSERT INTO `orders` VALUES (74,6,32,0,57,0.01,'eos1513494600',1,'蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉',NULL,0,0,'2017-12-17 07:10:09','2017-12-17 07:10:09',NULL),(75,6,21,0,57,0.01,'eos1513494626',1,'2017新款Apple/苹果 iPad Air2 32 128G iPad7 9.7寸 WiFi 4G国行',NULL,1,0,'2017-12-17 07:10:26',NULL,NULL),(76,3,16,0,58,0.02,'eos1513570424',2,'2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男',NULL,0,0,'2017-12-18 04:15:24','2017-12-18 04:15:24',NULL),(77,3,35,0,57,1,'eos1513570600',1,'澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜','100ml,原味,',1,0,'2017-12-18 04:16:40',NULL,NULL),(78,6,34,0,58,0.03,'eos1513571759',3,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-18 04:57:06','2017-12-18 04:57:06',NULL),(79,3,25,0,58,0.03,'eos1513572956',3,'2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男',NULL,0,0,'2017-12-18 04:57:06','2017-12-18 04:57:06',NULL),(82,3,16,0,57,0.01,'eos1513573370',1,'2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男',NULL,1,0,'2017-12-18 05:02:50',NULL,'oIk-Ov2EZvu9BoBjMJyJutEljyIo'),(83,3,16,0,57,0.01,'eos1513573399',1,'2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男',NULL,0,0,'2017-12-18 05:03:26','2017-12-18 05:03:26','oIk-Ov2EZvu9BoBjMJyJutEljyIo'),(84,6,34,0,59,0.01,'eos1513590675',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,1,0,'2017-12-18 09:51:15',NULL,NULL),(85,6,34,0,59,0.01,'eos1513590775',1,'香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g',NULL,0,0,'2017-12-18 09:53:05','2017-12-18 09:53:05',NULL);
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -412,7 +411,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'',NULL,NULL,'sdfsdfs','root','13661643461','372928199301027410','225658965123','1169815992@qq.com','$2y$10$VQUzRqVcdFMxAwhp8E4OJuf6Pkaeq.21SjBisA0NeXmywxix/6VVm',5,3,'1',0,'prbShdqM19EkwoBHRQSSduLOVzMesYJS1EqzMrvhVbHpPVd8bbDqnQgvOOxM','2017-11-25 00:13:55','2017-11-25 00:13:55','2017-11-25 03:03:24'),(3,'GBstudios原创男装','GBstudios原创男装','classify_1512192125952911.png','1259845635','李章岭','13661643461','372829366542123595','5842356411','1169856235@qq.com','$2y$10$3emDvyOjTh1QvyowMeoljehtFu1FK6GR6b2hw6JgEef3Shx6Fs.MO',5,3,NULL,1,'02BG1XqDZcN7vPUAmcpc6tfEXvTuEkBGiy0VVTG6khsQobq6Qsu2VpFGMnof',NULL,'2017-11-25 02:29:28','2017-12-01 21:22:05'),(6,'联想笔记本电脑商城','联想笔记本电脑商城','classify_1512192144361756.png','1235698','采购城888','13661643569','372928199301027456','1256335422','1169815996@qq.com','$2y$10$OSq6Mxxny1cwMpxf4VUrDO4FbRt/TTNH14sW5guZr73AEl.pwrdJ2',5,3,NULL,1,'G3hsvet5EG6T6drbZOHy4Z8lAlZ04JIHaM9bmWU21WixzfqXoaMHlwVon6dN',NULL,'2017-11-26 18:03:06','2017-12-01 21:22:24'),(7,NULL,NULL,NULL,'afd','li99','136584795896',NULL,NULL,'d@qq.com','1qaz2wsx',5,3,NULL,0,NULL,NULL,'2017-11-26 18:38:16','2017-11-26 18:57:25');
+INSERT INTO `users` VALUES (1,'',NULL,NULL,'lizhangling','root','13661643461','372928199301027410','225658965123','1169815992@qq.com','$2y$10$VQUzRqVcdFMxAwhp8E4OJuf6Pkaeq.21SjBisA0NeXmywxix/6VVm',5,3,'1',0,'F8EZH9F8BKbtz1n3sbDdkIkUnd8LFJJqal0L48AJmCX0KhU7io5dN9F4i6dv','2017-11-25 00:13:55','2017-11-25 00:13:55','2017-12-16 06:48:41'),(3,'GBstudios原创男装','GBstudios原创男装','classify_1512192125952911.png','1259845635','李章岭','13661643461','372829366542123595','5842356411','1169856235@qq.com','$2y$10$3emDvyOjTh1QvyowMeoljehtFu1FK6GR6b2hw6JgEef3Shx6Fs.MO',5,3,',58',1,'02BG1XqDZcN7vPUAmcpc6tfEXvTuEkBGiy0VVTG6khsQobq6Qsu2VpFGMnof',NULL,'2017-11-25 02:29:28','2017-12-18 05:03:26'),(6,'联想笔记本电脑商城','联想笔记本电脑商城','classify_1512192144361756.png','1235698','采购城888','13661643569','372928199301027456','1256335422','1169815996@qq.com','$2y$10$OSq6Mxxny1cwMpxf4VUrDO4FbRt/TTNH14sW5guZr73AEl.pwrdJ2',5,3,NULL,1,'G3hsvet5EG6T6drbZOHy4Z8lAlZ04JIHaM9bmWU21WixzfqXoaMHlwVon6dN',NULL,'2017-11-26 18:03:06','2017-12-01 21:22:24'),(7,NULL,NULL,NULL,'afd','li99','136584795896',NULL,NULL,'d@qq.com','1qaz2wsx',5,3,NULL,0,NULL,NULL,'2017-11-26 18:38:16','2017-11-26 18:57:25');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -425,4 +424,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-16 10:09:10
+-- Dump completed on 2017-12-18 18:43:24
