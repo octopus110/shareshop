@@ -229,7 +229,7 @@ class indexController extends Controller
         $commodityModel = new Commodity();
 
         $address = $addressModel->where('type', 1)->where('uid', $mid)->select(
-            'name', 'phone', 'info'
+            'id', 'name', 'phone', 'info'
         )->first();
 
         $money = $sum = 0;//总价格初始化 0元
