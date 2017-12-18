@@ -18,10 +18,11 @@
 
 @foreach($data as $item)
     <section class="carts">
-        <div class="left checkbox">
-            <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
-        </div>
-
+        @if($is_pay)
+            <div class="left checkbox">
+                <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
+            </div>
+        @endif
         <div class="left cart-img">
             <img src="/uploads/{{ $item->src  }}" alt="" width="100%">
         </div>
@@ -38,11 +39,13 @@
                      <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
 
-                <a href="/order/del/{{ $item->id }}">
-                    <em class="iconfont icon-shanchu"></em>
-                </a>
-                <em style="padding:1px 2vw;"> </em>
-                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
+                @if($is_pay)
+                    <a href="/order/del/{{ $item->id }}">
+                        <em class="iconfont icon-shanchu"></em>
+                    </a>
+                    <em style="padding:1px 2vw;"> </em>
+                    <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
+                @endif
             </p>
 
         </div>
