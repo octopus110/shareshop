@@ -187,7 +187,7 @@
         $(".share").slideDown();
         window.setTimeout(function () {
             $(".share").slideUp();
-        }, 3000);
+        }, 2000);
 
         $(".clickwn").click(function () {
             $(".flick-menu-mask").show();
