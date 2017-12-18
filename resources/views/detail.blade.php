@@ -83,7 +83,94 @@
                         {!! $data->introduce !!}
                     </div>
                 </div>
-                
+                <!-- 弹出 -->
+                <div class="flick-menu-mask" style=""></div>
+                <div class="spec-menu">
+                    <div class="spec-menu-content spec-menu-show" style="display: block;">
+                        <div class="spec-menu-top bdr-b">
+                            <div class="spec-first-pic"><img id="spec_image" src="/uploads/{{ $images[0]->src }}"/>
+                            </div>
+                            <a class="rt-close-btn-wrap spec-menu-close">
+                                <p class="flick-menu-close tclck"><img src="/images/close.png" width="24" height="24"/>
+                                </p>
+                            </a>
+
+                            <div class="spec-price" id="specJdPri" style="display: block">
+
+                                <span id="spec_price">￥ {{ $data->price }} </span></div>
+                            <div id="specWeightDiv" class="spec-weight"><span>库存:</span> <span
+                                        id="spec_weight">{{ $data->quantity }}</span></div>
+                        </div>
+                        <div class="spec-menu-middle">
+                            <div class="prod-spec" id="prodSpecArea">
+                                <div class="prod-spec" id="prodSpecArea">
+
+                                    <div class="spec-desc"><span class="part-note-msg">已选</span>
+
+                                        <div id="specDetailInfo_spec" class="base-txt">
+                                            <span class="amount" id="amount">1</span>件
+                                        </div>
+                                    </div>
+                                    @if($propertys)
+                                        <div class="nature-container" id="natureCotainer">
+                                            @foreach($propertys as $item)
+                                                <div class="pro-color"><span
+                                                            class="part-note-msg"> {{ $item['title'] }} </span>
+
+                                                    <p class="color">
+                                                        @foreach($item['content'] as $k=>$property)
+                                                            <a title="{{ $property }}"
+                                                               class="a-item {{ $k==0?'selected':'' }} J_ping"
+                                                               report-eventparam="{{ $property }}">{{ $property }}</a>
+                                                        @endforeach
+                                                    </p>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    @endif
+
+                                    <div id="addCartNum" class="pro-count">
+                                        <span class="part-note-msg" style="margin-right: 10px;">数量</span>
+
+                                        <div style="width: 100%;margin-left: 10px;" class="num">
+                                            <p class="jian" style="float: left;margin-top: 5px;"><img
+                                                        src="/images/jian.png" width="16" height="16"></p>
+                                            <input id="cool" class="inputBorder" value="1"
+                                                   onkeyup="this.value=this.value.replace(/[^0-9]/g,'')"
+                                                   onafterpaste="this.value=this.value.replace(/[^0-9]/g,'')"
+                                                   type="text" maxlength="5" placeholder="数量"
+                                                   style="font-size: 12px;width: 36px;height: 20px;float: left;padding: 0 5px;margin-top:3px;margin-left: 5px;"/>
+
+                                            <p class="jia" style="float: left;margin-top: 5px;margin-left:4px;"><img
+                                                        src="/images/jia.png" width="16" height="16"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flick-menu-btn spec-menu-btn">
+                            <a class="yellow-color add_cart add_cart">加入购物车</a>
+                            <a class="red-color directorder">立即购买</a></div>
+                    </div>
+                </div>
+                <!-- 弹出 -->
+                <section id="s-actionBar-container">
+                    <div id="s-actionbar" class="action-bar mui-flex align-center">
+                        <a href="tel:11">
+                            <div class="web">
+                                <img src="/images/atm.png" width="20" height="20"/>
+
+                                <p>联系商家</p>
+                            </div>
+                        </a>
+                        {{--<div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
+                            <p>进店</p>
+                        </div>--}}
+                        <button class="cart cell add_cart">加入购物车</button>
+                        <button class="buy cell">立即购买</button>
+                        <div class="activity-box cell"></div>
+                    </div>
+                </section>
             </div>
         </div>
     </div>
@@ -96,11 +183,11 @@
             scrollbar: '.swiper-scrollbar',
         })
 
-        /*     //两秒后隐藏提示
-         $(".share").slideDown();
-         window.setTimeout(function () {
-         $(".share").slideUp();
-         }, 3000);*/
+        //两秒后隐藏提示
+        $(".share").slideDown();
+        window.setTimeout(function () {
+            $(".share").slideUp();
+        }, 3000);
 
         $(".clickwn").click(function () {
             $(".flick-menu-mask").show();
