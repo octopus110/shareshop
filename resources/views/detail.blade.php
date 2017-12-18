@@ -31,6 +31,9 @@
     </div>
     <div class="scroller">
         <div id="p-summary" class="page">
+
+            <a href="/cart"><i class="iconfont icon-icon1"></i></a>
+
             <div class="container">
                 <div class="swiper-container swiper-banner">
                     <div class="swiper-wrapper">

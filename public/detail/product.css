@@ -4126,3 +4126,9 @@ body, div, ol, p, span, ul {
     font-size: 3.6vw;
     padding-top: 2vw;
 }
+
+.icon-icon1 {
+    position: absolute;
+    right: 2vw;
+    top: 2vw;
+}
