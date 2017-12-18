@@ -18,6 +18,7 @@ return array(
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
     'App\\Http\\Controllers\\Auth\\ResetPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ResetPasswordController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\WechatController' => $baseDir . '/app/Http/Controllers/WechatController.php',
     'App\\Http\\Controllers\\channelController' => $baseDir . '/app/Http/Controllers/channelController.php',
     'App\\Http\\Controllers\\classifyController' => $baseDir . '/app/Http/Controllers/classifyController.php',
     'App\\Http\\Controllers\\commodityController' => $baseDir . '/app/Http/Controllers/commodityController.php',
@@ -3624,4 +3625,7 @@ return array(
     'phpDocumentor\\Reflection\\Types\\String_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/String_.php',
     'phpDocumentor\\Reflection\\Types\\This' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/This.php',
     'phpDocumentor\\Reflection\\Types\\Void_' => $vendorDir . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+    'widuu\\Express\\Express' => $vendorDir . '/widuu/laravel-express/src/Express.php',
+    'widuu\\Express\\ExpressName' => $vendorDir . '/widuu/laravel-express/src/ExpressName.php',
+    'widuu\\Express\\ExpressServiceProvider' => $vendorDir . '/widuu/laravel-express/src/ExpressServiceProvider.php',
 );

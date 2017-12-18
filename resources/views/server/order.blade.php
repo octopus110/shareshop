@@ -51,6 +51,8 @@
             <th>交易订单号</th>
             <th>订单状态</th>
             <th>物流状态</th>
+            <th>物流公司</th>
+            <th>物流单号</th>
             <th>下单时间</th>
             <th></th>
         </tr>
@@ -67,13 +69,14 @@
                 <td>{{ $item->rid }}</td>
                 <td>{{ $item->status($item->status) }}</td>
                 <td>{{ $item->delivery($item->delivery) }}</td>
+                <td>{{ $item->express_id }}</td>
+                <td>{{ $item->rid }}</td>
                 <td>{{ $item->created_at }}</td>
                 <td>
                     @if($item->delivery==0&&$item->status==0&&$item->type==0)
                         {{--<a class="button" href="order/send?id={{$item->id}}" target="ajaxTodo"
                            title="确定要发货吗?"><span>发货</span></a>--}}
-                        <a class="button" href="/server/order/send?id={{$item->id}}" target="dialog" rel="express"
-                           minable="false"><span>发货</span></a>
+                        <a class="button" href="/server/order/send?id={{$item->id}}" target="dialog" rel="express" minable="false"><span>发货</span></a>
                     @endif
                 </td>
             </tr>

@@ -23,6 +23,10 @@ class ComposerStaticInit90c907fea106cfed068ed95086a0d1c5
     );
 
     public static $prefixLengthsPsr4 = array (
+        'w' => 
+        array (
+            'widuu\\Express\\' => 14,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -124,6 +128,10 @@ class ComposerStaticInit90c907fea106cfed068ed95086a0d1c5
     );
 
     public static $prefixDirsPsr4 = array (
+        'widuu\\Express\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/widuu/laravel-express/src',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -372,6 +380,7 @@ class ComposerStaticInit90c907fea106cfed068ed95086a0d1c5
         'App\\Http\\Controllers\\Auth\\RegisterController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/RegisterController.php',
         'App\\Http\\Controllers\\Auth\\ResetPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ResetPasswordController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\WechatController' => __DIR__ . '/../..' . '/app/Http/Controllers/WechatController.php',
         'App\\Http\\Controllers\\channelController' => __DIR__ . '/../..' . '/app/Http/Controllers/channelController.php',
         'App\\Http\\Controllers\\classifyController' => __DIR__ . '/../..' . '/app/Http/Controllers/classifyController.php',
         'App\\Http\\Controllers\\commodityController' => __DIR__ . '/../..' . '/app/Http/Controllers/commodityController.php',
@@ -3978,6 +3987,9 @@ class ComposerStaticInit90c907fea106cfed068ed95086a0d1c5
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
+        'widuu\\Express\\Express' => __DIR__ . '/..' . '/widuu/laravel-express/src/Express.php',
+        'widuu\\Express\\ExpressName' => __DIR__ . '/..' . '/widuu/laravel-express/src/ExpressName.php',
+        'widuu\\Express\\ExpressServiceProvider' => __DIR__ . '/..' . '/widuu/laravel-express/src/ExpressServiceProvider.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -11,10 +11,11 @@ use EasyWeChat\Factory;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use widuu\Express\Express;
 
 class memberController extends Controller
 {
-    public function member()
+    public function member(Express $exp)
     {
         $ordersModel = new Order();
         $memberModel = new Member();
@@ -27,8 +28,8 @@ class memberController extends Controller
         if ($memberid) {
             $member = $memberModel->select('nickname', 'head', 'earnings', 'getearnings', 'type')->find($memberid);
             $carts = $cartsModel->where('uid', $memberid)->count();
-            $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery')->get();
-
+            $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery', 'express_name', 'express_id')->get();
+            $express = [];
             foreach ($orderStatus as $item) {
                 if ($item->status == 1) {
                     $pay++;
@@ -38,11 +39,15 @@ class memberController extends Controller
                 }
                 if ($item->status == 1 && $item->delivery == 1) {
                     $submit++;
+
+                    //查询物流信息
+                    array_push($express, $exp->search($item->express_id, $item->express_name));
                 }
             }
         } else {
             $memberid = $this->addWechatMember();
         }
+        dd($express);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e508c37279d3e97df905206c5e05218",
+    "content-hash": "bdafa45ad9159cd518897f9ecd50bce0",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2727,6 +2727,48 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "widuu/laravel-express",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/widuu/laravel-express.git",
+                "reference": "0a7a55b49d06074b4ae869fbc51eec827153ecaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/widuu/laravel-express/zipball/0a7a55b49d06074b4ae869fbc51eec827153ecaf",
+                "reference": "0a7a55b49d06074b4ae869fbc51eec827153ecaf",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.1",
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "widuu\\Express\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "widuu",
+                    "email": "admin@widuu.com"
+                }
+            ],
+            "description": "A Express For Laravel",
+            "keywords": [
+                "express",
+                "laravel",
+                "laravel Express"
+            ],
+            "time": "2016-09-21 03:02:50"
         }
     ],
     "packages-dev": [
@@ -4406,7 +4448,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "widuu/laravel-express": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

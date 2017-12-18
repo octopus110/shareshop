@@ -25,7 +25,7 @@ class orderController extends Controller
             })
             ->select(
                 'orders.id', 'commoditys.name as name', 'orders.type', 'orders.uid', 'orders.money',
-                'orders.rid', 'orders.status', 'orders.delivery', 'orders.created_at'
+                'orders.rid', 'orders.status', 'orders.delivery','orders.express_name','orders.express_id', 'orders.created_at'
             )->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
             ->get();
 

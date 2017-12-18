@@ -4549,5 +4549,49 @@
             "wechat",
             "weixin"
         ]
+    },
+    {
+        "name": "widuu/laravel-express",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/widuu/laravel-express.git",
+            "reference": "0a7a55b49d06074b4ae869fbc51eec827153ecaf"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/widuu/laravel-express/zipball/0a7a55b49d06074b4ae869fbc51eec827153ecaf",
+            "reference": "0a7a55b49d06074b4ae869fbc51eec827153ecaf",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/support": "~5.1",
+            "php": ">=5.5.9"
+        },
+        "time": "2016-09-21T03:02:50+00:00",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "widuu\\Express\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "widuu",
+                "email": "admin@widuu.com"
+            }
+        ],
+        "description": "A Express For Laravel",
+        "keywords": [
+            "express",
+            "laravel",
+            "laravel Express"
+        ]
     }
 ]
