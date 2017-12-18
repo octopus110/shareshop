@@ -107,7 +107,7 @@
                 if (data.statusCode != 200) {
                     alert('数据更新失败');
                 } else {
-                    $(".submit").fadeOut();
+                    $(".submit").css('opacity', 0);
                 }
             }
         });
