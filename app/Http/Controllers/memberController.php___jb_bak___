@@ -57,6 +57,7 @@ class memberController extends Controller
 
     public function carts(Request $request)
     {
+        dd(session()->has('mid'));
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
@@ -92,7 +93,7 @@ class memberController extends Controller
             }
 
             $total = (new Commodity())->select('price')->find($cid);
-dd($mid);
+
             if ($cartModel->where('cid', $cid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
