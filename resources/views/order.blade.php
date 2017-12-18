@@ -59,7 +59,6 @@
 <script type="text/javascript">
     wx.config(<?php echo $js->config(array('chooseWXPay'), false) ?>);
     $('#pay').click(function () {
-        alert($("#addressId").val())
         if ($("#addressId").val() == 0) {
             alert('发货地址不能为空');
             return false;
