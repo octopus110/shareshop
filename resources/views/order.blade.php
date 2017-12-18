@@ -17,7 +17,7 @@
 </header>
 
 <section class="address">
-    <input type="text" id="addressId" value="{{ $address?$address->id:0 }}">
+    <input type="hidden" id="addressId" value="{{ $address?$address->id:0 }}">
     @if($address)
         <p><i class="iconfont icon-shoujianren"></i>收件人:&nbsp; {{ $address->name }}
             &nbsp;&nbsp;&nbsp; {{ $address->phone }}
@@ -59,9 +59,8 @@
 <script type="text/javascript">
     wx.config(<?php echo $js->config(array('chooseWXPay'), false) ?>);
     $('#pay').click(function () {
-        var addressId = $("#addressId").val();
-
-        if (!addressId) {
+        alert($("#addressId").val())
+        if ($("#addressId").val() == 0) {
             alert('发货地址不能为空');
             return false;
         }
