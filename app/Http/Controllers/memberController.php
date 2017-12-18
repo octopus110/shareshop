@@ -57,11 +57,10 @@ class memberController extends Controller
 
     public function carts(Request $request)
     {
-        dd(session()->has('mid'));
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            return false;
+            $memberid = $this->addWechatMember();
         }
 
         $cartModel = new Cart();
