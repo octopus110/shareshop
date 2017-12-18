@@ -29,10 +29,10 @@
 
         <p>分享产品到朋友圈有人购买后就能拿到奖金奥</p>
     </div>
-    <a href="/cart"><i class="iconfont icon-icon1"></i></a>
     <div class="scroller">
         <div id="p-summary" class="page">
             <div class="container">
+                <a href="/cart"><i class="iconfont icon-icon1"></i></a>
                 <div class="swiper-container swiper-banner">
                     <div class="swiper-wrapper">
                         @foreach($images as $item)
