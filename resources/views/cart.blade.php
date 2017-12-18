@@ -13,7 +13,7 @@
 </head>
 <body>
 <header class="cart-header">
-    <a href="/member"><i class="iconfont icon-fanhui"></i></a>购物车
+    <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui"></i></a>购物车
 </header>
 
 @foreach($carts as $item)
