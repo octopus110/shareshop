@@ -32,7 +32,8 @@
     <div class="scroller">
         <div id="p-summary" class="page">
             <div class="container">
-                <a href="/cart"><i class="iconfont icon-icon1"></i></a>
+                <i class="iconfont icon-icon1" id="cart_icon"></i>
+
                 <div class="swiper-container swiper-banner">
                     <div class="swiper-wrapper">
                         @foreach($images as $item)
@@ -182,7 +183,11 @@
         new Swiper('.swiper-banner', {
             autoplay: 2000,
             scrollbar: '.swiper-scrollbar',
-        })
+        });
+
+        $("#cart_icon").click(function () {
+            window.location.href = '/cart';
+        });
 
         //两秒后隐藏提示
         $(".share").slideDown();
