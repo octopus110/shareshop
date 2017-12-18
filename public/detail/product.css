@@ -4131,4 +4131,7 @@ body, div, ol, p, span, ul {
     position: absolute;
     right: 2vw;
     top: 2vw;
+    font-size: 6vw;
+    color: red;
+    font-weight: bold;
 }
