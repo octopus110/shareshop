@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-12-18 18:57:54
+Date: 2017-12-18 19:21:53
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -280,7 +280,8 @@ CREATE TABLE `orders` (
   `status` tinyint(1) unsigned DEFAULT '1' COMMENT '0 已付款 1 未付款 2关闭',
   `delivery` tinyint(2) unsigned NOT NULL DEFAULT '0' COMMENT '发货状态 0未发货 1已发货 2已签收',
   `shareshopid` varchar(50) DEFAULT NULL,
-  `address_id` int(11) NOT NULL COMMENT '地址id',
+  `express_name` varchar(50) DEFAULT NULL COMMENT '快递公司',
+  `express_id` varchar(100) DEFAULT NULL COMMENT '快递单号',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -290,16 +291,16 @@ CREATE TABLE `orders` (
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
-INSERT INTO `orders` VALUES ('74', '6', '32', '0', '57', '0.01', 'eos1513494600', '1', '蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉', null, '0', '0', null, '0', '2017-12-17 15:10:09', '2017-12-17 15:10:09');
-INSERT INTO `orders` VALUES ('75', '6', '21', '0', '57', '0.01', 'eos1513494626', '1', '2017新款Apple/苹果 iPad Air2 32 128G iPad7 9.7寸 WiFi 4G国行', null, '1', '0', null, '0', '2017-12-17 15:10:26', null);
-INSERT INTO `orders` VALUES ('76', '3', '16', '0', '58', '0.02', 'eos1513570424', '2', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', null, '0', '2017-12-18 12:15:24', '2017-12-18 12:15:24');
-INSERT INTO `orders` VALUES ('77', '3', '35', '0', '57', '1', 'eos1513570600', '1', '澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜', '100ml,原味,', '1', '0', null, '0', '2017-12-18 12:16:40', null);
-INSERT INTO `orders` VALUES ('78', '6', '34', '0', '58', '0.03', 'eos1513571759', '3', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '0', '0', null, '0', '2017-12-18 12:57:06', '2017-12-18 12:57:06');
-INSERT INTO `orders` VALUES ('79', '3', '25', '0', '58', '0.03', 'eos1513572956', '3', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', null, '0', '2017-12-18 12:57:06', '2017-12-18 12:57:06');
-INSERT INTO `orders` VALUES ('82', '3', '16', '0', '57', '0.01', 'eos1513573370', '1', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '1', '0', 'oIk-Ov2EZvu9BoBjMJyJutEljyIo', '0', '2017-12-18 13:02:50', null);
-INSERT INTO `orders` VALUES ('83', '3', '16', '0', '57', '0.01', 'eos1513573399', '1', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', 'oIk-Ov2EZvu9BoBjMJyJutEljyIo', '0', '2017-12-18 13:03:26', '2017-12-18 13:03:26');
-INSERT INTO `orders` VALUES ('84', '6', '34', '0', '59', '0.01', 'eos1513590675', '1', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '1', '0', null, '0', '2017-12-18 17:51:15', null);
-INSERT INTO `orders` VALUES ('85', '6', '34', '0', '59', '0.01', 'eos1513590775', '1', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '0', '0', null, '0', '2017-12-18 17:53:05', '2017-12-18 17:53:05');
+INSERT INTO `orders` VALUES ('74', '6', '32', '0', '57', '0.01', 'eos1513494600', '1', '蒙牛奶粉成人400g青少年女士男女学生儿童全脂高钙奶粉', null, '0', '0', null, '0', null, '2017-12-17 15:10:09', '2017-12-17 15:10:09');
+INSERT INTO `orders` VALUES ('75', '6', '21', '0', '57', '0.01', 'eos1513494626', '1', '2017新款Apple/苹果 iPad Air2 32 128G iPad7 9.7寸 WiFi 4G国行', null, '1', '0', null, '0', null, '2017-12-17 15:10:26', null);
+INSERT INTO `orders` VALUES ('76', '3', '16', '0', '58', '0.02', 'eos1513570424', '2', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', null, '0', null, '2017-12-18 12:15:24', '2017-12-18 12:15:24');
+INSERT INTO `orders` VALUES ('77', '3', '35', '0', '57', '1', 'eos1513570600', '1', '澳洲进口德运全脂高钙青少年成人冲饮牛奶粉1kg新鲜', '100ml,原味,', '1', '0', null, '0', null, '2017-12-18 12:16:40', null);
+INSERT INTO `orders` VALUES ('78', '6', '34', '0', '58', '0.03', 'eos1513571759', '3', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '0', '0', null, '0', null, '2017-12-18 12:57:06', '2017-12-18 12:57:06');
+INSERT INTO `orders` VALUES ('79', '3', '25', '0', '58', '0.03', 'eos1513572956', '3', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', null, '0', null, '2017-12-18 12:57:06', '2017-12-18 12:57:06');
+INSERT INTO `orders` VALUES ('82', '3', '16', '0', '57', '0.01', 'eos1513573370', '1', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '1', '0', 'oIk-Ov2EZvu9BoBjMJyJutEljyIo', '0', null, '2017-12-18 13:02:50', null);
+INSERT INTO `orders` VALUES ('83', '3', '16', '0', '57', '0.01', 'eos1513573399', '1', '2017秋冬季纯黑色弹力牛仔裤男小脚紧身修身休闲长裤牛仔长裤潮男', null, '0', '0', 'oIk-Ov2EZvu9BoBjMJyJutEljyIo', '0', null, '2017-12-18 13:03:26', '2017-12-18 13:03:26');
+INSERT INTO `orders` VALUES ('84', '6', '34', '0', '59', '0.01', 'eos1513590675', '1', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '1', '0', null, '0', null, '2017-12-18 17:51:15', null);
+INSERT INTO `orders` VALUES ('85', '6', '34', '0', '59', '0.01', 'eos1513590775', '1', '香港版雅培成人加营素奶粉金装加营素 完整均衡营养粉香草味900g', null, '0', '0', null, '0', null, '2017-12-18 17:53:05', '2017-12-18 17:53:05');
 
 -- ----------------------------
 -- Table structure for password_resets

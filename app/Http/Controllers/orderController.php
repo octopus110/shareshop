@@ -53,16 +53,22 @@ class orderController extends Controller
 
     public function send(Request $request)
     {
-        $id = $request->input('id');
+        if ($request->isMethod('get')) {
+            return view('server/express',[
+                'id'=> $request->input('id')
+            ]);
+        } else {
+            $id = $request->input('id');
+            $order = new Order();
+            $res = $order->where('id', $id)->update([
+                'delivery' => 1,
+                'express_name' => $request->input('express_name'),
+                'express_id' => $request->input('express_id'),
+            ]);
 
-        $order = new Order();
-
-        $res = $order->where('id', $id)->update([
-            'delivery' => 1
-        ]);
-
-        if ($res) {
-            return response()->json(['statusCode' => 200, 'confirmMsg' => '发货成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'order']);
+            if ($res) {
+                return response()->json(['statusCode' => 200, 'confirmMsg' => '发货成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'order']);
+            }
         }
     }
 }
