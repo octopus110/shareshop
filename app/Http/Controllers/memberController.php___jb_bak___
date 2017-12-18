@@ -60,7 +60,7 @@ class memberController extends Controller
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            $memberid = $this->addWechatMember();
+            $mid = $this->addWechatMember();
         }
 
         $cartModel = new Cart();
