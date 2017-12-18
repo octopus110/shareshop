@@ -4,6 +4,7 @@
     <list default="true" id="de19baf1-701f-4837-8ff7-75a4891c5ed3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/detail/product.css" afterPath="$PROJECT_DIR$/public/detail/product.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/detail.blade.php" afterPath="$PROJECT_DIR$/resources/views/detail.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-17.266666">
-              <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+              <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -48,8 +49,8 @@
       <file leaf-file-name="product.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/detail/product.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.89203084">
-              <caret line="4135" column="22" selection-start-line="4135" selection-start-column="22" selection-end-line="4135" selection-end-column="22" />
+            <state vertical-scroll-proportion="0.83804625">
+              <caret line="4133" column="30" selection-start-line="4133" selection-start-column="30" selection-end-line="4133" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -490,15 +491,15 @@
     <entry file="file://$PROJECT_DIR$/resources/views/detail.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.266666">
-          <caret line="32" column="41" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/detail/product.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.89203084">
-          <caret line="4135" column="22" selection-start-line="4135" selection-start-column="22" selection-end-line="4135" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.83804625">
+          <caret line="4133" column="30" selection-start-line="4133" selection-start-column="30" selection-end-line="4133" selection-end-column="30" />
           <folding />
         </state>
       </provider>
