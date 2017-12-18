@@ -101,7 +101,7 @@ class memberController extends Controller
                 $cartModel->sum = $request->input('sum', 1);
                 $cartModel->attr = rtrim($request->input('attr', ''), ',');
                 $cartModel->total = $request->input('sum', 1) * $total['price'];
-                $cartModel->shareshopid = $request->input('userid','');
+                $cartModel->shareshopid = $request->input('userid', '');
                 $ret = $cartModel->save();
 
                 if ($ret) {
@@ -147,7 +147,7 @@ class memberController extends Controller
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            return false;
+            $mid = $this->addWechatMember();
         }
 
         $orderModel = new Order();
@@ -186,7 +186,7 @@ class memberController extends Controller
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            return false;
+            $mid = $this->addWechatMember();
         }
 
         $orderModel = new Order();
@@ -214,7 +214,7 @@ class memberController extends Controller
         if (session()->has('mid')) {
             $mid = session()->get('mid');
         } else {
-            return false;
+            $mid = $this->addWechatMember();
         }
 
         $addressModel = new Address();
@@ -243,7 +243,7 @@ class memberController extends Controller
                 return response()->json(['statusCode' => 100]);
             }
 
-            if ($addressModel->where('type', 1)->count()) {
+            if ($addressModel->where('type', 1)->where('uid', $mid)->count()) {
                 $addressModel->type = 0;
             } else {
                 $addressModel->type = 1;
