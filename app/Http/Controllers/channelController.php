@@ -28,8 +28,11 @@ class channelController extends Controller
     public function send(Request $request)
     {
         $id = $request->input('id');
+        $memberModel = new Member();
+        $meber = $memberModel->select('getearnings', 'earnings')->find($id);
+        $meber->getearnings = $meber->earnings - $meber->getearnings;
 
-        $res = DB::update('update `members` set `getearnings` = `earnings` where id=' . $id);
+        $res = $meber->save();
 
         if ($res) {
             return response()->json(['statusCode' => 200, 'confirmMsg' => '发放成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'channel']);
