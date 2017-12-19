@@ -84,12 +84,12 @@
 
         @foreach($express as $k => $item)
             <h3>{{ $express_sub[$k]['commodity_name'] }} : <br>
-                <span>{{ $express_sub[$k]['express_name'] }}:{{ $item['nu'] }}</span></h3>
+                <span>{{ $express_sub[$k]['express_name'] }}({{ $item['nu'] }})</span></h3>
             <ul>
                 @foreach($item['data'] as $item_sub)
                     <li>
                         {{ $item_sub['time'] }} : <br/>
-                        {{ $item_sub['context'] }}
+                        &nbsp;&nbsp;&nbsp;{{ $item_sub['context'] }}
                     </li>
                 @endforeach
             </ul>
