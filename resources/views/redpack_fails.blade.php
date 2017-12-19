@@ -38,7 +38,7 @@
 
     <p>{{$title?$title:'失败'}}</p>
 </h2>
-<a href="/">返回首页</a>
 <a href="/member">个人中心</a>
+<a href="/">返回首页</a>
 </body>
 </html>
