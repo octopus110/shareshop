@@ -360,7 +360,7 @@ class indexController extends Controller
                 $member->save();
                 return view('pay_success', ['title' => '发放成功']);
             } else {
-                return view('redpack_fails', ['title' => '红包发放未开通']);
+                return view('redpack_fails', ['title' => '红包发放未开放']);
             }
         } else {
             return view('redpack_fails', ['title' => '余额不够']);
