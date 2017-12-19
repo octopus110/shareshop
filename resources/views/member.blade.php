@@ -83,7 +83,8 @@
         <h2>物流信息</h2>
 
         @foreach($express as $item)
-            <h3>商品名称 <span>{{ $item['com'] }}:{{ $item['nu'] }}</span></h3>
+            <h3>{{ $item->commodity_name }} : <br>
+                <span>{{ $item['express_name'] }}:{{ $item['nu'] }}</span></h3>
             <ul>
                 @foreach($item['data'] as $item_sub)
                     <li>
