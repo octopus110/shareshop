@@ -82,9 +82,9 @@
     <section class="logistics">
         <h2>物流信息</h2>
 
-        @foreach($express as $item)
-            <h3>{{ $item->commodity_name }} : <br>
-                <span>{{ $item['express_name'] }}:{{ $item['nu'] }}</span></h3>
+        @foreach($express as $k => $item)
+            <h3>{{ $express_sub[$k]['commodity_name'] }} : <br>
+                <span>{{ $express_sub[$k]['express_name'] }}:{{ $item['nu'] }}</span></h3>
             <ul>
                 @foreach($item['data'] as $item_sub)
                     <li>

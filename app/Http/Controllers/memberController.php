@@ -30,6 +30,7 @@ class memberController extends Controller
             $carts = $cartsModel->where('uid', $memberid)->count();
             $orderStatus = $ordersModel->where('uid', $memberid)->select('proinfo', 'status', 'delivery', 'express_name', 'express_id')->get();
             $express = [];
+            $express_sub = [];
             foreach ($orderStatus as $item) {
                 if ($item->status == 1) { //未付款
                     $pay++;
@@ -42,8 +43,7 @@ class memberController extends Controller
 
                     //查询物流信息
                     array_push($express, $exp->search($item->express_id, $item->express_name));
-                    array_push($express['express_name'], $item->express_name);
-                    array_push($express['commodity_name'], $item->proinfo);
+                    array_push($express_sub, ['express_name' => $item->express_name, 'commodity_name' => $item->proinfo]);
                 }
             }
         } else {
@@ -58,7 +58,8 @@ class memberController extends Controller
             'pay' => $pay,
             'send' => $send,
             'submit' => $submit,
-            'express' => $express
+            'express' => $express,
+            'express_sub' => $express_sub
         ]);
     }
 
