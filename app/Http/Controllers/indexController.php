@@ -347,7 +347,7 @@ class indexController extends Controller
                 'remark' => 'EOS商城发放红包',
             ];
             $ret = $redpack->sendNormal($redpackData);
-
+            dd($ret);
             if ($ret) {
                 $earning = new Earning();
 
