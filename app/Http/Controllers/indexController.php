@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Cart;
 use App\Classify;
 use App\Commodity;
+use App\Earning;
 use App\Image;
 use App\Member;
 use App\Order;
@@ -289,8 +290,7 @@ class indexController extends Controller
     //支付回调接口
     public function callback()
     {
-        $options = $this->options();
-        $app = new Application($options);
+        $app = new Application($this->options());
         $payment = $app->payment;
 
         $response = $payment->handleNotify(function ($notify, $successful) {
@@ -323,5 +323,42 @@ class indexController extends Controller
             }
         });
         return $response;
+    }
+
+    //发红包接口
+    public function packet()
+    {
+        $openid = $this->getId();
+        $memberModel = new Member();
+        $member = $memberModel->where('openid', $openid)->select('getearnings', 'id')->first();
+
+        if (isset($member->getearnings) && $member->getearnings != 0) {
+            $app = new Application($this->options());
+            $payment = $app->payment;
+            $redpack = $payment->redpack;
+
+            $redpackData = [
+                'mch_billno' => 'xy123456',
+                'send_name' => 'EOS商城发放红包',
+                're_openid' => $openid,
+                'total_amount' => $member->getearnings * 100,  //单位为分
+                'wishing' => 'EOS商城发放红包',
+                'act_name' => 'EOS商城发放红包',
+                'remark' => 'EOS商城发放红包',
+            ];
+
+            $ret = $redpack->sendNormal($redpackData);
+
+            if ($ret) {
+                $earning = new Earning();
+
+                $earning->money = $member->getearnings;
+                $earning->uid = $member->id;
+                $earning->cid = 0;
+                $earning->save();
+            }
+        }
+
+        return back();
     }
 }

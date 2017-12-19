@@ -30,7 +30,8 @@ class channelController extends Controller
         $id = $request->input('id');
         $memberModel = new Member();
         $meber = $memberModel->select('getearnings', 'earnings')->find($id);
-        $meber->getearnings = $meber->earnings - $meber->getearnings;
+        $meber->getearnings = $meber->earnings;
+        $meber->earnings = 0;
 
         $res = $meber->save();
 

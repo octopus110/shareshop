@@ -58,12 +58,14 @@
                 <td>
                     <h6><i class="iconfont icon-yuecopy"></i></h6>
 
-                    <p>我的余额(<span>￥{{ $member['earnings'] }}</span>)</p>
+                    <p>我的红包(<span>￥{{ $member['earnings'] }}</span>)</p>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-tixian"></i></h6>
+                    <a href="/packet">
+                        <h6><i class="iconfont icon-tixian"></i></h6>
 
-                    <p>提现(<span>{{ $member['getearnings'] }}</span>)</p>
+                        <p>获得红包(<span>{{ $member['getearnings'] }}</span>)</p>
+                    </a>
                 </td>
                 <td>
                     <a href="/address">
