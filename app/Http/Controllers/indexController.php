@@ -335,7 +335,7 @@ class indexController extends Controller
 
         if (isset($member->getearnings) && $member->getearnings != 0) {
             $app = new Application($this->options());
-            $redpack = $app->redpack;
+            $redpack = $app->lucky_money;
 
             $redpackData = [
                 'mch_billno' => 'xy123456',
