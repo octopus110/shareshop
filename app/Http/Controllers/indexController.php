@@ -13,7 +13,7 @@ use App\Property;
 use App\Address;
 use App\User;
 use EasyWeChat\Foundation\Application;
-use EasyWeChat\Factory;
+use Illuminate\Support\Facades\Log;
 use Validator;
 use EasyWeChat;
 use Illuminate\Http\Request;
@@ -334,8 +334,9 @@ class indexController extends Controller
         $member = $memberModel->where('openid', $openid)->select('id', 'getearnings')->first();
 
         if (isset($member->getearnings) && $member->getearnings != 0) {
-            $payment = Factory::payment($this->options);
-            $redpack = $payment->redpack;
+            $app = new Application($this->options());
+            $redpack = $app->redpack;
+
             $redpackData = [
                 'mch_billno' => 'xy123456',
                 'send_name' => 'EOS商城发放红包',
@@ -356,6 +357,7 @@ class indexController extends Controller
                 $earning->save();
             }
         }
+
         return back();
     }
 }
