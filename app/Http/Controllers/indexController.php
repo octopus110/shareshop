@@ -348,7 +348,7 @@ class indexController extends Controller
             ];
             $ret = $redpack->sendNormal($redpackData);
 
-            if ($ret->return_code = 'SUCCESS' && $ret->result_code = 'SUCCESS') {
+            if ($ret->return_code == 'SUCCESS' && $ret->result_code == 'SUCCESS') {
                 $earning = new Earning();
 
                 $earning->money = $member->getearnings;
