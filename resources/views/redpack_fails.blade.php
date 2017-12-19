@@ -13,9 +13,9 @@
             text-align: center;
         }
 
-        .icon-ziyuan {
+        .icon-fail {
             font-size: 50vw;
-            color: red;
+            color: #CCCCCC;
         }
 
         h2 p {
