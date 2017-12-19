@@ -47,7 +47,7 @@ class memberController extends Controller
         } else {
             $memberid = $this->addWechatMember();
         }
-
+        dd($express);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,
