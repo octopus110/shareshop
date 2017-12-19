@@ -15,7 +15,6 @@
 
         .icon-fail {
             font-size: 50vw;
-            color: #CCCCCC;
         }
 
         h2 p {
