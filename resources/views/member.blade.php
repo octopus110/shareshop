@@ -56,13 +56,13 @@
                     </a>
                 </td>
                 <td>
-                    <h6><i class="iconfont icon-yuecopy"></i></h6>
+                    <h6><i class="iconfont icon-hongbao"></i></h6>
 
                     <p>我的红包(<span>￥{{ $member['earnings'] }}</span>)</p>
                 </td>
                 <td>
                     <a href="/packet">
-                        <h6><i class="iconfont icon-tixian"></i></h6>
+                        <h6><i class="iconfont icon-fafanghongbao-"></i></h6>
 
                         <p>获得红包(<span>{{ $member['getearnings'] }}</span>)</p>
                     </a>

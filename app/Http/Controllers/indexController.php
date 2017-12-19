@@ -347,7 +347,7 @@ class indexController extends Controller
                 'remark' => 'EOS商城发放红包',
             ];
             $ret = $redpack->sendNormal($redpackData);
-            
+
             if ($ret->return_code = 'SUCCESS' && $ret->result_code = 'SUCCESS') {
                 $earning = new Earning();
 
@@ -358,9 +358,10 @@ class indexController extends Controller
 
                 $member->getearnings = 0;
                 $member->save();
+                return back();
+            } else {
+                return view('redpack_fails');
             }
         }
-
-        return back();
     }
 }
