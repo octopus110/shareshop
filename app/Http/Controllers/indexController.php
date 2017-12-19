@@ -13,7 +13,7 @@ use App\Property;
 use App\Address;
 use App\User;
 use EasyWeChat\Foundation\Application;
-use Illuminate\Support\Facades\Log;
+use EasyWeChat\Factory;
 use Validator;
 use EasyWeChat;
 use Illuminate\Http\Request;
