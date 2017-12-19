@@ -334,10 +334,8 @@ class indexController extends Controller
         $member = $memberModel->where('openid', $openid)->select('id', 'getearnings')->first();
 
         if (isset($member->getearnings) && $member->getearnings != 0) {
-            $app = new Application($this->options());
-            $payment = $app->payment;
+            $payment = Factory::payment($this->options);
             $redpack = $payment->redpack;
-
             $redpackData = [
                 'mch_billno' => 'xy123456',
                 'send_name' => 'EOS商城发放红包',
