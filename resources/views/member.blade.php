@@ -82,15 +82,16 @@
     <section class="logistics">
         <h2>物流信息</h2>
 
-        <h3>商品名称 <span>圆通快递</span></h3>
-        <ul>
-            <li>
-                2017-2-13 5:30 从仓库发出
-            </li>
-            <li>
-                2017-2-14 15:30 到达上海分中心
-            </li>
-        </ul>
+        @foreach($express as $item)
+            <h3>商品名称 <span>{{ $item['com'] }}:{{ $item['nu'] }}</span></h3>
+            <ul>
+                @foreach($item['data'] as $item_sub)
+                    <li>
+                        {{ $item_sub['time'] }} {{ $item_sub['context'] }}
+                    </li>
+                @endforeach
+            </ul>
+        @endforeach
     </section>
 @endsection
 @section('js')

@@ -47,7 +47,6 @@ class memberController extends Controller
         } else {
             $memberid = $this->addWechatMember();
         }
-        dd($express);
         session()->put('mid', $memberid);
         return view('member', [
             'member' => $member,
@@ -56,7 +55,8 @@ class memberController extends Controller
             'carts' => $carts,
             'pay' => $pay,
             'send' => $send,
-            'submit' => $submit
+            'submit' => $submit,
+            'express' => $express
         ]);
     }
 
