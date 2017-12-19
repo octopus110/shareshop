@@ -30,15 +30,15 @@ class memberController extends Controller
             $carts = $cartsModel->where('uid', $memberid)->count();
             $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery', 'express_name', 'express_id')->get();
             $express = [];
-            dd($memberid);
+            dd($orderStatus);
             foreach ($orderStatus as $item) {
-                if ($item->status == 1) {
+                if ($item->status == 1) { //未付款
                     $pay++;
                 }
-                if ($item->status == 0 && $item->delivery == 0) {
+                if ($item->status == 0 && $item->delivery == 0) { //已付款未发货
                     $send++;
                 }
-                if ($item->status == 1 && $item->delivery == 1) {
+                if ($item->status == 0 && $item->delivery == 1) { //已付款已发货
                     $submit++;
 
                     //查询物流信息
