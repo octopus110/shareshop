@@ -328,14 +328,12 @@ class indexController extends Controller
     //发红包接口
     public function packet()
     {
-        $openid = $this->getId();
+        $user = session('wechat.oauth_user');
+        $openid = $user['id'];
         $memberModel = new Member();
-        $member = $memberModel->where('openid', $openid)->select('getearnings', 'id')->first();
+        $member = $memberModel->where('openid', $openid)->select('id', 'getearnings')->first();
 
-        Log::info('packet:0');
-        Log::info('packet:0'.$openid);
-        Log::info('packet:'.$member);
-        if (isset($member->getearnings) && $member->getearnings != 0) {Log::info('packet:1');
+        if (isset($member->getearnings) && $member->getearnings != 0) {
             $app = new Application($this->options());
             $payment = $app->payment;
             $redpack = $payment->redpack;
@@ -349,7 +347,6 @@ class indexController extends Controller
                 'act_name' => 'EOS商城发放红包',
                 'remark' => 'EOS商城发放红包',
             ];
-            Log::info('packet:'.$redpackData);
             $ret = $redpack->sendNormal($redpackData);
 
             if ($ret) {
@@ -361,7 +358,6 @@ class indexController extends Controller
                 $earning->save();
             }
         }
-        Log::info('packet:2');
         return back();
     }
 }
