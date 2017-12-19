@@ -355,6 +355,9 @@ class indexController extends Controller
                 $earning->uid = $member->id;
                 $earning->cid = 0;
                 $earning->save();
+
+                $member->getearnings = 0;
+                $member->save();
             }
         }
 
