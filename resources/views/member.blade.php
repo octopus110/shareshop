@@ -81,19 +81,22 @@
 
     <section class="logistics">
         <h2>物流信息</h2>
-
-        @foreach($express as $k => $item)
-            <h3>{{ $express_sub[$k]['commodity_name'] }} : <br>
-                <span>{{ $express_sub[$k]['express_name'] }}({{ $item['nu'] }})</span></h3>
-            <ul>
-                @foreach($item['data'] as $item_sub)
-                    <li>
-                        {{ $item_sub['time'] }} : <br/>
-                        &nbsp;&nbsp;&nbsp;{{ $item_sub['context'] }}
-                    </li>
-                @endforeach
-            </ul>
-        @endforeach
+        @if(count($express))
+            @foreach($express as $k => $item)
+                <h3>{{ $express_sub[$k]['commodity_name'] }} : <br>
+                    <span>{{ $express_sub[$k]['express_name'] }}({{ $item['nu'] }})</span></h3>
+                <ul>
+                    @foreach($item['data'] as $item_sub)
+                        <li>
+                            {{ $item_sub['time'] }} : <br/>
+                            &nbsp;&nbsp;&nbsp;{{ $item_sub['context'] }}
+                        </li>
+                    @endforeach
+                </ul>
+            @endforeach
+        @else
+            <h3>暂无物流</h3>
+        @endif
     </section>
 @endsection
 @section('js')
