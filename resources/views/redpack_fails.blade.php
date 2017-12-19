@@ -37,7 +37,7 @@
 <h2>
     <i class="iconfont icon-fail"></i>
 
-    <p>红包发放功能处于关闭状态</p>
+    <p>{{$title?$title:'失败'}}</p>
 </h2>
 <a href="/">返回首页</a>
 <a href="/member">个人中心</a>

@@ -358,10 +358,12 @@ class indexController extends Controller
 
                 $member->getearnings = 0;
                 $member->save();
-                return back();
+                return view('pay_success', ['title' => '发放成功']);
             } else {
-                return view('redpack_fails');
+                return view('redpack_fails', ['title' => '红包发放功能处于关闭状态']);
             }
+        } else {
+            return view('redpack_fails', ['title' => '余额不够']);
         }
     }
 }
