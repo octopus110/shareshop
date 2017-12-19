@@ -30,6 +30,7 @@ class memberController extends Controller
             $carts = $cartsModel->where('uid', $memberid)->count();
             $orderStatus = $ordersModel->where('uid', $memberid)->select('status', 'delivery', 'express_name', 'express_id')->get();
             $express = [];
+            dd($memberid);
             foreach ($orderStatus as $item) {
                 if ($item->status == 1) {
                     $pay++;
