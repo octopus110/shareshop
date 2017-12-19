@@ -333,7 +333,8 @@ class indexController extends Controller
         $member = $memberModel->where('openid', $openid)->select('getearnings', 'id')->first();
 
         Log::info('packet:0');
-
+        Log::info('packet:0'.$openid);
+        Log::info('packet:'.$member);
         if (isset($member->getearnings) && $member->getearnings != 0) {Log::info('packet:1');
             $app = new Application($this->options());
             $payment = $app->payment;
