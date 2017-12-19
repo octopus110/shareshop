@@ -87,7 +87,8 @@
             <ul>
                 @foreach($item['data'] as $item_sub)
                     <li>
-                        {{ $item_sub['time'] }} {{ $item_sub['context'] }}
+                        {{ $item_sub['time'] }} : <br/>
+                        {{ $item_sub['context'] }}
                     </li>
                 @endforeach
             </ul>
