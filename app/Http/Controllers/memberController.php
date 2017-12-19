@@ -41,7 +41,6 @@ class memberController extends Controller
                     $submit++;
 
                     //查询物流信息
-                    dd($item->express_id,$item->express_name);
                     array_push($express, $exp->search($item->express_id, $item->express_name));
                 }
             }
