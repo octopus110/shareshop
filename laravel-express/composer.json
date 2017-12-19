@@ -1,0 +1,22 @@
+{
+    "name": "widuu/laravel-express",
+    "description": "A Express For Laravel",
+    "license": "Apache-2.0",
+    "keywords": ["laravel", "Express", "laravel Express"],
+    "authors": [
+        {
+            "name": "widuu",
+            "email": "admin@widuu.com"
+        }
+    ],
+   
+    "autoload": {
+        "psr-4": {
+          "widuu\\Express\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "~5.1"
+    }
+}
