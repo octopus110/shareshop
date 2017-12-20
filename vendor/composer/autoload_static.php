@@ -3987,9 +3987,6 @@ class ComposerStaticInit90c907fea106cfed068ed95086a0d1c5
         'phpDocumentor\\Reflection\\Types\\String_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/String_.php',
         'phpDocumentor\\Reflection\\Types\\This' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/This.php',
         'phpDocumentor\\Reflection\\Types\\Void_' => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src/Types/Void_.php',
-        'widuu\\Express\\Express' => __DIR__ . '/..' . '/widuu/laravel-express/src/Express.php',
-        'widuu\\Express\\ExpressName' => __DIR__ . '/..' . '/widuu/laravel-express/src/ExpressName.php',
-        'widuu\\Express\\ExpressServiceProvider' => __DIR__ . '/..' . '/widuu/laravel-express/src/ExpressServiceProvider.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
