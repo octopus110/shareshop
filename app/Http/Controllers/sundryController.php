@@ -116,7 +116,7 @@ class sundryController extends Controller
     {
         $imagesModel = new Image();
 
-        $images = $imagesModel->select('id', 'src')->where('classify', 1)->orderBy('id', 'desc')->limit(4)->get()->toArray();
+        $images = $imagesModel->select('id', 'src', 'href')->where('classify', 1)->orderBy('id', 'desc')->limit(4)->get()->toArray();
 
         return view('server/banner', ['images' => $images]);
     }
@@ -125,11 +125,8 @@ class sundryController extends Controller
     {
         $id = $request->input('id');
         $imageModel = new Image();
-        $res = $imageModel->where('id', $id)->delete();
-        if ($res) {
-            return response()->json(['statusCode' => 200, 'confirmMsg' => '删除成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'banner']);
-        } else {
-            return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'banner']);
-        }
+        $imageModel->where('id', $id)->delete();
+        return response()->json(['statusCode' => 200, 'confirmMsg' => '删除成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'banner']);
+
     }
 }

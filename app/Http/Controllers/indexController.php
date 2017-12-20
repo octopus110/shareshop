@@ -39,7 +39,7 @@ class indexController extends Controller
     public function index(Request $request)
     {
         $imageModel = new Image();
-        $banner = $imageModel->where('classify', 1)->select('id', 'src')->get();
+        $banner = $imageModel->where('classify', 1)->select('id', 'src','href')->get();
 
         $classifyModel = new Classify();
         $classify = $classifyModel->select('id', 'src', 'name')->get();

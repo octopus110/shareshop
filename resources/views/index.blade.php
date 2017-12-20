@@ -5,16 +5,14 @@
 @endsection
 
 @section('content')
-{{--    @if(!$mid)
-        <div class="login">
-            <a href="/login">登录 / 注册</a>
-        </div>
-    @endif--}}
-
     <div class="swiper-container swiper-banner">
         <div class="swiper-wrapper">
             @foreach($banner as $item)
-                <div class="swiper-slide"><img src="/uploads/{{ $item->src }}" alt="" width="100%"/></div>
+                <div class="swiper-slide">
+                    <a href="{{ $item->href }}">
+                        <img src="/uploads/{{ $item->src }}" alt="" width="100%"/>
+                    </a>
+                </div>
             @endforeach
         </div>
         <div class="swiper-scrollbar"></div>

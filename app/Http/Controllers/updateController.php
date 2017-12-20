@@ -37,21 +37,25 @@ class updateController extends Controller
     public function banner(Request $request)
     {
         $file = $request->file('image');
-        foreach ($file as $item) {
-            if ($item->isValid()) {
-                if (in_array(strtolower($item->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
-                    $newName = 'banner_' . time() . rand(1, 999999) . '.' . $item->getClientOriginalExtension();
+        $src = $request->input('src');
+        if (count($file)) {
+            foreach ($file as $k => $item) {
+                if ($item->isValid()) {
+                    if (in_array(strtolower($item->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
+                        $newName = 'banner_' . time() . rand(1, 999999) . '.' . $item->getClientOriginalExtension();
 
-                    $realPath = $item->getRealPath();
+                        $realPath = $item->getRealPath();
 
-                    $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
+                        $bool = Storage::disk('uploads')->put($newName, file_get_contents($realPath));
 
-                    if ($bool) {
-                        $imageModel = new Image();
-                        $id = $imageModel->add($newName, 1);
+                        if ($bool) {
+                            $imageModel = new Image();
+                            $id = $imageModel->add($newName, 1, $src[$k]);
+                        }
                     }
                 }
             }
         }
+
     }
 }
