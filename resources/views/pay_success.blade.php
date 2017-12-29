@@ -37,7 +37,7 @@
 <h2>
     <i class="iconfont icon-ziyuan"></i>
 
-    <p>{{$title?$title:'支付成功'}}</p>
+    <p>{{isset($title)?$title:'支付成功'}}</p>
 </h2>
 <a href="/member">个人中心</a>
 <a href="/">返回首页</a>
