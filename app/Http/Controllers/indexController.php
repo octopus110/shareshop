@@ -306,9 +306,12 @@ class indexController extends Controller
                         $order->status = 0;
                     }
                     $order->save();
+                    Log::info('微信回调');
+                    Log::info('微信回调'.$order->shareshopid.'//'.$order->money);
                     if ($order->shareshopid && $order->money > 0) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
                         $member = $memberModel->where('openid', $order->shareshopid)->first();
                         $user = $userModel->where('id', $order->sid)->first();
+                        Log::info('微信回调2'.$user->profit);
                         $member->earnings += $user->profit;
                         $member->type = 1;
                         $member->save();
