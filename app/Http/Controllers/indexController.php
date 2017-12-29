@@ -309,7 +309,7 @@ class indexController extends Controller
                     if ($order->shareshopid && $order->money > 0) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
                         $member = $memberModel->where('openid', $order->shareshopid)->first();
                         $user = $userModel->where('id', $order->sid)->first();
-                        $member->earnings = $user->profit;
+                        $member->earnings += $user->profit;
                         $member->type = 1;
                         $member->save();
                         //更新注册商表，让他的个体注册商里包含此用户
