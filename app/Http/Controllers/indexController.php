@@ -143,7 +143,7 @@ class indexController extends Controller
 
     //创建订单接口
     public function create_order(Request $request)
-    {
+    {dd($request->input('userid'));
         //产品id
         $validator = Validator::make($request->all(), [
             'type' => 'required', //0传递的是商品id 1传递的是订单id
