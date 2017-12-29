@@ -50,7 +50,7 @@
             <tr>
                 <td>
                     <a href="/transaction">
-                        <h6><i class="iconfont icon-jiaoyijilu"></i></h6>
+                        <h6><i class="iconfont icon-fenxiang"></i></h6>
 
                         <p>交易记录</p>
                     </a>

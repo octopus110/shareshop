@@ -24,11 +24,6 @@
     <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui" style="color: #333;"></i></a>产品详情
 </header>
 <div id="content">
-    <div class="share">
-        <h6>告诉你个秘密：</h6>
-
-        <p>分享产品到朋友圈有人购买后就能拿到奖金奥</p>
-    </div>
     <div class="scroller">
         <div id="p-summary" class="page">
             <div class="container" style="position: relative">
@@ -188,13 +183,7 @@
         $("#cart_icon").click(function () {
             window.location.href = '/cart';
         });
-
-        //两秒后隐藏提示
-        $(".share").slideDown();
-        window.setTimeout(function () {
-            $(".share").slideUp();
-        }, 2000);
-
+        
         $(".clickwn").click(function () {
             $(".flick-menu-mask").show();
             $(".spec-menu").show();
