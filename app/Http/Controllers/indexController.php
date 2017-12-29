@@ -39,7 +39,7 @@ class indexController extends Controller
     public function index(Request $request)
     {
         $imageModel = new Image();
-        $banner = $imageModel->where('classify', 1)->select('id', 'src','href')->get();
+        $banner = $imageModel->where('classify', 1)->select('id', 'src', 'href')->get();
 
         $classifyModel = new Classify();
         $classify = $classifyModel->select('id', 'src', 'name')->get();
@@ -306,13 +306,10 @@ class indexController extends Controller
                         $order->status = 0;
                     }
                     $order->save();
-                    Log::info('微信回调');
-                    Log::info('微信回调'.$order->shareshopid.'//'.$order->money);
                     if ($order->shareshopid && $order->money > 0) { //如果存在分享者的id并且交易金额大于50要给你分享者分发利益
                         $member = $memberModel->where('id', $order->shareshopid)->first();
                         $user = $userModel->where('id', $order->sid)->first();
-                        Log::info('微信回调2'.$user->profit.'**'.$member.',,,'.$member->earnings);
-                        $member->earnings += $user->profit*1;
+                        $member->earnings = $member->earnings * 1 + $user->profit * 1;
                         $member->type = 1;
                         $member->save();
                         //更新注册商表，让他的个体注册商里包含此用户
