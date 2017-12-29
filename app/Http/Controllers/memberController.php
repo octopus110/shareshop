@@ -200,12 +200,13 @@ class memberController extends Controller
         $orderModel = new Order();
         $transactions = $orderModel->where('orders.status', 0)
             ->where('orders.uid', $mid)
-            ->select('commoditys.name', 'orders.money', 'orders.type')
+            ->select('commoditys.id', 'commoditys.name', 'orders.money', 'orders.type')
             ->leftjoin('commoditys', 'commoditys.id', 'orders.cid')
             ->get();
 
         return view('transaction', [
-            'transactions' => $transactions
+            'transactions' => $transactions,
+            'mid' => $mid
         ]);
     }
 

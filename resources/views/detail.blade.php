@@ -160,9 +160,6 @@
                                 <p>联系商家</p>
                             </div>
                         </a>
-                        {{--<div class="web"><img src="/images/trade-assurance.png" width="20" height="20"/>
-                            <p>进店</p>
-                        </div>--}}
                         <button class="cart cell add_cart">加入购物车</button>
                         <button class="buy cell">立即购买</button>
                         <div class="activity-box cell"></div>

@@ -12,12 +12,17 @@
 </head>
 <body>
 <header class="cart-header">
-    <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>交易记录
+    <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>获得红包
 </header>
+<section class="transactions" style="color: red;">
+    * 分享你购买的产品将有机会获得红包奥
+</section>
 
 @foreach($transactions as $item)
     <section class="transactions">
-        【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
+        <a href="details/{{ $item->id }}/{{ $mid }}">
+            【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
+        </a>
     </section>
 @endforeach
 
