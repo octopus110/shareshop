@@ -13,7 +13,7 @@
 </head>
 <body>
 <header class="address-header">
-    <a href="/member"><i class="iconfont icon-fanhui"></i></a>收货地址
+    <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui"></i></a>收货地址
 </header>
 
 @foreach($address as $item)
