@@ -52,7 +52,7 @@
                     <a href="/transaction">
                         <h6><i class="iconfont icon-fenxiang"></i></h6>
 
-                        <p>交易记录</p>
+                        <p>获得红包</p>
                     </a>
                 </td>
                 <td>
@@ -64,7 +64,7 @@
                     <a href="/packet">
                         <h6><i class="iconfont icon-fafanghongbao-"></i></h6>
 
-                        <p>获得红包(<span>{{ $member['getearnings'] }}</span>)</p>
+                        <p>红包提现(<span>{{ $member['getearnings'] }}</span>)</p>
                     </a>
                 </td>
                 <td>
