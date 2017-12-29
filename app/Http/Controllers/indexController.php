@@ -130,7 +130,7 @@ class indexController extends Controller
         }
 
         $app = new Application($this->options());
-dd($userid);
+
         return view('detail', [
             'openid' => $this->getWeChatInfo()['id'],
             'userid' => $userid,
