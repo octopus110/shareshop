@@ -31,7 +31,6 @@ class channelController extends Controller
         $memberModel = new Member();
         $meber = $memberModel->select('getearnings', 'earnings')->find($id);
 
-        dd($meber);
         $meber->getearnings = $meber->earnings;
         $meber->earnings = 0;
 
