@@ -12,6 +12,8 @@ class updateController extends Controller
     public function images(Request $request, $type = 0)
     {
         $file = $request->file('image');
+
+        dd($file);
         if ($file->isValid()) {
             if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
                 $newName = 'commodity_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
