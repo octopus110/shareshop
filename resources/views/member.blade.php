@@ -36,7 +36,7 @@
                     <a href="/obligation/1">
                         <h6><i class="iconfont icon-daifahuo1"></i></h6>
 
-                        <p>代发货(<span>{{ $send }}</span>)</p>
+                        <p>待发货(<span>{{ $send }}</span>)</p>
                     </a>
                 </td>
                 <td>
