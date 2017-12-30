@@ -13,8 +13,8 @@ class updateController extends Controller
     {
         $file = $request->file('image');
 
-        dd($file);
         if ($file->isValid()) {
+            dd(1);
             if (in_array(strtolower($file->getClientOriginalExtension()), ['jpeg', 'jpg', 'gif', 'png'])) {
                 $newName = 'commodity_' . time() . rand(1, 999999) . '.' . $file->getClientOriginalExtension();
 
