@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/updateController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/updateController.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/server/classify.blade.php" afterPath="$PROJECT_DIR$/resources/views/server/classify.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,12 +26,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="updateController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="updateController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/updateController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
               <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="classify.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/server/classify.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+              <folding>
+                <marker date="1514607791759" expanded="true" signature="731:745" ph="..." />
+                <marker date="1514607791759" expanded="true" signature="782:793" ph="..." />
+                <marker date="1514607791759" expanded="true" signature="820:831" ph="..." />
+                <marker date="1514607791759" expanded="true" signature="861:874" ph="..." />
+                <marker date="1514607791759" expanded="true" signature="923:935" ph="..." />
+                <marker date="1514607791759" expanded="true" signature="990:1003" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,6 +116,7 @@
         <option value="$PROJECT_DIR$/resources/views/pay_success.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/updateController.php" />
+        <option value="$PROJECT_DIR$/resources/views/server/classify.blade.php" />
       </list>
     </option>
   </component>
@@ -249,6 +267,24 @@
             <path>
               <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="server" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
@@ -331,12 +367,12 @@
       <updated>1513598355227</updated>
       <workItem from="1514517019455" duration="76000" />
       <workItem from="1514517336269" duration="25000" />
-      <workItem from="1514606507376" duration="1069000" />
+      <workItem from="1514606507376" duration="1161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1170000" />
+    <option name="totallyTimeSpent" value="1262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -382,14 +418,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/channelController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/channelController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -743,6 +771,21 @@
         <state relative-caret-position="450">
           <caret line="25" column="61" lean-forward="false" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/server/classify.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="23" column="78" lean-forward="false" selection-start-line="23" selection-start-column="78" selection-end-line="23" selection-end-column="78" />
+          <folding>
+            <marker date="1514607791759" expanded="true" signature="731:745" ph="..." />
+            <marker date="1514607791759" expanded="true" signature="782:793" ph="..." />
+            <marker date="1514607791759" expanded="true" signature="820:831" ph="..." />
+            <marker date="1514607791759" expanded="true" signature="861:874" ph="..." />
+            <marker date="1514607791759" expanded="true" signature="923:935" ph="..." />
+            <marker date="1514607791759" expanded="true" signature="990:1003" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

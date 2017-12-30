@@ -21,7 +21,7 @@
             <tr target="id" rel="{{ $item->id }}">
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
-                <td><img src="/uploads/{{ $item->src }}" alt="无标志"></td>
+                <td><img src="/uploads/{{ $item->src }}" alt="无标志" width="64px"></td>
                 <td>{{ $item->sort }}</td>
             </tr>
         @endforeach
