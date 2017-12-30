@@ -58,9 +58,6 @@ class userController extends Controller
             }
 
             $userModel = new User();
-
-            dd($request->all());
-
             $userModel->weixin = $request->input('weixin');
             $userModel->storename = $request->input('storename');
             $userModel->storeintroduce = $request->input('storeintroduce');
