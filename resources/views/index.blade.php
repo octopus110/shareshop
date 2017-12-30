@@ -23,7 +23,7 @@
             @foreach($classify as $k=>$item)
                 <div class="swiper-slide">
                     <a href="/list/{{ $item->id }}/{{ $k+3 }}">
-                        <img src="/uploads/{{ $item->src }}" alt="" width="100%"/>
+                        <img src="/uploads/{{ $item->src }}" alt="" width="100%" height="100%"/>
 
                         <p>{{ $item->name }}</p>
                     </a>
