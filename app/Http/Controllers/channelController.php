@@ -29,12 +29,12 @@ class channelController extends Controller
     {
         $id = $request->input('id');
         $memberModel = new Member();
-        $meber = $memberModel->select('getearnings', 'earnings')->find($id);
+        $member = $memberModel->select('getearnings', 'earnings')->find($id);
 
-        $meber->getearnings = $meber->earnings;
-        $meber->earnings = 0;
+        $member->getearnings = $member->earnings;
+        $member->earnings = 0;
 
-        $res = $memberModel->save();
+        $res = $member->save();
 
         if ($res) {
             return response()->json(['statusCode' => 200, 'confirmMsg' => '发放成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'channel']);
