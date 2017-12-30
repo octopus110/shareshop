@@ -23,7 +23,7 @@ class updateController extends Controller
 
                 if ($bool) {
                     $imageModel = new Image();
-                    $id = $imageModel->add($newName, $type);
+                    $id = $imageModel->add($newName, $type,'');
 
                     if ($id) {
                         return response()->json(['statusCode' => 200, 'id' => $id]);
