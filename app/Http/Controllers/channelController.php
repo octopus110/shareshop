@@ -34,7 +34,7 @@ class channelController extends Controller
         $meber->getearnings = $meber->earnings;
         $meber->earnings = 0;
 
-        $res = $meber->save();
+        $res = $memberModel->save();
 
         if ($res) {
             return response()->json(['statusCode' => 200, 'confirmMsg' => '发放成功', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'channel']);
