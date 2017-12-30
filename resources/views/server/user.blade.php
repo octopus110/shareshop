@@ -31,7 +31,7 @@
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->weixin }}</td>
                 <td>{{ $item->storename }}</td>
-                <td><img src="/uploads/{{ $item->logo }}" alt="无标志"></td>
+                <td><img src="/uploads/{{ $item->logo }}" alt="无标志" width="128px"></td>
                 <td>{{ $item->phone }}</td>
                 <td>{{ $item->email }}</td>
                 <td>{{ $item->IDnumber }}</td>
