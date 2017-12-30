@@ -42,7 +42,7 @@ class indexController extends Controller
         $banner = $imageModel->where('classify', 1)->select('id', 'src', 'href')->get();
 
         $classifyModel = new Classify();
-        $classify = $classifyModel->select('id', 'src', 'name')->get();
+        $classify = $classifyModel->select('id', 'src', 'name')->orderBy('sort','desc')->get();
 
         $commoditysModel = new Commodity();
         $newcommoditys = $commoditysModel->select(
