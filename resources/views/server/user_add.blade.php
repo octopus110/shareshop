@@ -22,7 +22,7 @@
             <div style="clear: both;height: 50px;"></div>
             <p>
                 <label>微信号：</label>
-                <input name="weixin" type="text" class="required" alt="关注我们公众号的微信号"/>
+                <input name="weixin" type="text" class="required" alt="微信号"/>
             </p>
 
             <p>
@@ -37,7 +37,7 @@
 
             <p>
                 <label>负责人邮箱：</label>
-                <input name="email" class="required email" type="text" alt="用于用户登录和找回密码"/>
+                <input name="email" class="required email" type="text" alt="用于登录和找回密码"/>
             </p>
 
             <p>
