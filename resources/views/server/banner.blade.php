@@ -11,7 +11,7 @@
 
         <div class="pageFormContent banner_img_td" layoutH="56">
             <div class="unit">
-                <h2 class="contentTitle">图片上传</h2>
+                <h2 class="contentTitle">首页轮播图</h2>
 
                 <div style="padding-bottom: 10px;color: red;">*如果要替换，删除后上传即可</div>
                 <table>

@@ -89,7 +89,7 @@
     <div id="header">
         <div class="headerNav">
             <ul class="nav">
-                <li><a href="http://www.shashop.com" target="_blank">前台</a></li>
+                <li><a href="http://mall.eos-tech.cn" target="_blank">前台</a></li>
                 <li><a href="javascript:;">管理员:{{$data['email']}}</a></li>
                 <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
                 <li><a href="/server/quit">退出</a></li>
