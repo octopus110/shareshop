@@ -76,7 +76,7 @@
                     @if($item->delivery==0&&$item->status==0&&$item->type==0)
                         {{--<a class="button" href="order/send?id={{$item->id}}" target="ajaxTodo"
                            title="确定要发货吗?"><span>发货</span></a>--}}
-                        <a class="button" href="/server/order/send?id={{$item->id}}" target="dialog" rel="express" minable="false"><span>发货</span></a>
+                        <a class="button" href="/server/order/send?id={{$item->id}}" target="express" rel="express" mask="true"><span>发货</span></a>
                     @endif
                 </td>
             </tr>
