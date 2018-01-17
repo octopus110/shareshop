@@ -68,6 +68,11 @@
     padding: 1vw 0;
 }
 
+.icon-gerenxinxi{
+    font-size: 12vw;
+    color: orangered;
+}
+
 .footer {
     display: none;
 }
