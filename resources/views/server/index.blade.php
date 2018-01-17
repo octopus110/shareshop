@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <title>商城后台</title>
+    <title>{{ env('APP_NAME','laravel')}}</title>
     <link href="/themes/default/style.css" rel="stylesheet" type="text/css" media="screen"/>
     <link href="/themes/css/core.css" rel="stylesheet" type="text/css" media="screen"/>
     <link href="/themes/css/print.css" rel="stylesheet" type="text/css" media="print"/>
