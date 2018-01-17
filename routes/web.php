@@ -19,7 +19,7 @@ Route::group(['middleware' => 'wechat.oauth'], function () {
     Route::any('/cart', 'memberController@carts');//购物车
     Route::any('/create_order', 'indexController@create_order'); //创建订单
     Route::any('/pay', 'indexController@pay');//支付
-    Route::any('/packet', 'indexController@packet');//支付
+    Route::any('/packet', 'indexController@packet');//获得红包
 });
 Route::any('/pay/callback', 'indexController@callback');//支付回调
 

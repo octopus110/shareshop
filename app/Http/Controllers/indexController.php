@@ -331,8 +331,11 @@ class indexController extends Controller
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
         $memberModel = new Member();
-        $member = $memberModel->where('openid', $openid)->select('id', 'getearnings')->first();
+        $member = $memberModel->where('openid', $openid)->select('id', 'getearnings','realname','IDnumber')->first();
 
+        if(!($member->realname && $member->IDnumber)){
+            return view('redpack_fails', ['title' => '个人信息不完整，请前往个人中心填写完整的个人信息']);
+        }
         if (isset($member->getearnings) && $member->getearnings != 0) {
             $app = new Application($this->options());
             $redpack = $app->lucky_money;
