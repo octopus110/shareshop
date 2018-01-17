@@ -54,7 +54,7 @@
     <div class="blank"></div>
 
     <label for="0">
-        唯一识别编号：
+        唯一识别编号(不可修改)：
     </label>
     <input type="text" name="openid" placeholder="唯一识别编号" readonly value="{{ $data->openid }}"/>
 
@@ -64,7 +64,7 @@
     <input type="text" name="realname" placeholder="用户昵称" readonly value="{{ $data->nickname }}"/>
 
     <label for="0">
-        注册时间：
+        注册时间(不可修改)：
     </label>
     <input type="text" name="realname" placeholder="注册时间" readonly value="{{ $data->created_at }}"/>
     <form action="/improve" method="post">
