@@ -4,7 +4,7 @@
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transaction.blade.php" afterPath="$PROJECT_DIR$/resources/views/transaction.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,12 +27,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="indexController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="indexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="333" column="117" lean-forward="true" selection-start-line="333" selection-start-column="117" selection-end-line="333" selection-end-column="117" />
+            <state relative-caret-position="284">
+              <caret line="336" column="61" lean-forward="false" selection-start-line="336" selection-start-column="61" selection-end-line="336" selection-end-column="61" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+              <folding>
+                <marker date="1516178132592" expanded="true" signature="264:283" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="742:764" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="828:839" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="844:850" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="870:893" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="898:911" ph="..." />
+                <marker date="1516178132592" expanded="true" signature="922:936" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -79,7 +97,6 @@
         <option value="$PROJECT_DIR$/resources/views/common.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/address.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/address_eidt.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/transaction.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/redpack_fails.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pay_success.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/order.blade.php" />
@@ -95,6 +112,7 @@
         <option value="$PROJECT_DIR$/resources/views/improve.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
+        <option value="$PROJECT_DIR$/resources/views/transaction.blade.php" />
       </list>
     </option>
   </component>
@@ -259,6 +277,17 @@
               <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -348,12 +377,12 @@
       <workItem from="1516173602664" duration="310000" />
       <workItem from="1516173925341" duration="405000" />
       <workItem from="1516174340812" duration="417000" />
-      <workItem from="1516174770951" duration="3130000" />
+      <workItem from="1516174770951" duration="3361000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19119000" />
+    <option name="totallyTimeSpent" value="19350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -609,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="30" lean-forward="false" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/redpack_fails.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -791,9 +813,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="333" column="117" lean-forward="true" selection-start-line="333" selection-start-column="117" selection-end-line="333" selection-end-column="117" />
+        <state relative-caret-position="284">
+          <caret line="336" column="61" lean-forward="false" selection-start-line="336" selection-start-column="61" selection-end-line="336" selection-end-column="61" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <marker date="1516178132592" expanded="true" signature="264:283" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="742:764" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="828:839" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="844:850" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="870:893" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="898:911" ph="..." />
+            <marker date="1516178132592" expanded="true" signature="922:936" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -15,7 +15,8 @@
     <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>获得红包
 </header>
 <section class="transactions" style="color: red;">
-    * 点击购买产品进入详情微信分享即有机会获得现金红包
+    * 点击购买产品进入详情微信分享即有机会获得现金红包<br>
+    * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
 @foreach($transactions as $item)
