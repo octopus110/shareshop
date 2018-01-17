@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
     <meta name="keywords" content=""/>
-    <title>EOS商城</title>
+    <title>{{ env('APP_NAME')}}</title>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/iconfont.css">
     <style>
