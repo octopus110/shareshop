@@ -346,4 +346,42 @@ class memberController extends Controller
             }
         }
     }
+
+    public function improve(Request $request)
+    {
+        if (session()->has('mid')) {
+            $mid = session()->get('mid');
+        } else {
+            //$mid = $this->addWechatMember();
+            $mid = 57;
+        }
+
+        $memberModel = new Member();
+        if ($request->isMethod('get')) {
+            $data = $memberModel->select('realname', 'IDnumber', 'sex')->find($mid);
+            return view('improve', [
+                'data' => $data
+            ]);
+        } else {
+            $validator = Validator::make($request->all(), [
+                'realname' => 'required',
+                'IDnumber' => 'required',
+                'sex' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect('/improve');
+            }
+
+            $res = $memberModel->where('id', $mid)->update([
+                'realname' => $request->input('realname'),
+                'IDnumber' => $request->input('IDnumber'),
+                'sex' => $request->input('sex'),
+            ]);
+
+            if ($res) {
+                return redirect('/member');
+            }
+        }
+    }
 }

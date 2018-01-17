@@ -9,6 +9,7 @@ Route::get('/transaction', 'memberController@transaction');
 Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@address_edit');
+Route::any('/improve', 'memberController@improve');//完善个人信息
 
 Route::any('/wechat', 'WechatController@serve');//消息回复
 Route::any('/menu', 'WechatController@menu');//生成菜单
