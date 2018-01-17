@@ -55,12 +55,12 @@
     <label for="0">
         昵称(微信昵称)：
     </label>
-    <input type="text" name="realname" placeholder="用户昵称" value="{{ $data->nickname }}"/>
+    <input type="text" name="realname" placeholder="用户昵称" readonly value="{{ $data->nickname }}"/>
 
     <label for="0">
         注册时间：
     </label>
-    <input type="text" name="realname" placeholder="注册时间" value="{{ $data->created_at }}"/>
+    <input type="text" name="realname" placeholder="注册时间" readonly value="{{ $data->created_at }}"/>
     <form action="/improve" method="post">
         {{ csrf_field() }}
         <label for="0">
