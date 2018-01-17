@@ -52,6 +52,12 @@
         <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui"></i></a>个人信息
     </header>
     <div class="blank"></div>
+
+    <label for="0">
+        唯一识别编号：
+    </label>
+    <input type="text" name="openid" placeholder="唯一识别编号" readonly value="{{ $data->openid }}"/>
+
     <label for="0">
         昵称(微信昵称)：
     </label>

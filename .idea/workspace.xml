@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/transaction.blade.php" afterPath="$PROJECT_DIR$/resources/views/transaction.blade.php" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/improve.blade.php" afterPath="$PROJECT_DIR$/resources/views/improve.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,6 +26,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="improve.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/improve.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="58" column="54" lean-forward="false" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+              <folding>
+                <marker date="1516178296605" expanded="true" signature="264:290" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="1627:1642" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="1776:1793" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="1923:1942" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="2001:2015" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="2148:2165" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="2301:2318" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="2490:2518" ph="..." />
+                <marker date="1516178296605" expanded="true" signature="2593:2621" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="indexController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -35,7 +56,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="357">
@@ -49,6 +70,16 @@
                 <marker date="1516178217736" expanded="true" signature="902:915" ph="..." />
                 <marker date="1516178217736" expanded="true" signature="926:940" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="memberController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="440">
+              <caret line="360" column="48" lean-forward="false" selection-start-line="360" selection-start-column="48" selection-end-line="360" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -106,11 +137,11 @@
         <option value="$PROJECT_DIR$/resources/views/imporve.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
         <option value="$PROJECT_DIR$/public/css/member.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
-        <option value="$PROJECT_DIR$/resources/views/improve.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
         <option value="$PROJECT_DIR$/resources/views/transaction.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/improve.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
       </list>
     </option>
   </component>
@@ -212,7 +243,7 @@
       <path value="$PROJECT_DIR$/vendor/widuu/laravel-express" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1934" />
     <option name="y" value="155" />
     <option name="width" value="1936" />
@@ -375,15 +406,15 @@
       <workItem from="1516173602664" duration="310000" />
       <workItem from="1516173925341" duration="405000" />
       <workItem from="1516174340812" duration="417000" />
-      <workItem from="1516174770951" duration="3446000" />
+      <workItem from="1516174770951" duration="3545000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19435000" />
+    <option name="totallyTimeSpent" value="19534000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="7" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -776,43 +807,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="360" column="80" lean-forward="false" selection-start-line="360" selection-start-column="72" selection-end-line="360" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="441">
           <caret line="21" column="49" lean-forward="false" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/improve.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="46" column="12" lean-forward="true" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="12" />
-          <folding>
-            <marker date="1516177585478" expanded="true" signature="264:290" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="1628:1645" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="1775:1794" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="1853:1867" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="2000:2017" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="2153:2170" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="2342:2370" ph="..." />
-            <marker date="1516177585478" expanded="true" signature="2445:2473" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="336" column="61" lean-forward="false" selection-start-line="336" selection-start-column="61" selection-end-line="336" selection-end-column="61" />
           <folding />
         </state>
       </provider>
@@ -830,6 +828,40 @@
             <marker date="1516178217736" expanded="true" signature="902:915" ph="..." />
             <marker date="1516178217736" expanded="true" signature="926:940" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/improve.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="58" column="54" lean-forward="false" selection-start-line="58" selection-start-column="54" selection-end-line="58" selection-end-column="54" />
+          <folding>
+            <marker date="1516178296605" expanded="true" signature="264:290" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="1627:1642" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="1776:1793" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="1923:1942" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="2001:2015" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="2148:2165" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="2301:2318" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="2490:2518" ph="..." />
+            <marker date="1516178296605" expanded="true" signature="2593:2621" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="336" column="61" lean-forward="false" selection-start-line="336" selection-start-column="61" selection-end-line="336" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="360" column="48" lean-forward="false" selection-start-line="360" selection-start-column="48" selection-end-line="360" selection-end-column="48" />
+          <folding />
         </state>
       </provider>
     </entry>
