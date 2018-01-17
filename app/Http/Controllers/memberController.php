@@ -358,7 +358,7 @@ class memberController extends Controller
 
         $memberModel = new Member();
         if ($request->isMethod('get')) {
-            $data = $memberModel->select('realname', 'IDnumber', 'sex')->find($mid);
+            $data = $memberModel->select('realname', 'IDnumber', 'sex','nickname','created_at')->find($mid);
             return view('improve', [
                 'data' => $data
             ]);
