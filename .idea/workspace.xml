@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
       <change beforePath="$PROJECT_DIR$/resources/views/transaction.blade.php" afterPath="$PROJECT_DIR$/resources/views/transaction.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
@@ -40,16 +38,16 @@
       <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state relative-caret-position="357">
+              <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
               <folding>
-                <marker date="1516178132592" expanded="true" signature="264:283" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="742:764" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="828:839" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="844:850" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="870:893" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="898:911" ph="..." />
-                <marker date="1516178132592" expanded="true" signature="922:936" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="264:283" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="746:768" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="832:843" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="848:854" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="874:897" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="902:915" ph="..." />
+                <marker date="1516178217736" expanded="true" signature="926:940" ph="..." />
               </folding>
             </state>
           </provider>
@@ -214,7 +212,7 @@
       <path value="$PROJECT_DIR$/vendor/widuu/laravel-express" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="1934" />
     <option name="y" value="155" />
     <option name="width" value="1936" />
@@ -377,15 +375,15 @@
       <workItem from="1516173602664" duration="310000" />
       <workItem from="1516173925341" duration="405000" />
       <workItem from="1516174340812" duration="417000" />
-      <workItem from="1516174770951" duration="3361000" />
+      <workItem from="1516174770951" duration="3446000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19350000" />
+    <option name="totallyTimeSpent" value="19435000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1096" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1663113" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -821,16 +819,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="31" lean-forward="false" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        <state relative-caret-position="357">
+          <caret line="17" column="38" lean-forward="false" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
           <folding>
-            <marker date="1516178132592" expanded="true" signature="264:283" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="742:764" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="828:839" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="844:850" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="870:893" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="898:911" ph="..." />
-            <marker date="1516178132592" expanded="true" signature="922:936" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="264:283" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="746:768" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="832:843" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="848:854" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="874:897" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="902:915" ph="..." />
+            <marker date="1516178217736" expanded="true" signature="926:940" ph="..." />
           </folding>
         </state>
       </provider>
