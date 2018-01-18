@@ -6,7 +6,7 @@ return [
      *
      * 当值为 false 时，所有的日志都不会记录
      */
-    'debug' => false,
+    'debug' => true,
 
     /*
      * 使用 Laravel 的缓存系统
@@ -16,9 +16,9 @@ return [
     /*
      * 账号基本信息，请从微信公众平台/开放平台获取
      */
-    'app_id' => env('WECHAT_APPID', 'wx4ff5811e62c11489'),
-    'secret' => env('WECHAT_SECRET', 'be70527ea608b92d64918efd40c2c1e9'),
-    'token' => env('WECHAT_TOKEN', 'mall'),
+    'app_id' => env('WECHAT_APPID', ''),
+    'secret' => env('WECHAT_SECRET', ''),
+    'token' => env('WECHAT_TOKEN', ''),
     'aes_key' => env('WECHAT_AES_KEY', ''),                    // EncodingAESKey
 
     /**
@@ -83,8 +83,8 @@ return [
      * 微信支付
      */
     'payment' => [
-        'merchant_id' => '1497214972',
-        'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
+        'merchant_id' => env('MERCHANT_ID', ''),
+        'key' => env('WEICHAT_PAY', ''),
         'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
         'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem',
     ],
