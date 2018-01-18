@@ -23,13 +23,13 @@ class indexController extends Controller
     protected function options()
     {
         return [
-            'app_id' => env('WECHAT_APPID', 'wx4ff5811e62c11489'),
-            'secret' => env('WECHAT_SECRET', 'be70527ea608b92d64918efd40c2c1e9'),
-            'token' => env('WECHAT_TOKEN', 'mall'),
+            'app_id' => env('WECHAT_APPID', ''),
+            'secret' => env('WECHAT_SECRET', ''),
+            'token' => env('WECHAT_TOKEN', ''),
 
             'payment' => [
-                'merchant_id' => '1497214972',
-                'key' => 'qwertyuiopqwertyuiopqwertyuiop12',
+                'merchant_id' => env('MERCHANT_ID', ''),
+                'key' => env('WEICHAT_PAY', ''),
                 'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
                 'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem'
             ],
