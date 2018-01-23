@@ -42,7 +42,8 @@ class WechatController extends Controller
                             'head' => $user['headimgurl'],
                             'earnings' => 0,
                             'getearnings' => 0,
-                            'type' => 0
+                            'type' => 0,
+                            'created_at'=> date('Y-m-d H:i:s',time())
                         ];
                         $memberid = $memberModel->insertGetId($member);
                     }
