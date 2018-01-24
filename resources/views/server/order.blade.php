@@ -45,8 +45,8 @@
             <th>编号</th>
             <th>商品名称</th>
             <th>订单类型</th>
+            <th>用户唯一号</th>
             <th>用户微信昵称</th>
-            <th>用户微信号</th>
             <th>交易金额</th>
             <th>交易订单号</th>
             <th>订单状态</th>
@@ -63,8 +63,8 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->type($item->type) }}</td>
-                <td>{{ $item->nickname }}</td>
                 <td>{{ $item->openid }}</td>
+                <td>{{ $item->nickname }}</td>
                 <td>{{ $item->money }}</td>
                 <td>{{ $item->rid }}</td>
                 <td>{{ $item->status($item->status) }}</td>
