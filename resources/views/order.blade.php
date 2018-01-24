@@ -57,7 +57,7 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript" charset="utf-8"></script>
 
 <script type="text/javascript">
-    wx.config(<?php echo $js->config(array('chooseWXPay'), true) ?>);
+    wx.config(<?php echo $js->config(array('chooseWXPay'), false) ?>);
     $('#pay').click(function () {
         if ($("#addressId").val() == 0) {
             alert('发货地址不能为空');
