@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/WechatController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/WechatController.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/order.blade.php" afterPath="$PROJECT_DIR$/resources/views/order.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,13 +25,43 @@
     <favorites_list name="shareshop" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="WechatController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/WechatController.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="wechat.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/wechat.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="45" column="60" lean-forward="false" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
+            <state relative-caret-position="168">
+              <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="order.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/order.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+              <folding>
+                <marker date="1516763825637" expanded="true" signature="264:280" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="746:771" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="784:792" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="859:875" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="911:928" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="993:1009" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1178:1200" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1294:1306" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1380:1393" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1444:1458" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1540:1559" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1591:1611" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1691:1697" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="1750:1758" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="2242:2262" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="2292:2311" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="2340:2358" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="2388:2407" ph="..." />
+                <marker date="1516763825637" expanded="true" signature="2436:2454" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,7 +115,6 @@
         <option value="$PROJECT_DIR$/resources/views/address_eidt.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/redpack_fails.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pay_success.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/order.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/obligation.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/detail.blade.php" />
@@ -102,6 +131,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/indexController.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/WechatController.php" />
+        <option value="$PROJECT_DIR$/resources/views/order.blade.php" />
       </list>
     </option>
   </component>
@@ -241,7 +271,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,20 +286,24 @@
             <path>
               <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -362,27 +395,28 @@
       <workItem from="1516322235828" duration="3133000" />
       <workItem from="1516519933633" duration="282000" />
       <workItem from="1516686099792" duration="1123000" />
-      <workItem from="1516691612789" duration="457000" />
+      <workItem from="1516691612789" duration="879000" />
+      <workItem from="1516763755990" duration="72000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30287000" />
+    <option name="totallyTimeSpent" value="30781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17590618" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750533" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2388535" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23834746" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -498,13 +532,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pay_success.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/order.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
@@ -735,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/wechat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1638">
-          <caret line="78" column="17" lean-forward="false" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
@@ -768,6 +788,42 @@
         <state relative-caret-position="525">
           <caret line="45" column="60" lean-forward="false" selection-start-line="45" selection-start-column="60" selection-end-line="45" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/wechat.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="20" lean-forward="true" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/order.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="58" column="31" lean-forward="true" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+          <folding>
+            <marker date="1516763825637" expanded="true" signature="264:280" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="746:771" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="784:792" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="859:875" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="911:928" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="993:1009" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1178:1200" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1294:1306" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1380:1393" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1444:1458" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1540:1559" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1591:1611" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1691:1697" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="1750:1758" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="2242:2262" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="2292:2311" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="2340:2358" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="2388:2407" ph="..." />
+            <marker date="1516763825637" expanded="true" signature="2436:2454" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
