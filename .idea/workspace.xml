@@ -4,7 +4,6 @@
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/orderController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/orderController.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/server/order.blade.php" afterPath="$PROJECT_DIR$/resources/views/server/order.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/orderController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+              <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
               <folding />
             </state>
           </provider>
@@ -420,12 +419,12 @@
       <workItem from="1516519933633" duration="282000" />
       <workItem from="1516686099792" duration="1123000" />
       <workItem from="1516691612789" duration="879000" />
-      <workItem from="1516763755990" duration="2440000" />
+      <workItem from="1516763755990" duration="2494000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33149000" />
+    <option name="totallyTimeSpent" value="33203000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
@@ -877,7 +876,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/orderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="26" column="78" lean-forward="false" selection-start-line="26" selection-start-column="78" selection-end-line="26" selection-end-column="78" />
+          <caret line="26" column="96" lean-forward="false" selection-start-line="26" selection-start-column="96" selection-end-line="26" selection-end-column="96" />
           <folding />
         </state>
       </provider>
