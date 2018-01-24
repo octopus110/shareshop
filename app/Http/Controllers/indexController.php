@@ -253,6 +253,7 @@ class indexController extends Controller
         /*
          * 生成微信支付订单信息
          * */
+        Log::info($this->options());
         $app = new Application($this->options());
         $payment = $app->payment;
 
@@ -275,6 +276,8 @@ class indexController extends Controller
         } else {
             dd($result);
         }
+        Log::info('11111111');
+        Log::info($config);
 
         return view('order', [
             'order' => $orders,
