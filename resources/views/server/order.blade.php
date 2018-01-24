@@ -63,8 +63,8 @@
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->type($item->type) }}</td>
-                <td>{{ $item->uid }}</td>
-                <td>{{ $item->uid }}</td>
+                <td>{{ $item->nickname }}</td>
+                <td>{{ $item->openid }}</td>
                 <td>{{ $item->money }}</td>
                 <td>{{ $item->rid }}</td>
                 <td>{{ $item->status($item->status) }}</td>
