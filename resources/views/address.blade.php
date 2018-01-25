@@ -45,9 +45,6 @@
     <input type="text" id="address" placeholder="输入详细地址"/>
     <input type="text" id="name" placeholder="联系人"/>
     <input type="text" id="phone" placeholder="联系方式"/>
-
-    <input type="text" value="{{ $r }}">
-
     <input type="submit" value="确认" id="address_add"/>
     <input type="button" value="取消" id="address_quit"/>
 </div>
@@ -93,7 +90,7 @@
             success: function (data) {
                 switch (data.statusCode) {
                     case 200:
-                        if (data.r) {
+                        if (data.r != '0') {
                             window.location.href = '/pay';
                         } else {
                             window.location.reload();
