@@ -89,11 +89,10 @@
                 '_token': '{{ csrf_token() }}'
             },
             success: function (data) {
-                alert(data.r)
                 switch (data.statusCode) {
                     case 200:
                         if (data.r) {
-                            window.history.back();
+                            window.location.href = '/pay';
                         } else {
                             window.location.reload();
                         }
