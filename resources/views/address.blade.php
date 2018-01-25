@@ -93,7 +93,7 @@
                 console.log(data)
                 switch (data.statusCode) {
                     case 200:
-                        window.location.reload();
+                        window.history.back();
                         break;
                     case 100:
                         alert('数据不完整');
