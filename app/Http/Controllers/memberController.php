@@ -220,7 +220,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request, $redirect)
+    public function address(Request $request, $redirect=0)
     {
         $mid = $this->addWechatMember();
 
