@@ -71,7 +71,7 @@
                     </a>
                 </td>
                 <td>
-                    <a href="/address">
+                    <a href="/address/0">
                         <h6><i class="iconfont icon-shouhuodizhi1"></i></h6>
 
                         <p>收货地址</p>

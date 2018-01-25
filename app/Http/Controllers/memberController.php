@@ -262,7 +262,6 @@ class memberController extends Controller
             $addressModel->phone = $request->input('phone');
             $addressModel->uid = $mid;
 
-            $redirect = isset($redirect) ? $redirect : 0;
             if ($addressModel->save()) {
                 return response()->json(['statusCode' => 200, 'redirect' => $redirect]);
             } else {
