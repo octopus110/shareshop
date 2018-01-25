@@ -16,20 +16,21 @@ class Controller extends BaseController
     public function addWechatMember()
     {
         $memberModel = new Member();
-        $memberid = $memberModel->where('openid', $this->getWeChatInfo()['id'])->select('id')->first();
+        $memberid = $memberModel->where('openid', session('wechat.oauth_user')['id'])->select('id')->first();
 
         if ($memberid) {
             $memberid = $memberid->id;
         } else {
             $member = [
-                'openid' => $this->getWeChatInfo()['id'],
-                'nickname' => $this->getWeChatInfo()['nickname'],
-                'head' => $this->getWeChatInfo()['avatar'],
+                'openid' => session('wechat.oauth_user')['id'],
+                'nickname' => session('wechat.oauth_user')['nickname'],
+                'head' => session('wechat.oauth_user')['avatar'],
                 'earnings' => 0,
                 'getearnings' => 0,
-                'type' => 0
+                'type' => 0,
+                'created_at' => date('Y-m-d H:i:s', time())
             ];
-            $memberid = (new Member())->insertGetId($member);
+            $memberid = $memberModel->insertGetId($member);
         }
         return $memberid;
     }
