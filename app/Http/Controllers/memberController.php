@@ -264,6 +264,7 @@ class memberController extends Controller
 
 
             Log::info($redirect);
+            Log::info(111);
 
             if ($addressModel->save()) {
                 return response()->json(['statusCode' => 200,'redirect'=>$redirect]);
