@@ -234,7 +234,8 @@ class memberController extends Controller
                 ->get();
 
             return view('address', [
-                'address' => $address
+                'address' => $address,
+                'r'=>$r
             ]);
         } else {
             $validator = Validator::make($request->all(), [

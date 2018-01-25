@@ -76,7 +76,7 @@
         }
 
         $.ajax({
-            url: '/address',
+            url: '/address/{{ $r }}',
             type: 'post',
             dataType: 'json',
             data: {
@@ -92,9 +92,9 @@
                 alert(data.r)
                 switch (data.statusCode) {
                     case 200:
-                        if(data.r){
+                        if (data.r) {
                             window.history.back();
-                        }else{
+                        } else {
                             window.location.reload();
                         }
                         break;
