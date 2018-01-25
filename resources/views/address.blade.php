@@ -89,11 +89,13 @@
                 '_token': '{{ csrf_token() }}'
             },
             success: function (data) {
-
-                console.log(data)
                 switch (data.statusCode) {
                     case 200:
-                        window.history.back();
+                        if(data.redirect){
+                            window.history.back();
+                        }else{
+                            window.location.reload();
+                        }
                         break;
                     case 100:
                         alert('数据不完整');

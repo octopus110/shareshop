@@ -25,7 +25,7 @@
 
         <p><i class="iconfont icon-dizhi"></i>{{ $address->info }} </p>
     @else
-        <a href="/address">
+        <a href="/address/1">
             <div class="add_address">
                 添加地址
             </div>

@@ -219,7 +219,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request)
+    public function address(Request $request,$redirect=0)
     {
         if (session()->has('mid')) {
             $mid = session()->get('mid');
@@ -268,9 +268,9 @@ class memberController extends Controller
             $ret = $addressModel->save();
 
             if ($ret) {
-                return response()->json(['statusCode' => 200]);
+                return response()->json(['statusCode' => 200,'redirect'=>$redirect]);
             } else {
-                return response()->json(['statusCode' => 300]);
+                return response()->json(['statusCode' => 300,'redirect'=>$redirect]);
             }
         }
     }
