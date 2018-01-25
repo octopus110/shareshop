@@ -12,20 +12,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    //根据用户openid获取用户id
-    protected function getId()
-    {
-        $user = session('wechat.oauth_user');
-        $memberid = Member::where('openid', $user['id'])->select('id')->first()->id;
-        return $memberid;
-    }
-
-    //获得微信用户信息
-    protected function getWeChatInfo()
-    {
-        return session('wechat.oauth_user');
-    }
-
     //添加新的微信用户
     public function addWechatMember()
     {
