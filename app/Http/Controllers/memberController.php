@@ -291,7 +291,7 @@ class memberController extends Controller
                 ]);
 
                 if ($ret) {
-                    return redirect('/address');
+                    return redirect('/address/0');
                 }
                 break;
         }
