@@ -220,7 +220,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request, $r=0)
+    public function address(Request $request, $r = 0)
     {
         $mid = $this->addWechatMember();
 
@@ -235,7 +235,7 @@ class memberController extends Controller
 
             return view('address', [
                 'address' => $address,
-                'r'=>$r
+                'r' => $r
             ]);
         } else {
             $validator = Validator::make($request->all(), [

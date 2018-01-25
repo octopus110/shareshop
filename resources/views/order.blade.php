@@ -65,7 +65,7 @@
         }
 
         wx.chooseWXPay({
-            appId:'{{$config['appId']}}',
+            appId: '{{$config['appId']}}',
             timestamp: '{{$config['timestamp']}}',
             nonceStr: '{{$config['nonceStr']}}',
             package: '{{$config['package']}}',
