@@ -8,6 +8,7 @@ use App\Commodity;
 use App\Member;
 use App\Order;
 use EasyWeChat\Factory;
+use EasyWeChat\Support\Log;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -261,9 +262,10 @@ class memberController extends Controller
             $addressModel->phone = $request->input('phone');
             $addressModel->uid = $mid;
 
-            $ret = $addressModel->save();
 
-            if ($ret) {
+            Log::info($redirect);
+
+            if ($addressModel->save()) {
                 return response()->json(['statusCode' => 200,'redirect'=>$redirect]);
             } else {
                 return response()->json(['statusCode' => 300,'redirect'=>$redirect]);
