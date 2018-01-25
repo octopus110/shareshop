@@ -221,11 +221,7 @@ class memberController extends Controller
 
     public function address(Request $request,$redirect=0)
     {
-        if (session()->has('mid')) {
-            $mid = session()->get('mid');
-        } else {
-            $mid = $this->addWechatMember();
-        }
+        $mid = $this->addWechatMember();
 
         $addressModel = new Address();
 

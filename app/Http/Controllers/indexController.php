@@ -152,9 +152,6 @@ class indexController extends Controller
             return response()->json(['statusCode' => 100]);
         }
 
-        //'commodityid' => 'required', 是一个数组，索引是商品id 值是一个数组分别存放数量和属性
-        //'orderid' =>  'required' 是一个数组，订单id
-
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
