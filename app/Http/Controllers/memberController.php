@@ -220,7 +220,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request,$redirect=0)
+    public function address(Request $request, $redirect)
     {
         $mid = $this->addWechatMember();
 
@@ -262,14 +262,11 @@ class memberController extends Controller
             $addressModel->phone = $request->input('phone');
             $addressModel->uid = $mid;
 
-
-            Log::info($redirect);
-            Log::info(111);
-
+            $redirect = isset($redirect) ? $redirect : 0;
             if ($addressModel->save()) {
-                return response()->json(['statusCode' => 200,'redirect'=>$redirect]);
+                return response()->json(['statusCode' => 200, 'redirect' => $redirect]);
             } else {
-                return response()->json(['statusCode' => 300,'redirect'=>$redirect]);
+                return response()->json(['statusCode' => 300, 'redirect' => $redirect]);
             }
         }
     }
@@ -277,7 +274,7 @@ class memberController extends Controller
     public function address_deal($id = 0, $t = 0)//删除和设为默认
     {
         $addressModel = new Address();
-        Log::info(222);
+
         switch ($t) {
             case 0:
                 $ret = $addressModel->where('id', $id)->delete();
@@ -358,7 +355,7 @@ class memberController extends Controller
 
         $memberModel = new Member();
         if ($request->isMethod('get')) {
-            $data = $memberModel->select('openid','realname', 'IDnumber', 'sex','nickname','created_at')->find($mid);
+            $data = $memberModel->select('openid', 'realname', 'IDnumber', 'sex', 'nickname', 'created_at')->find($mid);
             return view('improve', [
                 'data' => $data
             ]);
