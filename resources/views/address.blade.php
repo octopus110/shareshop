@@ -91,6 +91,7 @@
             success: function (data) {
                 switch (data.statusCode) {
                     case 200:
+                        alert(data.redirect)
                         if(data.redirect){
                             window.history.back();
                         }else{
