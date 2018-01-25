@@ -42,7 +42,7 @@ class indexController extends Controller
         $banner = $imageModel->where('classify', 1)->select('id', 'src', 'href')->get();
 
         $classifyModel = new Classify();
-        $classify = $classifyModel->select('id', 'src', 'name')->orderBy('sort','desc')->get();
+        $classify = $classifyModel->select('id', 'src', 'name')->orderBy('sort', 'desc')->get();
 
         $commoditysModel = new Commodity();
         $newcommoditys = $commoditysModel->select(
@@ -162,10 +162,7 @@ class indexController extends Controller
         $orderModel = new Order();
         $commdityModel = new Commodity();
 
-        $member = $membreModel->where('openid', $openid)->select('id')->first();
-        if (!isset($member->id)) {
-            return response()->json(['statusCode' => 100]);
-        }
+        $memberid = $this->addWechatMember();
 
         if ($request->input('type') == 0) { //传递的是产品id
             $dataArr = $request->input('commodityid');
@@ -182,7 +179,7 @@ class indexController extends Controller
                     'sid' => $one->sid,
                     'cid' => $k,
                     'type' => 0,
-                    'uid' => $member->id,
+                    'uid' => $memberid,
                     'money' => $money,
                     'rid' => 'eos' . time(),
                     'sum' => $v['sum'],
@@ -197,7 +194,7 @@ class indexController extends Controller
 
                 //如果是从cart来的 更新cart状态
                 $cart = $cartsModel->where([
-                    'uid' => $member->id,
+                    'uid' => $memberid,
                     'cid' => $k
                 ])->select('id')->first();
 
@@ -221,9 +218,7 @@ class indexController extends Controller
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
-        $membreModel = new Member();
-        $member = $membreModel->where('openid', $openid)->select('id')->first();
-        $mid = $member->id;
+        $mid = $this->addWechatMember();
 
         $addressModel = new Address();
         $orderModel = new Order();
@@ -331,9 +326,9 @@ class indexController extends Controller
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
         $memberModel = new Member();
-        $member = $memberModel->where('openid', $openid)->select('id', 'getearnings','realname','IDnumber')->first();
+        $member = $memberModel->where('openid', $openid)->select('id', 'getearnings', 'realname', 'IDnumber')->first();
 
-        if(!($member->realname && $member->IDnumber)){
+        if (!($member->realname && $member->IDnumber)) {
             return view('redpack_fails', ['title' => '个人信息不完整']);
         }
         if (isset($member->getearnings) && $member->getearnings != 0) {
