@@ -158,6 +158,8 @@ class indexController extends Controller
         $user = session('wechat.oauth_user');
         $openid = $user['id'];
 
+        dd($openid);
+
         $membreModel = new Member();
         $orderModel = new Order();
         $commdityModel = new Commodity();
