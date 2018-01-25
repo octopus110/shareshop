@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/memberController.php" />
-      <change beforePath="$PROJECT_DIR$/config/wechat.php" afterPath="$PROJECT_DIR$/config/wechat.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,8 +49,8 @@
       <file leaf-file-name="memberController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="279" column="23" lean-forward="true" selection-start-line="279" selection-start-column="23" selection-end-line="279" selection-end-column="23" />
+            <state relative-caret-position="357">
+              <caret line="279" column="11" lean-forward="false" selection-start-line="279" selection-start-column="11" selection-end-line="279" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -62,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="206">
-              <caret line="227" column="37" lean-forward="true" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
+              <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -428,12 +426,12 @@
       <workItem from="1516686099792" duration="1123000" />
       <workItem from="1516691612789" duration="879000" />
       <workItem from="1516763755990" duration="2649000" />
-      <workItem from="1516867010182" duration="2850000" />
+      <workItem from="1516867010182" duration="3010000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36208000" />
+    <option name="totallyTimeSpent" value="36368000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -932,7 +930,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/indexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
-          <caret line="227" column="37" lean-forward="true" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
+          <caret line="227" column="37" lean-forward="false" selection-start-line="227" selection-start-column="37" selection-end-line="227" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -958,8 +956,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/memberController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="279" column="23" lean-forward="true" selection-start-line="279" selection-start-column="23" selection-end-line="279" selection-end-column="23" />
+        <state relative-caret-position="357">
+          <caret line="279" column="11" lean-forward="false" selection-start-line="279" selection-start-column="11" selection-end-line="279" selection-end-column="11" />
           <folding />
         </state>
       </provider>
