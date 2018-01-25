@@ -277,7 +277,7 @@ class memberController extends Controller
     public function address_deal($id = 0, $t = 0)//删除和设为默认
     {
         $addressModel = new Address();
-
+        Log::info(222);
         switch ($t) {
             case 0:
                 $ret = $addressModel->where('id', $id)->delete();
