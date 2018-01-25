@@ -132,7 +132,7 @@ class indexController extends Controller
         $app = new Application($this->options());
 
         return view('detail', [
-            'openid' => $this->getWeChatInfo()['id'],
+            'openid' => session('wechat.oauth_user')['id'],
             'userid' => $userid,
             'data' => $data,
             'images' => $images,
