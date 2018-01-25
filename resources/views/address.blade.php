@@ -89,9 +89,10 @@
                 '_token': '{{ csrf_token() }}'
             },
             success: function (data) {
+                alert(data.r)
                 switch (data.statusCode) {
                     case 200:
-                        if(data.redirect){
+                        if(data.r){
                             window.history.back();
                         }else{
                             window.location.reload();

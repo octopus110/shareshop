@@ -220,7 +220,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request, $redirect=0)
+    public function address(Request $request, $r=0)
     {
         $mid = $this->addWechatMember();
 
@@ -263,9 +263,9 @@ class memberController extends Controller
             $addressModel->uid = $mid;
 
             if ($addressModel->save()) {
-                return response()->json(['statusCode' => 200, 'redirect' => $redirect]);
+                return response()->json(['statusCode' => 200, 'r' => $r]);
             } else {
-                return response()->json(['statusCode' => 300, 'redirect' => $redirect]);
+                return response()->json(['statusCode' => 300, 'r' => $r]);
             }
         }
     }
