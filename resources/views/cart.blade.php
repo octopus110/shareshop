@@ -30,7 +30,7 @@
             <a href="/details/{{ $item->commodty_id }}">
                 <h3>{{ $item->name }}</h3>
 
-                <p class="attr">{{ $item->attr }}</p>
+                <p class="attr">属性：{{ $item->attr }}</p>
             </a>
 
             <p>
