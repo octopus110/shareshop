@@ -146,11 +146,10 @@
                             </div>
                         </div>
                         <div class="flick-menu-btn spec-menu-btn">
-                            <a class="yellow-color add_cart add_cart">加入购物车</a>
-                            <a class="red-color directorder">立即购买</a></div>
+                            <a class="red-color directorder">确定</a></div>
                     </div>
                 </div>
-                <!-- 弹出 -->
+                <!-- 弹出框条件选择 -->
                 <section id="s-actionBar-container">
                     <div id="s-actionbar" class="action-bar mui-flex align-center">
                         <a href="tel:11">
@@ -180,7 +179,7 @@
         $("#cart_icon").click(function () {
             window.location.href = '/cart';
         });
-        
+
         $(".clickwn").click(function () {
             $(".flick-menu-mask").show();
             $(".spec-menu").show();
@@ -221,10 +220,10 @@
                     $('.amount').html($num)
                 }
             });
-        })
+        });
 
         //加入购物车ajax
-        $(".add_cart").click(function () {
+        function add_carts() {
             var sum = $("#amount").text();
             var natureCotainer = $("#natureCotainer");
             var attr = natureCotainer.find('a.selected');
@@ -258,13 +257,10 @@
                     }
                 }
             });
-        });
+        }
 
-        $(".buy").click(function () {
-            $(".clickwn").click();
-        });
-
-        $(".directorder").click(function () {
+        //购买商品
+        function buy_produce() {
             var natureCotainer = $("#natureCotainer");
             var attr = natureCotainer.find('a.selected');
             var amount = $("#amount");
@@ -299,6 +295,26 @@
                     }
                 }
             });
+        }
+
+        var carts_buy_flag = 0;//默认购买
+
+        $(".add_cart").click(function () {
+            $(".clickwn").click();
+            carts_buy_flag = 1;
+        });
+
+        $(".buy").click(function () {
+            $(".clickwn").click();
+            carts_buy_flag = 0;
+        });
+
+        $(".directorder").click(function () {
+            if (carts_buy_flag) {
+                add_carts()
+            } else {
+                buy_produce()
+            }
         });
     })
 </script>
