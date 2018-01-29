@@ -32,7 +32,7 @@
                 <div class="swiper-container swiper-banner">
                     <div class="swiper-wrapper">
                         @foreach($images as $item)
-                            <div class="swiper-slide"><img src="/uploads/{{ $item->src }}" alt="" width="100%"/></div>
+                            <div class="swiper-slide"><img src="/uploads/{{ $item->src }}" alt="" width="100%" height="100%"/></div>
                         @endforeach
                     </div>
                     <div class="swiper-scrollbar"></div>

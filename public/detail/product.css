@@ -4111,7 +4111,7 @@ body, div, ol, p, span, ul {
 }
 
 .swiper-slide {
-    height: 105vw;
+    height: 100vw;
     overflow: hidden;
 }
 
