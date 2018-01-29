@@ -71,6 +71,8 @@
     background: red;
     color: #ffffff;
     height: 28vw;
+    width: 2vw;
+    font-size: 2vw;
     line-height: 28vw;
     padding-right: 2vw;
     text-align: center;

@@ -49,7 +49,7 @@
                 {{--<em style="padding:1px 2vw;"> </em>
                 <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>--}}
             </p>
-            <div class="submit">确<br/>认</div>
+            <div class="submit">确认</div>
         </div>
         <div class="clear"></div>
 
@@ -70,13 +70,13 @@
         var cu_sum = parseFloat(sum.text());
         var t_sum = 0;
 
-        if (type == 0) {//-
+        if (type == 0) {
             if (cu_sum > 1) {
                 t_sum = cu_sum - 1;
             } else {
                 t_sum = cu_sum;
             }
-        } else {//+
+        } else {
             t_sum = cu_sum + 1;
         }
 
