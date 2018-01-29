@@ -66,12 +66,13 @@
     position: absolute;
     right: 0;
     top: 0;
-    height: 100%;
     opacity: 1;
     z-index: 100;
     background: red;
     color: #ffffff;
     height: 28vw;
+    line-height: 28vw;
+    font-size: 30vw;
     padding-right: 2vw;
 }
 
