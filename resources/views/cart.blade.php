@@ -49,10 +49,7 @@
                 {{--<em style="padding:1px 2vw;"> </em>
                 <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>--}}
             </p>
-            <div class="submit">
-                <p>确</p>
-                <p>认</p>
-            </div>
+            <div class="submit">确认</div>
         </div>
         <div class="clear"></div>
 
@@ -87,7 +84,7 @@
         total.text(t_sum * parseFloat(price.text()));
 
         if (submit.css('opacity') == 0) {
-            submit.css('opacity', 1);
+            submit.css('opacity', 0.8);
         }
     }
 
