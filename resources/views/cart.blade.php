@@ -94,6 +94,8 @@
 
         var cart_id = $(this).attr('data_id');
 
+        var that = $(this);
+
         $.ajax({
             url: '/cart/deal/' + cart_id,
             type: 'post',
@@ -107,7 +109,7 @@
                 if (data.statusCode != 200) {
                     alert('数据更新失败');
                 } else {
-                    $(".submit").css('opacity', 0);
+                    that.css('opacity', 0);
                 }
             }
         });
