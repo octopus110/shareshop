@@ -47,9 +47,9 @@
                     <em class="iconfont icon-shanchu"></em>
                 </a>
                 {{--<em style="padding:1px 2vw;"> </em>
-                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>--}}
+                <em class="iconfont icon-queren-copy submit" ></em>--}}
             </p>
-            <div class="submit">确认</div>
+            <div class="submit" data_id="{{ $item->id }}">确认</div>
         </div>
         <div class="clear"></div>
 
@@ -89,8 +89,8 @@
     }
 
     $(".submit").click(function () {
-        var sum = $(this).parent().find('.sum').text();
-        var total = $(this).parent().find('.total').text();
+        var sum = $(this).prev().find('.sum').text();
+        var total = $(this).prev().find('.total').text();
 
         var cart_id = $(this).attr('data_id');
 
