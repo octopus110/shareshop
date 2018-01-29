@@ -46,10 +46,10 @@
                 <a href="/cart/deal/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
-                <em style="padding:1px 2vw;"> </em>
-                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
+                {{--<em style="padding:1px 2vw;"> </em>
+                <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>--}}
             </p>
-
+            <div class="submit">确认</div>
         </div>
         <div class="clear"></div>
 
