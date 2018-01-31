@@ -36,8 +36,11 @@
     });*/
     (function () {
         const qr = new QRious({
-            element: document.getElementById('qr'),
-            value: "{{ str_replace('getCode','details',url()->full()) }}",
+            background: '#000',
+            foreground: '#fff',
+            level: 'H',
+            size: 500,
+            value: 'http://www.jq22.com/'
         })
     })()
 </script>
