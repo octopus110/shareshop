@@ -54,9 +54,9 @@
     //ajax获取用户当前城市
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
         $("#target").distpicker({
-            province: remote_ip_info.province,
-            city: remote_ip_info.city,
-            district: remote_ip_info.district
+            province: '山东省',
+            city: '菏泽市',
+            district: '郓城县'
         })
     })
 
