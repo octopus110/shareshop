@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/css/cart.css">
     <style>
         .pro_code {
+            display: block;
             color: red;
             padding: 1.5vw 0;
         }
