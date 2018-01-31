@@ -48,10 +48,8 @@ class memberController extends Controller
                     array_push($express_sub, ['express_name' => $item->express_name, 'commodity_name' => $item->proinfo]);
                 }
             }
-        } else {
-            $memberid = $this->addWechatMember();
-        }
-        session()->put('mid', $memberid);
+        } 
+        
         return view('member', [
             'member' => $member,
             'carts' => $carts,
@@ -67,11 +65,7 @@ class memberController extends Controller
 
     public function carts(Request $request)
     {
-        if (session()->has('mid')) {
-            $mid = session()->get('mid');
-        } else {
-            $mid = $this->addWechatMember();
-        }
+        $mid = $this->addWechatMember();
 
         $cartModel = new Cart();
 
@@ -154,11 +148,7 @@ class memberController extends Controller
 
     public function obligation(Request $request, $type)//订单状态
     {
-        if (session()->has('mid')) {
-            $mid = session()->get('mid');
-        } else {
-            $mid = $this->addWechatMember();
-        }
+        $mid = $this->addWechatMember();
 
         $orderModel = new Order();
         $order = $orderModel->where('uid', $mid);
@@ -193,11 +183,7 @@ class memberController extends Controller
 
     public function transaction()//交易记录
     {
-        if (session()->has('mid')) {
-            $mid = session()->get('mid');
-        } else {
-            $mid = $this->addWechatMember();
-        }
+        $mid = $this->addWechatMember();
 
         $orderModel = new Order();
         $transactions = $orderModel->where('orders.status', 0)
@@ -346,12 +332,7 @@ class memberController extends Controller
 
     public function improve(Request $request)
     {
-        if (session()->has('mid')) {
-            $mid = session()->get('mid');
-        } else {
-            //$mid = $this->addWechatMember();
-            $mid = 57;
-        }
+        $mid = $this->addWechatMember();
 
         $memberModel = new Member();
         if ($request->isMethod('get')) {
