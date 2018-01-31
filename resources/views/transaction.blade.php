@@ -18,9 +18,9 @@
     </style>
 
     <script type="javascript">
-        function getCode(url) {
+        function getCode(url,that) {
             new QRious({
-                element: document.getElementById("qrcode{{ $item->id }}"),
+                element: $(that).next()[0],
                 value: url,
                 mime: "image/png",
                 size: 100,
@@ -44,8 +44,8 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p class="pro_code" onclick=getCode("{{ url('details/'.$item->id.'/'.$mid) }}")>点击获取产品二维码</p>
-        <img alt="二维码" title="二维码" id="qrcode{{ $item->id }}"/>
+        <p class="pro_code" onclick=getCode("{{ url('details/'.$item->id.'/'.$mid) }}",this)>点击获取产品二维码</p>
+        <img alt="二维码" title="二维码"/>
     </section>
 @endforeach
 
