@@ -38,11 +38,12 @@
 
 <div class="turnoff" style="display: none">
     <div style="width: 100vw; height: 14vw;"></div>
-    <div data-toggle="distpicker" id="target">
+    {{--<div data-toggle="distpicker" id="target">
         <select id="province"></select>
         <select id="city"></select>
         <select id="district"></select>
-    </div>
+    </div>--}}
+    <div id="target"></div>
 
     <input type="text" id="address" placeholder="输入详细地址"/>
     <input type="text" id="name" placeholder="联系人"/>
@@ -53,12 +54,12 @@
 <script>
     //ajax获取用户当前城市
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
-        $("#target").distpicker('reset');
-        $("#target").distpicker({
+        $("#target").distpicker();
+        /*$("#target").distpicker({
             province: remote_ip_info.province,
             city: remote_ip_info.city,
             district: remote_ip_info.district
-        })
+        })*/
     })
 
     $('.address-add').click(function () {
