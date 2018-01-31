@@ -51,7 +51,7 @@
     <input type="button" value="取消" id="address_quit"/>
 </div>
 <script>
-    $('#target').distpicker('destroy')
+    $('#target').distpicker('destroy');
     $('#target').distpicker({
         province: '---- 所在省 ----',
         city: '---- 所在市 ----',
