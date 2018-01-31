@@ -233,6 +233,16 @@ class memberController extends Controller
                 ->orderBy('type', 'desc')
                 ->get();
 
+            //curl获取默认用户位置
+            $ch = curl_init();//初始化curl
+            curl_setopt($ch, CURLOPT_URL, 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js');//设置url属性
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            $output = curl_exec($ch);//获取数据
+            curl_close($ch);//关闭curl
+
+            dd($output);
+
             return view('address', [
                 'address' => $address,
                 'r' => $r

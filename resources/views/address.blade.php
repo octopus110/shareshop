@@ -51,15 +51,6 @@
     <input type="button" value="取消" id="address_quit"/>
 </div>
 <script>
-    //ajax获取用户当前城市
-    $.ajax({
-        url: 'http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',
-        type: 'get',
-        dataType: 'json',
-        success: function (data) {
-            console.log(data)
-        }
-    });
     $('.address-add').click(function () {
         $('.turnoff').fadeIn();
         return false;
