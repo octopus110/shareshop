@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <style>
-
+        img {
+            margin: 2vw auto;
+        }
     </style>
 </head>
 <body>
 <header class="cart-header">
-    <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>产品二维码
+    <a href="/transaction"><img src="/images/back.png" alt="" width="12vw"></a>产品二维码
 </header>
 <section class="transactions" style="color: red;">
     * 保存二维码自行分享给朋友也可有机会获得现金红包<br>
@@ -29,7 +31,9 @@
     (function () {
         new QRious({
             element: document.getElementById('qr'),
-            value: "{{ str_replace('getCode','details',url()->full()) }}"
+            value: "{{ str_replace('getCode','details',url()->full()) }}",
+            width: 300,
+            height: 300
         })
     })()
 </script>
