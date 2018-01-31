@@ -7,7 +7,6 @@
     <meta name="keywords" content=""/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="/lib/qrious.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <style>
@@ -34,21 +33,8 @@
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
         <p class="pro_code">
-            <a href="/getCode">点击获取产品二维码</a>
+            <a href="/getCode/url">点击获取产品二维码</a>
         </p>
-
-        <canvas></canvas>
-
-        <script type="javascript">
-            $(function () {
-                new QRious({
-                    element: document.querySelector('canvas'),
-                    value: "{{ url()->full() }}",
-                    mime: "image/png",
-                    size: 100,
-                })
-            });
-        </script>
     </section>
 @endforeach
 </body>

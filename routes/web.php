@@ -10,7 +10,7 @@ Route::any('/address/{r?}', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@address_edit');
 Route::any('/improve', 'memberController@improve');//完善个人信息
-Route::any('/getCode', function () {
+Route::any('/getCode/url', function () {
     return view('getCode');
 });//获取产品二维码
 
