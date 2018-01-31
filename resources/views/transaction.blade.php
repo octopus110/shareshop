@@ -25,7 +25,7 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <canvas id="{{ 'qrcode'.$item->id }}"></canvas>
+        <img id="{{ 'qrcode'.$item->id }}"/>
         <script>
             new QRious({
                 element: document.getElementById("{{ 'qrcode'.$item->id }}"),
