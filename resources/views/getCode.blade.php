@@ -6,7 +6,7 @@
     <meta name="author" content="李章岭"/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="/lib/qrious.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.qrcode.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <style>
@@ -23,7 +23,7 @@
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
-<canvas id="qr"></canvas>
+<div id="code"></div>
 
 <script type="javascript">
     /*$(function () {
@@ -34,15 +34,12 @@
             size: 100,
         })
     });*/
-    (function () {
-        const qr = new QRious({
-            background: '#000',
-            foreground: '#fff',
-            level: 'H',
-            size: 500,
-            value: 'http://www.jq22.com/'
-        })
-    })()
+    $("#code").qrcode({
+        render: "table", //table方式
+        width: 200, //宽度
+        height:200, //高度
+        text: "www.helloweba.net" //任意内容
+    });
 </script>
 </body>
 </html>
