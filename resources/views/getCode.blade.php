@@ -23,17 +23,23 @@
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
-<img/>
-{{ url()->full() }}
+<canvas id="qr"></canvas>
+
 <script type="javascript">
-    $(function () {
+    /*$(function () {
         new QRious({
             element: document.querySelector('img'),
-            value: "{{ url()->full() }}",
+            value: "{{ str_replace('getCode','details',url()->full()) }}",
             mime: "image/png",
             size: 100,
         })
-    });
+    });*/
+    (function() {
+        const qr = new QRious({
+            element: document.getElementById('qr'),
+            value: 'http://www.jq22.com/'
+        })
+    })()
 </script>
 </body>
 </html>

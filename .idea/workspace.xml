@@ -39,13 +39,11 @@
       <file leaf-file-name="getCode.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/getCode.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+            <state relative-caret-position="584">
+              <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
               <folding>
-                <marker date="1517375814823" expanded="true" signature="225:244" ph="..." />
-                <marker date="1517375814823" expanded="true" signature="823:840" ph="..." />
-                <marker date="1517375814823" expanded="true" signature="825:840" ph="..." />
-                <marker date="1517375814823" expanded="true" signature="985:1000" ph="..." />
+                <marker date="1517376032911" expanded="true" signature="225:244" ph="..." />
+                <marker date="1517376032911" expanded="true" signature="987:1035" ph="..." />
               </folding>
             </state>
           </provider>
@@ -54,8 +52,8 @@
       <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="651">
+              <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <marker date="1517375574659" expanded="true" signature="264:283" ph="..." />
                 <marker date="1517375574659" expanded="true" signature="913:935" ph="..." />
@@ -262,8 +260,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-109" />
-    <option name="y" value="23" />
+    <option name="x" value="8" />
+    <option name="y" value="49" />
     <option name="width" value="1932" />
     <option name="height" value="1056" />
   </component>
@@ -346,16 +344,16 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views" />
-      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\vendor\widuu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views\server" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public\lib" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views\server" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public\css" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views" />
+      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\vendor\widuu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,12 +440,12 @@
       <workItem from="1517370281540" duration="1792000" />
       <workItem from="1517372091056" duration="1830000" />
       <workItem from="1517373937895" duration="1792000" />
-      <workItem from="1517375747487" duration="68000" />
+      <workItem from="1517375747487" duration="286000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50279000" />
+    <option name="totallyTimeSpent" value="50497000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -816,13 +814,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/lib/qrious.js" />
-    <entry file="file://$PROJECT_DIR$/public/lib/qrious.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -831,10 +822,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/qrious.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="36" column="12" lean-forward="false" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="651">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="24" />
           <folding>
             <marker date="1517375574659" expanded="true" signature="264:283" ph="..." />
             <marker date="1517375574659" expanded="true" signature="913:935" ph="..." />
@@ -852,13 +851,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/getCode.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+        <state relative-caret-position="584">
+          <caret line="41" column="8" lean-forward="false" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
           <folding>
-            <marker date="1517375814823" expanded="true" signature="225:244" ph="..." />
-            <marker date="1517375814823" expanded="true" signature="823:840" ph="..." />
-            <marker date="1517375814823" expanded="true" signature="825:840" ph="..." />
-            <marker date="1517375814823" expanded="true" signature="985:1000" ph="..." />
+            <marker date="1517376032911" expanded="true" signature="225:244" ph="..." />
+            <marker date="1517376032911" expanded="true" signature="987:1035" ph="..." />
           </folding>
         </state>
       </provider>
