@@ -16,17 +16,6 @@
             padding: 1.5vw 0;
         }
     </style>
-
-    <script type="javascript">
-        function getCode(that) {
-            new QRious({
-                element: $(that).next()[0],
-                value: $(that).attr('data-id'),
-                mime: "image/png",
-                size: 100,
-            })
-        }
-    </script>
 </head>
 <body>
 <header class="cart-header">
@@ -49,5 +38,17 @@
     </section>
 @endforeach
 
+<script type="javascript">
+    $(function(){
+        function getCode(that) {
+            new QRious({
+                element: $(that).next()[0],
+                value: $(that).attr('data-id'),
+                mime: "image/png",
+                size: 100,
+            })
+        }
+    });
+</script>
 </body>
 </html>
