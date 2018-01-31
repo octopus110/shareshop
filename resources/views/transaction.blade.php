@@ -36,6 +36,19 @@
         <p class="pro_code">
             <a href="/getCode">点击获取产品二维码</a>
         </p>
+
+        <img/>
+
+        <script type="javascript">
+            $(function () {
+                new QRious({
+                    element: document.querySelector('img'),
+                    value: "{{ url()->full() }}",
+                    mime: "image/png",
+                    size: 100,
+                })
+            });
+        </script>
     </section>
 @endforeach
 </body>
