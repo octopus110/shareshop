@@ -6,7 +6,7 @@
     <meta name="author" content="李章岭"/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="/lib/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="/lib/qrious.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <style>
@@ -23,12 +23,15 @@
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
-<div id="code"></div>
+<img />
 
-<script>
-    jQuery(function(){
-        jQuery('#code').qrcode("http://www.jq22.com");
-    })
+<script type="text/javascript">
+    (function() {
+        const qr = new QRious({
+            element: document.getElementById('qr'),
+            value: "{{ str_replace('getCode','details',url()->full()) }}"
+        })
+    })()
 </script>
 </body>
 </html>
