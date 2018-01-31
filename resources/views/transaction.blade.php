@@ -33,7 +33,7 @@
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
         <p class="pro_code">
-            <a href="/getCode/{{ url('details/'. $item->id .'/'.$mid) }}">点击获取产品二维码</a>
+            <a href="/getCode/{{ $item->id }}/{{ $mid }}">点击获取产品二维码</a>
         </p>
     </section>
 @endforeach
