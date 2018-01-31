@@ -6,6 +6,7 @@
             display: block;
             width: 100%;
             text-align: center;
+            color: orangered;
         }
     </style>
 @endsection
