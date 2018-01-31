@@ -25,6 +25,7 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
+        <p>产品二维码：</p>
         <img id="{{ 'qrcode'.$item->id }}"/>
         <script>
             new QRious({
