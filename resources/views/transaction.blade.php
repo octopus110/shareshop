@@ -33,20 +33,21 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p class="pro_code" data-id="{{url('/details/'.$item->id.'/'.$mid)}}">
+        {{-- data-id="{{url('/details/'.)}}"--}}
+        <a class="pro_code" href="{{url('/getCode/'.$item->id.'/'.$mid)}}">
             点击获取产品二维码
-        </p>
+        </a>
         <img/>
     </section>
 @endforeach
 
-<script type="text/javascript">
+{{--<script type="text/javascript">
     $(".pro_code").click(function () {
         new QRious({
             element: $(this).next()[0],
             value: $(this).attr('data-id')
         })
     });
-</script>
+</script>--}}
 </body>
 </html>
