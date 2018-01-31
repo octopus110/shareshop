@@ -37,9 +37,9 @@
 <div class="turnoff" style="display: none">
     <div style="width: 100vw; height: 14vw;"></div>
     <div data-toggle="distpicker">
-        <select id="province"></select>
-        <select id="city"></select>
-        <select id="district"></select>
+        <select id="province" data-province="---- 选择省 ----"></select>
+        <select id="city" data-city="---- 选择市 ----"></select>
+        <select id="district" data-district="---- 选择区 ----"></select>
     </div>
 
     <input type="text" id="address" placeholder="输入详细地址"/>
@@ -52,11 +52,7 @@
 <script src="/lib/distpicker.data.js"></script>
 <script src="/lib/distpicker.js"></script>
 <script>
-    $("#distpicker").distpicker({
-        province: '---- 所在省 ----',
-        city: '---- 所在市 ----',
-        district: '---- 所在区 ----'
-    });
+    $("#distpicker").distpicker();
     $('.address-add').click(function () {
         $('.turnoff').fadeIn();
         return false;
