@@ -22,7 +22,9 @@
     <a href="/member"><img src="/images/back.png" alt="" width="12vw"></a>获得红包
 </header>
 <section class="transactions" style="color: red;">
-    * 点击购买产品进入详情微信分享即有机会获得现金红包<br><br>
+    * 点击购买产品进入详情微信分享即有机会获得现金红包<br>
+    * 或者保存二维码自行分享给朋友也可有机会获得现金红包<br>
+    * 分享后有人购买即可得到红包分成<br>
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
