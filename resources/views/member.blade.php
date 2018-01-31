@@ -15,6 +15,7 @@
         <div class="right">
             <a href="/improve">
                 <i class="iconfont icon-gerenxinxi"></i>
+                <br>
                 <i>个人信息</i>
             </a>
         </div>

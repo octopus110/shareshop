@@ -27,7 +27,7 @@
     @else
         <a href="/address/1">
             <div class="add_address">
-                添加地址
+                + 添加地址
             </div>
         </a>
     @endif
