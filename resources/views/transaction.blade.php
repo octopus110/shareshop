@@ -37,12 +37,12 @@
             <a href="/getCode">点击获取产品二维码</a>
         </p>
 
-        <img/>
+        <canvas></canvas>
 
         <script type="javascript">
             $(function () {
                 new QRious({
-                    element: document.querySelector('img'),
+                    element: document.querySelector('canvas'),
                     value: "{{ url()->full() }}",
                     mime: "image/png",
                     size: 100,
