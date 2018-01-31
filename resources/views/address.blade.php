@@ -52,7 +52,11 @@
 <script src="/lib/distpicker.data.js"></script>
 <script src="/lib/distpicker.js"></script>
 <script>
-    $("#distpicker").distpicker();
+    $("#distpicker").distpicker({
+        province: '---- 所在省 ----',
+        city: '---- 所在市 ----',
+        district: '---- 所在区 ----'
+    });
     $('.address-add').click(function () {
         $('.turnoff').fadeIn();
         return false;

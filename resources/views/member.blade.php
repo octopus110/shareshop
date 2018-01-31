@@ -22,8 +22,8 @@
         </div>
         <div class="right">
             <a href="/improve">
-                <i class="iconfont icon-gerenxinxi"></i>
                 <i>个人信息</i>
+                <i class="iconfont icon-gerenxinxi"></i>
             </a>
         </div>
         <div class="clear"></div>
