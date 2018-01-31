@@ -16,6 +16,17 @@
             padding: 1.5vw 0;
         }
     </style>
+
+    <script type="javascript">
+        function getCodeEr(that) {
+            new QRious({
+                element: $(that).next()[0],
+                value: $(that).attr('data-id'),
+                mime: "image/png",
+                size: 100,
+            })
+        }
+    </script>
 </head>
 <body>
 <header class="cart-header">
@@ -33,22 +44,9 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p class="pro_code" data-id="{{ url('details/'.$item->id.'/'.$mid) }}" onclick=getCodeEr(this)>点击获取产品二维码</p>
+        <p class="pro_code" data-id="{{ url('details/'.$item->id.'/'.$mid) }}" onclick="getCodeEr(this)">点击获取产品二维码</p>
         <img alt="二维码" title="二维码"/>
     </section>
 @endforeach
-
-<script type="javascript">
-    $(function(){
-        function getCodeEr(that) {
-            new QRious({
-                element: $(that).next()[0],
-                value: $(that).attr('data-id'),
-                mime: "image/png",
-                size: 100,
-            })
-        }
-    });
-</script>
 </body>
 </html>
