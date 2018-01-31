@@ -7,6 +7,7 @@
     <meta name="keywords" content=""/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/lib/jquery.qrcode.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
 </head>
@@ -24,6 +25,10 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
+        <div id="{{ 'qrcode'.$item->id }}"></div>
+        <script>
+            jQuery("#{{ 'qrcode'.$item->id }}").qrcode("details/{{ $item->id }}/{{ $mid }}");
+        </script>
     </section>
 @endforeach
 
