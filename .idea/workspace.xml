@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/resources/views/getCode.blade.php" afterPath="$PROJECT_DIR$/resources/views/getCode.blade.php" />
+      <change beforePath="$PROJECT_DIR$/resources/views/address.blade.php" afterPath="$PROJECT_DIR$/resources/views/address.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,45 +26,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <file leaf-file-name="address.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/address.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getCode.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/getCode.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            <state relative-caret-position="210">
+              <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
               <folding>
-                <marker date="1517378071341" expanded="true" signature="225:244" ph="..." />
-                <marker date="1517378071341" expanded="true" signature="1064:1112" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="15" column="34" lean-forward="false" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <folding>
-                <marker date="1517377991431" expanded="true" signature="264:283" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1022:1044" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1108:1119" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1124:1130" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1150:1173" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1178:1191" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1202:1216" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1263:1280" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1324:1358" ph="..." />
-                <marker date="1517377991431" expanded="true" signature="1324:1359" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="264:290" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="837:854" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="935:946" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1007:1037" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1077:1090" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1095:1108" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1115:1129" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1178:1189" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="1267:1278" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="2809:2813" ph="..." />
+                <marker date="1517378302349" expanded="true" signature="3127:3141" ph="..." />
               </folding>
             </state>
           </provider>
@@ -154,10 +132,10 @@
         <option value="$PROJECT_DIR$/resources/views/order.blade.php" />
         <option value="$PROJECT_DIR$/public/css/member.css" />
         <option value="$PROJECT_DIR$/resources/views/member.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/address.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/transaction.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/getCode.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/address.blade.php" />
       </list>
     </option>
   </component>
@@ -307,17 +285,6 @@
             <path>
               <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="lib" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -325,11 +292,6 @@
               <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="shareshop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shareshop" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -441,12 +403,12 @@
       <workItem from="1517372091056" duration="1830000" />
       <workItem from="1517373937895" duration="1792000" />
       <workItem from="1517375747487" duration="1791000" />
-      <workItem from="1517377554446" duration="517000" />
+      <workItem from="1517377554446" duration="748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52519000" />
+    <option name="totallyTimeSpent" value="52750000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -800,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/address.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="51" column="47" lean-forward="true" selection-start-line="51" selection-start-column="47" selection-end-line="51" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/member.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -856,6 +811,26 @@
           <folding>
             <marker date="1517378071341" expanded="true" signature="225:244" ph="..." />
             <marker date="1517378071341" expanded="true" signature="1064:1112" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/address.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <marker date="1517378302349" expanded="true" signature="264:290" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="837:854" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="935:946" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1007:1037" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1077:1090" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1095:1108" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1115:1129" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1178:1189" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="1267:1278" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="2809:2813" ph="..." />
+            <marker date="1517378302349" expanded="true" signature="3127:3141" ph="..." />
           </folding>
         </state>
       </provider>

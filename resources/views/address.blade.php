@@ -7,6 +7,8 @@
     <meta name="keywords" content=""/>
     <title>{{ env('APP_NAME','laravel')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="/lib/distpicker.data.js"></script>
+    <script type="text/javascript" src="/lib/distpicker.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/address.css">
     <link rel="stylesheet" href="/css/iconfont.css">
@@ -48,9 +50,6 @@
     <input type="submit" value="确认" id="address_add"/>
     <input type="button" value="取消" id="address_quit"/>
 </div>
-
-<script src="/lib/distpicker.data.js"></script>
-<script src="/lib/distpicker.js"></script>
 <script>
     $("#distpicker").distpicker();
     $('.address-add').click(function () {
