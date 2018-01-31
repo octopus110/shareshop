@@ -16,19 +16,6 @@
             padding: 1.5vw 0;
         }
     </style>
-
-    <script type="javascript">
-        $(".pro_code").click(function () {
-            alert(0);
-            console.log($(this).next()[0])
-            new QRious({
-                element: $(this).next()[0],
-                value: $(this).attr('data-id'),
-                mime: "image/png",
-                size: 100,
-            })
-        });
-    </script>
 </head>
 <body>
 <header class="cart-header">
@@ -49,6 +36,21 @@
         <p class="pro_code" data-id="{{ url('details/'.$item->id.'/'.$mid) }}">点击获取产品二维码</p>
         <img alt="二维码" title="二维码"/>
     </section>
+
+    <script type="javascript">
+        $(function () {
+            $(".pro_code").click(function () {
+                alert(0);
+                console.log($(this).next()[0])
+                new QRious({
+                    element: $(this).next()[0],
+                    value: $(this).attr('data-id'),
+                    mime: "image/png",
+                    size: 100,
+                })
+            });
+        })
+    </script>
 @endforeach
 </body>
 </html>
