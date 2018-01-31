@@ -29,15 +29,15 @@
     /*$(function () {
         new QRious({
             element: document.querySelector('img'),
-            value: "{{ str_replace('getCode','details',url()->full()) }}",
+            value: "",
             mime: "image/png",
             size: 100,
         })
     });*/
-    (function() {
+    (function () {
         const qr = new QRious({
             element: document.getElementById('qr'),
-            value: 'http://www.jq22.com/'
+            value: "{{ str_replace('getCode','details',url()->full()) }}",
         })
     })()
 </script>
