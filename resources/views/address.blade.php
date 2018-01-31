@@ -39,9 +39,9 @@
 <div class="turnoff" style="display: none">
     <div style="width: 100vw; height: 14vw;"></div>
     <div data-toggle="distpicker" id="target">
-        <select id="province" data-province="浙江省"></select>
-        <select id="city" data-city="杭州市"></select>
-        <select id="district" data-district="西湖区"></select>
+        <select id="province"></select>
+        <select id="city"></select>
+        <select id="district"></select>
     </div>
 
     <input type="text" id="address" placeholder="输入详细地址"/>
