@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; maximum-scale=1.0;"/>
     <meta name="author" content="李章岭"/>
-    <meta name="keywords" content=""/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <script type="text/javascript" src="/lib/qrious.min.js"></script>
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cart.css">
     <style>
 
     </style>

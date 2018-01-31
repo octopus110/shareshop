@@ -33,17 +33,10 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <a class="pro_code" href="/getCode">点击获取产品二维码</a>
+        <p class="pro_code">
+            <a href="/getCode">点击获取产品二维码</a>
+        </p>
     </section>
-
-    <script type="javascript">
-        new QRious({
-            element: $(this).next()[0],
-            value: $(this).attr('data-id'),
-            mime: "image/png",
-            size: 100,
-        })
-    </script>
 @endforeach
 </body>
 </html>
