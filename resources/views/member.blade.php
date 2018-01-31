@@ -1,6 +1,13 @@
 @extends('common')
 @section('css')
     <link rel="stylesheet" href="/css/member.css">
+    <style>
+        .right i{
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
 @endsection
 @section('content')
     <section class="member-info">
@@ -15,7 +22,6 @@
         <div class="right">
             <a href="/improve">
                 <i class="iconfont icon-gerenxinxi"></i>
-                <br>
                 <i>个人信息</i>
             </a>
         </div>
