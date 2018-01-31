@@ -7,7 +7,7 @@
     <meta name="keywords" content=""/>
     <title>{{ env('APP_NAME','')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
-    <script type="text/javascript" src="/lib/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="/lib/qrious.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
 </head>
@@ -27,12 +27,12 @@
         </a>
         <div id="{{ 'qrcode'.$item->id }}"></div>
         <script>
-            jQuery("#{{ 'qrcode'.$item->id }}").qrcode({
-                render: "table", //也可以替换为table
-                width: 100,
-                height: 100,
-                text: "details/{{ $item->id }}/{{ $mid }}"
-            });
+            new QRious({
+                element: document.getElementById("{{ 'qrcode'.$item->id }}"),
+                value: "details/{{ $item->id }}/{{ $mid }}",
+                mime:"image/png",
+                size:100,
+            })
         </script>
     </section>
 @endforeach

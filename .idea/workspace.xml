@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/public/lib/qrious.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/resources/views/transaction.blade.php" afterPath="$PROJECT_DIR$/resources/views/transaction.blade.php" />
     </list>
@@ -29,20 +30,20 @@
       <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+            <state relative-caret-position="436">
+              <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
               <folding>
-                <marker date="1517370682091" expanded="true" signature="264:283" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="823:845" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="909:920" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="925:931" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="951:974" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="979:992" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="1003:1017" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="1059:1079" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="1130:1150" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="1301:1312" ph="..." />
-                <marker date="1517370682091" expanded="true" signature="1317:1323" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="264:283" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="812:834" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="898:909" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="914:920" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="940:963" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="968:981" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="992:1006" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="1048:1068" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="1173:1193" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="1233:1244" ph="..." />
+                <marker date="1517371186698" expanded="true" signature="1249:1255" ph="..." />
               </folding>
             </state>
           </provider>
@@ -315,15 +316,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\vendor\widuu" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public\lib" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\public\css" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\resources\views" />
       <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\phpStudy\PHPTutorial\WWW\shareshop\vendor\widuu" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -407,12 +408,12 @@
       <workItem from="1517210865604" duration="1787000" />
       <workItem from="1517212892073" duration="192000" />
       <workItem from="1517368493685" duration="1772000" />
-      <workItem from="1517370281540" duration="401000" />
+      <workItem from="1517370281540" duration="905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45198000" />
+    <option name="totallyTimeSpent" value="45702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -458,13 +459,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/common.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -809,22 +803,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/lib/qrious.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        <state relative-caret-position="436">
+          <caret line="33" column="25" lean-forward="false" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
           <folding>
-            <marker date="1517370682091" expanded="true" signature="264:283" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="823:845" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="909:920" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="925:931" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="951:974" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="979:992" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="1003:1017" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="1059:1079" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="1130:1150" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="1301:1312" ph="..." />
-            <marker date="1517370682091" expanded="true" signature="1317:1323" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="264:283" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="812:834" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="898:909" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="914:920" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="940:963" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="968:981" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="992:1006" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="1048:1068" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="1173:1193" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="1233:1244" ph="..." />
+            <marker date="1517371186698" expanded="true" signature="1249:1255" ph="..." />
           </folding>
         </state>
       </provider>
