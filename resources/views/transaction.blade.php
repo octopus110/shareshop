@@ -16,6 +16,17 @@
             padding: 1.5vw 0;
         }
     </style>
+
+    <script type="javascript">
+        function getCode(url) {
+            new QRious({
+                element: document.getElementById("qrcode{{ $item->id }}"),
+                value: url,
+                mime: "image/png",
+                size: 100,
+            })
+        }
+    </script>
 </head>
 <body>
 <header class="cart-header">
@@ -37,17 +48,6 @@
         <img alt="二维码" title="二维码" id="qrcode{{ $item->id }}"/>
     </section>
 @endforeach
-
-<script type="javascript">
-    function getCode() {
-        new QRious({
-            element: document.getElementById("qrcode{{ $item->id }}"),
-            value: url,
-            mime: "image/png",
-            size: 100,
-        })
-    }
-</script>
 
 </body>
 </html>
