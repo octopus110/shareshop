@@ -27,7 +27,7 @@
 
 <script>
     jQuery(function(){
-        jQuery('#qrcode').qrcode("http://www.jq22.com");
+        jQuery('#code').qrcode("http://www.jq22.com");
     })
 </script>
 </body>
