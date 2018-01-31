@@ -52,7 +52,7 @@
 </div>
 <script>
     //ajax获取用户当前城市
-    $.getScript('http://fw.qq.com/ipaddress', function () {
+    $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
         console.log(remote_ip_info);
     })
 
