@@ -13,7 +13,7 @@
     <style>
         .pro_code {
             display: block;
-            color: red;
+            color: red !important;
             padding: 1.5vw 0;
         }
     </style>
@@ -38,7 +38,6 @@
         <a class="pro_code" href="{{url('/getCode/'.$item->id.'/'.$mid)}}">
             点击获取产品二维码
         </a>
-        <img/>
     </section>
 @endforeach
 

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/cart.css">
     <style>
         img {
+            display: block;
             margin: 2vw auto;
         }
     </style>
