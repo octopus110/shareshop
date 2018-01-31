@@ -19,6 +19,8 @@
 
     <script type="javascript">
         $(".pro_code").click(function () {
+            alert(0);
+            console.log($(this).next()[0])
             new QRious({
                 element: $(this).next()[0],
                 value: $(this).attr('data-id'),
