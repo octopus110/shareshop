@@ -18,14 +18,14 @@
     </style>
 
     <script type="javascript">
-        function getCodeEr(that) {
+        $(".pro_code").click(function () {
             new QRious({
-                element: $(that).next()[0],
-                value: $(that).attr('data-id'),
+                element: $(this).next()[0],
+                value: $(this).attr('data-id'),
                 mime: "image/png",
                 size: 100,
             })
-        }
+        });
     </script>
 </head>
 <body>
@@ -44,7 +44,7 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p class="pro_code" data-id="{{ url('details/'.$item->id.'/'.$mid) }}" onclick="getCodeEr(this)">点击获取产品二维码</p>
+        <p class="pro_code" data-id="{{ url('details/'.$item->id.'/'.$mid) }}">点击获取产品二维码</p>
         <img alt="二维码" title="二维码"/>
     </section>
 @endforeach
