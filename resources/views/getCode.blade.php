@@ -33,8 +33,7 @@
         new QRious({
             element: document.getElementById('qr'),
             value: "{{ str_replace('getCode','details',url()->full()) }}",
-            width: 300,
-            height: 300
+            size: 300,
         })
     })()
 </script>
