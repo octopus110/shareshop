@@ -29,9 +29,9 @@
         <script>
             new QRious({
                 element: document.getElementById("{{ 'qrcode'.$item->id }}"),
-                value: "details/{{ $item->id }}/{{ $mid }}",
-                mime:"image/png",
-                size:100,
+                value: "{{ url('details/'.$item->id.'/'.$mid) }}",
+                mime: "image/png",
+                size: 100,
             })
         </script>
     </section>
