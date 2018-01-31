@@ -24,7 +24,7 @@
 </section>
 
 <img/>
-{{ url() }}
+{{ dd(url()) }}
 <script type="javascript">
     $(function () {
         new QRious({
