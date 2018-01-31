@@ -23,7 +23,7 @@
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
-<img />
+<img id="qr" />
 
 <script type="text/javascript">
     (function() {
