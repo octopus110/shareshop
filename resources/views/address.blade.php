@@ -54,6 +54,9 @@
     //ajax获取用户当前城市
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
         console.log(remote_ip_info);
+        $('#province').attr('data-province',remote_ip_info.province);
+        $('#province').attr('data-city',remote_ip_info.city);
+        $('#province').attr('data-district',remote_ip_info.district);
     })
 
     $('.address-add').click(function () {
