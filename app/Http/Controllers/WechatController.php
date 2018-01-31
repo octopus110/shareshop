@@ -46,6 +46,7 @@ class WechatController extends Controller
                             'created_at'=> date('Y-m-d H:i:s',time())
                         ];
                         $memberid = $memberModel->insertGetId($member);
+                        session()->pull('mid',$memberid);
                     }
 
                     if ($memberid) {

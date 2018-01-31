@@ -20,6 +20,7 @@ class Controller extends BaseController
 
         if ($memberid) {
             $memberid = $memberid->id;
+            session()->pull('mid',$memberid);
         } else {
             $member = [
                 'openid' => session('wechat.oauth_user')['id'],
@@ -31,6 +32,7 @@ class Controller extends BaseController
                 'created_at' => date('Y-m-d H:i:s', time())
             ];
             $memberid = $memberModel->insertGetId($member);
+            session()->pull('mid',$memberid);
         }
         return $memberid;
     }
