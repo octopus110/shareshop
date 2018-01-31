@@ -10,6 +10,12 @@
     <script type="text/javascript" src="/lib/qrious.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
+    <style>
+        .pro_code{
+            color: red;
+            padding: 1.5vw 0;
+        }
+    </style>
 </head>
 <body>
 <header class="cart-header">
@@ -25,7 +31,7 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p>产品二维码：</p>
+        <p class="pro_code">产品二维码：</p>
         <img id="{{ 'qrcode'.$item->id }}"/>
         <script>
             new QRious({
