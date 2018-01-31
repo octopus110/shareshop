@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/cart.css">
     <style>
-        .pro_code{
+        .pro_code {
             color: red;
             padding: 1.5vw 0;
         }
@@ -33,18 +33,21 @@
         <a href="details/{{ $item->id }}/{{ $mid }}">
             【{{ $item->type?'提现':'购物' }}】{{ $item->name }} <span>{{ $item->money }}</span>
         </a>
-        <p class="pro_code">产品二维码：</p>
-        <img id="{{ 'qrcode'.$item->id }}"/>
-        <script>
-            new QRious({
-                element: document.getElementById("{{ 'qrcode'.$item->id }}"),
-                value: "{{ url('details/'.$item->id.'/'.$mid) }}",
-                mime: "image/png",
-                size: 100,
-            })
-        </script>
+        <p class="pro_code" onclick="getCode({{ url('details/'.$item->id.'/'.$mid) }})">点击获取产品二维码</p>
+        <img alt="二维码" title="二维码" id="qrcode{{ $item->id }}"/>
     </section>
 @endforeach
+
+<script type="javascript">
+    function getCode() {
+        new QRious({
+            element: document.getElementById("qrcode{{ $item->id }}"),
+            value: url,
+            mime: "image/png",
+            size: 100,
+        })
+    }
+</script>
 
 </body>
 </html>
