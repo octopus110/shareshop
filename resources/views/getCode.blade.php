@@ -25,21 +25,10 @@
 
 <div id="code"></div>
 
-<script type="javascript">
-    /*$(function () {
-        new QRious({
-            element: document.querySelector('img'),
-            value: "",
-            mime: "image/png",
-            size: 100,
-        })
-    });*/
-    $("#code").qrcode({
-        render: "table", //table方式
-        width: 200, //宽度
-        height:200, //高度
-        text: "www.helloweba.net" //任意内容
-    });
+<script>
+    jQuery(function(){
+        jQuery('#qrcode').qrcode("http://www.jq22.com");
+    })
 </script>
 </body>
 </html>
