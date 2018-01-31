@@ -4,7 +4,6 @@
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/resources/views/getCode.blade.php" afterPath="$PROJECT_DIR$/resources/views/getCode.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transaction.blade.php" afterPath="$PROJECT_DIR$/resources/views/transaction.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,11 +57,11 @@
       <file leaf-file-name="getCode.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/getCode.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+            <state relative-caret-position="336">
+              <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
               <folding>
-                <marker date="1517374704986" expanded="true" signature="225:244" ph="..." />
-                <marker date="1517374704986" expanded="true" signature="941:956" ph="..." />
+                <marker date="1517374840061" expanded="true" signature="225:244" ph="..." />
+                <marker date="1517374840061" expanded="true" signature="966:981" ph="..." />
               </folding>
             </state>
           </provider>
@@ -437,12 +436,12 @@
       <workItem from="1517368493685" duration="1772000" />
       <workItem from="1517370281540" duration="1792000" />
       <workItem from="1517372091056" duration="1830000" />
-      <workItem from="1517373937895" duration="784000" />
+      <workItem from="1517373937895" duration="903000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49203000" />
+    <option name="totallyTimeSpent" value="49322000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -844,11 +843,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/getCode.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="30" column="37" lean-forward="true" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+        <state relative-caret-position="336">
+          <caret line="28" column="19" lean-forward="true" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
           <folding>
-            <marker date="1517374704986" expanded="true" signature="225:244" ph="..." />
-            <marker date="1517374704986" expanded="true" signature="941:956" ph="..." />
+            <marker date="1517374840061" expanded="true" signature="225:244" ph="..." />
+            <marker date="1517374840061" expanded="true" signature="966:981" ph="..." />
           </folding>
         </state>
       </provider>

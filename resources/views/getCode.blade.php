@@ -23,15 +23,17 @@
     * 获得奖金需要提供完整的个人信息（真实姓名和身份证号）
 </section>
 
-<img id="qr">
+<img/>
 
 <script type="javascript">
-    new QRious({
-        element: document.getElementById('qr'),
-        value: "{{ url()->full() }}",
-        mime: "image/png",
-        size: 100,
-    })
+    $(function () {
+        new QRious({
+            element: document.querySelector('img'),
+            value: "{{ url()->full() }}",
+            mime: "image/png",
+            size: 100,
+        })
+    });
 </script>
 </body>
 </html>
