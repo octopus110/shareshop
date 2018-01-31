@@ -29,20 +29,20 @@
       <file leaf-file-name="transaction.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="499">
-              <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+            <state relative-caret-position="457">
+              <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
               <folding>
-                <marker date="1517370561803" expanded="true" signature="264:283" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="823:845" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="909:920" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="925:931" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="951:974" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="979:992" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="1003:1017" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="1059:1079" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="1130:1150" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="1254:1265" ph="..." />
-                <marker date="1517370561803" expanded="true" signature="1270:1276" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="264:283" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="823:845" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="909:920" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="925:931" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="951:974" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="979:992" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="1003:1017" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="1059:1079" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="1130:1150" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="1301:1312" ph="..." />
+                <marker date="1517370682091" expanded="true" signature="1317:1323" ph="..." />
               </folding>
             </state>
           </provider>
@@ -407,12 +407,12 @@
       <workItem from="1517210865604" duration="1787000" />
       <workItem from="1517212892073" duration="192000" />
       <workItem from="1517368493685" duration="1772000" />
-      <workItem from="1517370281540" duration="281000" />
+      <workItem from="1517370281540" duration="401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45078000" />
+    <option name="totallyTimeSpent" value="45198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -811,20 +811,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/transaction.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="499">
-          <caret line="29" column="56" lean-forward="false" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
+        <state relative-caret-position="457">
+          <caret line="28" column="16" lean-forward="true" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
           <folding>
-            <marker date="1517370561803" expanded="true" signature="264:283" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="823:845" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="909:920" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="925:931" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="951:974" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="979:992" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="1003:1017" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="1059:1079" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="1130:1150" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="1254:1265" ph="..." />
-            <marker date="1517370561803" expanded="true" signature="1270:1276" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="264:283" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="823:845" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="909:920" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="925:931" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="951:974" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="979:992" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="1003:1017" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="1059:1079" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="1130:1150" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="1301:1312" ph="..." />
+            <marker date="1517370682091" expanded="true" signature="1317:1323" ph="..." />
           </folding>
         </state>
       </provider>

@@ -28,6 +28,7 @@
         <div id="{{ 'qrcode'.$item->id }}"></div>
         <script>
             jQuery("#{{ 'qrcode'.$item->id }}").qrcode({
+                render: "table", //也可以替换为table
                 width: 100,
                 height: 100,
                 text: "details/{{ $item->id }}/{{ $mid }}"
