@@ -13,7 +13,10 @@
             <p>{{ $member['type']==1?'个体商':'普通会员' }}</p>
         </div>
         <div class="right">
-            <a href="/improve"><i class="iconfont icon-gerenxinxi"></i></a>
+            <a href="/improve">
+                <i class="iconfont icon-gerenxinxi"></i>
+                <i>个人信息</i>
+            </a>
         </div>
         <div class="clear"></div>
     </section>

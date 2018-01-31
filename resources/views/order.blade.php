@@ -60,7 +60,7 @@
     wx.config(<?php echo $js->config(array('chooseWXPay'), false) ?>);
     $('#pay').click(function () {
         if ($("#addressId").val() == 0) {
-            alert('发货地址不能为空');
+            alert('点击添加地址按钮，添加一个发货地址');
             return false;
         }
 
