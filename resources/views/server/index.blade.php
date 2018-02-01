@@ -91,15 +91,13 @@
             <ul class="nav">
                 <li><a href="http://mall.eos-tech.cn" target="_blank">前台</a></li>
                 <li><a href="javascript:;">
-                        {{ data['grade']?'注册商家':'系统管理员' .':'.$data['email']}}
+                        {{ $data['grade']?'注册商家':'系统管理员' .':'.$data['email']}}
                     </a></li>
                 <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
                 <li><a href="/server/quit">退出</a></li>
             </ul>
         </div>
-
         <!-- navMenu -->
-
     </div>
     <div id="leftside">
         <div id="sidebar">
@@ -165,8 +163,11 @@
                             <table class="list" width="98%">
                                 <thead>
                                 <tr>
+                                    <th>申请时间</th>
                                     <th>商户ID</th>
                                     <th>商户名称</th>
+                                    <th>商户微信</th>
+                                    <th>商户手机号</th>
                                     <th>申请金额</th>
                                     <th>商户盈收入总金额</th>
                                     <th>商户已经发放金额</th>
@@ -175,18 +176,22 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>张三</td>
-                                    <td>男</td>
-                                    <td>1</td>
-                                    <td>张三</td>
-                                    <td>张三</td>
-                                    <td>
-                                        <input name="field1" type="text" placeholder="输入线下放款的金额"/>
-                                        <button>提醒商家已放款</button>
-                                    </td>
-                                </tr>
+                                @foreach($appay as $item)
+                                    <tr>
+                                        <td>{{$item->updated_at}}</td>
+                                        <td>{{$item->id}}</td>
+                                        <td>{{$item->storeanme}}</td>
+                                        <td>{{$item->wexin}}</td>
+                                        <td>{{$item->phone}}</td>
+                                        <td>{{$item->money}}</td>
+                                        <td>{{$item->send_money}}</td>
+                                        <td>{{$item->money-$item->appay_money}}</td>
+                                        <td>
+                                            <input name="field1" type="text" placeholder="输入线下放款的金额"/>
+                                            <button>提醒商家已放款</button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
