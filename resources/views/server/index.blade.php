@@ -179,9 +179,10 @@
                                     <td>男</td>
                                     <td>1</td>
                                     <td>张三</td>
+                                    <td>张三</td>
                                     <td>
                                         <input name="field1" type="text" placeholder="输入要发放金额，默认申请的金额" />
-                                        <div class="button"><div class="buttonContent"><button>按钮</button></div></div>
+                                        <button>按钮</button>
                                     </td>
                                 </tr>
                                 </tbody>
