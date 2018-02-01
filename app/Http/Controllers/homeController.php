@@ -54,7 +54,7 @@ class homeController extends Controller
         )
             ->leftJoin('orders', 'orders.sid', 'users.id')
             ->groupBy('orders.sid')
-            ->find(3);
+            ->find(Auth::id());
 
         return view('server.index', ['data' => $user, 'appay' => $appay,'userindex'=>$userIndex]);
     }
