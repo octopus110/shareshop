@@ -10,16 +10,13 @@ class orderController extends Controller
 {
     public function _list(Request $request)
     {
-        $orderModel = new Order();
+        $data = new Order();
 
-        $id = Auth::id();//属于哪个商户的id
-        dd(Auth::user()->grade);
-        $data = $orderModel;
-        if ($id) {
-            $data = $orderModel->where('orders.sid', $id);
+        if (Auth::user()->grade) {
+            $data = $data->where('orders.sid', Auth::id());
         }
 
-        $data->where(function ($query) use ($request) {
+        $data = $data->where(function ($query) use ($request) {
             if ($request->input('status', -1) != -1) {
                 $query->where('orders.status', $request->input('status'));
             }
