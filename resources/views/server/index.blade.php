@@ -183,7 +183,6 @@
                                         <td>{{$item->storename}}</td>
                                         <td>{{$item->weixin}}</td>
                                         <td>{{$item->phone}}</td>
-                                        <td>{{$item->phone}}</td>
                                         <td>{{$item->appay_money}}</td>
                                         <td>{{$item->money}}</td>
                                         <td>{{$item->send_money}}</td>
