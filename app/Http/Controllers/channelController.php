@@ -23,7 +23,9 @@ class channelController extends Controller
             $member = $member->whereIn('id', $usermid);
         }
 
-        $member = $member->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'updated_at')->get();
+        $member = $member->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'users.storename', 'users.id as storeid', 'updated_at')
+            ->leftJoin('users', 'membres.id', 'in', $usermid)
+            ->get();
 
         return view('server/channel', ['data' => $member]);
     }
