@@ -37,11 +37,11 @@ class homeController extends Controller
         $userModel = new Member();
 
         $appay = $userModel->where('appy', 0)->select(
-            'member.id', 'member.storename', 'member.weixin', 'member.phone', 'member.appay_money', 'member.send_money', 'member.updated_at',
-            DB::raw('SUM(order.money) as money')
+            'members.id', 'members.storename', 'members.weixin', 'members.phone', 'members.appay_money', 'members.send_money', 'members.updated_at',
+            DB::raw('SUM(orders.money) as money')
         )
-            ->leftJoin('order', 'order.sid', 'members.id')
-            ->groupBy('order.sid')
+            ->leftJoin('orders', 'orders.sid', 'members.id')
+            ->groupBy('orders.sid')
             ->get();
 
 
