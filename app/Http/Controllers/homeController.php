@@ -40,7 +40,7 @@ class homeController extends Controller
 
         //查询出申请发放的商家
         $appay = $userModel->where('users.appay', 1)->select(
-            'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.appay_money', 'users.send_money', 'users.updated_at',
+            'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.appay_money', 'users.send_money', 'users.updated_at','users.chang',
             DB::raw('sum(orders.money) as money')
         )
             ->leftJoin('orders', 'orders.sid', 'users.id')

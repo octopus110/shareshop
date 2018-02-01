@@ -204,7 +204,7 @@
                                         </div>
                                         <div class="formBar">
                                             <ul>
-                                                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                                                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">申请</button></div></div></li>
                                                 <li>
                                                     <div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
                                                 </li>
@@ -225,6 +225,7 @@
                                                 <th>商户名称</th>
                                                 <th>商户微信</th>
                                                 <th>商户手机号</th>
+                                                <th>商家手续费</th>
                                                 <th>申请金额</th>
                                                 <th>商户盈收入总金额</th>
                                                 <th>商户已经发放金额</th>
@@ -240,10 +241,11 @@
                                                 <td>{{$item->storename}}</td>
                                                 <td>{{$item->weixin}}</td>
                                                 <td>{{$item->phone}}</td>
+                                                <td>{{$item->chang}}</td>
                                                 <td class="apply_money">{{$item->appay_money}}</td>
-                                                <td>{{round($item->money,2)}}</td>
+                                                <td>{{round($item->money*(1-$item->chang),2)}}</td>
                                                 <td>{{$item->send_money}}</td>
-                                                <td>{{round($item->money - $item->send_money,2)}}</td>
+                                                <td>{{round($item->money*(1-$item->chang) - $item->send_money,2)}}</td>
                                                 <td>
                                                     <input name="field1" type="text" placeholder="输入线下放款的金额"/>
                                                     <button class="alertUser">提醒商家已放款</button>
