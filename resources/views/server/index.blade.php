@@ -151,13 +151,39 @@
                 <div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
                     <ul class="navTab-tab">
                         <li tabid="main" class="main"><a href="javascript:;"><span><span
-                                            class="home_icon">介绍</span></span></a></li>
+                                            class="home_icon">首页</span></span></a></li>
                     </ul>
                 </div>
             </div>
             <div class="navTab-panel tabsPageContent layoutBox">
                 <div class="page unitBox">
-                    <div class="">商城后台管</div>
+                    <div class="panel" defH="150">
+                        <h1>放款申请</h1>
+                        <div>
+                            <table class="list" width="98%">
+                                <thead>
+                                <tr>
+                                    <th>商户ID</th>
+                                    <th>商户名称</th>
+                                    <th>申请金额</th>
+                                    <th>商户盈收入总金额</th>
+                                    <th>商户已经发放金额</th>
+                                    <th>商户已经剩余金额</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>张三</td>
+                                    <td>男</td>
+                                    <td>1</td>
+                                    <td>张三</td>
+                                    <td>男</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
