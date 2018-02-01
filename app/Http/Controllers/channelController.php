@@ -23,7 +23,7 @@ class channelController extends Controller
             $member = $member->whereIn('id', $usermid);
         }
 
-        $member = select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'updated_at')->get();
+        $member = $member->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'updated_at')->get();
 
         return view('server/channel', ['data' => $member]);
     }
