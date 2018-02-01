@@ -39,11 +39,13 @@ class homeController extends Controller
 
         $appay = $userModel->where('users.appay', 0)->select(
             'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.appay_money', 'users.send_money', 'users.updated_at',
-            DB::raw('SUM(orders.money) as money')
+            DB::raw('sum(orders.money) as money')
         )
             ->leftJoin('orders', 'orders.sid', 'users.id')
             ->groupBy('orders.sid')
             ->get();
+
+            dd($appay);
 
 
         return view('server.index', ['data' => $user, 'appay' => $appay]);
