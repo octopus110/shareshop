@@ -59,12 +59,12 @@
 
             <p>
                 <label>负责人身份证号：</label>
-                <input name="IDnumber" class="required IDnumeric" type="text" value="{{ $data->IDnumber  }}" alt=""/>
+                <input name="IDnumber" class="required IDnumeric" type="text" value="{{ $data->IDnumber  }}"/>
             </p>
 
             <p>
                 <label>公司注册号：</label>
-                <input name="provider" class="required" type="text" value="{{ $data->provider  }}" alt=""/>
+                <input name="provider" class="required" type="text" value="{{ $data->provider  }}"/>
             </p>
 
             <p>
@@ -74,7 +74,12 @@
 
             <p>
                 <label>分红有效期限(天)：</label>
-                <input name="deadline" class="required digits" type="text" value="{{ $data->deadline }}" value="3"/>
+                <input name="deadline" class="required digits" type="text" value="{{ $data->deadline }}"/>
+            </p>
+
+            <p>
+                <label>手续费(默认收取0.2的手续费)：</label>
+                <input name="chang" class="required digits" type="text" value="{{ $data->chang }}"/>
             </p>
         </div>
         <div class="formBar">

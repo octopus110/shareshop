@@ -33,6 +33,7 @@ class userController extends Controller
                 'email' => 'required|unique:users',
                 'password' => 'required',
                 'profit' => 'required',
+                'chang' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -69,6 +70,7 @@ class userController extends Controller
             $userModel->email = $request->input('email');
             $userModel->password = bcrypt($request->input('password'));
             $userModel->deadline = $request->input('deadline');
+            $userModel->chang = $request->input('chang');
             $userModel->grade = 1;
 
             $res = $userModel->save();
@@ -112,7 +114,8 @@ class userController extends Controller
                 'IDnumber' => 'required',
                 'provider' => 'required',
                 'email' => 'required',
-                'profit' => 'required'
+                'profit' => 'required',
+                'chang' => 'required',
             ]);
 
             if ($validator->fails()) {
@@ -146,6 +149,7 @@ class userController extends Controller
             $arr['provider'] = $request->input('provider');
             $arr['email'] = $request->input('email');
             $arr['profit'] = $request->input('profit');
+            $arr['chang'] = $request->input('chang');
 
             if ($request->input('password')) {
                 $arr['password'] = bcrypt($request->input('password'));

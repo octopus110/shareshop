@@ -21,6 +21,7 @@
             <th>公司注册号</th>
             <th>分红额度</th>
             <th>分红有效期限</th>
+            <th>手续费</th>
             <th>注册时间</th>
         </tr>
         </thead>
@@ -38,6 +39,7 @@
                 <td>{{ $item->provider }}</td>
                 <td>{{ $item->profit }}</td>
                 <td>{{ $item->deadline }}</td>
+                <td>{{ $item->chang }}</td>
                 <td>{{ $item->created_at }}</td>
             </tr>
         @endforeach

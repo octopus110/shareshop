@@ -70,6 +70,11 @@
                 <label>分红有效期限(天)：</label>
                 <input name="deadline" class="required digits" type="text" value="3"/>
             </p>
+
+            <p>
+                <label>手续费(默认收取0.2的手续费)：</label>
+                <input name="chang" class="required digits" type="text" value="0.2"/>
+            </p>
         </div>
         <div class="formBar">
             <ul>

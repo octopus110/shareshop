@@ -137,6 +137,7 @@
                                     @if($data['grade'] == 0)
                                     <li><a href="/server/admin" target="navTab" rel="admin">管理员管理</a></li>
                                     <li><a href="/server/banner" target="navTab" rel="banner">首页轮播图</a></li>
+                                    <li><a href="/server/setCharge" target="navTab" rel="banner">设置手续费</a></li>
                                     @endif
                                 </ul>
                             </li>
