@@ -90,7 +90,9 @@
         <div class="headerNav">
             <ul class="nav">
                 <li><a href="http://mall.eos-tech.cn" target="_blank">前台</a></li>
-                <li><a href="javascript:;">管理员:{{$data['email']}}</a></li>
+                <li><a href="javascript:;">
+                        {{ data['grade']?'注册商家':'系统管理员' .':'.$data['email']}}
+                    </a></li>
                 <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
                 <li><a href="/server/quit">退出</a></li>
             </ul>
