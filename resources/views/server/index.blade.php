@@ -170,22 +170,28 @@
 
                                     <div class="pageFormContent">
                                         <p>
+                                            <label>当前手续费：</label>
+                                            <input name="sn" type="text" size="30" value="{{ $userindex->chang }}" readonly/>
+                                        </p>
+                                    </div>
+                                    <div class="pageFormContent">
+                                        <p>
                                             <label>当前总收入：</label>
-                                            <input name="sn" type="text" size="30" value="{{ round($userindex->money,2) }}" readonly/>
+                                            <input name="sn" type="text" size="30" value="{{ round($userindex->money*(1-$userindex->chang),2) }}" readonly/>
                                         </p>
                                     </div>
 
                                     <div class="pageFormContent">
                                         <p>
                                             <label>已发放的金额：</label>
-                                            <input name="sn" type="text" size="30" value="{{ round($userindex->send_money) }}" readonly/>
+                                            <input name="sn" type="text" size="30" value="{{ round($userindex->send_money,2) }}" readonly/>
                                         </p>
                                     </div>
 
                                     <div class="pageFormContent">
                                         <p>
                                             <label>剩余金额：</label>
-                                            <input name="sn" type="text" size="30" value="{{ round($userindex->money-$userindex->send_money) }}" readonly/>
+                                            <input name="sn" type="text" size="30" value="{{ round(($userindex->money*(1-$userindex->chang))-$userindex->send_money,2) }}" readonly/>
                                         </p>
                                     </div>
 

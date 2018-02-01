@@ -49,8 +49,7 @@ class homeController extends Controller
 
         //列出当前商家的信息$data['id']
         $userIndex = $userModel->select(
-            'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.send_money','users.appay_money',
-            DB::raw('sum(orders.money) as money')
+            'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.send_money','users.appay_money','users.chang',DB::raw('sum(orders.money) as money')
         )
             ->leftJoin('orders', 'orders.sid', 'users.id')
             ->groupBy('orders.sid')
