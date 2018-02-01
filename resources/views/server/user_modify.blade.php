@@ -78,7 +78,7 @@
             </p>
 
             <p>
-                <label>手续费(默认收取0.2的手续费)：</label>
+                <label>手续费(默认0.2)：</label>
                 <input name="chang" class="required digits" type="text" value="{{ $data->chang }}"/>
             </p>
         </div>
