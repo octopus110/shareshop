@@ -37,7 +37,7 @@ class homeController extends Controller
         //查询是否有放款信息
         $userModel = new User();
 
-        $appay = $userModel->where('users.appy', 0)->select(
+        $appay = $userModel->where('users.appay', 0)->select(
             'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.appay_money', 'users.send_money', 'users.updated_at',
             DB::raw('SUM(orders.money) as money')
         )
