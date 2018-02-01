@@ -53,8 +53,8 @@
             <th>交易订单号</th>
             <th>订单状态</th>
             <th>物流状态</th>
-            <th>物流公司</th>
             <th>物流单号</th>
+            <th>物流公司</th>
             <th>下单时间</th>
             @if($userType)
                 <th @show:$userType></th>
@@ -76,7 +76,7 @@
                 <td>{{ $item->status($item->status) }}</td>
                 <td>{{ $item->delivery($item->delivery) }}</td>
                 <td>{{ $item->express_id }}</td>
-                <td>{{ $item->rid }}</td>
+                <td>{{ $item->express_name }}</td>
                 <td>{{ $item->created_at }}</td>
                 @if($userType)
                     <td>
