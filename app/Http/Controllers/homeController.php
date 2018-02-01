@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Member;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -34,7 +35,7 @@ class homeController extends Controller
         $user['grade'] = $data['grade'];
 
         //查询是否有放款信息
-        $userModel = new Member();
+        $userModel = new User();
 
         $appay = $userModel->where('users.appy', 0)->select(
             'users.id', 'users.storename', 'users.weixin', 'users.phone', 'users.appay_money', 'users.send_money', 'users.updated_at',
