@@ -37,6 +37,7 @@ class orderController extends Controller
             'data' => $data,
             'status' => $request->input('status', -1),
             'delivery' => $request->input('delivery', -1),
+            'userType' => Auth::user()->grade,
         ]);
     }
 
