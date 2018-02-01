@@ -70,7 +70,7 @@ class homeController extends Controller
     public function applyMoney(Request $request){
         $userModel = new User();
 
-        $user = $userModel->select('id','appay_money','appay')->find(3);
+        $user = $userModel->select('id','appay_money','appay')->find(Auth::id());
 
         $user->appay_money = $request->input('money');
         $user->appay = 1;
