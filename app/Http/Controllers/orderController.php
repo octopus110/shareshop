@@ -13,21 +13,26 @@ class orderController extends Controller
         $orderModel = new Order();
 
         $id = Auth::id();//属于哪个商户的id
+        $data = $orderModel;
+        if ($id) {
+            $data = $orderModel->where('orders.sid', $id);
+        }
 
-        $data = $orderModel->where('orders.sid', $id)
-            ->where(function ($query) use ($request) {
-                if ($request->input('status', -1) != -1) {
-                    $query->where('orders.status', $request->input('status'));
-                }
-                if ($request->input('delivery', -1) != -1) {
-                    $query->where('orders.delivery', $request->input('delivery'));
-                }
-            })
+        $data->where(function ($query) use ($request) {
+            if ($request->input('status', -1) != -1) {
+                $query->where('orders.status', $request->input('status'));
+            }
+            if ($request->input('delivery', -1) != -1) {
+                $query->where('orders.delivery', $request->input('delivery'));
+            }
+        })
             ->select(
-                'orders.id', 'commoditys.name as name', 'orders.type', 'members.openid','members.nickname', 'orders.money',
-                'orders.rid', 'orders.status', 'orders.delivery','orders.express_name','orders.express_id', 'orders.created_at'
+                'orders.id', 'commoditys.name as name', 'orders.type', 'members.openid', 'members.nickname', 'orders.money',
+                'orders.rid', 'orders.status', 'orders.delivery', 'orders.express_name', 'orders.express_id', 'orders.created_at',
+                'users.storename', 'users.id as storeid'
             )->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
-            ->leftJoin('members','members.id','orders.uid')
+            ->leftJoin('members', 'members.id', 'orders.uid')
+            ->leftJoin('users', 'users.id', 'orders.sid')
             ->get();
 
         return view('server/order', [
@@ -55,8 +60,8 @@ class orderController extends Controller
     public function send(Request $request)
     {
         if ($request->isMethod('get')) {
-            return view('server/express',[
-                'id'=> $request->input('id')
+            return view('server/express', [
+                'id' => $request->input('id')
             ]);
         } else {
             $id = $request->input('id');

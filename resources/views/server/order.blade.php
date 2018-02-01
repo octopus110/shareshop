@@ -44,6 +44,8 @@
         <tr>
             <th>编号</th>
             <th>商品名称</th>
+            <th>商家名称</th>
+            <th>商家ID</th>
             <th>订单类型</th>
             <th>用户唯一号</th>
             <th>用户微信昵称</th>
@@ -62,6 +64,8 @@
             <tr target="id" rel="{{ $item->id }}">
                 <td>{{ $item->id }}</td>
                 <td>{{ $item->name }}</td>
+                <td>{{ $item->storename }}</td>
+                <td>{{ $item->storeid }}</td>
                 <td>{{ $item->type($item->type) }}</td>
                 <td>{{ $item->openid }}</td>
                 <td>{{ $item->nickname }}</td>
@@ -76,7 +80,8 @@
                     @if($item->delivery==0&&$item->status==0&&$item->type==0)
                         {{--<a class="button" href="order/send?id={{$item->id}}" target="ajaxTodo"
                            title="确定要发货吗?"><span>发货</span></a>--}}
-                        <a class="button" href="/server/order/send?id={{$item->id}}" target="dialog" rel="express" mask="true"><span>发货</span></a>
+                        <a class="button" href="/server/order/send?id={{$item->id}}" target="dialog" rel="express"
+                           mask="true"><span>发货</span></a>
                     @endif
                 </td>
             </tr>
