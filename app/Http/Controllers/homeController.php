@@ -45,9 +45,6 @@ class homeController extends Controller
             ->groupBy('orders.sid')
             ->get();
 
-            dd($appay);
-
-
         return view('server.index', ['data' => $user, 'appay' => $appay]);
     }
 
