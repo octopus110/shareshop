@@ -14,20 +14,22 @@ class channelController extends Controller
     public function _list()
     {
         $memberModel = new Member();
-        $user = Auth::user();
-        $usermid = explode(',', $user->mid); //一个商户可能拥有多个渠道商
 
         $member = $memberModel->where('type', 1);
 
         if (Auth::user()->grade) {
+            $usermid = explode(',', Auth::user()->mid); //一个商户可能拥有多个渠道商
+
             $member = $member->whereIn('id', $usermid);
         }
 
-        $member = $member->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'users.storename', 'users.id as storeid', 'updated_at')
-            ->leftJoin('users', 'membres.id', 'in', $usermid)
+        $member = $member->select('id', 'nickname', 'IDnumber', 'earnings', 'getearnings', 'updated_at')
             ->get();
 
-        return view('server/channel', ['data' => $member]);
+        return view('server/channel', [
+            'data' => $member,
+            'mType'=> Auth::user()->grade,
+        ]);
     }
 
     //发放红包

@@ -23,9 +23,10 @@
                 <td>
                     <a class="button" href="channel/earnings/{{ $item->id  }}" target="dialog" rel="detail"
                        mask="true"><span>查看收益列表</span></a>
-
-                    <a class="button" href="channel/send?id={{$item->id}}" target="ajaxTodo" rel="send"
-                       title="确定要发红包吗?"><span>发红包</span></a>
+                    @if($mType)
+                        <a class="button" href="channel/send?id={{$item->id}}" target="ajaxTodo" rel="send"
+                           title="确定要发红包吗?"><span>发红包</span></a>
+                    @endif
                 </td>
             </tr>
         @endforeach
