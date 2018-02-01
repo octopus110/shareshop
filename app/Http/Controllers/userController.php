@@ -14,8 +14,6 @@ class userController extends Controller
         $user = new User();
         $data = $user->where('grade', 1)->get();
 
-        dd($data)
-
         return view('server/user', ['data' => $data]);
     }
 
