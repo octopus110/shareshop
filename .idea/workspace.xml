@@ -4,7 +4,6 @@
     <list default="true" id="076de6b2-385e-435a-9db2-7fbd0a61a0ff" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/server/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/server/index.blade.php" />
     </list>
     <ignored path="shareshop.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +43,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="homeController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="homeController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/homeController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="46" />
+              <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
               <folding>
                 <element signature="e#40#55#0#PHP" expanded="true" />
               </folding>
@@ -56,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/server/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="607">
-              <caret line="187" column="58" lean-forward="false" selection-start-line="187" selection-start-column="58" selection-end-line="187" selection-end-column="58" />
+            <state relative-caret-position="418">
+              <caret line="178" column="23" lean-forward="false" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
               <folding>
                 <marker date="1517461710128" expanded="true" signature="135:149" ph="..." />
                 <marker date="1517461710128" expanded="true" signature="168:187" ph="..." />
@@ -174,8 +173,8 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/channelController.php" />
         <option value="$PROJECT_DIR$/resources/views/server/channel.blade.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/a611cb23-a747-483a-b393-056e284d1506/console.sql" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/homeController.php" />
         <option value="$PROJECT_DIR$/resources/views/server/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/homeController.php" />
       </list>
     </option>
   </component>
@@ -464,12 +463,12 @@
       <workItem from="1517456148030" duration="1791000" />
       <workItem from="1517457982924" duration="1753000" />
       <workItem from="1517459796333" duration="1791000" />
-      <workItem from="1517461604927" duration="107000" />
+      <workItem from="1517461604927" duration="178000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63997000" />
+    <option name="totallyTimeSpent" value="64068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -847,20 +846,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/homeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="39" column="46" lean-forward="false" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="46" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/server/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="607">
-          <caret line="187" column="58" lean-forward="false" selection-start-line="187" selection-start-column="58" selection-end-line="187" selection-end-column="58" />
+        <state relative-caret-position="418">
+          <caret line="178" column="23" lean-forward="false" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
           <folding>
             <marker date="1517461710128" expanded="true" signature="135:149" ph="..." />
             <marker date="1517461710128" expanded="true" signature="168:187" ph="..." />
@@ -882,6 +871,16 @@
             <marker date="1517461710128" expanded="true" signature="9536:9548" ph="..." />
             <marker date="1517461710128" expanded="true" signature="9602:9619" ph="..." />
             <marker date="1517461710128" expanded="true" signature="9673:9704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/homeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="40" column="14" lean-forward="false" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+          <folding>
+            <element signature="e#40#55#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
