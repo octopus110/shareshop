@@ -158,7 +158,7 @@
                     <div class="navTab-panel tabsPageContent layoutBox">
                         <div class="page unitBox">
                             @if($data['grade'])
-                            <div class="panel" defH="300">
+                            <div class="panel">
                                 <h1>申请放款(平台扣除费用后的金额)</h1>
                                 <div class="pageContent">
                                     <div class="pageFormContent">
