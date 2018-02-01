@@ -33,6 +33,8 @@ Route::any('/pay/success', function () {//支付成功
 Route::group(['prefix' => 'server'], function () {
     Auth::routes();
     Route::get('/home', 'homeController@index')->name('home');
+    Route::any('/send/money', 'homeController@sendMoney')->name('home');//通知商家已经放款
+    Route::any('/apply/money', 'homeController@applyMoney')->name('home');//商家申请放款
     Route::get('/quit', 'homeController@quit')->name('quit');
     //多图片上传接口
     Route::any('/update', 'updateController@images');

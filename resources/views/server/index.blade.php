@@ -9,7 +9,7 @@
     <link href="/uploadify/css/uploadify.css" rel="stylesheet" type="text/css" media="screen"/>
     <!--[if IE]>
     <link href="/themes/css/ieHack.css" rel="stylesheet" type="text/css" media="screen"/>
-    <![endif]-->
+<![endif]-->
     <!--[if lt IE 9]>
     <script src="/juijs/speedup.js" type="text/javascript"></script>
     <script src="/juijs/jquery-1.11.3.min.js" type="text/javascript"></script><![endif]-->
@@ -85,124 +85,206 @@
 </head>
 
 <body>
-<div id="layout">
-    <div id="header">
-        <div class="headerNav">
-            <ul class="nav">
-                <li><a href="http://mall.eos-tech.cn" target="_blank">前台</a></li>
-                <li><a href="javascript:;">
+    <div id="layout">
+        <div id="header">
+            <div class="headerNav">
+                <ul class="nav">
+                    <li><a href="http://mall.eos-tech.cn" target="_blank">前台</a></li>
+                    <li><a href="javascript:;">
                         {{ $data['grade']?'注册商家':'系统管理员' .':'.$data['email']}}
                     </a></li>
-                <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
-                <li><a href="/server/quit">退出</a></li>
-            </ul>
-        </div>
-        <!-- navMenu -->
-    </div>
-    <div id="leftside">
-        <div id="sidebar">
-            <div class="toggleCollapse"><h2>后台管理</h2>
-
-                <div>收缩</div>
+                    <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
+                    <li><a href="/server/quit">退出</a></li>
+                </ul>
             </div>
-            <div class="accordion" fillSpace="sidebar">
-                <div class="accordionHeader">
-                    <h2><span>Folder</span>导航</h2>
+            <!-- navMenu -->
+        </div>
+        <div id="leftside">
+            <div id="sidebar">
+                <div class="toggleCollapse"><h2>后台管理</h2>
+
+                    <div>收缩</div>
                 </div>
-                <div class="accordionContent">
-                    <ul class="tree treeFolder">
-                        <li><a>商品管理</a>
-                            <ul>
-                                <li><a href="/server/classify" target="navTab" rel="classify">商品分类</a></li>
-                                <li><a href="/server/commodity" target="navTab" rel="commodity">商品列表</a></li>
-                            </ul>
-                        </li>
+                <div class="accordion" fillSpace="sidebar">
+                    <div class="accordionHeader">
+                        <h2><span>Folder</span>导航</h2>
+                    </div>
+                    <div class="accordionContent">
+                        <ul class="tree treeFolder">
+                            <li><a>商品管理</a>
+                                <ul>
+                                    <li><a href="/server/classify" target="navTab" rel="classify">商品分类</a></li>
+                                    <li><a href="/server/commodity" target="navTab" rel="commodity">商品列表</a></li>
+                                </ul>
+                            </li>
 
-                        <li><a>订单管理</a>
-                            <ul>
-                                <li><a href="/server/order" target="navTab" rel="order">订单列表</a></li>
-                            </ul>
-                        </li>
+                            <li><a>订单管理</a>
+                                <ul>
+                                    <li><a href="/server/order" target="navTab" rel="order">订单列表</a></li>
+                                </ul>
+                            </li>
 
-                        <li><a>渠道商管理</a>
-                            <ul>
-                                @if($data['grade'] == 0)
+                            <li><a>渠道商管理</a>
+                                <ul>
+                                    @if($data['grade'] == 0)
                                     <li><a href="/server/user" target="navTab" rel="user">注册渠道商</a></li>
-                                @endif
-                                <li><a href="/server/channel" target="navTab" rel="channel">个体渠道商</a></li>
-                            </ul>
-                        </li>
-                        <li><a>杂项管理</a>
-                            <ul>
-                                @if($data['grade'] == 0)
+                                    @endif
+                                    <li><a href="/server/channel" target="navTab" rel="channel">个体渠道商</a></li>
+                                </ul>
+                            </li>
+                            <li><a>杂项管理</a>
+                                <ul>
+                                    @if($data['grade'] == 0)
                                     <li><a href="/server/admin" target="navTab" rel="admin">管理员管理</a></li>
                                     <li><a href="/server/banner" target="navTab" rel="banner">首页轮播图</a></li>
-                                @endif
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="container">
-        <div id="navTab" class="tabsPage">
-            <div class="tabsPageHeader">
-                <div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
-                    <ul class="navTab-tab">
-                        <li tabid="main" class="main"><a href="javascript:;"><span><span
-                                            class="home_icon">首页</span></span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="navTab-panel tabsPageContent layoutBox">
-                <div class="page unitBox">
-                    <div class="panel" defH="150">
-                        <h1>放款申请</h1>
-                        <div>
-                            <table class="list" width="98%">
-                                <thead>
-                                <tr>
-                                    <th>申请时间</th>
-                                    <th>商户ID</th>
-                                    <th>商户名称</th>
-                                    <th>商户微信</th>
-                                    <th>商户手机号</th>
-                                    <th>申请金额</th>
-                                    <th>商户盈收入总金额</th>
-                                    <th>商户已经发放金额</th>
-                                    <th>商户已经剩余金额</th>
-                                    <th>更新状态</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                @foreach($appay as $item)
-                                    <tr>
-                                        <td>{{$item->updated_at}}</td>
-                                        <td>{{$item->id}}</td>
-                                        <td>{{$item->storename}}</td>
-                                        <td>{{$item->weixin}}</td>
-                                        <td>{{$item->phone}}</td>
-                                        <td>{{$item->appay_money}}</td>
-                                        <td>{{$item->money}}</td>
-                                        <td>{{$item->send_money}}</td>
-                                        <td>{{$item->money - $item->send_money}}</td>
-                                        <td>
-                                            <input name="field1" type="text" placeholder="输入线下放款的金额"/>
-                                            <button>提醒商家已放款</button>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                                </tbody>
-                            </table>
-                        </div>
+                                    @endif
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div id="container">
+            <div id="navTab" class="tabsPage">
+                <div class="tabsPageHeader">
+                    <div class="tabsPageHeaderContent"><!-- 显示左右控制时添加 class="tabsPageHeaderMargin" -->
+                        <ul class="navTab-tab">
+                            <li tabid="main" class="main"><a href="javascript:;"><span><span
+                                class="home_icon">首页</span></span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="navTab-panel tabsPageContent layoutBox">
+                        <div class="page unitBox">
+                            @if($data['grade'])
+                            <div class="panel" defH="300">
+                                <h1>申请放款(平台扣除费用后的金额)</h1>
+                                <div class="pageContent">
+                                    <div class="pageFormContent">
+                                        <p>
+                                            <label>商户名：</label>
+                                            <input name="sn" type="text" size="30" value="{{ $userindex->storename }}" readonly/>
+                                        </p>
+                                    </div>
 
-<div id="footer">Copyright &copy; 2017 <a href="demo_page2.html" target="dialog">商城团队</a> 沪ICP备15053290号-2</div>
-</body>
-</html>
+                                    <div class="pageFormContent">
+                                        <p>
+                                            <label>当前总收入：</label>
+                                            <input name="sn" type="text" size="30" value="{{ round($userindex->money,2) }}" readonly/>
+                                        </p>
+                                    </div>
+
+                                    <div class="pageFormContent">
+                                        <p>
+                                            <label>已发放的金额：</label>
+                                            <input name="sn" type="text" size="30" value="{{ round($userindex->send_money) }}" readonly/>
+                                        </p>
+                                    </div>
+
+                                    <div class="pageFormContent">
+                                        <p>
+                                            <label>剩余金额：</label>
+                                            <input name="sn" type="text" size="30" value="{{ round($userindex->money-$userindex->send_money) }}" readonly/>
+                                        </p>
+                                    </div>
+
+                                    <form method="post" action="{{ url('server/apply/money') }}" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+                                        <div class="pageFormContent">
+                                            <p>
+                                                <label>申请发放金额：</label>
+                                                <input name="money" type="text" size="30" value="{{ $userindex->appay_money }}"/>
+                                            </p>
+                                        </div>
+                                        <div class="formBar">
+                                            <ul>
+                                                <li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+                                                <li>
+                                                    <div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            @else
+                            <div class="panel" defH="150">
+                                <h1>放款申请</h1>
+                                <div>
+                                    <table class="list" width="98%">
+                                        <thead>
+                                            <tr>
+                                                <th>申请时间</th>
+                                                <th>商户ID</th>
+                                                <th>商户名称</th>
+                                                <th>商户微信</th>
+                                                <th>商户手机号</th>
+                                                <th>申请金额</th>
+                                                <th>商户盈收入总金额</th>
+                                                <th>商户已经发放金额</th>
+                                                <th>商户已经剩余金额</th>
+                                                <th>更新状态</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach($appay as $item)
+                                            <tr>
+                                                <td>{{$item->updated_at}}</td>
+                                                <td class="money_id">{{$item->id}}</td>
+                                                <td>{{$item->storename}}</td>
+                                                <td>{{$item->weixin}}</td>
+                                                <td>{{$item->phone}}</td>
+                                                <td class="apply_money">{{$item->appay_money}}</td>
+                                                <td>{{round($item->money,2)}}</td>
+                                                <td>{{$item->send_money}}</td>
+                                                <td>{{round($item->money - $item->send_money,2)}}</td>
+                                                <td>
+                                                    <input name="field1" type="text" placeholder="输入线下放款的金额"/>
+                                                    <button class="alertUser">提醒商家已放款</button>
+                                                </td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            @endif
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">Copyright &copy; 2017 <a href="demo_page2.html" target="dialog">商城团队</a> 沪ICP备15053290号-2</div>
+
+        <script type="text/javascript">
+            $(".alertUser").click(function(){
+                var money = $(this).prev().val();
+                var money_id = $(this).parent().parent().find('.money_id').text();
+
+                if(!money){
+                    money = $(this).parent().parent().find('.apply_money').text();
+                }
+
+                $.ajax({
+                    url:"{{ url('server/send/money') }}",
+                    type:'post',
+                    dataType:'json',
+                    data:{
+                        'id':money_id,
+                        'money':money,
+                        '_token':'{{ csrf_token() }}'
+                    },
+                    success:function(data){
+                        if(data.statusCode == 200){
+                            window.location.reload();
+                        }else{
+                            alert('提醒失败');
+                        }
+                    }
+                });
+            });
+        </script>>
+    </body>
+    </html>
