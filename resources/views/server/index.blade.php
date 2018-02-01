@@ -169,6 +169,7 @@
                                     <th>商户盈收入总金额</th>
                                     <th>商户已经发放金额</th>
                                     <th>商户已经剩余金额</th>
+                                    <th>操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -178,7 +179,10 @@
                                     <td>男</td>
                                     <td>1</td>
                                     <td>张三</td>
-                                    <td>男</td>
+                                    <td>
+                                        <input name="field1" type="text" placeholder="输入要发放金额，默认申请的金额" />
+                                        <div class="button"><div class="buttonContent"><button>按钮</button></div></div>
+                                    </td>
                                 </tr>
                                 </tbody>
                             </table>
