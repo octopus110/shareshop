@@ -39,7 +39,7 @@
                     <span>关闭订单</span></a>
             </li>
             <li class="line">line</li>
-            <li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出已付款的订单到EXCEL</span></a></li>
+            <li><a class="icon" href="{{ url('server/excel/export') }}" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出已付款的订单到EXCEL</span></a></li>
         </ul>
     </div>
     <table class="table" width="100%" layoutH="138">

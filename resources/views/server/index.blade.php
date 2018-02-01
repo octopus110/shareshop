@@ -132,14 +132,14 @@
                                     <li><a href="/server/channel" target="navTab" rel="channel">个体渠道商</a></li>
                                 </ul>
                             </li>
+                            @if($data['grade'] == 0)
                             <li><a>杂项管理</a>
                                 <ul>
-                                    @if($data['grade'] == 0)
                                     <li><a href="/server/admin" target="navTab" rel="admin">管理员管理</a></li>
-                                    <li><a href="/server/banner" target="navTab" rel="banner">首页轮播图</a></li>
-                                    @endif
+                                    <li><a href="/server/banner" target="navTab" rel="banner">首页轮播图</a></li>  
                                 </ul>
                             </li>
+                            @endif
                         </ul>
                     </div>
                 </div>

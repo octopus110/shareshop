@@ -54,6 +54,7 @@ Route::group(['prefix' => 'server'], function () {
     Route::any('/order', 'orderController@_list');
     Route::any('/order/stop', 'orderController@stop');
     Route::any('/order/send', 'orderController@send');
+    Route::get('/excel/export','orderController@export');//导出exl
     //个体渠道商
     Route::any('/channel', 'channelController@_list');
     Route::any('/channel/send', 'channelController@send');
