@@ -30,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/orderController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
+              <caret line="16" column="9" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -40,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/channelController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -413,12 +413,12 @@
       <workItem from="1517381180343" duration="897000" />
       <workItem from="1517384957638" duration="292000" />
       <workItem from="1517454275145" duration="1768000" />
-      <workItem from="1517456148030" duration="408000" />
+      <workItem from="1517456148030" duration="873000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58963000" />
+    <option name="totallyTimeSpent" value="59428000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -836,7 +836,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/orderController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
+          <caret line="16" column="9" lean-forward="false" selection-start-line="14" selection-start-column="8" selection-end-line="16" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -844,7 +844,7 @@
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/channelController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="8" lean-forward="false" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
           <folding />
         </state>
       </provider>
