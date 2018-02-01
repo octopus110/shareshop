@@ -13,7 +13,7 @@ class orderController extends Controller
         $orderModel = new Order();
 
         $id = Auth::id();//属于哪个商户的id
-        dd(Auth::user());
+        dd(Auth::user()->grade);
         $data = $orderModel;
         if ($id) {
             $data = $orderModel->where('orders.sid', $id);
