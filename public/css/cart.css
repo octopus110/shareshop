@@ -65,14 +65,14 @@
 .submit {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 5vw;
     opacity: 0;
     z-index: 100;
     background: red;
     color: #ffffff;
-    height: 28vw;
-    line-height: 28vw;
-    padding: 0 3vw;
+    height: 8vw;
+    line-height: 8vw;
+    padding: 0 8vw;
     text-align: center;
 }
 
