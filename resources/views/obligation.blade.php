@@ -17,7 +17,7 @@
             }
 
             .qrsh{
-                width: 100%
+                width: 100%;
                 padding:2vw 0;
                 background: red;
             }
