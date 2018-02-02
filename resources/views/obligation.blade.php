@@ -20,6 +20,9 @@
                 width: 100%;
                 padding:2vw 0;
                 background: red;
+                text-align: center;
+                color: #fff;
+                margin-top: 2vw;
             }
         </style>
     @endif
