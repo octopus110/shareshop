@@ -60,9 +60,8 @@
                 @endif
             </p>
         </div>
-        <div class="qrsh">确认收货</div>
         <div class="clear"></div>
-
+        <div class="qrsh">确认收货</div>
     </section>
 @endforeach
 
