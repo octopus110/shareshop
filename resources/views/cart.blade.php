@@ -56,7 +56,9 @@
     </section>
 @endforeach
 
+@if(count($carts))
 <input type="button" value="支付" class="pay">
+@endif
 
 <script type="text/javascript">
 
