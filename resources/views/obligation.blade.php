@@ -51,8 +51,6 @@
                     <a href="/order/del/{{ $item->id }}">
                         <em class="iconfont icon-shanchu"></em>
                     </a>
-                    <em style="padding:1px 2vw;"> </em>
-                    <em class="iconfont icon-queren-copy submit" data_id="{{ $item->id }}"></em>
                 @endif
             </p>
 
@@ -67,30 +65,6 @@
 @endif
 
 <script type="text/javascript">
-    $(".submit").click(function () {
-        var sum = $(this).parent().find('.sum').text();
-        var total = $(this).parent().find('.total').text();
-
-        var cart_id = $(this).attr('data_id');
-
-        $.ajax({
-            url: '/cart/deal/' + cart_id,
-            type: 'post',
-            dataType: 'json',
-            data: {
-                total: total,
-                sum: sum,
-                '_token': '{{ csrf_token() }}'
-            },
-            success: function (data) {
-                if (data.statusCode != 200) {
-                    alert('数据更新失败');
-                } else {
-                    $(".submit").fadeOut();
-                }
-            }
-        });
-    });
     var checkbox_input = $('.checkbox_input');
     var checkbox_sum = $('.checkbox_input').length;
     var ids = [];
