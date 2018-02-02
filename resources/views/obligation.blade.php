@@ -15,6 +15,12 @@
             .cart-content {
                 width: 67%;
             }
+
+            .qrsh{
+                width: 100%
+                padding:2vw 0;
+                background: red;
+            }
         </style>
     @endif
 </head>
@@ -53,8 +59,8 @@
                     </a>
                 @endif
             </p>
-
         </div>
+        <div class="qrsh">确认收货</div>
         <div class="clear"></div>
 
     </section>
