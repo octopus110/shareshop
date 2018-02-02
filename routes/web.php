@@ -5,6 +5,7 @@ Route::any('/ajax_list/{id?}/{k?}', 'indexController@ajax_list');//ajax获取产
 Route::any('/cart/deal/{id?}', 'memberController@cartDeal');
 Route::any('/order/del/{id?}', 'memberController@order_del');//删除订单
 Route::any('/obligation/{type?}', 'memberController@obligation');//待付款 待签收 待发货
+Route::any('/order/qrsh/{id}', 'memberController@qrsh');//确认签收
 Route::get('/transaction', 'memberController@transaction');
 Route::any('/address/{r?}', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');

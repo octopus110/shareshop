@@ -362,4 +362,17 @@ class memberController extends Controller
             }
         }
     }
+
+    //确认收货
+    public function qrsh($id){
+        $ret  = (new Orders)->where('id',$id)->update([
+            'delivery'=>2
+        ]);
+
+        if($ret){
+            return response()->json(['statusCode' => 200]);
+        }else{
+            return response()->json(['statusCode' => 100]);
+        }
+    }
 }

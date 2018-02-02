@@ -64,7 +64,7 @@
             </p>
         </div>
         <div class="clear"></div>
-        <div class="qrsh">确认收货</div>
+        <div class="qrsh" data-id='{{ $item->id }}'>确认收货</div>
     </section>
 @endforeach
 
@@ -106,6 +106,17 @@
                 } else {
                     alert('网络不稳定，请重试');
                 }
+            }
+        });
+    });
+
+    $('.qrsh').click(function(){
+        var id = $(this).attr('data-id');
+        $.ajax({
+            url:"{{ url('order/qrsh/')}}".'/'.id,
+            type:'get',
+            success:function(){
+                alert('签收成功');
             }
         });
     });
