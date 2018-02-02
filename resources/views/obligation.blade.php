@@ -11,33 +11,33 @@
     <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/iconfont.css">
     @if(!$is_pay)
-        <style>
-            .cart-content {
-                width: 67%;
-            }
+    <style>
+    .cart-content {
+        width: 67%;
+    }
 
-            .qrsh{
-                width: 100%;
-                padding:2vw 0;
-                background: red;
-                text-align: center;
-                color: #fff;
-                margin-top: 2vw;
-            }
-        </style>
-    @endif
+    .qrsh{
+        width: 100%;
+        padding:2vw 0;
+        background: red;
+        text-align: center;
+        color: #fff;
+        margin-top: 2vw;
+    }
+</style>
+@endif
 </head>
 <body>
-<header class="cart-header">
-    <a href="/member"><i class="iconfont icon-fanhui"></i></a>{{ $title }}
-</header>
+    <header class="cart-header">
+        <a href="/member"><i class="iconfont icon-fanhui"></i></a>{{ $title }}
+    </header>
 
-@foreach($data as $item)
+    @foreach($data as $item)
     <section class="carts">
         @if($is_pay)
-            <div class="left checkbox">
-                <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
-            </div>
+        <div class="left checkbox">
+            <input type="checkbox" class="checkbox_input" value="{{ $item->id }}"/>
+        </div>
         @endif
         <div class="left cart-img">
             <img src="/uploads/{{ $item->src  }}" alt="" width="100%">
@@ -53,75 +53,81 @@
                 <i class="sum">{{ $item->sum }}</i>
                 <span>
                     ￥<i class="total">{{ $item->money }}</i>
-                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
+                    <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
 
                 @if($is_pay)
-                    <a href="/order/del/{{ $item->id }}">
-                        <em class="iconfont icon-shanchu"></em>
-                    </a>
+                <a href="/order/del/{{ $item->id }}">
+                    <em class="iconfont icon-shanchu"></em>
+                </a>
                 @endif
             </p>
         </div>
         <div class="clear"></div>
         <div class="qrsh" data-id='{{ $item->id }}'>确认收货</div>
     </section>
-@endforeach
+    @endforeach
 
-@if($is_pay && count($data))
+    @if($is_pay && count($data))
     <input type="button" value="支付" class="pay">
-@endif
+    @endif
 
-<script type="text/javascript">
-    var checkbox_input = $('.checkbox_input');
-    var checkbox_sum = $('.checkbox_input').length;
-    var ids = [];
+    <script type="text/javascript">
+        var checkbox_input = $('.checkbox_input');
+        var checkbox_sum = $('.checkbox_input').length;
+        var ids = [];
 
-    $('.pay').click(function () {
-        for (var i = 0; i < checkbox_sum; i++) {
-            if (checkbox_input.eq(i).is(':checked')) {
-                ids[i] = checkbox_input.eq(i).val() + ',';
-            }
-        }
-
-        if (ids.length == 0) {
-            alert('你没有选择付款订单');
-            return false;
-        }
-
-        $.ajax({
-            url: '/create_order',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                type: 1,
-                orderid: ids,
-                '_token': '{{ csrf_token() }}'
-            },
-            success: function (data) {
-                if (data.statusCode == 200) {
-                    window.location.href = '/pay'
-                } else if (data.statusCode == 100) {
-                    window.location.href = '/member'
-                } else {
-                    alert('网络不稳定，请重试');
+        $('.pay').click(function () {
+            for (var i = 0; i < checkbox_sum; i++) {
+                if (checkbox_input.eq(i).is(':checked')) {
+                    ids[i] = checkbox_input.eq(i).val() + ',';
                 }
             }
-        });
-    });
 
-    $('.qrsh').click(function(){
-        var id = $(this).attr('data-id');
-        $.ajax({
-            url:"{{ url('order/qrsh/')}}"+'/'+id,
-            type:'get',
-            success:function(){
-                alert('签收成功');
-                window.location.reload();
+            if (ids.length == 0) {
+                alert('你没有选择付款订单');
+                return false;
             }
+
+            $.ajax({
+                url: '/create_order',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    type: 1,
+                    orderid: ids,
+                    '_token': '{{ csrf_token() }}'
+                },
+                success: function (data) {
+                    if (data.statusCode == 200) {
+                        window.location.href = '/pay'
+                    } else if (data.statusCode == 100) {
+                        window.location.href = '/member'
+                    } else {
+                        alert('网络不稳定，请重试');
+                    }
+                }
+            });
         });
-    });
-</script>
+
+        $('.qrsh').click(function(){
+
+            var msg = "确认签收吗？"; 
+            if (confirm(msg)==true){ 
+              var id = $(this).attr('data-id');
+              $.ajax({
+                url:"{{ url('order/qrsh/')}}"+'/'+id,
+                type:'get',
+                success:function(){
+                    alert('签收成功');
+                    window.location.reload();
+                }
+            });
+          }else{ 
+              return false; 
+          }  
+      });
+  </script>
 
 </body>
 </html>
