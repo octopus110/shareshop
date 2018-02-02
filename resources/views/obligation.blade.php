@@ -113,7 +113,7 @@
     $('.qrsh').click(function(){
         var id = $(this).attr('data-id');
         $.ajax({
-            url:"{{ url('order/qrsh/')}}".'/'.id,
+            url:"{{ url('order/qrsh/')}}"+'/'+id,
             type:'get',
             success:function(){
                 alert('签收成功');
