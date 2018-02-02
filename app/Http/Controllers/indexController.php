@@ -228,7 +228,7 @@ class indexController extends Controller
         $money = $sum = 0;//总价格初始化 0元
         $commditys = $orders = [];
 
-        $orders = $orderModel->whereIn('id', $orderid)->select('id', 'cid', 'money', 'sum')->get();
+        $orders = $orderModel->whereIn('id', $orderid)->select('id', 'cid', 'money', 'sum','attr')->get();
         foreach ($orders as $item) {
             $money += $item->money;
             $sum += $item->sum;
