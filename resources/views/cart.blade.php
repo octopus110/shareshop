@@ -8,7 +8,7 @@
     <title>{{ env('APP_NAME')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/cart.css">
+    
     <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>
