@@ -27,7 +27,7 @@
             {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
         </p>
         <a href="/address/edit/{{ $item->id }}"><i class="iconfont icon-bianji"></i></a>
-        <a href="/address/deal/{{ $item->id }}/0"><i class="iconfont icon-shanchu"></i></a>
+        <a href="/address/deal/{{ $item->id }}/0" style="float: right;"><i class="iconfont icon-shanchu"></i></a>
     </section>
 @endforeach
 
