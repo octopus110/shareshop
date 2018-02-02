@@ -117,6 +117,7 @@
             type:'get',
             success:function(){
                 alert('签收成功');
+                window.location.reload();
             }
         });
     });
