@@ -43,7 +43,7 @@
             <h6>单价: <span class="price">￥{{ $item->price }}</span> &nbsp;&nbsp;&nbsp;
                 <i class="iconfont icon-cheng"></i>{{ $order[$k]['sum'] }}</h6>
 
-            <p>产品属性: {{ $order[$k]['attr'] }}</p>
+            <p>产品属性: {{ rtrim($order[$k]['attr'],',') }}</p>
         </div>
     </section>
 @endforeach
