@@ -172,7 +172,7 @@ class memberController extends Controller
                 $title = '已购买';
                 break;
         }
-        $order = $order->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum')
+        $order = $order->select('orders.id', 'commoditys.id as commodty_id', 'orders.money', 'commoditys.name', 'commoditys.price', 'images.src', 'orders.sum','orders.attr')
             ->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
             ->leftJoin('images', 'images.cid', 'commoditys.id')
             ->groupby('orders.id')
