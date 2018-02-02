@@ -60,7 +60,7 @@
     </section>
 @endforeach
 
-@if($is_pay)
+@if($is_pay && count($data))
     <input type="button" value="支付" class="pay">
 @endif
 
