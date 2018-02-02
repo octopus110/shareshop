@@ -97,7 +97,7 @@ class memberController extends Controller
 
             $total = (new Commodity())->select('price')->find($cid);
 
-            if ($cartModel->where('cid', $cid)->count()) {
+            if ($cartModel->where('cid', $cid)->whre('uid',$mid)->count()) {
                 return response()->json(['statusCode' => 400]);
             } else {
                 $cartModel->uid = $mid;
