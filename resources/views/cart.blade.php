@@ -8,7 +8,7 @@
     <title>{{ env('APP_NAME')}}</title>
     <script type="text/javascript" src="/lib/jquery-1.10.1.min.js"></script>
     <link rel="stylesheet" href="/css/base.css">
-    
+    <link rel="stylesheet" href="/css/cart.css">
     <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>
@@ -46,8 +46,6 @@
                 <a href="/cart/deal/{{ $item->id }}">
                     <em class="iconfont icon-shanchu"></em>
                 </a>
-                {{--<em style="padding:1px 2vw;"> </em>
-                <em class="iconfont icon-queren-copy submit" ></em>--}}
             </p>
             <div class="submit" data_id="{{ $item->id }}">确认</div>
         </div>
