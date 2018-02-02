@@ -365,7 +365,7 @@ class memberController extends Controller
 
     //确认收货
     public function qrsh($id){
-        $ret  = (new Orders)->where('id',$id)->update([
+        $ret  = (new Orders())->where('id',$id)->update([
             'delivery'=>2
         ]);
 
