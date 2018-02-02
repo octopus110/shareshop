@@ -50,6 +50,7 @@ Route::group(['prefix' => 'server'], function () {
     Route::any('/commodity/modify', 'commodityController@modify');
     Route::any('/commodity/detail/{id}', 'commodityController@detail');
     Route::any('/commodity/soldout', 'commodityController@soldout');
+    Route::any('/commodity/downCode/{id}', 'commodityController@downCode');
     //订单管理
     Route::any('/order', 'orderController@_list');
     Route::any('/order/stop', 'orderController@stop');

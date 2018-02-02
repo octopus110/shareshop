@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use QrCode;
 
 class Commodity extends Model
 {
@@ -16,19 +17,20 @@ class Commodity extends Model
         $grade = $user->grade;
 
         if ($grade == 0) {
-            $res = $this->select(
+            $data = $this->select(
                 'commoditys.id', 'commoditys.name', 'commoditys.sales', 'commoditys.quantity', 'commoditys.status',
                 'commoditys.introduce', 'commoditys.price', 'commoditys.created_at', 'classifys.name as classify')
                 ->leftJoin('classifys', 'commoditys.classify_id', 'classifys.id')
                 ->get();
         } else {
-            $res = $this->where('sid', $user->id)->select(
+            $data = $this->where('sid', $user->id)->select(
                 'commoditys.id', 'commoditys.name', 'commoditys.quantity', 'commoditys.status',
                 'commoditys.introduce', 'commoditys.price', 'commoditys.created_at', 'classifys.name as classify')
                 ->leftJoin('classifys', 'commoditys.classify_id', 'classifys.id')
                 ->get();
         }
-        return $res;
+
+        return $data;
     }
 
     public function status($status)

@@ -10,6 +10,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
+use QrCode;
 
 class commodityController extends Controller
 {
@@ -234,5 +235,12 @@ class commodityController extends Controller
         } else {
             return response()->json(['statusCode' => 200, 'confirmMsg' => '网络异常，请重试', 'callbackType' => 'forwardConfirm', 'forwardUrl' => 'commodity']);
         }
+    }
+
+    //下载指定产品二维码
+    public function downCode($id){
+        QrCode::format('png')->size(300)->generate('http://mall.eos-tech.cn/details/'.$id,public_path('qrcodes/qrcode_'.$id.'.png'));
+
+        return response()->download(public_path('qrcodes/qrcode_'.$id.'.png'));
     }
 }

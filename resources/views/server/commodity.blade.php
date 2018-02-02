@@ -46,7 +46,7 @@
                         <a class="button" href="commodity/soldout?id={{$item->id}}&s=1" target="ajaxTodo"
                            title="确定要下架吗?"><span>下架</span></a>
                     @endif
-
+                    <a class="button" href="{{ url('server/commodity/downCode/'.$item->id) }}" target="_black"><span>下载产品二维码</span></a>
                 </td>
             </tr>
         @endforeach

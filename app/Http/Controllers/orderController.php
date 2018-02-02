@@ -26,13 +26,12 @@ class orderController extends Controller
             }
         })
         ->select(
-            'orders.id', 'commoditys.name as name', 'orders.type', 'members.openid', 'members.nickname', 'orders.money',
-            'orders.rid', 'orders.status', 'orders.delivery', 'orders.express_name', 'orders.express_id', 'orders.created_at',
+            'orders.id', 'commoditys.name as name', 'orders.type', 'members.openid', 'members.nickname', 'orders.money','orders.rid', 'orders.status', 'orders.delivery', 'orders.express_name', 'orders.express_id', 'orders.created_at',
             'users.storename', 'users.id as storeid'
         )->leftJoin('commoditys', 'orders.cid', 'commoditys.id')
         ->leftJoin('members', 'members.id', 'orders.uid')
         ->leftJoin('users', 'users.id', 'orders.sid')
-        ->get();
+        ->get();        
 
         return view('server/order', [
             'data' => $data,

@@ -180,6 +180,7 @@ return [
         widuu\Express\ExpressServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
+        SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
     ],
 
     /*
@@ -230,6 +231,7 @@ return [
         'EasyWeChat' => Overtrue\LaravelWechat\Facade::class,
         'Express' => widuu\Express\Express::class,
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+        'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
     ],
 
 ];
