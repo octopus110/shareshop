@@ -8,7 +8,7 @@
                 <label>快递公司：</label>
                 <select name="express_name" class="required combox">
                     <option value="顺丰快递">顺丰快递</option>
-                    <option value="中通快递">圆通快递</option>
+                    <option value="圆通快递">圆通快递</option>
                     <option value="中通快递">中通快递</option>
                     <option value="申通快递">申通快递</option>
                     <option value="韵达快递">韵达快递</option>
