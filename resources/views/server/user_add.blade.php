@@ -74,7 +74,7 @@
 
             <p>
                 <label>手续费(默认0.2)：</label>
-                <input name="chang" class="required digits" type="text" value="0.2"/>
+                <input name="chang" class="required" type="text" value="0.2"/>
             </p>
         </div>
         <div class="formBar">

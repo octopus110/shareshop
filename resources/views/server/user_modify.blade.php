@@ -79,7 +79,7 @@
 
             <p>
                 <label>手续费(默认0.2)：</label>
-                <input name="chang" class="required digits" type="text" value="{{ $data->chang }}"/>
+                <input name="chang" class="required" type="text" value="{{ $data->chang }}"/>
             </p>
         </div>
         <div class="formBar">
