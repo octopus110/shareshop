@@ -321,7 +321,7 @@ class memberController extends Controller
             $address->phone = $request->input('phone');
     
             if ($address->save()) {
-                return redirect('/address');
+                return redirect()->back();
             } else {
                 return redirect('/address/edit/' . $request->input('id'));
             }
