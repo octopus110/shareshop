@@ -93,7 +93,7 @@
                     <li><a href="javascript:;">
                         {{ $data['grade']?'注册商家':'系统管理员' .':'.$data['email']}}
                     </a></li>
-                    <li><a href="javascript:;">微信号：{{$data['weixin']}}</a></li>
+                    <li><a href="javascript:;">用户唯一标识：{{$data['weixin']}}</a></li>
                     <li><a href="/server/quit">退出</a></li>
                 </ul>
             </div>
