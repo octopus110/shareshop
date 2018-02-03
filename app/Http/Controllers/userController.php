@@ -23,6 +23,7 @@ class userController extends Controller
 
             return view('server/user_add');
         } else {
+
             $validator = Validator::make($request->all(), [
                 'weixin' => 'required|unique:users',
                 'storename' => 'required',

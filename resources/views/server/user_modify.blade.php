@@ -25,8 +25,8 @@
             <div style="clear: both;height: 50px;"></div>
 
             <p>
-                <label>微信号：</label>
-                <input name="weixin" type="text" value="{{ $data->weixin  }}" class="required" alt="关注我们公众号的微信号"/>
+                <label>微信唯一标识</label>
+                <input name="weixin" type="text" value="{{ $data->weixin  }}" class="required" alt="微信唯一标识"/>
             </p>
 
             <p>
