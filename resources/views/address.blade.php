@@ -35,7 +35,6 @@
     <a href="javascript:;">+</a>
 </section>
 
-
 <div class="turnoff" style="display: none">
     <div style="width: 100vw; height: 14vw;"></div>
     <div id="target">
@@ -63,6 +62,7 @@
             return false;
         }
     }
+
     //ajax获取用户当前城市
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
         $("#target").distpicker({

@@ -7,7 +7,7 @@ Route::any('/order/del/{id?}', 'memberController@order_del');//删除订单
 Route::any('/obligation/{type?}', 'memberController@obligation');//待付款 待签收 待发货
 Route::any('/order/qrsh/{id}', 'memberController@qrsh');//确认签收
 Route::get('/transaction', 'memberController@transaction');
-Route::any('/address/{r?}', 'memberController@address');
+Route::any('/address', 'memberController@address');
 Route::get('/address/deal/{id?}/{t?}', 'memberController@address_deal');
 Route::any('/address/edit/{id?}', 'memberController@address_edit');
 Route::any('/improve', 'memberController@improve');//完善个人信息
