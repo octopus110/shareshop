@@ -25,7 +25,7 @@
             <div style="clear: both;height: 50px;"></div>
 
             <p>
-                <label>微信唯一标识</label>
+                <label>用户唯一标识：</label>
                 <input name="weixin" type="text" value="{{ $data->weixin  }}" class="required" alt="微信唯一标识"/>
             </p>
 

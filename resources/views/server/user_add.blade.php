@@ -3,7 +3,7 @@
           enctype="multipart/form-data" onsubmit="return iframeCallback(this)">
         {{ csrf_field()}}
         <div class="pageFormContent" layoutH="56">
-            <h6 style="padding:10px 0">唯一识别编号 进入公众号->我的账号->个人信息 中获取</h6>
+            <h6 style="padding:10px 0">用户唯一标识 进入公众号->我的账号->个人信息 中获取</h6>
             <p>
                 <label>商店名称：</label>
                 <input name="storename" type="text" class="required" alt=""/>
@@ -22,7 +22,7 @@
 
             <div style="clear: both;height: 50px;"></div>
             <p>
-                <label>微信唯一识别编号：</label>
+                <label>用户唯一标识：</label>
                 <input name="weixin" type="text" class="required" alt="微信唯一编号"/>
             </p>
 
