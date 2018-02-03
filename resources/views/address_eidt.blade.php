@@ -17,7 +17,7 @@
         <a href="/address"><i class="iconfont icon-fanhui"></i></a>地址编辑
     </header>
 
-    <form action="/address/edit" method="post">
+    <form action="/address/edit/{{$id}}" method="post">
         {{ csrf_field() }}
         <input type="hidden" name="id" value="{{ $id }}">
         <div data-toggle="distpicker">
