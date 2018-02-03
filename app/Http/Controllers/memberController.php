@@ -315,14 +315,12 @@ class memberController extends Controller
             $info = $request->input('province') . ' ' . $request->input('city') . ' ' . $request->input('district')
                 . ' ' . $request->input('address');
 
-
-            $ret = $addressModel->where('id', $request->input('id'))->update([
-                'info' => $info,
-                'name' => $request->input('name'),
-                'phone' => $request->input('phone'),
-            ]);
-
-            if ($ret) {
+            $address = $addressModel->find($request->input('id'));
+            $address->info = $info;
+            $address->name = $request->input('name');
+            $address->phone = $request->input('phone');
+    
+            if ($address->save()) {
                 return redirect('/address');
             } else {
                 return redirect('/address/edit/' . $request->input('id'));
