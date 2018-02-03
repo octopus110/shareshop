@@ -35,7 +35,9 @@
     width: 100vw;
     height: 1px;
 }
-
+.address a i{
+    font-size: 4.8vw !important;
+}
 .address a i.sheweimoren {
     color: red;
 }
