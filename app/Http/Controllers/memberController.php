@@ -206,7 +206,7 @@ class memberController extends Controller
         }
     }
 
-    public function address(Request $request)
+    public function address(Request $request,$r=0)
     {
         $mid = $this->addWechatMember();
 
@@ -220,7 +220,8 @@ class memberController extends Controller
                 ->get();
 
             return view('address', [
-                'address' => $address
+                'address' => $address,
+                'r'=>$r
             ]);
         } else {
             $validator = Validator::make($request->all(), [
@@ -249,9 +250,9 @@ class memberController extends Controller
             $addressModel->uid = $mid;
 
             if ($addressModel->save()) {
-                return response()->json(['statusCode' => 200]);
+                return response()->json(['statusCode' => 200, 'r' => $r]);
             } else {
-                return response()->json(['statusCode' => 300]);
+                return response()->json(['statusCode' => 300, 'r' => $r]);
             }
         }
     }
@@ -320,7 +321,7 @@ class memberController extends Controller
             $address->phone = $request->input('phone');
     
             if ($address->save()) {
-                return redirect()->back();
+                return redirect('/address/0');
             } else {
                 return redirect('/address/edit/' . $request->input('id'));
             }
