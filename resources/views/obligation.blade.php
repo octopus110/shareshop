@@ -64,7 +64,9 @@
             </p>
         </div>
         <div class="clear"></div>
+        @if($title == '待签收')
         <div class="qrsh" data-id='{{ $item->id }}'>确认收货</div>
+        @enfif
     </section>
     @endforeach
 
