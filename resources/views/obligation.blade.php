@@ -50,11 +50,11 @@
             </a>
 
             <p>
-                <i class="sum">数量：{{ $item->sum }}</i>
                 <span>
-                    ￥<i class="total">总价：{{ $item->money }}</i>
+                   ￥<i class="total">{{ $item->money }}</i>
                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
+                <i class="sum">数量：{{ $item->sum }}</i>
 
                 @if($is_pay)
                     <em data-id="{{ $item->id }}" class="iconfont icon-shanchu" onclick="cartDel(this)"></em>
