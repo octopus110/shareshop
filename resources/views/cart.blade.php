@@ -42,7 +42,7 @@
                     ￥<i class="total">{{ $item->total }}</i>
                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
-                <em class="iconfont icon-shanchu" data-id='{{$item->id}}' onclick="cartDel"></em>
+                <em class="iconfont icon-shanchu" data-id='{{$item->id}}' onclick="cartDel()"></em>
             </p>
             <div class="submit" data_id="{{ $item->id }}">确认</div>
         </div>
