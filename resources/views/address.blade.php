@@ -27,7 +27,7 @@
             {{ $item->info }} {{ $item->name }} 收 {{ $item->phone }}
         </p>
         <a href="/address/edit/{{ $item->id }}"><i class="iconfont icon-bianji"></i></a>
-        <a href="/address/deal/{{ $item->id }}/0" style="float: right;"><i class="iconfont icon-shanchu"></i></a>
+        <i class="iconfont icon-shanchu" data-id="{{$item->id}}" onclick="cartDel(this)"></i>
     </section>
 @endforeach
 
@@ -51,6 +51,18 @@
     <input type="button" value="取消" id="address_quit"/>
 </div>
 <script>
+    //删除
+    function cartDel(that){
+        var msg = "确定要删除吗?";
+        if(confirm(msg)==true){
+         var id = $(that).attr('data-id');
+         $.get('{{ url("/address/deal") }}'+'/'+id+'/0',function(){
+            window.location.reload();
+         }); 
+        }else{
+            return false;
+        }
+    }
     //ajax获取用户当前城市
     $.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js', function () {
         $("#target").distpicker({
