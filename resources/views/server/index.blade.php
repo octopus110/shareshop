@@ -113,7 +113,9 @@
                         <ul class="tree treeFolder">
                             <li><a>商品管理</a>
                                 <ul>
+                                    @if($data['grade'] == 0)
                                     <li><a href="/server/classify" target="navTab" rel="classify">商品分类</a></li>
+                                    @endif
                                     <li><a href="/server/commodity" target="navTab" rel="commodity">商品列表</a></li>
                                 </ul>
                             </li>
