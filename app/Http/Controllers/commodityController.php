@@ -244,8 +244,9 @@ class commodityController extends Controller
         $userid = Auth::id();
 
         $openid = (new User())->select('weixin')->find($userid);
-        $memberid = (new Member())->select('id')->where('openid',$openid)->first();
-        QrCode::format('png')->size(300)->generate('http://mall.eos-tech.cn/details/'.$id.'/'.$memberid,public_path('qrcodes/qrcode_'.$id.'.png'));
+        $memberid = (new Member())->select('id')->where('openid',$openid->weixin)->first();
+
+        QrCode::format('png')->size(300)->generate('http://mall.eos-tech.cn/details/'.$id.'/'.$memberid->id,public_path('qrcodes/qrcode_'.$id.'.png'));
 
         return response()->download(public_path('qrcodes/qrcode_'.$id.'.png'));
     }
