@@ -50,10 +50,10 @@
             </a>
 
             <p>
+                <i class="sum">{{ $item->sum }}</i>
                 <span>
-                   ￥<i class="total">{{ $item->money }}</i>
+                    ￥<i class="total">{{ $item->money }}</i>
                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
-                    <i class="sum">数量：{{ $item->sum }}</i>
                 </span>
 
                 @if($is_pay)
