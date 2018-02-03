@@ -46,7 +46,7 @@
         <div class="left cart-content">
             <a href="/details/{{ $item->commodty_id }}">
                 <h3>{{ $item->name }}</h3>
-                <p class="attr">属性：{{ rtrim($item->attr,',') }}</p>
+                <p class="attr">{{ rtrim($item->attr,',') }}</p>
             </a>
 
             <p>
