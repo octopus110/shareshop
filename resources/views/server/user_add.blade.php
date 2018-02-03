@@ -23,7 +23,7 @@
             <div style="clear: both;height: 50px;"></div>
             <p>
                 <label>用户唯一标识：</label>
-                <input name="weixin" type="text" class="required" alt="微信唯一编号"/>
+                <input name="weixin" type="text" class="required" alt="用户唯一标识"/>
             </p>
 
             <p>
