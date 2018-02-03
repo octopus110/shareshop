@@ -358,7 +358,7 @@ class indexController extends Controller
                 return view('redpack_fails', ['title' => '红包发放未开放']);
             }
         } else {
-            return view('redpack_fails', ['title' => '余额不够']);
+            return view('redpack_fails', ['title' => '没有可以提现的红包']);
         }
     }
 }
