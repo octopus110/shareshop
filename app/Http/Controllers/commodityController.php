@@ -7,6 +7,7 @@ use App\Commodity;
 use App\Image;
 use App\Property;
 use App\User;
+use App\Member;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Validator;
@@ -243,7 +244,7 @@ class commodityController extends Controller
         $userid = Auth::id();
 
         $oppenid = (new User())->select('weixin')->find($userid);
-        $memberid = (new members())->select('id')->where('oppenid',$oppenid)->first();
+        $memberid = (new Member())->select('id')->where('oppenid',$oppenid)->first();
         QrCode::format('png')->size(300)->generate('http://mall.eos-tech.cn/details/'.$id.'/'.$memberid,public_path('qrcodes/qrcode_'.$id.'.png'));
 
         return response()->download(public_path('qrcodes/qrcode_'.$id.'.png'));
