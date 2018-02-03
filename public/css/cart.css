@@ -91,10 +91,10 @@
 
 .pay {
     display: block;
-    width: 80vw;
+    width: 90vw;
     height: 10vw;
     margin: 10vw auto;
-    border: 1px #ccc solid;
+    border: 1px #fff solid;
     background: #fff;
     border-radius: 1.5vw;
 }

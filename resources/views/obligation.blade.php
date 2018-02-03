@@ -57,9 +57,7 @@
                 </span>
 
                 @if($is_pay)
-                <a href="/order/del/{{ $item->id }}">
-                    <em class="iconfont icon-shanchu"></em>
-                </a>
+                    <em data-id="{{ $item->id }}" class="iconfont icon-shanchu" onclick="cartDel(this)"></em>
                 @endif
             </p>
         </div>
@@ -75,61 +73,75 @@
     @endif
 
     <script type="text/javascript">
-        var checkbox_input = $('.checkbox_input');
-        var checkbox_sum = $('.checkbox_input').length;
-        var ids = [];
 
-        $('.pay').click(function () {
-            for (var i = 0; i < checkbox_sum; i++) {
-                if (checkbox_input.eq(i).is(':checked')) {
-                    ids[i] = checkbox_input.eq(i).val() + ',';
-                }
+//删除
+function cartDel(that){
+    var msg = "确定要删除吗?";
+    if(confirm(msg)==true){
+     var id = $(that).attr('data-id');
+     $.get('{{ url("/order/del") }}'+'/'+id,function(){
+        window.location.reload();
+    }); 
+ }else{
+    return false;
+}
+}
+
+var checkbox_input = $('.checkbox_input');
+var checkbox_sum = $('.checkbox_input').length;
+var ids = [];
+
+$('.pay').click(function () {
+    for (var i = 0; i < checkbox_sum; i++) {
+        if (checkbox_input.eq(i).is(':checked')) {
+            ids[i] = checkbox_input.eq(i).val() + ',';
+        }
+    }
+
+    if (ids.length == 0) {
+        alert('你没有选择付款订单');
+        return false;
+    }
+
+    $.ajax({
+        url: '/create_order',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            type: 1,
+            orderid: ids,
+            '_token': '{{ csrf_token() }}'
+        },
+        success: function (data) {
+            if (data.statusCode == 200) {
+                window.location.href = '/pay'
+            } else if (data.statusCode == 100) {
+                window.location.href = '/member'
+            } else {
+                alert('网络不稳定，请重试');
             }
+        }
+    });
+});
 
-            if (ids.length == 0) {
-                alert('你没有选择付款订单');
-                return false;
-            }
+$('.qrsh').click(function(){
 
-            $.ajax({
-                url: '/create_order',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    type: 1,
-                    orderid: ids,
-                    '_token': '{{ csrf_token() }}'
-                },
-                success: function (data) {
-                    if (data.statusCode == 200) {
-                        window.location.href = '/pay'
-                    } else if (data.statusCode == 100) {
-                        window.location.href = '/member'
-                    } else {
-                        alert('网络不稳定，请重试');
-                    }
-                }
-            });
-        });
-
-        $('.qrsh').click(function(){
-
-            var msg = "确认签收吗？"; 
-            if (confirm(msg)==true){ 
-              var id = $(this).attr('data-id');
-              $.ajax({
-                url:"{{ url('order/qrsh/')}}"+'/'+id,
-                type:'get',
-                success:function(){
-                    alert('签收成功');
-                    window.location.reload();
-                }
-            });
-          }else{ 
-              return false; 
-          }  
-      });
-  </script>
+    var msg = "确认签收吗？"; 
+    if (confirm(msg)==true){ 
+      var id = $(this).attr('data-id');
+      $.ajax({
+        url:"{{ url('order/qrsh/')}}"+'/'+id,
+        type:'get',
+        success:function(){
+            alert('签收成功');
+            window.location.reload();
+        }
+    });
+  }else{ 
+      return false; 
+  }  
+});
+</script>
 
 </body>
 </html>
