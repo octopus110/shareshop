@@ -42,7 +42,7 @@
                     ￥<i class="total">{{ $item->total }}</i>
                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
-                <em class="iconfont icon-shanchu" data-id='{{$item->id}}' onclick="cartDel()"></em>
+                <em class="iconfont icon-shanchu" data-id='{{$item->id}}' onclick="cartDel(this)"></em>
             </p>
             <div class="submit" data_id="{{ $item->id }}">确认</div>
         </div>
@@ -57,11 +57,11 @@
 
     <script type="text/javascript">
     //删除
-    function cartDel(){
+    function cartDel(that){
         var msg = "确定要删除吗?";
         if(confirm(msg)==true){
-         var id = $(this).attr('data-id');
-         $.get('{{ url("/cart/deal/") }}'+id,function(){
+         var id = $(that).attr('data-id');
+         $.get('{{ url("/cart/deal") }}'+'/'+id,function(){
             window.location.reload();
          }); 
         }else{
