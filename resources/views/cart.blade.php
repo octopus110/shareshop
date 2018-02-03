@@ -12,11 +12,11 @@
     <link rel="stylesheet" href="/css/iconfont.css">
 </head>
 <body>
-<header class="cart-header">
-    <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui"></i></a>购物车
-</header>
+    <header class="cart-header">
+        <a href="javascript:window.history.back();"><i class="iconfont icon-fanhui"></i></a>购物车
+    </header>
 
-@foreach($carts as $item)
+    @foreach($carts as $item)
     <section class="carts">
         <div class="left checkbox">
             <input type="checkbox" class="checkbox_input" value="{{ $item->commodty_id }}"/>
@@ -40,122 +40,131 @@
                 <br/>
                 <span>
                     ￥<i class="total">{{ $item->total }}</i>
-                     <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
+                    <i style="color: #CCCCCC;">单价：<i class="price">{{ $item->price }}</i></i>
                 </span>
-
-                <a href="/cart/deal/{{ $item->id }}">
-                    <em class="iconfont icon-shanchu"></em>
-                </a>
+                <em class="iconfont icon-shanchu"></em>
             </p>
             <div class="submit" data_id="{{ $item->id }}">确认</div>
         </div>
         <div class="clear"></div>
 
     </section>
-@endforeach
+    @endforeach
 
-@if(count($carts))
-<input type="button" value="支付" class="pay">
-@endif
+    @if(count($carts))
+    <input type="button" value="支付" class="pay">
+    @endif
 
-<script type="text/javascript">
-
-    function commidty_sum(that, type) {
-        var sum = $(that).parent().find('.sum');
-        var total = $(that).parent().find('.total');
-
-        var price = $(that).parent().find('.price');
-        var submit = $(that).parent().parent().find('.submit');
-
-        var cu_sum = parseFloat(sum.text());
-        var t_sum = 0;
-
-        if (type == 0) {
-            if (cu_sum > 1) {
-                t_sum = cu_sum - 1;
-            } else {
-                t_sum = cu_sum;
-            }
-        } else {
-            t_sum = cu_sum + 1;
-        }
-
-        sum.text(t_sum);
-        total.text(t_sum * parseFloat(price.text()));
-
-        if (submit.css('opacity') == 0) {
-            submit.css('opacity', 0.8);
+    <script type="text/javascript">
+    //删除
+    function cartDel(){
+        var msg = "确定要删除吗?";
+        if(confirm(msg)==true){
+         $.get('{{ url("/cart/deal/".$item->id) }}',function(){
+            window.location.reload()l
+         }); 
+        }else{
+            return false;
         }
     }
 
-    $(".submit").click(function () {
-        var sum = $(this).prev().find('.sum').text();
-        var total = $(this).prev().find('.total').text();
 
-        var cart_id = $(this).attr('data_id');
+function commidty_sum(that, type) {
+    var sum = $(that).parent().find('.sum');
+    var total = $(that).parent().find('.total');
 
-        var that = $(this);
+    var price = $(that).parent().find('.price');
+    var submit = $(that).parent().parent().find('.submit');
 
-        $.ajax({
-            url: '/cart/deal/' + cart_id,
-            type: 'post',
-            dataType: 'json',
-            data: {
-                total: total,
-                sum: sum,
-                '_token': '{{ csrf_token() }}'
-            },
-            success: function (data) {
-                if (data.statusCode != 200) {
-                    alert('数据更新失败');
-                } else {
-                    that.css('opacity', 0);
-                }
-            }
-        });
-    });
+    var cu_sum = parseFloat(sum.text());
+    var t_sum = 0;
 
-    var checkbox_input = $('.checkbox_input');
-    var checkbox_sum = $('.checkbox_input').length;
-    var id = 0;
-    var data = [];
+    if (type == 0) {
+        if (cu_sum > 1) {
+            t_sum = cu_sum - 1;
+        } else {
+            t_sum = cu_sum;
+        }
+    } else {
+        t_sum = cu_sum + 1;
+    }
 
-    $('.pay').click(function () {
-        for (var i = 0; i < checkbox_sum; i++) {
-            if (checkbox_input.eq(i).is(':checked')) {
-                id = checkbox_input.eq(i).val();
-                data[id] = {
-                    'attr': checkbox_input.eq(i).parent().parent().find('.attr').text(),
-                    'sum': checkbox_input.eq(i).parent().parent().find('.sum').text()
-                };
+    sum.text(t_sum);
+    total.text(t_sum * parseFloat(price.text()));
+
+    if (submit.css('opacity') == 0) {
+        submit.css('opacity', 0.8);
+    }
+}
+
+$(".submit").click(function () {
+    var sum = $(this).prev().find('.sum').text();
+    var total = $(this).prev().find('.total').text();
+
+    var cart_id = $(this).attr('data_id');
+
+    var that = $(this);
+
+    $.ajax({
+        url: '/cart/deal/' + cart_id,
+        type: 'post',
+        dataType: 'json',
+        data: {
+            total: total,
+            sum: sum,
+            '_token': '{{ csrf_token() }}'
+        },
+        success: function (data) {
+            if (data.statusCode != 200) {
+                alert('数据更新失败');
+            } else {
+                that.css('opacity', 0);
             }
         }
-
-        if (data.length == 0) {
-            alert('你没有选择产品');
-            return false;
-        }
-
-        $.ajax({
-            url: '/create_order',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                type: 0,
-                commodityid: data,
-                '_token': '{{ csrf_token() }}'
-            },
-            success: function (data) {
-                if (data.statusCode == 200) {
-                    window.location.href = '/pay'
-                } else if (data.statusCode == 100) {
-                    window.location.href = '/member'
-                } else {
-                    alert('网络不稳定，请重试');
-                }
-            }
-        });
     });
+});
+
+var checkbox_input = $('.checkbox_input');
+var checkbox_sum = $('.checkbox_input').length;
+var id = 0;
+var data = [];
+
+$('.pay').click(function () {
+    for (var i = 0; i < checkbox_sum; i++) {
+        if (checkbox_input.eq(i).is(':checked')) {
+            id = checkbox_input.eq(i).val();
+            data[id] = {
+                'attr': checkbox_input.eq(i).parent().parent().find('.attr').text(),
+                'sum': checkbox_input.eq(i).parent().parent().find('.sum').text()
+            };
+        }
+    }
+
+    if (data.length == 0) {
+        alert('你没有选择产品');
+        return false;
+    }
+
+    $.ajax({
+        url: '/create_order',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            type: 0,
+            commodityid: data,
+            '_token': '{{ csrf_token() }}'
+        },
+        success: function (data) {
+            if (data.statusCode == 200) {
+                window.location.href = '/pay'
+            } else if (data.statusCode == 100) {
+                window.location.href = '/member'
+            } else {
+                alert('网络不稳定，请重试');
+            }
+        }
+    });
+});
 </script>
 
 </body>
