@@ -328,7 +328,7 @@ class indexController extends Controller
         if (!($member->realname && $member->IDnumber)) {
             return view('redpack_fails', ['title' => '个人信息不完整']);
         }
-        if (isset($member->getearnings) && $member->getearnings >= 1) {
+        if (isset($member->getearnings) && $member->getearnings >= 50) {
             $app = new Application($this->options());
             $redpack = $app->lucky_money;
 
@@ -358,7 +358,7 @@ class indexController extends Controller
                 return view('redpack_fails', ['title' => '红包发放未开放']);
             }
         } else {
-            return view('redpack_fails', ['title' => '1元以上才能提现']);
+            return view('redpack_fails', ['title' => '50元以上才能提现']);
         }
     }
 }
