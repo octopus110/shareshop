@@ -131,7 +131,7 @@ class WxPayData
  * @author widyhu
  *
  */
-class WxPayResults extends WxPayDataBase
+class WxPayResults extends WxPayData
 {
 	/**
 	 * 
