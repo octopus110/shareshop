@@ -1,11 +1,5 @@
 <?php
 /**
-* 2015-06-29 修复签名问题
-**/
-require_once "WxPay.Config.php";
-require_once "WxPay.Exception.php";
-
-/**
  * 
  * 数据对象基础类，该类中定义数据类最基本的行为，包括：
  * 计算/设置/获取签名、输出xml格式的参数、从xml读取数据对象等
