@@ -39,7 +39,7 @@ class indexController extends Controller
     //测试微信支付
     public function test()
     {
-        $tools = new \Libs\JsApiPay();
+        $tools = new APP\libs\JsApiPay();
 
         $openId = $tools->GetOpenid();
 
