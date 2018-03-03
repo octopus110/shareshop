@@ -747,7 +747,7 @@ class WxPayUnifiedOrder extends WxPayData
  * @author widyhu
  *
  */
-class WxPayOrderQuery extends WxPayDataBase
+class WxPayOrderQuery extends WxPayData
 {
 	/**
 	* 设置微信分配的公众账号ID
