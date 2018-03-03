@@ -30,8 +30,8 @@ class indexController extends Controller
             'payment' => [
                 'merchant_id' => env('MERCHANT_ID', ''),
                 'key' => env('WEICHAT_PAY', ''),
-                'cert_path' => '/data/shareshop/public/cert/apiclient_cert.pem',
-                'key_path' => '/data/shareshop/public/cert/apiclient_key.pem'
+                'cert_path' => '/data/web/shareshop/public/cert/apiclient_cert.pem',
+                'key_path' => '/data/web/shareshop/public/cert/apiclient_key.pem'
             ],
         ];
     }
