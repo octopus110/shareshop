@@ -272,7 +272,7 @@ class WxPayNotifyReply extends  WxPayDataBase
  * @author widyhu
  *
  */
-class WxPayUnifiedOrder extends WxPayDataBase
+class WxPayUnifiedOrder extends WxPayData
 {	
 	/**
 	* 设置微信分配的公众账号ID
