@@ -37,7 +37,7 @@
 <footer class="footer">
     <p><img src="/images/tmp/7.png" alt=""></p>
 
-    <p>@版权 版权 版权</p>
+    <p>沪ICP备18006971号</p>
 </footer>
 
 @yield('js')
